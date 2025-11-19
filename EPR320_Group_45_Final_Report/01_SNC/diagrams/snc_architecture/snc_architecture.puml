@@ -1,0 +1,87 @@
+@startuml snc_architecture
+
+skinparam packageStyle rectangle
+skinparam defaultFontSize 11
+skinparam backgroundColor white
+skinparam linetype ortho
+
+skinparam component {
+  BackgroundColor<<developed>> LightGreen
+  BorderColor<<developed>> DarkGreen
+  BackgroundColor<<offshelf>> Moccasin
+  BorderColor<<offshelf>> Orange
+  BackgroundColor<<external>> LightGray
+  BorderColor<<external>> DimGray
+  FontSize 10
+}
+
+skinparam package {
+  BackgroundColor WhiteSmoke
+  BorderColor Black
+  FontStyle bold
+  FontSize 11
+}
+
+title SNC Subsystem Architecture
+
+rectangle "SNC Subsystem Boundary" {
+
+  package "Main ESP32 (Off-the-Shelf)" as MAIN {
+    [State Machine] <<developed>> as SM
+    [NAVCON] <<developed>> as NAV
+    [SCS Protocol] <<developed>> as SCS
+    [Pure Tone\nDetection] <<developed>> as PTD
+    [SPI Master] <<developed>> as SPIM
+
+    SCS -up-> SM
+    NAV -up-> SM
+    PTD -up-> SM
+    SM -down-> SPIM
+  }
+
+  package "WiFi ESP32 (Off-the-Shelf)" as WIFI {
+    [SPI Slave] <<developed>> as SPIS
+    [Web Server] <<developed>> as WEB
+    [Dashboard] <<developed>> as DASH
+
+    SPIS -up-> DASH
+    DASH -up-> WEB
+  }
+
+  package "Analog Circuit (Developed)" as ANALOG {
+    component "Mic" <<offshelf>> as MIC
+    component "Preamp\nMCP6024" <<offshelf>> as PRE
+    component "BPF\nMCP6024" <<offshelf>> as BPF
+    component "Envelope\nBAT48" <<offshelf>> as ENV
+
+    MIC -right-> PRE
+    PRE -right-> BPF
+    BPF -right-> ENV
+  }
+
+}
+
+component [SS\nUART RX] <<external>> as SS
+component [MDPS\nUART TX/RX] <<external>> as MDPS
+actor Operator as OP
+
+' Analog to digital
+ENV -down-> PTD
+
+' External UART connections to Main ESP32
+SS -down-> SCS : UART\n19200
+MDPS -down-> SCS : UART\n19200
+
+' ESP32 to ESP32 SPI
+SPIM -right-> SPIS : SPI 2MHz\n200Hz
+
+' WiFi to Operator
+WEB -up-> OP : WiFi AP\nHTTP/WS
+
+legend right
+  |<back:LightGreen>| Developed Software
+  |<back:Moccasin>| Off-the-Shelf Hardware
+  |<back:LightGray>| External Subsystems
+endlegend
+
+@enduml

@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   contentStyleType="text/css"
+   height="704px"
+   preserveAspectRatio="none"
+   style="width:430px;height:704px;background:#FFFFFF;"
+   version="1.1"
+   viewBox="0 0 430 704"
+   width="430px"
+   zoomAndPan="magnify"
+   id="svg43"
+   sodipodi:docname="state_machine.svg"
+   inkscape:export-filename="state_machine.pdf"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview43"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.1335227"
+     inkscape:cx="215.25815"
+     inkscape:cy="352"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="2391"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg43" />
+  <defs
+     id="defs1" />
+  <g
+     id="g43">
+    <ellipse
+       cx="142.5"
+       cy="16"
+       fill="#222222"
+       rx="10"
+       ry="10"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="ellipse1" />
+    <g
+       id="IDLE">
+      <rect
+         fill="#ADD8E6"
+         height="57.9468"
+         rx="12.5"
+         ry="12.5"
+         style="stroke:#000000;stroke-width:0.5;"
+         width="122.0991"
+         x="81.5"
+         y="107.5"
+         id="rect1" />
+      <line
+         style="stroke:#000000;stroke-width:0.5;"
+         x1="81.5"
+         x2="203.5991"
+         y1="130.1489"
+         y2="130.1489"
+         id="line1" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="11"
+         lengthAdjust="spacing"
+         textLength="24.4546"
+         x="130.3223"
+         y="122.8179"
+         id="text1">IDLE</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="11"
+         lengthAdjust="spacing"
+         textLength="67.2461"
+         x="86.5"
+         y="145.4668"
+         id="text2">System ready</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="11"
+         lengthAdjust="spacing"
+         textLength="102.0991"
+         x="86.5"
+         y="158.1157"
+         id="text3">Waiting for activation</text>
+    </g>
+    <g
+       id="CAL">
+      <rect
+         fill="#FFFFE0"
+         height="57.9468"
+         rx="12.5"
+         ry="12.5"
+         style="stroke:#000000;stroke-width:0.5;"
+         width="133.0991"
+         x="7"
+         y="258"
+         id="rect3" />
+      <line
+         style="stroke:#000000;stroke-width:0.5;"
+         x1="7"
+         x2="140.0991"
+         y1="280.6489"
+         y2="280.6489"
+         id="line3" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="11"
+         lengthAdjust="spacing"
+         textLength="21.3984"
+         x="62.8503"
+         y="273.3179"
+         id="text4">CAL</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="11"
+         lengthAdjust="spacing"
+         textLength="83.1553"
+         x="12"
+         y="295.9668"
+         id="text5">Calibration mode</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="11"
+         lengthAdjust="spacing"
+         textLength="113.0991"
+         x="12"
+         y="308.6157"
+         id="text6">SS &amp; MDPS calibrating</text>
+    </g>
+    <g
+       id="MAZE">
+      <rect
+         fill="#90EE90"
+         height="70.5957"
+         rx="12.5"
+         ry="12.5"
+         style="stroke:#000000;stroke-width:0.5;"
+         width="125.7783"
+         x="78.5"
+         y="433.5"
+         id="rect6" />
+      <line
+         style="stroke:#000000;stroke-width:0.5;"
+         x1="78.5"
+         x2="204.2783"
+         y1="456.1489"
+         y2="456.1489"
+         id="line6" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="11"
+         lengthAdjust="spacing"
+         textLength="30.5562"
+         x="126.1111"
+         y="448.8179"
+         id="text7">MAZE</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="11"
+         lengthAdjust="spacing"
+         textLength="83.7676"
+         x="83.5"
+         y="471.4668"
+         id="text8">Navigation active</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="11"
+         lengthAdjust="spacing"
+         textLength="95.9761"
+         x="83.5"
+         y="484.1157"
+         id="text9">NAVCON decisions</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="11"
+         lengthAdjust="spacing"
+         textLength="105.7783"
+         x="83.5"
+         y="496.7646"
+         id="text10">Executing maneuvers</text>
+    </g>
+    <g
+       id="SOS">
+      <rect
+         fill="#FFA500"
+         height="70.5957"
+         rx="12.5"
+         ry="12.5"
+         style="stroke:#000000;stroke-width:0.5;"
+         width="110.5029"
+         x="86"
+         y="624"
+         id="rect10" />
+      <line
+         style="stroke:#000000;stroke-width:0.5;"
+         x1="86"
+         x2="196.5029"
+         y1="646.6489"
+         y2="646.6489"
+         id="line10" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="11"
+         lengthAdjust="spacing"
+         textLength="23.23"
+         x="129.6365"
+         y="639.3179"
+         id="text11">SOS</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="11"
+         lengthAdjust="spacing"
+         textLength="82.5376"
+         x="91"
+         y="661.9668"
+         id="text12">Emergency state</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="11"
+         lengthAdjust="spacing"
+         textLength="80.6899"
+         x="91"
+         y="674.6157"
+         id="text13">NAVCON frozen</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="11"
+         lengthAdjust="spacing"
+         textLength="90.5029"
+         x="91"
+         y="687.2646"
+         id="text14">Awaiting dual-tone</text>
+    </g>
+    <g
+       id="elem_GMN13">
+      <path
+         d="M239,99 L239,132.5 L203.68,136.5 L239,140.5 L239,174.4063 A0,0 0 0 0 239,174.4063 L396.062,174.4063 A0,0 0 0 0 396.062,174.4063 L396.062,109 L386.062,99 L239,99 A0,0 0 0 0 239,99 "
+         fill="#FEFFDD"
+         style="stroke:#181818;stroke-width:0.5;"
+         id="path14" />
+      <path
+         d="M386.062,99 L386.062,109 L396.062,109 L386.062,99 "
+         fill="#FEFFDD"
+         style="stroke:#181818;stroke-width:0.5;"
+         id="path15" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="13"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="69.3481"
+         x="245"
+         y="117.4951"
+         id="text15">Initial State</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="13"
+         lengthAdjust="spacing"
+         textLength="84.0303"
+         x="245"
+         y="133.8467"
+         id="text16">• Display IDLE</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="13"
+         lengthAdjust="spacing"
+         textLength="111.4839"
+         x="245"
+         y="150.1982"
+         id="text17">• SCS timing active</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="13"
+         lengthAdjust="spacing"
+         textLength="136.062"
+         x="245"
+         y="166.5498"
+         id="text18">• No spam in wait loops</text>
+    </g>
+    <g
+       id="elem_GMN16">
+      <path
+         d="M240,423 L240,465 L204.59,469 L240,473 L240,514.7578 A0,0 0 0 0 240,514.7578 L423.043,514.7578 A0,0 0 0 0 423.043,514.7578 L423.043,433 L413.043,423 L240,423 A0,0 0 0 0 240,423 "
+         fill="#FEFFDD"
+         style="stroke:#181818;stroke-width:0.5;"
+         id="path18" />
+      <path
+         d="M413.043,423 L413.043,433 L423.043,433 L413.043,423 "
+         fill="#FEFFDD"
+         style="stroke:#181818;stroke-width:0.5;"
+         id="path19" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="13"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="109.0845"
+         x="246"
+         y="441.4951"
+         id="text19">Active Navigation</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="13"
+         lengthAdjust="spacing"
+         textLength="140.2642"
+         x="246"
+         y="457.8467"
+         id="text20">• Process SS colors &amp; θᵢ</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="13"
+         lengthAdjust="spacing"
+         textLength="162.043"
+         x="246"
+         y="474.1982"
+         id="text21">• Process MDPS kinematics</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="13"
+         lengthAdjust="spacing"
+         textLength="145.812"
+         x="246"
+         y="490.5498"
+         id="text22">• Issue IST=3 commands</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="13"
+         lengthAdjust="spacing"
+         textLength="120.1675"
+         x="246"
+         y="506.9014"
+         id="text23">• Display diagnostics</text>
+    </g>
+    <g
+       id="elem_GMN19">
+      <path
+         d="M232.5,622 L232.5,655.5 L197.31,659.5 L232.5,663.5 L232.5,697.4063 A0,0 0 0 0 232.5,697.4063 L414.1401,697.4063 A0,0 0 0 0 414.1401,697.4063 L414.1401,632 L404.1401,622 L232.5,622 A0,0 0 0 0 232.5,622 "
+         fill="#FEFFDD"
+         style="stroke:#181818;stroke-width:0.5;"
+         id="path23" />
+      <path
+         d="M404.1401,622 L404.1401,632 L414.1401,632 L404.1401,622 "
+         fill="#FEFFDD"
+         style="stroke:#181818;stroke-width:0.5;"
+         id="path24" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="13"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="74.4199"
+         x="238.5"
+         y="640.4951"
+         id="text24">Safety State</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="13"
+         lengthAdjust="spacing"
+         textLength="116.5811"
+         x="238.5"
+         y="656.8467"
+         id="text25">• Navigation paused</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="13"
+         lengthAdjust="spacing"
+         textLength="112.9502"
+         x="238.5"
+         y="673.1982"
+         id="text26">• Maintains position</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="13"
+         lengthAdjust="spacing"
+         textLength="160.6401"
+         x="238.5"
+         y="689.5498"
+         id="text27">• Reject off-frequency tones</text>
+    </g>
+    <!--link *start* to IDLE-->
+    <g
+       id="link_*start*_IDLE">
+      <path
+         d="M142.5,26.3 C142.5,43.54 142.5,75.1 142.5,101.32 "
+         fill="none"
+         id="*start*-to-IDLE"
+         style="stroke:#000000;stroke-width:1.0;" />
+      <polygon
+         fill="#000000"
+         points="142.5,107.32,146.5,98.32,142.5,102.32,138.5,98.32,142.5,107.32"
+         style="stroke:#000000;stroke-width:1.0;"
+         id="polygon27" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="9"
+         lengthAdjust="spacing"
+         textLength="40.0122"
+         x="143.5"
+         y="66.3428"
+         id="text28">Power-Up</text>
+    </g>
+    <!--link IDLE to CAL-->
+    <g
+       id="link_IDLE_CAL">
+      <path
+         d="M119.32,165.59 C110.84,176.96 101.81,190.56 95.5,204 C87.49,221.08 83.2548,235.7148 79.7548,251.9448 "
+         fill="none"
+         id="IDLE-to-CAL"
+         style="stroke:#000000;stroke-width:1.0;" />
+      <polygon
+         fill="#000000"
+         points="78.49,257.81,84.2973,249.8555,79.544,252.9224,76.4771,248.169,78.49,257.81"
+         style="stroke:#000000;stroke-width:1.0;"
+         id="polygon28" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="9"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="73.002"
+         x="103.7751"
+         y="214.3428"
+         id="text29">Touch Activation</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="9"
+         lengthAdjust="spacing"
+         textLength="87.5522"
+         x="96.5"
+         y="225.6631"
+         id="text30">(Valid touch detected)</text>
+    </g>
+    <!--link CAL to MAZE-->
+    <g
+       id="link_CAL_MAZE">
+      <path
+         d="M79.58,316.15 C84.61,337.6 92.54,367.65 102.5,393 C107.81,406.52 112.0262,415.506 118.6562,427.936 "
+         fill="none"
+         id="CAL-to-MAZE"
+         style="stroke:#000000;stroke-width:1.0;" />
+      <polygon
+         fill="#000000"
+         points="121.48,433.23,120.7737,423.4065,119.1269,428.8183,113.715,427.1715,121.48,433.23"
+         style="stroke:#000000;stroke-width:1.0;"
+         id="polygon30" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="9"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="47.0039"
+         x="120.3816"
+         y="356.3428"
+         id="text31">EoC Guard</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="9"
+         lengthAdjust="spacing"
+         textLength="66.7705"
+         x="110.4983"
+         y="367.6631"
+         id="text32">SS.EoC = TRUE</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="9"
+         lengthAdjust="spacing"
+         textLength="19.002"
+         x="134.3826"
+         y="378.9834"
+         id="text33">AND</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="9"
+         lengthAdjust="spacing"
+         textLength="80.7671"
+         x="103.5"
+         y="390.3037"
+         id="text34">MDPS.EoC = TRUE</text>
+    </g>
+    <!--link MAZE to SOS-->
+    <g
+       id="link_MAZE_SOS">
+      <path
+         d="M100.34,504.71 C89.51,516.29 79.26,530.08 73.5,545 C65.98,564.49 65.4,572.75 73.5,592 C78.5,603.87 82.5684,610.3869 91.6484,619.6869 "
+         fill="none"
+         id="MAZE-to-SOS"
+         style="stroke:#000000;stroke-width:1.0;" />
+      <polygon
+         fill="#000000"
+         points="95.84,623.98,92.4147,614.746,92.347,620.4024,86.6906,620.3347,95.84,623.98"
+         style="stroke:#000000;stroke-width:1.0;"
+         id="polygon34" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="9"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="74.0083"
+         x="82.3464"
+         y="555.3428"
+         id="text35">Dual-Tone Detect</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="9"
+         lengthAdjust="spacing"
+         textLength="89.1782"
+         x="74.7615"
+         y="566.6631"
+         id="text36">Two tones @ 2800 Hz</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="9"
+         lengthAdjust="spacing"
+         textLength="89.7012"
+         x="74.5"
+         y="577.9834"
+         id="text37">(0.5-1.0s each, Δt≤2s)</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="9"
+         lengthAdjust="spacing"
+         textLength="74.4697"
+         x="82.1157"
+         y="589.3037"
+         id="text38">≤60 dB @ ≥10 cm</text>
+    </g>
+    <!--link SOS to MAZE-->
+    <g
+       id="link_SOS_MAZE">
+      <path
+         d="M158.55,623.73 C162.64,613.73 166.42,602.64 168.5,592 C172.5,571.5 172.09,565.58 168.5,545 C166.14,531.5 163.7,522.8392 158.98,510.4092 "
+         fill="none"
+         id="SOS-to-MAZE"
+         style="stroke:#000000;stroke-width:1.0;" />
+      <polygon
+         fill="#000000"
+         points="156.85,504.8,156.3055,514.6338,158.625,509.4743,163.7844,511.7938,156.85,504.8"
+         style="stroke:#000000;stroke-width:1.0;"
+         id="polygon38" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="9"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="74.0083"
+         x="172.5"
+         y="566.8428"
+         id="text39">Dual-Tone Detect</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="9"
+         lengthAdjust="spacing"
+         textLength="59.0098"
+         x="179.9993"
+         y="578.1631"
+         id="text40">(Same criteria)</text>
+    </g>
+    <!--link MAZE to IDLE-->
+    <g
+       id="link_MAZE_IDLE">
+      <path
+         d="M168.85,433.34 C176.8,421.27 184.42,407.18 188.5,393 C211.71,312.27 213.53,284.18 188.5,204 C184.19,190.2 179.4972,181.5421 171.1372,170.3821 "
+         fill="none"
+         id="MAZE-to-IDLE"
+         style="stroke:#000000;stroke-width:1.0;" />
+      <polygon
+         fill="#000000"
+         points="167.54,165.58,169.7345,175.1813,170.5377,169.5817,176.1372,170.3849,167.54,165.58"
+         style="stroke:#000000;stroke-width:1.0;"
+         id="polygon40" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="9"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="48.5024"
+         x="227.7788"
+         y="279.8428"
+         id="text41">EoM Signal</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="9"
+         lengthAdjust="spacing"
+         textLength="81.0176"
+         x="211.5212"
+         y="291.1631"
+         id="text42">From SS subsystem</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="9"
+         lengthAdjust="spacing"
+         textLength="87.0601"
+         x="208.5"
+         y="302.4834"
+         id="text43">Execute end behavior</text>
+    </g>
+    <!--SRC=[TLHTRjD047xtAUO9jHQfaY8GL6s5yzDIgKchRbe4X8UjT-8ijNV3xheXHKYyzfqJL70494xHEz2JiBjs7BSDbYBBCzzyyyrVz0KNKwfe1jfGW_0r0FkqQNoHA9aBrf6fLDlR1zt3tkuk7F9aOjffZgjHdUXm0Ng7QIfdgs7zw7r5jgyGnMeOEI8MTQIeICfyKZ5KtWljrCAzTKyAG_WLGgjLVGzeXX0fJjFWMn3egiP8AJch4pnmLLolWk13-14QZLrmfSCM7CiPgiRfrDBvHdbprPYYRIMKpBN131HIDg_Rtr9kk4XWRDFJsF1BQhWKNg6djEs3HHCBGcVPWWvD-RdoOCWamvgB47W2_UunWNW14icIqNKQgeONdDws1GDwoPE2qsl1Uyxeh7Cq08OnrnQXwxxU5unpNqT61UQNgFGoePqPB2PNf7CM6vIXIb34ysBDQfuorLZ9gt8H2diqAxl5SfesZ1JeilXEkgaKvOVXKERn1AAgcs4u4cjdjXSCZ7SnD1WRPEj1u69SR5b86FPa1_PpgfYB8cJ3VU_0yEIqDnBHe3iIhhCrQn3uKCTHY0p3hbCtjEgWwnCvfk5CWXEiuJLilcmsuSsL5TNSUDveRJGr88qdJ-7sXxcx_hcfrqV2lbyqWRKj_ExwLwi9SHO4Bi4ziQiohH6twB7Y1ksohzVqbIldQkm3uOcWgGlOKp9pIwFpS-stT2IAUIAWO72E4xiMKWM1aDQat8M277isFvimF11sB3G5ukOOXjvwz_q6kbnFKpfVGfsHT0WOdhanrfRCUGOIzDIU7HVW1Wsfb5CTE0qkyyFyhgmolnyrrjQtfk5OoHYrTWN6xiYrFOxRFtz_tpn2-9Enju-PvOXrvJ_GEhUtJOOxpon5PZUSwKSbCauJ8RKF_9zYExvICA5ZDFD7_QhTtvJc6bdbwLCkZFrfc4hD_L_4mdM2d-paBV-uCLRuEVSNvLTjAUGV]-->
+  </g>
+</svg>

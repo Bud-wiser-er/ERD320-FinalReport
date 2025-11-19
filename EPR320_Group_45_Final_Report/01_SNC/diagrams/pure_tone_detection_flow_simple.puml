@@ -1,0 +1,41 @@
+@startuml pure_tone_detection_flow_simple
+
+skinparam activity {
+    BackgroundColor LightBlue
+    BorderColor Black
+    FontSize 11
+    FontName Arial
+}
+
+skinparam ArrowColor Black
+skinparam ArrowFontSize 10
+
+' Force left-to-right layout
+left to right direction
+
+title Pure Tone Detection System: Analog Chain → Digital Validation
+
+|Analog Signal Chain|
+start
+:2800 Hz Tone\n60 dB SPL;
+:Electret\nMicrophone;
+:Preamp\n+40 dB;
+:Bandpass Filter\n2800 Hz\nQ≈2.6;
+:Envelope\nDetector\nτ=33ms;
+
+|Digital Validation|
+:ESP32 ADC\n12-bit\nGPIO 36;
+:Voltage\nThreshold\n≥2.8V;
+if (Tone Duration\n500-1000ms?) then (valid)
+  if (Second tone\nwithin 2s?) then (yes)
+    :Dual-Tone\n**DETECTED**;
+    :Trigger SOS\nTransition;
+    stop
+  else (no)
+    :Wait for\nSecond Tone;
+  endif
+else (invalid)
+  :Discard;
+endif
+
+@enduml

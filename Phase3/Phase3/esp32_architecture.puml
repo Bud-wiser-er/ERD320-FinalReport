@@ -1,0 +1,279 @@
+@startuml ESP32_MARV_Architecture
+!theme plain
+
+title ESP32 MARV SNC Architecture & Operation Flow\\nMain Controller with NAVCON Navigation System
+
+skinparam backgroundColor White
+skinparam sequenceParticipant {
+    BackgroundColor LightBlue
+    BorderColor DarkBlue
+}
+
+skinparam note {
+    BackgroundColor LightYellow
+    BorderColor Orange
+}
+
+== System Initialization ==
+
+participant "Arduino Setup" as Setup
+participant "UART Handlers" as UART
+participant "GPIO Commands" as GPIO
+participant "System State" as SysState
+participant "NAVCON Core" as NAVCON
+participant "SPI Comm" as SPI
+
+Setup -> Setup : Serial.begin(115200)
+Setup -> UART : ssHandler.begin(19200)
+Setup -> UART : mdpsHandler.begin(19200)
+Setup -> GPIO : setupGPIOCommands()
+Setup -> SysState : initializeSystemState()
+Setup -> NAVCON : initializeNavcon()
+Setup -> SPI : spi_comm.begin()
+
+note over Setup
+**Pin Definitions:**
+- SS UART: RX=21, TX=22
+- MDPS UART: RX=16, TX=17
+- SPI: SCK=18, MISO=19, CS=15
+- GPIO Commands: 4, 2, 15
+end note
+
+== Main Control Loop - Continuous Operation ==
+
+loop Every Loop Iteration (∞)
+
+    participant "Main Loop" as Loop
+    participant "WiFi Commands" as WiFi
+    participant "SPI Updates" as SPIUpd
+    participant "SS Handler" as SS
+    participant "MDPS Handler" as MDPS
+    participant "Serial Commands" as SerCmd
+
+    Loop -> WiFi : checkWiFiCommands()
+    note right : Check GPIO pins 4, 2, 15\\nfor WiFi ESP32 commands
+
+    Loop -> SPIUpd : sendSPIUpdates() [20Hz]
+    note right : Rate-limited SPI transmission\\nto WiFi ESP32 every 50ms
+
+    SPIUpd -> SPI : Send system state packet
+    SPIUpd -> SPI : Send sensor data packet
+    SPIUpd -> SPI : Send movement data packet
+    SPIUpd -> SPI : Send heartbeat packet
+
+    == SS Packet Processing ==
+
+    Loop -> SS : ssHandler.readPacket(packet)
+
+    alt SS Packet Received
+        SS -> Loop : SCSPacket with SS data
+        Loop -> SysState : processStateTransition(packet)
+        Loop -> NAVCON : handleNavconIncomingData(packet)
+
+        note over SysState
+        **SS Packet Types:**
+        - IST=1: Sensor colors (S1,S2,S3)
+        - IST=2: Incidence angle
+        - IST=3: End-of-maze detection
+        end note
+
+        alt System in MAZE State & SNC Active
+            Loop -> NAVCON : runEnhancedNavcon()
+            NAVCON -> NAVCON : executeNavconStateMachine()
+
+            group NAVCON State Machine
+
+                alt State: FORWARD_SCAN
+                    NAVCON -> NAVCON : updateLineDetection()
+
+                    note over NAVCON
+                    **Line Detection Priority:**
+                    1. S2 (center) - immediate response
+                    2. S1+S2 or S2+S3 combinations
+                    3. Single edge sensors (S1 or S3)
+                    4. Distance-based angle inference
+                    end note
+
+                    alt Line Detected
+                        NAVCON -> NAVCON : planCorrectionForRedGreen()\\nor planCorrectionForBlackBlue()
+                        NAVCON -> Loop : createStopPacket()
+                    else No Line
+                        NAVCON -> Loop : createForwardPacket()
+                    end
+
+                else State: STOP
+                    alt MDPS Speeds = 0
+                        NAVCON -> NAVCON : Set stop_confirmed = true
+                        NAVCON -> NAVCON : State = REVERSE
+                        NAVCON -> Loop : createReversePacket()
+                    else Still Moving
+                        NAVCON -> Loop : createStopPacket()
+                    end
+
+                else State: REVERSE
+                    alt Distance >= REVERSE_DISTANCE (60mm)
+                        NAVCON -> NAVCON : Set reverse_confirmed = true
+                        NAVCON -> NAVCON : State = STOP_BEFORE_ROTATE
+                        NAVCON -> Loop : createStopPacket()
+                    else Continue Reversing
+                        NAVCON -> Loop : createReversePacket()
+                    end
+
+                else State: STOP_BEFORE_ROTATE
+                    alt Stop Confirmed by MDPS
+                        NAVCON -> NAVCON : State = ROTATE
+                        NAVCON -> Loop : createRotatePacket(angle, direction)
+                    else Waiting for Stop
+                        NAVCON -> Loop : createStopPacket()
+                    end
+
+                else State: ROTATE
+                    NAVCON -> NAVCON : State = EVALUATE_CORRECTION
+                    note right : Rotation command sent,\\nwaiting for feedback
+
+                else State: EVALUATE_CORRECTION
+                    alt Steering Correction (5°)
+                        NAVCON -> NAVCON : resetForNewDetection()
+                        NAVCON -> NAVCON : State = FORWARD_SCAN
+                        NAVCON -> Loop : createForwardPacket()
+                    else RED/GREEN Correction
+                        alt Rotation Sufficient (±5°)
+                            NAVCON -> NAVCON : State = CROSSING_LINE
+                            NAVCON -> Loop : createForwardPacket()
+                        else Need More Rotation
+                            NAVCON -> NAVCON : State = STOP
+                            NAVCON -> Loop : createStopPacket()
+                        end
+                    else BLACK/BLUE Correction
+                        NAVCON -> NAVCON : resetForNewDetection()
+                        NAVCON -> NAVCON : State = FORWARD_SCAN
+                        NAVCON -> Loop : createForwardPacket()
+                    end
+
+                else State: CROSSING_LINE
+                    alt All Sensors White
+                        NAVCON -> NAVCON : Line crossing complete
+                        NAVCON -> NAVCON : resetForNewDetection()
+                        NAVCON -> NAVCON : State = FORWARD_SCAN
+                    end
+                    NAVCON -> Loop : createForwardPacket()
+                end
+            end
+
+            Loop -> SS : ssHandler.sendPacket(navconPacket)
+
+        else Not NAVCON Active
+            Loop -> SysState : respondToSubsystem(packet)
+            Loop -> SS : ssHandler.sendPacket(responsePacket)
+        end
+    end
+
+    == MDPS Packet Processing ==
+
+    Loop -> MDPS : mdpsHandler.readPacket(packet)
+
+    alt MDPS Packet Received
+        MDPS -> Loop : SCSPacket with MDPS data
+        Loop -> SysState : processStateTransition(packet)
+        Loop -> NAVCON : handleNavconIncomingData(packet)
+
+        note over SysState
+        **MDPS Packet Types:**
+        - IST=1: Battery/Level data
+        - IST=2: Rotation feedback
+        - IST=3: Speed feedback
+        - IST=4: Distance feedback
+        end note
+
+        alt System in MAZE State & SNC Active
+            Loop -> NAVCON : runEnhancedNavcon()
+            Loop -> MDPS : mdpsHandler.sendPacket(navconPacket)
+        else Not NAVCON Active
+            Loop -> SysState : respondToSubsystem(packet)
+            Loop -> MDPS : mdpsHandler.sendPacket(responsePacket)
+        end
+    end
+
+    == Serial Command Processing ==
+
+    Loop -> SerCmd : checkSerialCommands()
+
+    alt Serial Input Available
+        alt Command 'T'
+            SerCmd -> GPIO : simulateTouchCommand()
+        else Command 'P'
+            SerCmd -> GPIO : simulatePureToneCommand()
+        else Command 'S'
+            SerCmd -> GPIO : simulateSendCommand()
+        else Command '?'
+            SerCmd -> SysState : printSystemStatus()
+        else Command 'N'
+            SerCmd -> NAVCON : printNavconDebugInfo()
+        end
+    end
+
+end
+
+== Key Data Structures ==
+
+note over NAVCON
+**NavconStatus Structure:**
+- current_state: NavconState enum
+- line_detection: LineDetectionData
+- correction: CorrectionTracker
+- black_blue_nav: BlackBlueNavigation
+- stop_confirmed, reverse_confirmed: bool
+end note
+
+note over NAVCON
+**LineDetectionData:**
+- detected_color: uint8_t (0-4)
+- detecting_sensor: uint8_t (1-3)
+- initial_angle, current_target_angle: uint8_t
+- angle_valid, detection_active: bool
+- line_type: LineType enum
+end note
+
+note over NAVCON
+**CorrectionTracker:**
+- correction_direction: uint8_t (2=LEFT, 3=RIGHT)
+- attempts_made: uint8_t
+- in_correction_sequence: bool
+- last_rotation_commanded/actual: uint16_t
+end note
+
+== SPI Communication Data Flow ==
+
+note over SPI
+**SPI Packet Types to WiFi ESP32:**
+1. **System State** (every 50ms):
+   - Current system state & subsystem
+   - Active flags and counters
+
+2. **Sensor Data** (when updated):
+   - S1, S2, S3 color values
+   - Incidence angle from SS
+
+3. **Movement Data** (when updated):
+   - Current speeds (left/right)
+   - Current distance traveled
+   - Last rotation angle & direction
+
+4. **Heartbeat** (periodic):
+   - System alive indicator
+   - Packet sequence counter
+end note
+
+== Constants & Configuration ==
+
+note over Setup
+**Key Constants:**
+- REVERSE_DISTANCE: 60mm
+- SENSOR_SPACING: 50mm
+- STEERING_CORRECTION: 5°
+- VOP_FORWARD: 10mm/s
+- Color codes: 0=WHITE, 1=RED, 2=GREEN, 3=BLUE, 4=BLACK
+- Direction codes: 2=LEFT, 3=RIGHT
+end note
+
+@enduml

@@ -1,0 +1,104 @@
+\documentclass{article}
+\usepackage[margin=0.5in, paperwidth=14in, paperheight=10in]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, fit, backgrounds, shadows}
+\usepackage{xcolor}
+\pagestyle{empty}
+
+\begin{document}
+\centering
+
+\definecolor{developed}{RGB}{144,238,144}
+\definecolor{offshelf}{RGB}{255,255,200}
+\definecolor{hardware}{RGB}{173,216,230}
+
+\tikzset{
+    devbox/.style={rectangle, draw=black, fill=developed, thick, minimum width=2.2cm, minimum height=1cm, align=center, font=\footnotesize},
+    hwbox/.style={rectangle, draw=black, fill=offshelf, thick, minimum width=2.2cm, minimum height=1cm, align=center, font=\footnotesize},
+    pkgbox/.style={rectangle, draw=black, very thick, inner sep=0.3cm},
+    arrow/.style={-{Stealth[length=2mm]}, thick},
+    bidir/.style={<->{Stealth[length=2mm]}, thick},
+}
+
+\begin{tikzpicture}[node distance=1.5cm]
+
+% Title
+\node[font=\large\bfseries] at (0,8) {SNC Architecture: Hardware \& Software Components};
+
+% Main ESP32 Package
+\node[pkgbox, fill=offshelf!30, minimum width=8cm, minimum height=6cm] (mainesp) at (0,3.5) {};
+\node[above right, font=\scriptsize\bfseries] at (mainesp.north west) {Main ESP32 (Off-the-Shelf)};
+
+\node[devbox] (sm) at (0,5.5) {State\\Machine};
+\node[devbox] (navcon) at (-2.5,4) {NAVCON\\Logic};
+\node[devbox] (scs) at (2.5,4) {SCS\\Protocol};
+\node[devbox] (ptd) at (-2.5,2.5) {Pure Tone\\Detection};
+\node[devbox] (touch) at (0,2.5) {Touch\\Driver};
+\node[devbox] (spim) at (2.5,2.5) {SPI\\Master};
+
+% WiFi ESP32 Package
+\node[pkgbox, fill=offshelf!30, minimum width=5cm, minimum height=3cm] (wifiesp) at (8,3.5) {};
+\node[above right, font=\scriptsize\bfseries] at (wifiesp.north west) {WiFi ESP32 (Off-the-Shelf)};
+
+\node[devbox] (spis) at (8,4.5) {SPI\\Slave};
+\node[devbox] (dash) at (8,3) {Telemetry\\Dashboard};
+\node[devbox] (web) at (8,1.5) {Web\\Server};
+
+% Pure Tone Circuit
+\node[pkgbox, fill=hardware!30, minimum width=8cm, minimum height=1.5cm] (ptcircuit) at (0,0) {};
+\node[above right, font=\scriptsize\bfseries] at (ptcircuit.north west) {Pure Tone Circuit (Developed)};
+
+\node[hwbox, minimum width=1.5cm] (mic) at (-3,0) {Mic};
+\node[hwbox, minimum width=1.5cm] (preamp) at (-1.5,0) {Preamp};
+\node[hwbox, minimum width=1.5cm] (bpf) at (0,0) {BPF};
+\node[hwbox, minimum width=1.5cm] (env) at (1.5,0) {Envelope};
+
+% Touch Pad
+\node[hwbox] (cap) at (-5,2.5) {Touch\\Pad};
+
+% External
+\node[hwbox, fill=gray!20] (ss) at (-5,5.5) {SS\\UART RX};
+\node[hwbox, fill=gray!20] (mdps) at (5.5,5.5) {MDPS\\UART TX/RX};
+
+% Operator
+\node[circle, draw, fill=gray!20, minimum size=1cm, font=\scriptsize] (op) at (11,3.5) {Operator};
+
+% Internal Main ESP32 connections
+\draw[arrow] (navcon) -- (sm);
+\draw[arrow] (ptd) -- (sm);
+\draw[arrow] (touch) -- (sm);
+\draw[arrow] (sm) -- (scs);
+\draw[arrow] (sm) -- (spim);
+
+% External connections
+\draw[bidir] (scs) -- (ss);
+\draw[bidir] (scs) -- (mdps);
+
+% Pure tone circuit to digital
+\draw[arrow] (mic) -- (preamp);
+\draw[arrow] (preamp) -- (bpf);
+\draw[arrow] (bpf) -- (env);
+\draw[arrow] (env) |- (ptd);
+
+% Touch pad
+\draw[arrow] (cap) -- (touch);
+
+% ESP32 to WiFi ESP32
+\draw[bidir] (spim) -- node[above, font=\scriptsize] {SPI 2MHz} (spis);
+
+% WiFi ESP32 internal
+\draw[arrow] (spis) -- (dash);
+\draw[arrow] (dash) -- (web);
+\draw[bidir] (web) -- node[above, font=\scriptsize] {WiFi} (op);
+
+% Legend
+\node[below right, font=\scriptsize, align=left] at (-5.5,-1.5) {
+    \textbf{Legend:}\\
+    \tikz{\fill[developed] (0,0) rectangle (0.3,0.2);} Developed Software\\
+    \tikz{\fill[offshelf] (0,0) rectangle (0.3,0.2);} Off-the-Shelf\\
+    \tikz{\fill[hardware!30] (0,0) rectangle (0.3,0.2);} Analog Circuit
+};
+
+\end{tikzpicture}
+
+\end{document}

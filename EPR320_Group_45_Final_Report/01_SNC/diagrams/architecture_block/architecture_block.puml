@@ -1,0 +1,122 @@
+@startuml architecture_block
+
+skinparam backgroundColor #FFFFFF
+skinparam componentStyle rectangle
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 10
+skinparam rectangleBorderColor #333333
+
+title SNC Subsystem Functional Block Diagram
+
+' External Entities
+actor "Operator" as OP
+cloud "Sensing\nSubsystem" as SS
+cloud "Mobility\nSubsystem" as MDPS
+database "Test\nHarness" as HUB
+
+' Main SNC Functional Blocks
+rectangle "SNC Subsystem" #F0F0F0 {
+
+  rectangle "Layer 1: System State Coordination" as L1 #E6E6FA {
+    component [Mission Phase\nManagement] as MPM
+    component [State Transition\nControl] as STC
+    component [Mode Supervision] as MS
+  }
+
+  rectangle "Layer 2: Navigation & Path Planning" as L2 #FFF8DC {
+    component [Environmental\nInterpretation] as EI
+    component [Navigation\nDecision Logic] as NDL
+    component [Path Behavior\nSelection] as PBS
+    component [Motion Strategy\nGeneration] as MSG
+  }
+
+  rectangle "Layer 3: Inter-Subsystem Coordination" as L3 #FFE0F0 {
+    component [Sensor Data\nAcquisition] as SDA
+    component [Motion Command\nDispatch] as MCD
+    component [Subsystem Status\nMonitoring] as SSM
+  }
+
+  rectangle "Layer 4: Human-Machine Interface" as L4 #E0FFE0 {
+    component [Operator Command\nProcessing] as OCP
+    component [Safety Override\nDetection] as SOD
+    component [Remote Monitoring\nInterface] as RMI
+  }
+
+  rectangle "Layer 5: System Health & Diagnostics" as L5 #FFE4B5 {
+    component [Performance\nMonitoring] as PM
+    component [Fault\nDetection] as FD
+    component [Mission Data\nLogging] as MDL
+    component [Test Interface] as TI
+  }
+}
+
+' External Inputs to SNC
+OP --> OCP : Start/Stop\nCommands
+OP --> SOD : Emergency\nOverride
+SS --> SDA : Environment\nPerception Data
+MDPS --> SDA : Position &\nKinematics
+HUB <--> TI : Test\nStimuli/Response
+
+' Layer 1 - System State Coordination
+OCP --> STC : Mode Change\nRequests
+SOD --> STC : Override\nActivation
+STC --> MPM : State\nTransitions
+MPM --> MS : Active Mode
+SSM --> STC : Calibration\nComplete
+SSM --> STC : Mission\nComplete
+
+' Layer 2 - Navigation & Path Planning
+SDA --> EI : Sensor\nReadings
+EI --> NDL : Interpreted\nEnvironment
+NDL --> PBS : Navigation\nConstraints
+PBS --> MSG : Selected\nBehavior
+MPM --> NDL : Mission Phase
+
+' Layer 3 - Inter-Subsystem Coordination
+MSG --> MCD : Motion\nStrategy
+MCD --> MDPS : Motion\nCommands
+SDA --> SSM : Subsystem\nStatus
+
+' Layer 4 - Human-Machine Interface
+MPM --> RMI : System State
+EI --> RMI : Environment\nStatus
+SSM --> RMI : Subsystem\nHealth
+OP <-- RMI : Status\nDisplay
+
+' Layer 5 - System Health & Diagnostics
+MPM --> MDL : State History
+NDL --> MDL : Decision Log
+STC --> PM : Timing Data
+PM --> FD : Performance\nMetrics
+FD --> MS : Fault\nNotifications
+
+' Cross-layer coordination
+MS --> NDL : Enable/Suspend
+FD --> STC : Error\nConditions
+
+' Legend
+note right of L2
+  **Navigation Functions:**
+  • Classify detected features
+  • Apply traversal rules
+  • Select motion behaviors
+  • Generate movement strategy
+end note
+
+note left of L1
+  **Mission Phases:**
+  • Initialization
+  • Calibration
+  • Autonomous Navigation
+  • Safety Override
+end note
+
+note bottom of L4
+  **Operator Interface:**
+  • Physical controls
+  • Audio safety signals
+  • Remote diagnostics
+end note
+
+@enduml

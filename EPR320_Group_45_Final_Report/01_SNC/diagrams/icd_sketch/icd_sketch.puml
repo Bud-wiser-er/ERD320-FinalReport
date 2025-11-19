@@ -1,0 +1,84 @@
+@startuml icd_sketch
+skinparam rectangle {
+    BackgroundColor White
+    BorderColor Black
+    FontSize 10
+    FontName Arial
+}
+
+skinparam note {
+    BackgroundColor LightYellow
+    BorderColor Black
+}
+
+title SCS Interface Control Document - Byte Structure
+
+package "CONTROL Byte" #LightCyan {
+    rectangle "SYS" as sys #Cyan
+    rectangle "SUB" as sub #Cyan
+    rectangle "**IST**" as ist #DeepSkyBlue
+}
+
+note right of ist
+    **IST = 3**
+    Indicates NAVCON
+    command
+end note
+
+package "DATA Byte" #LightGreen {
+    rectangle "DAT1" as dat1 #LimeGreen
+    rectangle "DAT0" as dat0 #LimeGreen
+    rectangle "**DEC**" as dec #Green
+}
+
+note right of dec
+    **DEC Field Values:**
+    • 0: Speed forward
+    • 1: Speed reverse
+    • 2: Rotate left
+    • 3: Rotate right
+    • 4-7: Reserved
+end note
+
+rectangle "Speed Command Example" #AliceBlue {
+    note as speed_note
+        **Forward Speed Command:**
+        CONTROL: <SYS:SUB:IST=3>
+        DATA: <DAT1:DAT0:DEC=0>
+
+        **Little-Endian Encoding:**
+        • DAT1 = vᴿ (right wheel) [mm/s]
+        • DAT0 = vᴸ (left wheel) [mm/s]
+    end note
+}
+
+rectangle "Rotation Command Example" #Honeydew {
+    note as rot_note
+        **Right Turn (90°):**
+        CONTROL: <SYS:SUB:IST=3>
+        DATA: <angle:DEC=3>
+
+        **Angle Encoding:**
+        • Absolute turn angle [deg]
+        • Right: DEC=3
+        • Left: DEC=2
+    end note
+}
+
+rectangle "Data Consumption" #Lavender {
+    note as consume_note
+        **SNC Consumes from:**
+
+        **MDPS:**
+        • SPEED (vᴿ, vᴸ) [mm/s]
+        • DIST (distance) [mm]
+        • ROT (rotation) [deg]
+
+        **SS:**
+        • COLOURS (W/R/G/B/K)
+        • θᵢ (incidence angle) [deg]
+        • EoM (End-of-Maze flag)
+    end note
+}
+
+@enduml

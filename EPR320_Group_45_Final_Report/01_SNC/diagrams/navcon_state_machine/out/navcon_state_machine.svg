@@ -1,0 +1,1015 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   contentStyleType="text/css"
+   height="929px"
+   preserveAspectRatio="none"
+   style="width:743px;height:929px;background:#FFFFFF;"
+   version="1.1"
+   viewBox="0 0 743 929"
+   width="743px"
+   zoomAndPan="magnify"
+   id="svg68"
+   sodipodi:docname="navcon_state_machine.svg"
+   inkscape:export-filename="navcon_state_machine.pdf"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview68"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.85898816"
+     inkscape:cx="371.36717"
+     inkscape:cy="278.23434"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="2391"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g68" />
+  <defs
+     id="defs1" />
+  <g
+     id="g68">
+    <ellipse
+       cx="603"
+       cy="545.5"
+       fill="#222222"
+       rx="10"
+       ry="10"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="ellipse1" />
+    <g
+       id="IDLE">
+      <rect
+         fill="#D3D3D3"
+         height="54.4971"
+         rx="12.5"
+         ry="12.5"
+         style="stroke:#000000;stroke-width:0.5;"
+         width="117.2607"
+         x="222.5"
+         y="692.5"
+         id="rect1" />
+      <line
+         style="stroke:#000000;stroke-width:0.5;"
+         x1="222.5"
+         x2="339.7607"
+         y1="713.999"
+         y2="713.999"
+         id="line1" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="22.2314"
+         x="270.0146"
+         y="706.8799"
+         id="text1">IDLE</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="47.793"
+         x="227.5"
+         y="728.3789"
+         id="text2">Waiting for</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="97.2607"
+         x="227.5"
+         y="739.8779"
+         id="text3">MAZE state activation</text>
+    </g>
+    <g
+       id="FORWARD_SCAN">
+      <rect
+         fill="#ADD8E6"
+         height="65.9961"
+         rx="12.5"
+         ry="12.5"
+         style="stroke:#000000;stroke-width:0.5;"
+         width="118.3691"
+         x="7"
+         y="512.5"
+         id="rect3" />
+      <line
+         style="stroke:#000000;stroke-width:0.5;"
+         x1="7"
+         x2="125.3691"
+         y1="533.999"
+         y2="533.999"
+         id="line3" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="85.0049"
+         x="23.6821"
+         y="526.8799"
+         id="text4">FORWARD_SCAN</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="62.8076"
+         x="12"
+         y="548.3789"
+         id="text5">Monitoring SS</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="73.3789"
+         x="12"
+         y="559.8779"
+         id="text6">for line detection</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="98.3691"
+         x="12"
+         y="571.377"
+         id="text7">Forward motion active</text>
+    </g>
+    <g
+       id="LINE_DETECTED">
+      <rect
+         fill="#FFFF00"
+         height="88.9941"
+         rx="12.5"
+         ry="12.5"
+         style="stroke:#000000;stroke-width:0.5;"
+         width="145.5811"
+         x="17"
+         y="675"
+         id="rect7" />
+      <line
+         style="stroke:#000000;stroke-width:0.5;"
+         x1="17"
+         x2="162.5811"
+         y1="696.499"
+         y2="696.499"
+         id="line7" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="81.6846"
+         x="48.9482"
+         y="689.3799"
+         id="text8">LINE_DETECTED</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="86.1426"
+         x="22"
+         y="710.8789"
+         id="text9">Color classification:</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="125.5811"
+         x="22"
+         y="722.3779"
+         id="text10">NAVIGABLE (RED/GREEN)</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="110.0342"
+         x="22"
+         y="733.877"
+         id="text11">or WALL (BLACK/BLUE)</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="102.2754"
+         x="22"
+         y="745.376"
+         id="text12">Record sensor position</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="48.9111"
+         x="22"
+         y="756.875"
+         id="text13">(S1/S2/S3)</text>
+    </g>
+    <g
+       id="ANGLE_ALIGNMENT">
+      <rect
+         fill="#FFFFE0"
+         height="77.4951"
+         rx="12.5"
+         ry="12.5"
+         style="stroke:#000000;stroke-width:0.5;"
+         width="139.2383"
+         x="320.5"
+         y="846"
+         id="rect13" />
+      <line
+         style="stroke:#000000;stroke-width:0.5;"
+         x1="320.5"
+         x2="459.7383"
+         y1="867.499"
+         y2="867.499"
+         id="line13" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="97.8027"
+         x="341.2178"
+         y="860.3799"
+         id="text14">ANGLE_ALIGNMENT</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="61.0498"
+         x="325.5"
+         y="881.8789"
+         id="text15">Categorize θᵢ:</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="95.2344"
+         x="325.5"
+         y="893.3779"
+         id="text16">• ≤5° (direct crossing)</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="119.2383"
+         x="325.5"
+         y="904.877"
+         id="text17">• 5-45° (alignment needed)</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="105.6201"
+         x="325.5"
+         y="916.376"
+         id="text18">• &gt;45° (steep approach)</text>
+    </g>
+    <g
+       id="TRAVERSAL_DECISION">
+      <rect
+         fill="#FFA500"
+         height="100.4932"
+         rx="12.5"
+         ry="12.5"
+         style="stroke:#000000;stroke-width:0.5;"
+         width="160.5713"
+         x="282.5"
+         y="7"
+         id="rect18" />
+      <line
+         style="stroke:#000000;stroke-width:0.5;"
+         x1="282.5"
+         x2="443.0713"
+         y1="28.499"
+         y2="28.499"
+         id="line18" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="113.3643"
+         x="306.1035"
+         y="21.3799"
+         id="text19">TRAVERSAL_DECISION</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="114.5166"
+         x="287.5"
+         y="42.8789"
+         id="text20">Evaluate navigation rules:</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="125.5908"
+         x="287.5"
+         y="54.3779"
+         id="text21">RED/GREEN: crossing logic</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="136.1865"
+         x="287.5"
+         y="65.877"
+         id="text22">BLACK/BLUE: avoidance logic</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="103.3691"
+         x="287.5"
+         y="77.376"
+         id="text23">Select motion primitive:</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="140.5713"
+         x="287.5"
+         y="88.875"
+         id="text24">FORWARD, REVERSE, STOP,</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="138.9111"
+         x="287.5"
+         y="100.374"
+         id="text25">ROTATE_L/R, INCREMENTAL</text>
+    </g>
+    <g
+       id="OBSTACLE_AVOIDANCE">
+      <rect
+         fill="#F08080"
+         height="65.9961"
+         rx="12.5"
+         ry="12.5"
+         style="stroke:#000000;stroke-width:0.5;"
+         width="159.8047"
+         x="283"
+         y="199"
+         id="rect25" />
+      <line
+         style="stroke:#000000;stroke-width:0.5;"
+         x1="283"
+         x2="442.8047"
+         y1="220.499"
+         y2="220.499"
+         id="line25" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="117.8125"
+         x="303.9961"
+         y="213.3799"
+         id="text26">OBSTACLE_AVOIDANCE</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="134.5264"
+         x="288"
+         y="234.8789"
+         id="text27">Execute avoidance maneuver:</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="125.5127"
+         x="288"
+         y="246.3779"
+         id="text28">θᵢ ≤45°: 90°±θᵢ turn (parallel)</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="139.8047"
+         x="288"
+         y="257.877"
+         id="text29">θᵢ &gt;45°: incremental corrections</text>
+    </g>
+    <g
+       id="MANEUVER_EXECUTION">
+      <rect
+         fill="#90EE90"
+         height="88.9941"
+         rx="12.5"
+         ry="12.5"
+         style="stroke:#000000;stroke-width:0.5;"
+         width="140.5762"
+         x="82.5"
+         y="337"
+         id="rect29" />
+      <line
+         style="stroke:#000000;stroke-width:0.5;"
+         x1="82.5"
+         x2="223.0762"
+         y1="358.499"
+         y2="358.499"
+         id="line29" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="120.5762"
+         x="92.5"
+         y="351.3799"
+         id="text30">MANEUVER_EXECUTION</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="107.2705"
+         x="87.5"
+         y="372.8789"
+         id="text31">Encode DEC command:</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="97.8271"
+         x="87.5"
+         y="384.3779"
+         id="text32">0=forward, 1=reverse,</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="117.8516"
+         x="87.5"
+         y="395.877"
+         id="text33">2=rotate left, 3=rotate right</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="105.0439"
+         x="87.5"
+         y="407.376"
+         id="text34">Send to MDPS via SCS</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="75.5908"
+         x="87.5"
+         y="418.875"
+         id="text35">Await completion</text>
+    </g>
+    <g
+       id="elem_GMN20"
+       transform="matrix(0.77956587,0,0,0.75451911,97.759425,4.7289972)">
+      <path
+         d="M 479,19.5 V 53 L 443.53,57 479,61 V 94.9063 H 680.521 V 29.5 l -10,-10 H 479"
+         fill="#feffdd"
+         style="stroke:#181818;stroke-width:0.5"
+         id="path35" />
+      <path
+         d="m 670.521,19.5 v 10 h 10 l -10,-10"
+         fill="#feffdd"
+         style="stroke:#181818;stroke-width:0.5"
+         id="path36" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="13px"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="111.2554"
+         x="485"
+         y="37.995098"
+         id="text36">Decision Latency:</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="13px"
+         lengthAdjust="spacing"
+         textLength="96.598602"
+         x="485"
+         y="54.346699"
+         id="text37">• Average: 18 µs</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="13px"
+         lengthAdjust="spacing"
+         textLength="72.737801"
+         x="485"
+         y="70.698196"
+         id="text38">• Max: 87 µs</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="13px"
+         lengthAdjust="spacing"
+         textLength="180.521"
+         x="485"
+         y="87.049797"
+         id="text39">• 111× margin vs 20 ms budget</text>
+    </g>
+    <g
+       id="elem_GMN23">
+      <path
+         d="M258.5,344 L258.5,419.4063 L459.6528,419.4063 L459.6528,354 L449.6528,344 L258.5,344 "
+         fill="#FEFFDD"
+         style="stroke:#181818;stroke-width:0.5;"
+         id="path39" />
+      <path
+         d="M449.6528,344 L449.6528,354 L459.6528,354 L449.6528,344 "
+         fill="#FEFFDD"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="path40" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="13"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="114.0991"
+         x="264.5"
+         y="362.4951"
+         id="text40">Guard Conditions:</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="13"
+         lengthAdjust="spacing"
+         textLength="180.1528"
+         x="264.5"
+         y="378.8467"
+         id="text41">• Wheel position rules enforced</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="13"
+         lengthAdjust="spacing"
+         textLength="162.811"
+         x="264.5"
+         y="395.1982"
+         id="text42">• Illegal crossings prevented</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="13"
+         lengthAdjust="spacing"
+         textLength="136.0747"
+         x="264.5"
+         y="411.5498"
+         id="text43">• SCS packet validation</text>
+    </g>
+    <g
+       id="elem_GMN26">
+      <path
+         d="M160,508 L160,583.4063 L557.6826,583.4063 L557.6826,518 L547.6826,508 L160,508 "
+         fill="#FEFFDD"
+         style="stroke:#181818;stroke-width:0.5;"
+         id="path43" />
+      <path
+         d="M547.6826,508 L547.6826,518 L557.6826,518 L547.6826,508 "
+         fill="#FEFFDD"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="path44" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="13"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="109.7954"
+         x="166"
+         y="526.4951"
+         id="text44">Navigation Rules:</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="13"
+         lengthAdjust="spacing"
+         textLength="304.2876"
+         x="166"
+         y="542.8467"
+         id="text45">• RED/GREEN traversal: θᵢ-dependent crossing logic</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="13"
+         lengthAdjust="spacing"
+         textLength="376.6826"
+         x="166"
+         y="559.1982"
+         id="text46">• BLACK/BLUE avoidance: parallel run or incremental corrections</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="13"
+         lengthAdjust="spacing"
+         textLength="280.5981"
+         x="166"
+         y="575.5498"
+         id="text47">• Test coverage: 47 scenario variations validated</text>
+    </g>
+    <!--link *start* to IDLE-->
+    <g
+       id="link_*start*_IDLE">
+      <path
+         d="M598.59,554.69 C593.89,562.78 585.79,575.05 576,583 C504.04,641.46 408.4544,678.88 345.2444,699.49 "
+         fill="none"
+         id="*start*-to-IDLE"
+         style="stroke:#000000;stroke-width:1.0;" />
+      <polygon
+         fill="#000000"
+         points="339.54,701.35,349.3366,702.363,344.2937,699.8,346.8567,694.7571,339.54,701.35"
+         style="stroke:#000000;stroke-width:1.0;"
+         id="polygon47" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="8"
+         lengthAdjust="spacing"
+         textLength="53.3438"
+         x="534"
+         y="632.3047"
+         id="text48">NAVCON Start</text>
+    </g>
+    <!--link IDLE to FORWARD_SCAN-->
+    <g
+       id="link_IDLE_FORWARD_SCAN">
+      <path
+         d="M277.96,692.33 C273.83,668.47 264.2,633.86 242,613 C208.18,581.23 185.27,599.76 142,583 C136.54,580.88 136.4238,580.9521 130.8438,578.5021 "
+         fill="none"
+         id="IDLE-to-FORWARD_SCAN"
+         style="stroke:#000000;stroke-width:1.0;" />
+      <polygon
+         fill="#000000"
+         points="125.35,576.09,131.9826,583.3707,129.9281,578.1001,135.1988,576.0457,125.35,576.09"
+         style="stroke:#000000;stroke-width:1.0;"
+         id="polygon48" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="8"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="68.4688"
+         x="264"
+         y="632.3047"
+         id="text49">MAZE state active</text>
+    </g>
+    <!--link FORWARD_SCAN to IDLE-->
+    <g
+       id="link_FORWARD_SCAN_IDLE">
+      <path
+         d="M108.11,578.77 C121.45,589.38 136.07,601.42 149,613 C163.98,626.42 165.74,631.9 181,645 C200.45,661.71 218.5335,675.2923 237.5535,688.7623 "
+         fill="none"
+         id="FORWARD_SCAN-to-IDLE"
+         style="stroke:#000000;stroke-width:1.0;" />
+      <polygon
+         fill="#000000"
+         points="242.45,692.23,237.4171,683.7642,238.3696,689.3403,232.7935,690.2928,242.45,692.23"
+         style="stroke:#000000;stroke-width:1.0;"
+         id="polygon49" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="8"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="48.0391"
+         x="183.543"
+         y="627.3047"
+         id="text50">MAZE→IDLE</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="8"
+         lengthAdjust="spacing"
+         textLength="51.125"
+         x="182"
+         y="637.3672"
+         id="text51">(End-of-maze)</text>
+    </g>
+    <!--link FORWARD_SCAN to LINE_DETECTED-->
+    <g
+       id="link_FORWARD_SCAN_LINE_DETECTED">
+      <path
+         d="M61.7,578.68 C59.94,598.04 59.11,623.1 63,645 C64.76,654.9 65.7855,659.5542 69.1555,669.2242 "
+         fill="none"
+         id="FORWARD_SCAN-to-LINE_DETECTED"
+         style="stroke:#000000;stroke-width:1.0;" />
+      <polygon
+         fill="#000000"
+         points="71.13,674.89,71.9454,665.075,69.4846,670.1685,64.391,667.7077,71.13,674.89"
+         style="stroke:#000000;stroke-width:1.0;"
+         id="polygon51" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="8"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="51.5664"
+         x="78.459"
+         y="622.3047"
+         id="text52">Line detected</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="8"
+         lengthAdjust="spacing"
+         textLength="58.7031"
+         x="74.8906"
+         y="632.3672"
+         id="text53">SS color change</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="8"
+         lengthAdjust="spacing"
+         textLength="80.4844"
+         x="64"
+         y="642.4297"
+         id="text54">(any sensor S1/S2/S3)</text>
+    </g>
+    <!--link LINE_DETECTED to ANGLE_ALIGNMENT-->
+    <g
+       id="link_LINE_DETECTED_ANGLE_ALIGNMENT">
+      <path
+         d="M163,760.17 C211.05,786.27 268.2778,817.3657 315.5278,843.0357 "
+         fill="none"
+         id="LINE_DETECTED-to-ANGLE_ALIGNMENT"
+         style="stroke:#000000;stroke-width:1.0;" />
+      <polygon
+         fill="#000000"
+         points="320.8,845.9,314.8012,838.0888,316.4065,843.5131,310.9822,845.1184,320.8,845.9"
+         style="stroke:#000000;stroke-width:1.0;"
+         id="polygon54" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="8"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="59.5742"
+         x="264.5254"
+         y="803.3047"
+         id="text55">Color classified</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="8"
+         lengthAdjust="spacing"
+         textLength="70.625"
+         x="259"
+         y="813.3672"
+         id="text56">θᵢ available from SS</text>
+    </g>
+    <!--link ANGLE_ALIGNMENT to TRAVERSAL_DECISION-->
+    <g
+       id="link_ANGLE_ALIGNMENT_TRAVERSAL_DECISION">
+      <path
+         d="M459.65,873.28 C541.41,856.89 666,816.22 666,720.5 C666,231 666,231 666,231 C666,218.18 538.8759,149.4823 449.1159,102.5023 "
+         fill="none"
+         id="ANGLE_ALIGNMENT-to-TRAVERSAL_DECISION"
+         style="stroke:#000000;stroke-width:1.0;" />
+      <polygon
+         fill="#000000"
+         points="443.8,99.72,449.919,107.4374,448.2299,102.0386,453.6287,100.3495,443.8,99.72"
+         style="stroke:#000000;stroke-width:1.0;"
+         id="polygon56" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="8"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="68.9023"
+         x="667"
+         y="465.3047"
+         id="text57">Angle categorized</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="8"
+         lengthAdjust="spacing"
+         textLength="63.3164"
+         x="669.793"
+         y="475.3672"
+         id="text58">(≤5°, 5-45°, &gt;45°)</text>
+    </g>
+    <!--link TRAVERSAL_DECISION to MANEUVER_EXECUTION-->
+    <g
+       id="link_TRAVERSAL_DECISION_MANEUVER_EXECUTION">
+      <path
+         d="M282.25,96.12 C241.49,119.78 195.42,154.26 170,199 C146,241.24 144.2405,292.0954 147.0205,330.8354 "
+         fill="none"
+         id="TRAVERSAL_DECISION-to-MANEUVER_EXECUTION"
+         style="stroke:#000000;stroke-width:1.0;" />
+      <polygon
+         fill="#000000"
+         points="147.45,336.82,150.7956,327.5568,147.0921,331.8328,142.8161,328.1294,147.45,336.82"
+         style="stroke:#000000;stroke-width:1.0;"
+         id="polygon58" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="8"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="63.1172"
+         x="186.25"
+         y="215.3047"
+         id="text59">NAVIGABLE line</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="8"
+         lengthAdjust="spacing"
+         textLength="52.8906"
+         x="191.3633"
+         y="225.3672"
+         id="text60">(RED/GREEN)</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="8"
+         lengthAdjust="spacing"
+         textLength="72.168"
+         x="181.7246"
+         y="235.4297"
+         id="text61">θᵢ ≤5°: cross directly</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="8"
+         lengthAdjust="spacing"
+         textLength="93.6172"
+         x="171"
+         y="245.4922"
+         id="text62">5°&lt;θᵢ≤45°: reverse + steer</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="8"
+         lengthAdjust="spacing"
+         textLength="92.2813"
+         x="171.668"
+         y="255.5547"
+         id="text63">θᵢ&gt;45°: iterative correction</text>
+    </g>
+    <!--link TRAVERSAL_DECISION to OBSTACLE_AVOIDANCE-->
+    <g
+       id="link_TRAVERSAL_DECISION_OBSTACLE_AVOIDANCE">
+      <path
+         d="M363,107.11 C363,136.58 363,167.22 363,192.98 "
+         fill="none"
+         id="TRAVERSAL_DECISION-to-OBSTACLE_AVOIDANCE"
+         style="stroke:#000000;stroke-width:1.0;" />
+      <polygon
+         fill="#000000"
+         points="363,198.98,367,189.98,363,193.98,359,189.98,363,198.98"
+         style="stroke:#000000;stroke-width:1.0;"
+         id="polygon63" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="8"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="39.1055"
+         x="378.9141"
+         y="146.3047"
+         id="text64">WALL line</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="8"
+         lengthAdjust="spacing"
+         textLength="54.6836"
+         x="371.125"
+         y="156.3672"
+         id="text65">(BLACK/BLUE)</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="8"
+         lengthAdjust="spacing"
+         textLength="68.9336"
+         x="364"
+         y="166.4297"
+         id="text66">Avoidance required</text>
+    </g>
+    <!--link OBSTACLE_AVOIDANCE to MANEUVER_EXECUTION-->
+    <g
+       id="link_OBSTACLE_AVOIDANCE_MANEUVER_EXECUTION">
+      <path
+         d="M317.43,265.01 C287.52,286.02 252.9093,310.3205 220.1193,333.3605 "
+         fill="none"
+         id="OBSTACLE_AVOIDANCE-to-MANEUVER_EXECUTION"
+         style="stroke:#000000;stroke-width:1.0;" />
+      <polygon
+         fill="#000000"
+         points="215.21,336.81,224.8736,334.9086,219.3011,333.9354,220.2742,328.3629,215.21,336.81"
+         style="stroke:#000000;stroke-width:1.0;"
+         id="polygon66" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="8"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="71.5898"
+         x="272"
+         y="304.3047"
+         id="text67">Maneuver selected</text>
+    </g>
+    <!--link MANEUVER_EXECUTION to FORWARD_SCAN-->
+    <g
+       id="link_MANEUVER_EXECUTION_FORWARD_SCAN">
+      <path
+         d="M129.46,426.34 C114.86,453.51 99.2783,482.5238 86.0483,507.1638 "
+         fill="none"
+         id="MANEUVER_EXECUTION-to-FORWARD_SCAN"
+         style="stroke:#000000;stroke-width:1.0;" />
+      <polygon
+         fill="#000000"
+         points="83.21,512.45,90.9916,506.4129,85.5753,508.0448,83.9434,502.6285,83.21,512.45"
+         style="stroke:#000000;stroke-width:1.0;"
+         id="polygon67" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="8"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="89.332"
+         x="114"
+         y="470.3047"
+         id="text68">Completion from MDPS</text>
+    </g>
+    <!--link MANEUVER_EXECUTION to GMN23-->
+    <g
+       id="link_MANEUVER_EXECUTION_GMN23">
+      <path
+         d="M223.81,381.5 C235.34,381.5 246.87,381.5 258.4,381.5 "
+         fill="none"
+         id="MANEUVER_EXECUTION-GMN23"
+         style="stroke:#000000;stroke-width:1.0;stroke-dasharray:7.0,7.0;" />
+    </g>
+    <!--link GMN23 to GMN26-->
+    <g
+       id="link_GMN23_GMN26">
+      <path
+         d="M359,419.26 C359,445.77 359,481.41 359,507.89 "
+         fill="none"
+         id="GMN23-GMN26"
+         style="stroke:#000000;stroke-width:1.0;stroke-dasharray:7.0,7.0;" />
+    </g>
+    <!--SRC=[VLPDRzj64BtpLypHPcNOoWUI4ea1Yc84eHGLY4hS3nN6XbpHYwnsbIKbnoaAz5IWrrvw3_e3qaE0djrx_qFpIpgxIrAYGiStSz_ElfbvyqR5QoRMH94L52KfAVpa0FuDIFewLt8Zia1ogPuy6G-ZyFmS8fPVbID5RhfHIU37yJWUrSW1tz1kv32SXy4y72BoEygvlEw6-T5u54_2U5v7_19u60RZP3oD4JjLHEHtFEs_d8w7VXmq-GHI4TwD3RyDWnTp6xFAdL9XiL9bL1aS33XUD5-VIL4cx1s5_bdpVqnM57p5y96V7QTe2kuh9Q_t0nmSDR4UEyuFxezmSd8EkW_WGUo_3AOn92LH9OOqdJD7JQTi7olu1M4b4paifLg8YVzzM3MRf2NRaf99OPYPRy-cimj_DhpKlOHMIst8rha74obOAPMEdYGBWIy0Pu92HakQciWTbvv9TKrK1Ykf4PO6tL68nd5uMIi4McAn7De03smHKqwAWYrPQZBo5WAhD1xv0op1qImSdevcOHWVBmH2B_meWgD1v0VVd0wY5-5nPzWPJR79K51Hu9srB9WEl117IVyqkNUQt3_USVRZKHHUDdg5jdOjxKCC4iUhELOFc_plt_zzV8-aF_to7ZxzzkV3smzmb365HOHKIKnCvCVszE790tDAECl5YeeI1AKPpQhZStjQb9IkWQpNIfBqQe_fVEQ_36U97rtM0mEjsR5SEr0UX5l2Dpg685kMcpA3sd1Q8E-cmbx35xZCMReGkpfxGBQIPKIar1xU_LP2kSwzaiXQiHNJAi6NAZ7rO1RgQs4FaldqUGyfJEV-FBoCJcSz6CV1BDHLzgDTwjD1ClS3tOFQ0w3j1pRt3XZc_fQc6pqpJG8h8kXcInLICitJRTErz-3hiziFjt_PZ-L62JZIOyqvvSSrzjmYcKWLrJqa751ioivCiQCyyUFm1QPvsLWHj6t9Kkw08MMHoem25XLZhv1kXbJFdYxjzFMW_rHHv5zGhDszfqgQ1pbTbZsuN_-hjElT_KH2HGQbXCdmUG9RHY09ahlH_ZKQaUQovhHs7MDHsjeEFC9r3usAkgxZj53wsk7Gkcwqyn-QkUv290c-QHpYIgy5760YRkgntisoqmwbWty-iQxRDXlxWkqfsHB6oIjEOQda2ltGSGu3wA2TSdTTN-HuCsqSmGG-ibRGguQ-PtM3N3k2wDYTPNVTdHDgSpQ1znsnaQ_Hf1bViDx3RnO2FpunY4RVbMpWAz0kewe0jQHBgeXkrvwWx-JREMgkQ_oveRhdqmlXD_Edw9iDaimSfoFA5uengUOM5S0hZJXE1xPJb44ZNjjaBVnENLQhryhuqw-_w_zDDg78JkJoP4NUKUoZaFMGWLnsICCCa-iEQSeA_MY4-X3fZOTlwXDj-3xcGdBgGVynt7uickyJyjQ3nuzQt_hz_Zz_e7Efd0dO5d3l35O5lDfaEIqTFSkQpo6hpsjJiHfjz1OFfCZCPYpsMLrSKSgRfMdN153z0o75bjMeCPfYhhslMXa5EZsAIvHx6BGKMEFl8re2xXzilb7K0TbNiYpbgk8LxzRJpAodFLwDxg5KHCkOSCyktvEChZ6gNgZj3TRStGbnjmOygBqTSnI0rd2NfzTHvhJG9bXtxS4ZA58gY68IyyEVYGPTfufrQ3Bz7m00]-->
+  </g>
+</svg>

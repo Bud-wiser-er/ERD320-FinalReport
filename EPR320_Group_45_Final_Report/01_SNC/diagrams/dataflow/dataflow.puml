@@ -1,0 +1,166 @@
+@startuml dataflow
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 10
+
+' External entities
+rectangle "SS\n(Sensor\nSubsystem)" as SS #FFE4B5
+rectangle "MDPS\n(Motor Drive)" as MDPS #E0FFE0
+actor "Operator\n(Physical)" as OP #FFF8DC
+actor "Operator\n(Remote)" as OP_REMOTE #F0E68C
+
+' Main ESP32 processes
+rectangle "Main ESP32 (Control Processor)" #E6E6FA {
+  rectangle "State\nManager" as SM {
+    component [FSM Logic] as FSM
+    component [Guard\nEvaluator] as GE
+  }
+
+  rectangle "NAVCON\nDecision\nEngine" as NAV {
+    component [Color Rules] as CR
+    component [Angle Rules] as AR
+    component [Motion\nGenerator] as MG
+  }
+
+  rectangle "SCS\nProtocol\nHandler" as SCS {
+    component [Frame\nDecoder] as FD
+    component [Frame\nEncoder] as FE
+  }
+
+  rectangle "Touch/Tone\nInterface" as TTI {
+    component [Touch\nHandler] as TH
+    component [Tone\nDetector] as TD
+  }
+
+  rectangle "SPI\nTelemetry\nEncoder" as SPITX #FFE0F0 {
+    component [Packet\nBuilder] as PB
+    component [Rate\nLimiter\n(200 Hz)] as RL
+  }
+
+  database "Episode\nState" as ES {
+    storage "Last Colors"
+    storage "Last θᵢ"
+    storage "Last Rotation"
+    storage "Since-Stop\nDistance"
+    storage "Last v_L, v_R"
+    storage "Nav State"
+  }
+}
+
+' WiFi ESP32 processes
+rectangle "WiFi ESP32 (Telemetry & Diagnostics)" #FFFFE0 {
+  rectangle "SPI\nSlave\nInterface" as SPIRX {
+    component [Packet\nReceiver] as PR
+    component [Packet\nDecoder] as PD
+  }
+
+  rectangle "Web\nServer" as WEB {
+    component [HTTP\nServer] as HTTP
+    component [JSON API\n(10 Hz)] as JSON
+  }
+
+  rectangle "WiFi\nAccess Point" as WIFI {
+    component [AP: ERD-Byron\n192.168.4.1] as AP
+  }
+
+  rectangle "GPIO\nCommand\nInjection" as GPIOCMD {
+    component [Touch Inject] as TI
+    component [Tone Inject] as TNI
+  }
+}
+
+' Data flows - Inputs from external entities
+SS -down-> FD : <b>SCS UART\n19200 baud</b>\nCOLOURS\nθᵢ\nEoM flag
+MDPS -down-> FD : <b>SCS UART\n19200 baud</b>\nSPEED\nDISTANCE\nROTATION
+OP -down-> TH : Touch\nActivation
+OP -down-> TD : Dual-Tone\n(2800 Hz)
+
+' Internal data flows - SCS to NAVCON
+FD --> NAV : Parsed Data:\nCOLOURS, θᵢ,\nSPEED, DISTANCE
+
+' Internal data flows - NAVCON to Episode State
+NAV --> ES : Store:\nLast values
+
+' Internal data flows - Episode State to NAVCON
+ES --> NAV : Retrieve:\nPrevious state
+
+' Internal data flows - NAVCON to Motion Commands
+MG --> FE : <b>Motion Commands</b>\nv_L, v_R\n(DEC=0/1)\nRotation angle\n(DEC=2/3)
+
+' Internal data flows - State Manager
+GE <--> FSM : Guard\nConditions
+TH --> GE : Touch\nEvent
+TD --> GE : Tone\nEvent
+FD --> GE : EoC/EoM\nFlags
+FSM --> NAV : State:\nEnable/Suspend\nNAVCON
+
+' SPI Telemetry flow - Main to WiFi ESP32
+FSM --> PB : System\nState
+ES --> PB : Episode\nData
+NAV --> PB : NAVCON\nState
+FD --> PB : Sensor\nData
+MG --> PB : Motion\nCommands
+PB --> RL : Complete\nTelemetry\nPackets
+RL -right-> PR : **<b>SPI 2 MHz</b>**\n200 Hz\n257-byte packets\n13+ packet types
+
+' WiFi ESP32 internal flows
+PR --> PD : Raw\nPackets
+PD --> JSON : Decoded\nTelemetry
+JSON --> HTTP : JSON\nUpdates
+HTTP --> AP : HTTP\nResponses
+
+' WiFi to Operator (Remote)
+AP -up-> OP_REMOTE : **<b>WiFi/HTTP</b>**\nWeb Dashboard\n10 Hz updates
+
+' Remote commands back via GPIO
+OP_REMOTE ..> AP : Browser\nCommands
+AP ..> HTTP : HTTP\nRequests
+HTTP ..> GPIOCMD : Command\nSignals
+TI ..> GE : GPIO:\nTouch\nInject
+TNI ..> GE : GPIO:\nTone\nInject
+
+' Output data flows
+FE -up-> MDPS : <b>SCS Command\nFrames</b>\nIST=3\nDEC=0/1/2/3
+
+' Annotations
+note right of NAV
+  Active only in
+  MAZE state
+  Suspended in SOS
+end note
+
+note left of ES
+  RAM-resident
+  episode tracking
+  (Main ESP32)
+end note
+
+note bottom of RL
+  Rate limiting prevents
+  WiFi ESP32 overload
+  (200 Hz max)
+end note
+
+note right of SPIRX
+  SPI Slave receives:
+  • System State
+  • Sensor Colors
+  • Wheel Speeds
+  • Rotation Angle
+  • NAVCON State
+  • Line Detection
+  • End of Maze
+  • Comm Status
+  + 5 more types
+end note
+
+note bottom of AP
+  WiFi AP Mode
+  SSID: "ERD-Byron"
+  IP: 192.168.4.1
+  Multiple connections
+end note
+
+@enduml

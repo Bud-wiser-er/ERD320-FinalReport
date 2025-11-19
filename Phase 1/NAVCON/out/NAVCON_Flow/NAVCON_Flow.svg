@@ -1,0 +1,3338 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   contentStyleType="text/css"
+   height="1656px"
+   preserveAspectRatio="none"
+   style="width:5211px;height:1656px;background:#FFFFFF;"
+   version="1.1"
+   viewBox="0 0 5211 1656"
+   width="5211px"
+   zoomAndPan="magnify"
+   id="svg285"
+   sodipodi:docname="NAVCON_Flow.svg"
+   inkscape:export-filename="NAVCON_Flow.pdf"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview285"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.3402418"
+     inkscape:cx="2605.5"
+     inkscape:cy="827.35279"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="2391"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg285" />
+  <defs
+     id="defs1" />
+  <g
+     id="g285">
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14"
+       font-weight="bold"
+       lengthAdjust="spacing"
+       textLength="263"
+       x="2472.875"
+       y="34.5332"
+       id="text1">NAVCON / SNC Flow (Activity Diagram)</text>
+    <ellipse
+       cx="3191.2793"
+       cy="58.6094"
+       fill="#4A90E2"
+       rx="10"
+       ry="10"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="ellipse1" />
+    <path
+       d="M3331.2793,78.6094 L3331.2793,128.6641 L3311.2793,132.6641 L3331.2793,136.6641 L3331.2793,186.7188 A0,0 0 0 0 3331.2793,186.7188 L3781.2793,186.7188 A0,0 0 0 0 3781.2793,186.7188 L3781.2793,88.6094 L3771.2793,78.6094 L3331.2793,78.6094 A0,0 0 0 0 3331.2793,78.6094 "
+       fill="#FFFBE6"
+       style="stroke:#D4C26B;stroke-width:0.5;"
+       id="path1" />
+    <path
+       d="M3771.2793,78.6094 L3771.2793,88.6094 L3781.2793,88.6094 L3771.2793,78.6094 "
+       fill="#FFFBE6"
+       style="stroke:#D4C26B;stroke-width:0.5;"
+       id="path2" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="114"
+       x="3337.2793"
+       y="97.1045"
+       id="text2">Fields (conceptual):</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="429"
+       x="3337.2793"
+       y="113.4561"
+       id="text3">- Colour_L, Colour_C, Colour_R ∈ {WHITE, RED, GREEN, BLUE, BLACK}</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="232"
+       x="3337.2793"
+       y="129.8076"
+       id="text4">- FirstHit_L, FirstHit_C, FirstHit_R : bool</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="364"
+       x="3337.2793"
+       y="146.1592"
+       id="text5">- Odo_mm, WheelSpeed_L, WheelSpeed_R, LastRotation_deg</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="386"
+       x="3337.2793"
+       y="162.5107"
+       id="text6">- B_baseline_mm, d_gate_mm, forward_window_mm, Debounce_N</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="274"
+       x="3337.2793"
+       y="178.8623"
+       id="text7">- Mode ∈ {IDLE, CAL, MAZE, EXIT}, LastAction</text>
+    <rect
+       fill="#F7F7F7"
+       height="35.0938"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#222222;stroke-width:0.5;"
+       width="240"
+       x="3071.2793"
+       y="115.1172"
+       id="rect7" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="220"
+       x="3081.2793"
+       y="137.5742"
+       id="text8">Read NAVCON_Input (from SS &amp; MDPS)</text>
+    <rect
+       fill="#F7F7F7"
+       height="35.0938"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#222222;stroke-width:0.5;"
+       width="164"
+       x="3109.2793"
+       y="255.6367"
+       id="rect8" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="144"
+       x="3119.2793"
+       y="278.0938"
+       id="text9">Await CAL done / Hold Idle</text>
+    <ellipse
+       cx="3191.2793"
+       cy="329.6836"
+       fill="none"
+       rx="11"
+       ry="11"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="ellipse9" />
+    <ellipse
+       cx="3191.2793"
+       cy="329.6836"
+       fill="#222222"
+       rx="6"
+       ry="6"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="ellipse10" />
+    <polygon
+       fill="#F7F7F7"
+       points="3093.2793,206.7188,3289.2793,206.7188,3301.2793,218.7188,3289.2793,230.7188,3093.2793,230.7188,3081.2793,218.7188,3093.2793,206.7188"
+       style="stroke:#222222;stroke-width:0.5;"
+       id="polygon10" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="13"
+       x="3195.2793"
+       y="242.1377"
+       id="text10">No</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="196"
+       x="3093.2793"
+       y="223.2197"
+       id="text11">Mode == MAZE AND calibration complete</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="20"
+       x="3301.2793"
+       y="216.3018"
+       id="text12">Yes</text>
+    <rect
+       fill="#F7F7F7"
+       height="35.0938"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#222222;stroke-width:0.5;"
+       width="115"
+       x="3133.7793"
+       y="426.6836"
+       id="rect12" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="95"
+       x="3143.7793"
+       y="449.1406"
+       id="text13">Read SS packets</text>
+    <rect
+       fill="#F7F7F7"
+       height="35.0938"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#222222;stroke-width:0.5;"
+       width="131"
+       x="3125.7793"
+       y="481.7773"
+       id="rect13" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="111"
+       x="3135.7793"
+       y="504.2344"
+       id="text14">Debounce N frames</text>
+    <rect
+       fill="#F7F7F7"
+       height="35.0938"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#222222;stroke-width:0.5;"
+       width="196"
+       x="3093.2793"
+       y="536.8711"
+       id="rect14" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="176"
+       x="3103.2793"
+       y="559.3281"
+       id="text15">Latch colour pattern after d_gate</text>
+    <polygon
+       fill="#F7F7F7"
+       points="3124.7793,591.9648,3257.7793,591.9648,3269.7793,603.9648,3257.7793,615.9648,3124.7793,615.9648,3112.7793,603.9648,3124.7793,591.9648"
+       style="stroke:#222222;stroke-width:0.5;"
+       id="polygon15" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="133"
+       x="3124.7793"
+       y="608.4658"
+       id="text16">Any non-WHITE in (L,C,R) ?</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="20"
+       x="3092.7793"
+       y="601.5479"
+       id="text17">Yes</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="13"
+       x="3269.7793"
+       y="601.5479"
+       id="text18">No</text>
+    <rect
+       fill="#F7F7F7"
+       height="35.0938"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#222222;stroke-width:0.5;"
+       width="177"
+       x="1197.5586"
+       y="625.9648"
+       id="rect18" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="157"
+       x="1207.5586"
+       y="648.4219"
+       id="text19">Classify feature by colour set</text>
+    <polygon
+       fill="#F7F7F7"
+       points="1251.5586,681.0586,1320.5586,681.0586,1332.5586,693.0586,1320.5586,705.0586,1251.5586,705.0586,1239.5586,693.0586,1251.5586,681.0586"
+       style="stroke:#222222;stroke-width:0.5;"
+       id="polygon19" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="69"
+       x="1251.5586"
+       y="697.5596"
+       id="text20">RED present ?</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="20"
+       x="1219.5586"
+       y="690.6416"
+       id="text21">Yes</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="13"
+       x="1332.5586"
+       y="690.6416"
+       id="text22">No</text>
+    <rect
+       fill="#F7F7F7"
+       height="35.0938"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#222222;stroke-width:0.5;"
+       width="87"
+       x="13.5"
+       y="715.0586"
+       id="rect22" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="67"
+       x="23.5"
+       y="737.5156"
+       id="text23">Stop motors</text>
+    <rect
+       fill="#F7F7F7"
+       height="35.0938"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#222222;stroke-width:0.5;"
+       width="92"
+       x="11"
+       y="785.1523"
+       id="rect23" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="72"
+       x="21"
+       y="807.6094"
+       id="text24">Mode &lt;- EXIT</text>
+    <ellipse
+       cx="57"
+       cy="866.2461"
+       fill="none"
+       rx="11"
+       ry="11"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="ellipse24" />
+    <ellipse
+       cx="57"
+       cy="866.2461"
+       fill="#222222"
+       rx="6"
+       ry="6"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="ellipse25" />
+    <polygon
+       fill="#F7F7F7"
+       points="2582.1172,715.0586,2648.1172,715.0586,2660.1172,727.0586,2648.1172,739.0586,2582.1172,739.0586,2570.1172,727.0586,2582.1172,715.0586"
+       style="stroke:#222222;stroke-width:0.5;"
+       id="polygon25" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="66"
+       x="2582.1172"
+       y="731.5596"
+       id="text25">GREEN only ?</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="20"
+       x="2550.1172"
+       y="724.6416"
+       id="text26">Yes</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="13"
+       x="2660.1172"
+       y="724.6416"
+       id="text27">No</text>
+    <polygon
+       fill="#F7F7F7"
+       points="814.1719,749.0586,900.1719,749.0586,912.1719,761.0586,900.1719,773.0586,814.1719,773.0586,802.1719,761.0586,814.1719,749.0586"
+       style="stroke:#222222;stroke-width:0.5;"
+       id="polygon27" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="86"
+       x="814.1719"
+       y="765.5596"
+       id="text28">Only C coloured ?</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="20"
+       x="782.1719"
+       y="758.6416"
+       id="text29">Yes</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="13"
+       x="912.1719"
+       y="758.6416"
+       id="text30">No</text>
+    <rect
+       fill="#F7F7F7"
+       height="35.0938"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#222222;stroke-width:0.5;"
+       width="127"
+       x="113"
+       y="783.0586"
+       id="rect30" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="107"
+       x="123"
+       y="805.5156"
+       id="text31">Near-perpendicular</text>
+    <rect
+       fill="#F7F7F7"
+       height="35.0938"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#222222;stroke-width:0.5;"
+       width="126"
+       x="113.5"
+       y="853.1523"
+       id="rect31" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="106"
+       x="123.5"
+       y="875.6094"
+       id="text32">Stop/verify -&gt; Cross</text>
+    <polygon
+       fill="#F7F7F7"
+       points="1435.8438,783.0586,1595.8438,783.0586,1607.8438,795.0586,1595.8438,807.0586,1435.8438,807.0586,1423.8438,795.0586,1435.8438,783.0586"
+       style="stroke:#222222;stroke-width:0.5;"
+       id="polygon32" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="160"
+       x="1435.8438"
+       y="799.5596"
+       id="text33">R and C coloured AND L WHITE ?</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="20"
+       x="1403.8438"
+       y="792.6416"
+       id="text34">Yes</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="13"
+       x="1607.8438"
+       y="792.6416"
+       id="text35">No</text>
+    <polygon
+       fill="#F7F7F7"
+       points="817,817.0586,933,817.0586,945,829.0586,933,841.0586,817,841.0586,805,829.0586,817,817.0586"
+       style="stroke:#222222;stroke-width:0.5;"
+       id="polygon35" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="116"
+       x="817"
+       y="833.5596"
+       id="text36">Both outers (L &amp; R) hit ?</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="20"
+       x="785"
+       y="826.6416"
+       id="text37">Yes</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="13"
+       x="945"
+       y="826.6416"
+       id="text38">No</text>
+    <rect
+       fill="#F7F7F7"
+       height="35.0938"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#222222;stroke-width:0.5;"
+       width="305"
+       x="511.5"
+       y="851.0586"
+       id="rect38" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="285"
+       x="521.5"
+       y="873.5156"
+       id="text39">Compute Delta_s = |s_R - s_L| (odometry at first-hit)</text>
+    <polygon
+       fill="#F7F7F7"
+       points="598,921.1523,730,921.1523,742,933.1523,730,945.1523,598,945.1523,586,933.1523,598,921.1523"
+       style="stroke:#222222;stroke-width:0.5;"
+       id="polygon39" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="132"
+       x="598"
+       y="937.6533"
+       id="text40">Delta_s &gt; B_baseline_mm ?</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="20"
+       x="566"
+       y="930.7354"
+       id="text41">Yes</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="13"
+       x="742"
+       y="930.7354"
+       id="text42">No</text>
+    <rect
+       fill="#F7F7F7"
+       height="35.0938"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#222222;stroke-width:0.5;"
+       width="140"
+       x="414"
+       y="955.1523"
+       id="rect42" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="120"
+       x="424"
+       y="977.6094"
+       id="text43">Rule A: theta &gt; 45 deg</text>
+    <rect
+       fill="#F7F7F7"
+       height="35.0938"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#222222;stroke-width:0.5;"
+       width="468"
+       x="250"
+       y="1025.2461"
+       id="rect43" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="448"
+       x="260"
+       y="1047.7031"
+       id="text44">Reverse; rotate LEFT or RIGHT (away from first-hit) &lt;= 5 deg; forward small -&gt; retry</text>
+    <rect
+       fill="#F7F7F7"
+       height="35.0938"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#222222;stroke-width:0.5;"
+       width="105"
+       x="791.5"
+       y="955.1523"
+       id="rect44" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="85"
+       x="801.5"
+       y="977.6094"
+       id="text45">theta &lt;= 45 deg</text>
+    <rect
+       fill="#F7F7F7"
+       height="35.0938"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#222222;stroke-width:0.5;"
+       width="212"
+       x="738"
+       y="1025.2461"
+       id="rect45" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="192"
+       x="748"
+       y="1047.7031"
+       id="text46">Micro-steer toward &lt;= 5 deg; Cross</text>
+    <polygon
+       fill="#F7F7F7"
+       points="664,1066.3398,676,1078.3398,664,1090.3398,652,1078.3398,664,1066.3398"
+       style="stroke:#222222;stroke-width:0.5;"
+       id="polygon46" />
+    <rect
+       fill="#F7F7F7"
+       height="35.0938"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#222222;stroke-width:0.5;"
+       width="134"
+       x="1007"
+       y="851.0586"
+       id="rect46" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="114"
+       x="1017"
+       y="873.5156"
+       id="text47">No Delta_s available</text>
+    <rect
+       fill="#F7F7F7"
+       height="35.0938"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#222222;stroke-width:0.5;"
+       width="212"
+       x="968"
+       y="921.1523"
+       id="rect47" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="192"
+       x="978"
+       y="943.6094"
+       id="text48">Micro-steer toward &lt;= 5 deg; Cross</text>
+    <polygon
+       fill="#F7F7F7"
+       points="875,1096.3398,887,1108.3398,875,1120.3398,863,1108.3398,875,1096.3398"
+       style="stroke:#222222;stroke-width:0.5;"
+       id="polygon48" />
+    <polygon
+       fill="#F7F7F7"
+       points="2126.6875,817.0586,2286.6875,817.0586,2298.6875,829.0586,2286.6875,841.0586,2126.6875,841.0586,2114.6875,829.0586,2126.6875,817.0586"
+       style="stroke:#222222;stroke-width:0.5;"
+       id="polygon49" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="160"
+       x="2126.6875"
+       y="833.5596"
+       id="text49">L and C coloured AND R WHITE ?</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="20"
+       x="2094.6875"
+       y="826.6416"
+       id="text50">Yes</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="13"
+       x="2298.6875"
+       y="826.6416"
+       id="text51">No</text>
+    <polygon
+       fill="#F7F7F7"
+       points="1757,851.0586,1873,851.0586,1885,863.0586,1873,875.0586,1757,875.0586,1745,863.0586,1757,851.0586"
+       style="stroke:#222222;stroke-width:0.5;"
+       id="polygon51" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="116"
+       x="1757"
+       y="867.5596"
+       id="text52">Both outers (L &amp; R) hit ?</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="20"
+       x="1725"
+       y="860.6416"
+       id="text53">Yes</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="13"
+       x="1885"
+       y="860.6416"
+       id="text54">No</text>
+    <rect
+       fill="#F7F7F7"
+       height="35.0938"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#222222;stroke-width:0.5;"
+       width="190"
+       x="1509"
+       y="885.0586"
+       id="rect54" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="170"
+       x="1519"
+       y="907.5156"
+       id="text55">Compute Delta_s = |s_R - s_L|</text>
+    <polygon
+       fill="#F7F7F7"
+       points="1538,955.1523,1670,955.1523,1682,967.1523,1670,979.1523,1538,979.1523,1526,967.1523,1538,955.1523"
+       style="stroke:#222222;stroke-width:0.5;"
+       id="polygon55" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="132"
+       x="1538"
+       y="971.6533"
+       id="text56">Delta_s &gt; B_baseline_mm ?</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="20"
+       x="1506"
+       y="964.7354"
+       id="text57">Yes</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="13"
+       x="1682"
+       y="964.7354"
+       id="text58">No</text>
+    <rect
+       fill="#F7F7F7"
+       height="35.0938"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#222222;stroke-width:0.5;"
+       width="140"
+       x="1354"
+       y="989.1523"
+       id="rect58" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="120"
+       x="1364"
+       y="1011.6094"
+       id="text59">Rule A: theta &gt; 45 deg</text>
+    <rect
+       fill="#F7F7F7"
+       height="35.0938"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#222222;stroke-width:0.5;"
+       width="468"
+       x="1190"
+       y="1059.2461"
+       id="rect59" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="448"
+       x="1200"
+       y="1081.7031"
+       id="text60">Reverse; rotate LEFT or RIGHT (away from first-hit) &lt;= 5 deg; forward small -&gt; retry</text>
+    <rect
+       fill="#F7F7F7"
+       height="35.0938"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#222222;stroke-width:0.5;"
+       width="105"
+       x="1731.5"
+       y="989.1523"
+       id="rect60" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="85"
+       x="1741.5"
+       y="1011.6094"
+       id="text61">theta &lt;= 45 deg</text>
+    <rect
+       fill="#F7F7F7"
+       height="35.0938"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#222222;stroke-width:0.5;"
+       width="212"
+       x="1678"
+       y="1059.2461"
+       id="rect61" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="192"
+       x="1688"
+       y="1081.7031"
+       id="text62">Micro-steer toward &lt;= 5 deg; Cross</text>
+    <polygon
+       fill="#F7F7F7"
+       points="1604,1100.3398,1616,1112.3398,1604,1124.3398,1592,1112.3398,1604,1100.3398"
+       style="stroke:#222222;stroke-width:0.5;"
+       id="polygon62" />
+    <rect
+       fill="#F7F7F7"
+       height="35.0938"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#222222;stroke-width:0.5;"
+       width="134"
+       x="1947"
+       y="885.0586"
+       id="rect62" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="114"
+       x="1957"
+       y="907.5156"
+       id="text63">No Delta_s available</text>
+    <rect
+       fill="#F7F7F7"
+       height="35.0938"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#222222;stroke-width:0.5;"
+       width="212"
+       x="1908"
+       y="955.1523"
+       id="rect63" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="192"
+       x="1918"
+       y="977.6094"
+       id="text64">Micro-steer toward &lt;= 5 deg; Cross</text>
+    <polygon
+       fill="#F7F7F7"
+       points="1815,1130.3398,1827,1142.3398,1815,1154.3398,1803,1142.3398,1815,1130.3398"
+       style="stroke:#222222;stroke-width:0.5;"
+       id="polygon64" />
+    <polygon
+       fill="#F7F7F7"
+       points="2547.875,851.0586,2632.875,851.0586,2644.875,863.0586,2632.875,875.0586,2547.875,875.0586,2535.875,863.0586,2547.875,851.0586"
+       style="stroke:#222222;stroke-width:0.5;"
+       id="polygon65" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="85"
+       x="2547.875"
+       y="867.5596"
+       id="text65">Only L coloured ?</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="20"
+       x="2515.875"
+       y="860.6416"
+       id="text66">Yes</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="13"
+       x="2644.875"
+       y="860.6416"
+       id="text67">No</text>
+    <rect
+       fill="#F7F7F7"
+       height="35.0938"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#222222;stroke-width:0.5;"
+       width="172"
+       x="2231.5"
+       y="885.0586"
+       id="rect67" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="152"
+       x="2241.5"
+       y="907.5156"
+       id="text68">Rule B (Left): theta &gt; 45 deg</text>
+    <rect
+       fill="#F7F7F7"
+       height="35.0938"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#222222;stroke-width:0.5;"
+       width="315"
+       x="2160"
+       y="955.1523"
+       id="rect68" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="295"
+       x="2170"
+       y="977.6094"
+       id="text69">Reverse; rotate RIGHT &lt;= 5 deg; forward small -&gt; retry</text>
+    <polygon
+       fill="#F7F7F7"
+       points="2834,885.0586,2920,885.0586,2932,897.0586,2920,909.0586,2834,909.0586,2822,897.0586,2834,885.0586"
+       style="stroke:#222222;stroke-width:0.5;"
+       id="polygon69" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="86"
+       x="2834"
+       y="901.5596"
+       id="text70">Only R coloured ?</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="20"
+       x="2802"
+       y="894.6416"
+       id="text71">Yes</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="13"
+       x="2932"
+       y="894.6416"
+       id="text72">No</text>
+    <rect
+       fill="#F7F7F7"
+       height="35.0938"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#222222;stroke-width:0.5;"
+       width="181"
+       x="2548"
+       y="919.0586"
+       id="rect72" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="161"
+       x="2558"
+       y="941.5156"
+       id="text73">Rule B (Right): theta &gt; 45 deg</text>
+    <rect
+       fill="#F7F7F7"
+       height="35.0938"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#222222;stroke-width:0.5;"
+       width="307"
+       x="2485"
+       y="989.1523"
+       id="rect73" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="287"
+       x="2495"
+       y="1011.6094"
+       id="text74">Reverse; rotate LEFT &lt;= 5 deg; forward small -&gt; retry</text>
+    <polygon
+       fill="#F7F7F7"
+       points="3070.75,919.0586,3164.75,919.0586,3176.75,931.0586,3164.75,943.0586,3070.75,943.0586,3058.75,931.0586,3070.75,919.0586"
+       style="stroke:#222222;stroke-width:0.5;"
+       id="polygon74" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="94"
+       x="3070.75"
+       y="935.5596"
+       id="text75">All three coloured ?</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="20"
+       x="3038.75"
+       y="928.6416"
+       id="text76">Yes</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="13"
+       x="3176.75"
+       y="928.6416"
+       id="text77">No</text>
+    <rect
+       fill="#F7F7F7"
+       height="35.0938"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#222222;stroke-width:0.5;"
+       width="213"
+       x="2815.75"
+       y="953.0586"
+       id="rect77" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="193"
+       x="2825.75"
+       y="975.5156"
+       id="text78">Square-up (equalize edges); Cross</text>
+    <polygon
+       fill="#F7F7F7"
+       points="3237.25,953.0586,3397.25,953.0586,3409.25,965.0586,3397.25,977.0586,3237.25,977.0586,3225.25,965.0586,3237.25,953.0586"
+       style="stroke:#222222;stroke-width:0.5;"
+       id="polygon78" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="160"
+       x="3237.25"
+       y="969.5596"
+       id="text79">L and R coloured AND C WHITE ?</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="20"
+       x="3205.25"
+       y="962.6416"
+       id="text80">Yes</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="13"
+       x="3409.25"
+       y="962.6416"
+       id="text81">No</text>
+    <rect
+       fill="#F7F7F7"
+       height="35.0938"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#222222;stroke-width:0.5;"
+       width="120"
+       x="3115.75"
+       y="987.0586"
+       id="rect81" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="100"
+       x="3125.75"
+       y="1009.5156"
+       id="text82">Ambiguous / glare</text>
+    <rect
+       fill="#F7F7F7"
+       height="35.0938"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#222222;stroke-width:0.5;"
+       width="242"
+       x="3054.75"
+       y="1057.1523"
+       id="rect82" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="222"
+       x="3064.75"
+       y="1079.6094"
+       id="text83">Nudge forward or micro-yaw; Re-sample</text>
+    <rect
+       fill="#F7F7F7"
+       height="35.0938"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#222222;stroke-width:0.5;"
+       width="284"
+       x="3316.75"
+       y="987.0586"
+       id="rect83" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="264"
+       x="3326.75"
+       y="1009.5156"
+       id="text84">Unhandled crossable pattern; Continue sensing</text>
+    <polygon
+       fill="#F7F7F7"
+       points="3317.25,1098.2461,3329.25,1110.2461,3317.25,1122.2461,3305.25,1110.2461,3317.25,1098.2461"
+       style="stroke:#222222;stroke-width:0.5;"
+       id="polygon84" />
+    <polygon
+       fill="#F7F7F7"
+       points="3117.75,1128.2461,3129.75,1140.2461,3117.75,1152.2461,3105.75,1140.2461,3117.75,1128.2461"
+       style="stroke:#222222;stroke-width:0.5;"
+       id="polygon85" />
+    <polygon
+       fill="#F7F7F7"
+       points="2877,1158.2461,2889,1170.2461,2877,1182.2461,2865,1170.2461,2877,1158.2461"
+       style="stroke:#222222;stroke-width:0.5;"
+       id="polygon86" />
+    <polygon
+       fill="#F7F7F7"
+       points="2590.375,1188.2461,2602.375,1200.2461,2590.375,1212.2461,2578.375,1200.2461,2590.375,1188.2461"
+       style="stroke:#222222;stroke-width:0.5;"
+       id="polygon87" />
+    <polygon
+       fill="#F7F7F7"
+       points="2206.6875,1218.2461,2218.6875,1230.2461,2206.6875,1242.2461,2194.6875,1230.2461,2206.6875,1218.2461"
+       style="stroke:#222222;stroke-width:0.5;"
+       id="polygon88" />
+    <polygon
+       fill="#F7F7F7"
+       points="1515.8438,1248.2461,1527.8438,1260.2461,1515.8438,1272.2461,1503.8438,1260.2461,1515.8438,1248.2461"
+       style="stroke:#222222;stroke-width:0.5;"
+       id="polygon89" />
+    <polygon
+       fill="#F7F7F7"
+       points="857.1719,1278.2461,869.1719,1290.2461,857.1719,1302.2461,845.1719,1290.2461,857.1719,1278.2461"
+       style="stroke:#222222;stroke-width:0.5;"
+       id="polygon90" />
+    <polygon
+       fill="#F7F7F7"
+       points="4393.8125,749.0586,4519.8125,749.0586,4531.8125,761.0586,4519.8125,773.0586,4393.8125,773.0586,4381.8125,761.0586,4393.8125,749.0586"
+       style="stroke:#222222;stroke-width:0.5;"
+       id="polygon91" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="126"
+       x="4393.8125"
+       y="765.5596"
+       id="text91">BLUE or BLACK present ?</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="20"
+       x="4361.8125"
+       y="758.6416"
+       id="text92">Yes</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="13"
+       x="4531.8125"
+       y="758.6416"
+       id="text93">No</text>
+    <polygon
+       fill="#F7F7F7"
+       points="4010.875,783.0586,4125.875,783.0586,4137.875,795.0586,4125.875,807.0586,4010.875,807.0586,3998.875,795.0586,4010.875,783.0586"
+       style="stroke:#222222;stroke-width:0.5;"
+       id="polygon93" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="115"
+       x="4010.875"
+       y="799.5596"
+       id="text94">Right only OR R and C ?</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="20"
+       x="3978.875"
+       y="792.6416"
+       id="text95">Yes</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="13"
+       x="4137.875"
+       y="792.6416"
+       id="text96">No</text>
+    <rect
+       fill="#F7F7F7"
+       height="35.0938"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#222222;stroke-width:0.5;"
+       width="259"
+       x="3710.75"
+       y="817.0586"
+       id="rect96" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="239"
+       x="3720.75"
+       y="839.5156"
+       id="text97">Align parallel to wall on RIGHT; Follow edge</text>
+    <rect
+       fill="#F7F7F7"
+       height="35.0938"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#222222;stroke-width:0.5;"
+       width="217"
+       x="3731.75"
+       y="887.1523"
+       id="rect97" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="197"
+       x="3741.75"
+       y="909.6094"
+       id="text98">If blocked -&gt; apply 90 deg turn policy</text>
+    <polygon
+       fill="#F7F7F7"
+       points="4242,817.0586,4351,817.0586,4363,829.0586,4351,841.0586,4242,841.0586,4230,829.0586,4242,817.0586"
+       style="stroke:#222222;stroke-width:0.5;"
+       id="polygon98" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="109"
+       x="4242"
+       y="833.5596"
+       id="text99">Left only OR L and C ?</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="20"
+       x="4210"
+       y="826.6416"
+       id="text100">Yes</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="13"
+       x="4363"
+       y="826.6416"
+       id="text101">No</text>
+    <rect
+       fill="#F7F7F7"
+       height="35.0938"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#222222;stroke-width:0.5;"
+       width="251"
+       x="3999.75"
+       y="851.0586"
+       id="rect101" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="231"
+       x="4009.75"
+       y="873.5156"
+       id="text102">Align parallel to wall on LEFT; Follow edge</text>
+    <rect
+       fill="#F7F7F7"
+       height="35.0938"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#222222;stroke-width:0.5;"
+       width="217"
+       x="4016.75"
+       y="921.1523"
+       id="rect102" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="197"
+       x="4026.75"
+       y="943.6094"
+       id="text103">If blocked -&gt; apply 90 deg turn policy</text>
+    <rect
+       fill="#F7F7F7"
+       height="35.0938"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#222222;stroke-width:0.5;"
+       width="394"
+       x="4270.75"
+       y="851.0586"
+       id="rect103" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="374"
+       x="4280.75"
+       y="873.5156"
+       id="text104">Both sides / All 3: Square-up; apply maze policy (e.g., right-hand rule)</text>
+    <polygon
+       fill="#F7F7F7"
+       points="4296.5,962.2461,4308.5,974.2461,4296.5,986.2461,4284.5,974.2461,4296.5,962.2461"
+       style="stroke:#222222;stroke-width:0.5;"
+       id="polygon104" />
+    <polygon
+       fill="#F7F7F7"
+       points="4068.375,992.2461,4080.375,1004.2461,4068.375,1016.2461,4056.375,1004.2461,4068.375,992.2461"
+       style="stroke:#222222;stroke-width:0.5;"
+       id="polygon105" />
+    <rect
+       fill="#F7F7F7"
+       height="35.0938"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#222222;stroke-width:0.5;"
+       width="281"
+       x="4674.75"
+       y="783.0586"
+       id="rect105" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="261"
+       x="4684.75"
+       y="805.5156"
+       id="text105">Unexpected colour combo; Keep driving forward</text>
+    <polygon
+       fill="#F7F7F7"
+       points="4456.8125,1022.2461,4468.8125,1034.2461,4456.8125,1046.2461,4444.8125,1034.2461,4456.8125,1022.2461"
+       style="stroke:#222222;stroke-width:0.5;"
+       id="polygon106" />
+    <polygon
+       fill="#F7F7F7"
+       points="2615.1172,1308.2461,2627.1172,1320.2461,2615.1172,1332.2461,2603.1172,1320.2461,2615.1172,1308.2461"
+       style="stroke:#222222;stroke-width:0.5;"
+       id="polygon107" />
+    <rect
+       fill="#F7F7F7"
+       height="35.0938"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#222222;stroke-width:0.5;"
+       width="206"
+       x="4965.75"
+       y="625.9648"
+       id="rect107" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="186"
+       x="4975.75"
+       y="648.4219"
+       id="text107">Drive forward nominally (re-check)</text>
+    <polygon
+       fill="#F7F7F7"
+       points="3191.2793,1342.2461,3203.2793,1354.2461,3191.2793,1366.2461,3179.2793,1354.2461,3191.2793,1342.2461"
+       style="stroke:#222222;stroke-width:0.5;"
+       id="polygon108" />
+    <polygon
+       fill="#F7F7F7"
+       points="3191.2793,382.6836,3203.2793,394.6836,3191.2793,406.6836,3179.2793,394.6836,3191.2793,382.6836"
+       style="stroke:#222222;stroke-width:0.5;"
+       id="polygon109" />
+    <polygon
+       fill="#F7F7F7"
+       points="3154.7793,1386.2461,3227.7793,1386.2461,3239.7793,1398.2461,3227.7793,1410.2461,3154.7793,1410.2461,3142.7793,1398.2461,3154.7793,1386.2461"
+       style="stroke:#222222;stroke-width:0.5;"
+       id="polygon110" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="73"
+       x="3154.7793"
+       y="1402.7471"
+       id="text110">Mode == MAZE</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="11"
+       lengthAdjust="spacing"
+       textLength="41"
+       x="3239.7793"
+       y="1395.8291"
+       id="text111">continue</text>
+    <ellipse
+       cx="3191.2793"
+       cy="1441.2461"
+       fill="none"
+       rx="11"
+       ry="11"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="ellipse111" />
+    <ellipse
+       cx="3191.2793"
+       cy="1441.2461"
+       fill="#222222"
+       rx="6"
+       ry="6"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="ellipse112" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="3191.2793"
+       x2="3191.2793"
+       y1="68.6094"
+       y2="115.1172"
+       id="line112" />
+    <polygon
+       fill="#222222"
+       points="3187.2793,105.1172,3191.2793,115.1172,3195.2793,105.1172,3191.2793,109.1172"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon112" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="3191.2793"
+       x2="3191.2793"
+       y1="290.7305"
+       y2="318.6836"
+       id="line113" />
+    <polygon
+       fill="#222222"
+       points="3187.2793,308.6836,3191.2793,318.6836,3195.2793,308.6836,3191.2793,312.6836"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon113" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="3191.2793"
+       x2="3191.2793"
+       y1="230.7188"
+       y2="255.6367"
+       id="line114" />
+    <polygon
+       fill="#222222"
+       points="3187.2793,245.6367,3191.2793,255.6367,3195.2793,245.6367,3191.2793,249.6367"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon114" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="3301.2793"
+       x2="3313.2793"
+       y1="218.7188"
+       y2="218.7188"
+       id="line115" />
+    <polygon
+       fill="#222222"
+       points="3309.2793,288.6836,3313.2793,298.6836,3317.2793,288.6836,3313.2793,292.6836"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon115" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="3313.2793"
+       x2="3313.2793"
+       y1="218.7188"
+       y2="362.6836"
+       id="line116" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="3313.2793"
+       x2="3191.2793"
+       y1="362.6836"
+       y2="362.6836"
+       id="line117" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="3191.2793"
+       x2="3191.2793"
+       y1="362.6836"
+       y2="382.6836"
+       id="line118" />
+    <polygon
+       fill="#222222"
+       points="3187.2793,372.6836,3191.2793,382.6836,3195.2793,372.6836,3191.2793,376.6836"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon118" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="3191.2793"
+       x2="3191.2793"
+       y1="150.2109"
+       y2="206.7188"
+       id="line119" />
+    <polygon
+       fill="#222222"
+       points="3187.2793,196.7188,3191.2793,206.7188,3195.2793,196.7188,3191.2793,200.7188"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon119" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="3191.2793"
+       x2="3191.2793"
+       y1="461.7773"
+       y2="481.7773"
+       id="line120" />
+    <polygon
+       fill="#222222"
+       points="3187.2793,471.7773,3191.2793,481.7773,3195.2793,471.7773,3191.2793,475.7773"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon120" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="3191.2793"
+       x2="3191.2793"
+       y1="516.8711"
+       y2="536.8711"
+       id="line121" />
+    <polygon
+       fill="#222222"
+       points="3187.2793,526.8711,3191.2793,536.8711,3195.2793,526.8711,3191.2793,530.8711"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon121" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="57"
+       x2="57"
+       y1="750.1523"
+       y2="785.1523"
+       id="line122" />
+    <polygon
+       fill="#222222"
+       points="53,775.1523,57,785.1523,61,775.1523,57,779.1523"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon122" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="57"
+       x2="57"
+       y1="820.2461"
+       y2="855.2461"
+       id="line123" />
+    <polygon
+       fill="#222222"
+       points="53,845.2461,57,855.2461,61,845.2461,57,849.2461"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon123" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="176.5"
+       x2="176.5"
+       y1="818.1523"
+       y2="853.1523"
+       id="line124" />
+    <polygon
+       fill="#222222"
+       points="172.5,843.1523,176.5,853.1523,180.5,843.1523,176.5,847.1523"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon124" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="484"
+       x2="484"
+       y1="990.2461"
+       y2="1025.2461"
+       id="line125" />
+    <polygon
+       fill="#222222"
+       points="480,1015.2461,484,1025.2461,488,1015.2461,484,1019.2461"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon125" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="844"
+       x2="844"
+       y1="990.2461"
+       y2="1025.2461"
+       id="line126" />
+    <polygon
+       fill="#222222"
+       points="840,1015.2461,844,1025.2461,848,1015.2461,844,1019.2461"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon126" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="586"
+       x2="484"
+       y1="933.1523"
+       y2="933.1523"
+       id="line127" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="484"
+       x2="484"
+       y1="933.1523"
+       y2="955.1523"
+       id="line128" />
+    <polygon
+       fill="#222222"
+       points="480,945.1523,484,955.1523,488,945.1523,484,949.1523"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon128" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="742"
+       x2="844"
+       y1="933.1523"
+       y2="933.1523"
+       id="line129" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="844"
+       x2="844"
+       y1="933.1523"
+       y2="955.1523"
+       id="line130" />
+    <polygon
+       fill="#222222"
+       points="840,945.1523,844,955.1523,848,945.1523,844,949.1523"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon130" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="484"
+       x2="484"
+       y1="1060.3398"
+       y2="1078.3398"
+       id="line131" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="484"
+       x2="652"
+       y1="1078.3398"
+       y2="1078.3398"
+       id="line132" />
+    <polygon
+       fill="#222222"
+       points="642,1074.3398,652,1078.3398,642,1082.3398,646,1078.3398"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon132" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="844"
+       x2="844"
+       y1="1060.3398"
+       y2="1078.3398"
+       id="line133" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="844"
+       x2="676"
+       y1="1078.3398"
+       y2="1078.3398"
+       id="line134" />
+    <polygon
+       fill="#222222"
+       points="686,1074.3398,676,1078.3398,686,1082.3398,682,1078.3398"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon134" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="664"
+       x2="664"
+       y1="886.1523"
+       y2="921.1523"
+       id="line135" />
+    <polygon
+       fill="#222222"
+       points="660,911.1523,664,921.1523,668,911.1523,664,915.1523"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon135" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="1074"
+       x2="1074"
+       y1="886.1523"
+       y2="921.1523"
+       id="line136" />
+    <polygon
+       fill="#222222"
+       points="1070,911.1523,1074,921.1523,1078,911.1523,1074,915.1523"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon136" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="805"
+       x2="664"
+       y1="829.0586"
+       y2="829.0586"
+       id="line137" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="664"
+       x2="664"
+       y1="829.0586"
+       y2="851.0586"
+       id="line138" />
+    <polygon
+       fill="#222222"
+       points="660,841.0586,664,851.0586,668,841.0586,664,845.0586"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon138" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="945"
+       x2="1074"
+       y1="829.0586"
+       y2="829.0586"
+       id="line139" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="1074"
+       x2="1074"
+       y1="829.0586"
+       y2="851.0586"
+       id="line140" />
+    <polygon
+       fill="#222222"
+       points="1070,841.0586,1074,851.0586,1078,841.0586,1074,845.0586"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon140" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="664"
+       x2="664"
+       y1="1090.3398"
+       y2="1108.3398"
+       id="line141" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="664"
+       x2="863"
+       y1="1108.3398"
+       y2="1108.3398"
+       id="line142" />
+    <polygon
+       fill="#222222"
+       points="853,1104.3398,863,1108.3398,853,1112.3398,857,1108.3398"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon142" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="1074"
+       x2="1074"
+       y1="956.2461"
+       y2="1108.3398"
+       id="line143" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="1074"
+       x2="887"
+       y1="1108.3398"
+       y2="1108.3398"
+       id="line144" />
+    <polygon
+       fill="#222222"
+       points="897,1104.3398,887,1108.3398,897,1112.3398,893,1108.3398"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon144" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="1424"
+       x2="1424"
+       y1="1024.2461"
+       y2="1059.2461"
+       id="line145" />
+    <polygon
+       fill="#222222"
+       points="1420,1049.2461,1424,1059.2461,1428,1049.2461,1424,1053.2461"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon145" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="1784"
+       x2="1784"
+       y1="1024.2461"
+       y2="1059.2461"
+       id="line146" />
+    <polygon
+       fill="#222222"
+       points="1780,1049.2461,1784,1059.2461,1788,1049.2461,1784,1053.2461"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon146" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="1526"
+       x2="1424"
+       y1="967.1523"
+       y2="967.1523"
+       id="line147" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="1424"
+       x2="1424"
+       y1="967.1523"
+       y2="989.1523"
+       id="line148" />
+    <polygon
+       fill="#222222"
+       points="1420,979.1523,1424,989.1523,1428,979.1523,1424,983.1523"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon148" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="1682"
+       x2="1784"
+       y1="967.1523"
+       y2="967.1523"
+       id="line149" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="1784"
+       x2="1784"
+       y1="967.1523"
+       y2="989.1523"
+       id="line150" />
+    <polygon
+       fill="#222222"
+       points="1780,979.1523,1784,989.1523,1788,979.1523,1784,983.1523"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon150" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="1424"
+       x2="1424"
+       y1="1094.3398"
+       y2="1112.3398"
+       id="line151" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="1424"
+       x2="1592"
+       y1="1112.3398"
+       y2="1112.3398"
+       id="line152" />
+    <polygon
+       fill="#222222"
+       points="1582,1108.3398,1592,1112.3398,1582,1116.3398,1586,1112.3398"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon152" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="1784"
+       x2="1784"
+       y1="1094.3398"
+       y2="1112.3398"
+       id="line153" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="1784"
+       x2="1616"
+       y1="1112.3398"
+       y2="1112.3398"
+       id="line154" />
+    <polygon
+       fill="#222222"
+       points="1626,1108.3398,1616,1112.3398,1626,1116.3398,1622,1112.3398"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon154" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="1604"
+       x2="1604"
+       y1="920.1523"
+       y2="955.1523"
+       id="line155" />
+    <polygon
+       fill="#222222"
+       points="1600,945.1523,1604,955.1523,1608,945.1523,1604,949.1523"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon155" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="2014"
+       x2="2014"
+       y1="920.1523"
+       y2="955.1523"
+       id="line156" />
+    <polygon
+       fill="#222222"
+       points="2010,945.1523,2014,955.1523,2018,945.1523,2014,949.1523"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon156" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="1745"
+       x2="1604"
+       y1="863.0586"
+       y2="863.0586"
+       id="line157" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="1604"
+       x2="1604"
+       y1="863.0586"
+       y2="885.0586"
+       id="line158" />
+    <polygon
+       fill="#222222"
+       points="1600,875.0586,1604,885.0586,1608,875.0586,1604,879.0586"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon158" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="1885"
+       x2="2014"
+       y1="863.0586"
+       y2="863.0586"
+       id="line159" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="2014"
+       x2="2014"
+       y1="863.0586"
+       y2="885.0586"
+       id="line160" />
+    <polygon
+       fill="#222222"
+       points="2010,875.0586,2014,885.0586,2018,875.0586,2014,879.0586"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon160" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="1604"
+       x2="1604"
+       y1="1124.3398"
+       y2="1142.3398"
+       id="line161" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="1604"
+       x2="1803"
+       y1="1142.3398"
+       y2="1142.3398"
+       id="line162" />
+    <polygon
+       fill="#222222"
+       points="1793,1138.3398,1803,1142.3398,1793,1146.3398,1797,1142.3398"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon162" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="2014"
+       x2="2014"
+       y1="990.2461"
+       y2="1142.3398"
+       id="line163" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="2014"
+       x2="1827"
+       y1="1142.3398"
+       y2="1142.3398"
+       id="line164" />
+    <polygon
+       fill="#222222"
+       points="1837,1138.3398,1827,1142.3398,1837,1146.3398,1833,1142.3398"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon164" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="2317.5"
+       x2="2317.5"
+       y1="920.1523"
+       y2="955.1523"
+       id="line165" />
+    <polygon
+       fill="#222222"
+       points="2313.5,945.1523,2317.5,955.1523,2321.5,945.1523,2317.5,949.1523"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon165" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="2638.5"
+       x2="2638.5"
+       y1="954.1523"
+       y2="989.1523"
+       id="line166" />
+    <polygon
+       fill="#222222"
+       points="2634.5,979.1523,2638.5,989.1523,2642.5,979.1523,2638.5,983.1523"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon166" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="3175.75"
+       x2="3175.75"
+       y1="1022.1523"
+       y2="1057.1523"
+       id="line167" />
+    <polygon
+       fill="#222222"
+       points="3171.75,1047.1523,3175.75,1057.1523,3179.75,1047.1523,3175.75,1051.1523"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon167" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="3225.25"
+       x2="3175.75"
+       y1="965.0586"
+       y2="965.0586"
+       id="line168" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="3175.75"
+       x2="3175.75"
+       y1="965.0586"
+       y2="987.0586"
+       id="line169" />
+    <polygon
+       fill="#222222"
+       points="3171.75,977.0586,3175.75,987.0586,3179.75,977.0586,3175.75,981.0586"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon169" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="3409.25"
+       x2="3458.75"
+       y1="965.0586"
+       y2="965.0586"
+       id="line170" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="3458.75"
+       x2="3458.75"
+       y1="965.0586"
+       y2="987.0586"
+       id="line171" />
+    <polygon
+       fill="#222222"
+       points="3454.75,977.0586,3458.75,987.0586,3462.75,977.0586,3458.75,981.0586"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon171" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="3175.75"
+       x2="3175.75"
+       y1="1092.2461"
+       y2="1110.2461"
+       id="line172" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="3175.75"
+       x2="3305.25"
+       y1="1110.2461"
+       y2="1110.2461"
+       id="line173" />
+    <polygon
+       fill="#222222"
+       points="3295.25,1106.2461,3305.25,1110.2461,3295.25,1114.2461,3299.25,1110.2461"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon173" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="3458.75"
+       x2="3458.75"
+       y1="1022.1523"
+       y2="1110.2461"
+       id="line174" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="3458.75"
+       x2="3329.25"
+       y1="1110.2461"
+       y2="1110.2461"
+       id="line175" />
+    <polygon
+       fill="#222222"
+       points="3339.25,1106.2461,3329.25,1110.2461,3339.25,1114.2461,3335.25,1110.2461"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon175" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="3058.75"
+       x2="2922.25"
+       y1="931.0586"
+       y2="931.0586"
+       id="line176" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="2922.25"
+       x2="2922.25"
+       y1="931.0586"
+       y2="953.0586"
+       id="line177" />
+    <polygon
+       fill="#222222"
+       points="2918.25,943.0586,2922.25,953.0586,2926.25,943.0586,2922.25,947.0586"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon177" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="3176.75"
+       x2="3317.25"
+       y1="931.0586"
+       y2="931.0586"
+       id="line178" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="3317.25"
+       x2="3317.25"
+       y1="931.0586"
+       y2="953.0586"
+       id="line179" />
+    <polygon
+       fill="#222222"
+       points="3313.25,943.0586,3317.25,953.0586,3321.25,943.0586,3317.25,947.0586"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon179" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="2922.25"
+       x2="2922.25"
+       y1="988.1523"
+       y2="1140.2461"
+       id="line180" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="2922.25"
+       x2="3105.75"
+       y1="1140.2461"
+       y2="1140.2461"
+       id="line181" />
+    <polygon
+       fill="#222222"
+       points="3095.75,1136.2461,3105.75,1140.2461,3095.75,1144.2461,3099.75,1140.2461"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon181" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="3317.25"
+       x2="3317.25"
+       y1="1122.2461"
+       y2="1140.2461"
+       id="line182" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="3317.25"
+       x2="3129.75"
+       y1="1140.2461"
+       y2="1140.2461"
+       id="line183" />
+    <polygon
+       fill="#222222"
+       points="3139.75,1136.2461,3129.75,1140.2461,3139.75,1144.2461,3135.75,1140.2461"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon183" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="2822"
+       x2="2638.5"
+       y1="897.0586"
+       y2="897.0586"
+       id="line184" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="2638.5"
+       x2="2638.5"
+       y1="897.0586"
+       y2="919.0586"
+       id="line185" />
+    <polygon
+       fill="#222222"
+       points="2634.5,909.0586,2638.5,919.0586,2642.5,909.0586,2638.5,913.0586"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon185" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="2932"
+       x2="3117.75"
+       y1="897.0586"
+       y2="897.0586"
+       id="line186" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="3117.75"
+       x2="3117.75"
+       y1="897.0586"
+       y2="919.0586"
+       id="line187" />
+    <polygon
+       fill="#222222"
+       points="3113.75,909.0586,3117.75,919.0586,3121.75,909.0586,3117.75,913.0586"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon187" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="2638.5"
+       x2="2638.5"
+       y1="1024.2461"
+       y2="1170.2461"
+       id="line188" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="2638.5"
+       x2="2865"
+       y1="1170.2461"
+       y2="1170.2461"
+       id="line189" />
+    <polygon
+       fill="#222222"
+       points="2855,1166.2461,2865,1170.2461,2855,1174.2461,2859,1170.2461"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon189" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="3117.75"
+       x2="3117.75"
+       y1="1152.2461"
+       y2="1170.2461"
+       id="line190" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="3117.75"
+       x2="2889"
+       y1="1170.2461"
+       y2="1170.2461"
+       id="line191" />
+    <polygon
+       fill="#222222"
+       points="2899,1166.2461,2889,1170.2461,2899,1174.2461,2895,1170.2461"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon191" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="2535.875"
+       x2="2317.5"
+       y1="863.0586"
+       y2="863.0586"
+       id="line192" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="2317.5"
+       x2="2317.5"
+       y1="863.0586"
+       y2="885.0586"
+       id="line193" />
+    <polygon
+       fill="#222222"
+       points="2313.5,875.0586,2317.5,885.0586,2321.5,875.0586,2317.5,879.0586"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon193" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="2644.875"
+       x2="2877"
+       y1="863.0586"
+       y2="863.0586"
+       id="line194" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="2877"
+       x2="2877"
+       y1="863.0586"
+       y2="885.0586"
+       id="line195" />
+    <polygon
+       fill="#222222"
+       points="2873,875.0586,2877,885.0586,2881,875.0586,2877,879.0586"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon195" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="2317.5"
+       x2="2317.5"
+       y1="990.2461"
+       y2="1200.2461"
+       id="line196" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="2317.5"
+       x2="2578.375"
+       y1="1200.2461"
+       y2="1200.2461"
+       id="line197" />
+    <polygon
+       fill="#222222"
+       points="2568.375,1196.2461,2578.375,1200.2461,2568.375,1204.2461,2572.375,1200.2461"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon197" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="2877"
+       x2="2877"
+       y1="1182.2461"
+       y2="1200.2461"
+       id="line198" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="2877"
+       x2="2602.375"
+       y1="1200.2461"
+       y2="1200.2461"
+       id="line199" />
+    <polygon
+       fill="#222222"
+       points="2612.375,1196.2461,2602.375,1200.2461,2612.375,1204.2461,2608.375,1200.2461"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon199" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="2114.6875"
+       x2="1815"
+       y1="829.0586"
+       y2="829.0586"
+       id="line200" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="1815"
+       x2="1815"
+       y1="829.0586"
+       y2="851.0586"
+       id="line201" />
+    <polygon
+       fill="#222222"
+       points="1811,841.0586,1815,851.0586,1819,841.0586,1815,845.0586"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon201" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="2298.6875"
+       x2="2590.375"
+       y1="829.0586"
+       y2="829.0586"
+       id="line202" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="2590.375"
+       x2="2590.375"
+       y1="829.0586"
+       y2="851.0586"
+       id="line203" />
+    <polygon
+       fill="#222222"
+       points="2586.375,841.0586,2590.375,851.0586,2594.375,841.0586,2590.375,845.0586"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon203" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="1815"
+       x2="1815"
+       y1="1154.3398"
+       y2="1230.2461"
+       id="line204" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="1815"
+       x2="2194.6875"
+       y1="1230.2461"
+       y2="1230.2461"
+       id="line205" />
+    <polygon
+       fill="#222222"
+       points="2184.6875,1226.2461,2194.6875,1230.2461,2184.6875,1234.2461,2188.6875,1230.2461"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon205" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="2590.375"
+       x2="2590.375"
+       y1="1212.2461"
+       y2="1230.2461"
+       id="line206" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="2590.375"
+       x2="2218.6875"
+       y1="1230.2461"
+       y2="1230.2461"
+       id="line207" />
+    <polygon
+       fill="#222222"
+       points="2228.6875,1226.2461,2218.6875,1230.2461,2228.6875,1234.2461,2224.6875,1230.2461"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon207" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="1423.8438"
+       x2="875"
+       y1="795.0586"
+       y2="795.0586"
+       id="line208" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="875"
+       x2="875"
+       y1="795.0586"
+       y2="817.0586"
+       id="line209" />
+    <polygon
+       fill="#222222"
+       points="871,807.0586,875,817.0586,879,807.0586,875,811.0586"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon209" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="1607.8438"
+       x2="2206.6875"
+       y1="795.0586"
+       y2="795.0586"
+       id="line210" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="2206.6875"
+       x2="2206.6875"
+       y1="795.0586"
+       y2="817.0586"
+       id="line211" />
+    <polygon
+       fill="#222222"
+       points="2202.6875,807.0586,2206.6875,817.0586,2210.6875,807.0586,2206.6875,811.0586"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon211" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="875"
+       x2="875"
+       y1="1120.3398"
+       y2="1260.2461"
+       id="line212" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="875"
+       x2="1503.8438"
+       y1="1260.2461"
+       y2="1260.2461"
+       id="line213" />
+    <polygon
+       fill="#222222"
+       points="1493.8438,1256.2461,1503.8438,1260.2461,1493.8438,1264.2461,1497.8438,1260.2461"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon213" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="2206.6875"
+       x2="2206.6875"
+       y1="1242.2461"
+       y2="1260.2461"
+       id="line214" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="2206.6875"
+       x2="1527.8438"
+       y1="1260.2461"
+       y2="1260.2461"
+       id="line215" />
+    <polygon
+       fill="#222222"
+       points="1537.8438,1256.2461,1527.8438,1260.2461,1537.8438,1264.2461,1533.8438,1260.2461"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon215" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="802.1719"
+       x2="176.5"
+       y1="761.0586"
+       y2="761.0586"
+       id="line216" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="176.5"
+       x2="176.5"
+       y1="761.0586"
+       y2="783.0586"
+       id="line217" />
+    <polygon
+       fill="#222222"
+       points="172.5,773.0586,176.5,783.0586,180.5,773.0586,176.5,777.0586"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon217" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="912.1719"
+       x2="1515.8438"
+       y1="761.0586"
+       y2="761.0586"
+       id="line218" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="1515.8438"
+       x2="1515.8438"
+       y1="761.0586"
+       y2="783.0586"
+       id="line219" />
+    <polygon
+       fill="#222222"
+       points="1511.8438,773.0586,1515.8438,783.0586,1519.8438,773.0586,1515.8438,777.0586"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon219" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="176.5"
+       x2="176.5"
+       y1="888.2461"
+       y2="1290.2461"
+       id="line220" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="176.5"
+       x2="845.1719"
+       y1="1290.2461"
+       y2="1290.2461"
+       id="line221" />
+    <polygon
+       fill="#222222"
+       points="835.1719,1286.2461,845.1719,1290.2461,835.1719,1294.2461,839.1719,1290.2461"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon221" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="1515.8438"
+       x2="1515.8438"
+       y1="1272.2461"
+       y2="1290.2461"
+       id="line222" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="1515.8438"
+       x2="869.1719"
+       y1="1290.2461"
+       y2="1290.2461"
+       id="line223" />
+    <polygon
+       fill="#222222"
+       points="879.1719,1286.2461,869.1719,1290.2461,879.1719,1294.2461,875.1719,1290.2461"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon223" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="3840.25"
+       x2="3840.25"
+       y1="852.1523"
+       y2="887.1523"
+       id="line224" />
+    <polygon
+       fill="#222222"
+       points="3836.25,877.1523,3840.25,887.1523,3844.25,877.1523,3840.25,881.1523"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon224" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="4125.25"
+       x2="4125.25"
+       y1="886.1523"
+       y2="921.1523"
+       id="line225" />
+    <polygon
+       fill="#222222"
+       points="4121.25,911.1523,4125.25,921.1523,4129.25,911.1523,4125.25,915.1523"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon225" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="4230"
+       x2="4125.25"
+       y1="829.0586"
+       y2="829.0586"
+       id="line226" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="4125.25"
+       x2="4125.25"
+       y1="829.0586"
+       y2="851.0586"
+       id="line227" />
+    <polygon
+       fill="#222222"
+       points="4121.25,841.0586,4125.25,851.0586,4129.25,841.0586,4125.25,845.0586"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon227" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="4363"
+       x2="4467.75"
+       y1="829.0586"
+       y2="829.0586"
+       id="line228" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="4467.75"
+       x2="4467.75"
+       y1="829.0586"
+       y2="851.0586"
+       id="line229" />
+    <polygon
+       fill="#222222"
+       points="4463.75,841.0586,4467.75,851.0586,4471.75,841.0586,4467.75,845.0586"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon229" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="4125.25"
+       x2="4125.25"
+       y1="956.2461"
+       y2="974.2461"
+       id="line230" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="4125.25"
+       x2="4284.5"
+       y1="974.2461"
+       y2="974.2461"
+       id="line231" />
+    <polygon
+       fill="#222222"
+       points="4274.5,970.2461,4284.5,974.2461,4274.5,978.2461,4278.5,974.2461"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon231" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="4467.75"
+       x2="4467.75"
+       y1="886.1523"
+       y2="974.2461"
+       id="line232" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="4467.75"
+       x2="4308.5"
+       y1="974.2461"
+       y2="974.2461"
+       id="line233" />
+    <polygon
+       fill="#222222"
+       points="4318.5,970.2461,4308.5,974.2461,4318.5,978.2461,4314.5,974.2461"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon233" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="3998.875"
+       x2="3840.25"
+       y1="795.0586"
+       y2="795.0586"
+       id="line234" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="3840.25"
+       x2="3840.25"
+       y1="795.0586"
+       y2="817.0586"
+       id="line235" />
+    <polygon
+       fill="#222222"
+       points="3836.25,807.0586,3840.25,817.0586,3844.25,807.0586,3840.25,811.0586"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon235" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="4137.875"
+       x2="4296.5"
+       y1="795.0586"
+       y2="795.0586"
+       id="line236" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="4296.5"
+       x2="4296.5"
+       y1="795.0586"
+       y2="817.0586"
+       id="line237" />
+    <polygon
+       fill="#222222"
+       points="4292.5,807.0586,4296.5,817.0586,4300.5,807.0586,4296.5,811.0586"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon237" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="3840.25"
+       x2="3840.25"
+       y1="922.2461"
+       y2="1004.2461"
+       id="line238" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="3840.25"
+       x2="4056.375"
+       y1="1004.2461"
+       y2="1004.2461"
+       id="line239" />
+    <polygon
+       fill="#222222"
+       points="4046.375,1000.2461,4056.375,1004.2461,4046.375,1008.2461,4050.375,1004.2461"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon239" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="4296.5"
+       x2="4296.5"
+       y1="986.2461"
+       y2="1004.2461"
+       id="line240" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="4296.5"
+       x2="4080.375"
+       y1="1004.2461"
+       y2="1004.2461"
+       id="line241" />
+    <polygon
+       fill="#222222"
+       points="4090.375,1000.2461,4080.375,1004.2461,4090.375,1008.2461,4086.375,1004.2461"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon241" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="4381.8125"
+       x2="4068.375"
+       y1="761.0586"
+       y2="761.0586"
+       id="line242" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="4068.375"
+       x2="4068.375"
+       y1="761.0586"
+       y2="783.0586"
+       id="line243" />
+    <polygon
+       fill="#222222"
+       points="4064.375,773.0586,4068.375,783.0586,4072.375,773.0586,4068.375,777.0586"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon243" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="4531.8125"
+       x2="4815.25"
+       y1="761.0586"
+       y2="761.0586"
+       id="line244" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="4815.25"
+       x2="4815.25"
+       y1="761.0586"
+       y2="783.0586"
+       id="line245" />
+    <polygon
+       fill="#222222"
+       points="4811.25,773.0586,4815.25,783.0586,4819.25,773.0586,4815.25,777.0586"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon245" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="4068.375"
+       x2="4068.375"
+       y1="1016.2461"
+       y2="1034.2461"
+       id="line246" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="4068.375"
+       x2="4444.8125"
+       y1="1034.2461"
+       y2="1034.2461"
+       id="line247" />
+    <polygon
+       fill="#222222"
+       points="4434.8125,1030.2461,4444.8125,1034.2461,4434.8125,1038.2461,4438.8125,1034.2461"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon247" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="4815.25"
+       x2="4815.25"
+       y1="818.1523"
+       y2="1034.2461"
+       id="line248" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="4815.25"
+       x2="4468.8125"
+       y1="1034.2461"
+       y2="1034.2461"
+       id="line249" />
+    <polygon
+       fill="#222222"
+       points="4478.8125,1030.2461,4468.8125,1034.2461,4478.8125,1038.2461,4474.8125,1034.2461"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon249" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="2570.1172"
+       x2="857.1719"
+       y1="727.0586"
+       y2="727.0586"
+       id="line250" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="857.1719"
+       x2="857.1719"
+       y1="727.0586"
+       y2="749.0586"
+       id="line251" />
+    <polygon
+       fill="#222222"
+       points="853.1719,739.0586,857.1719,749.0586,861.1719,739.0586,857.1719,743.0586"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon251" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="2660.1172"
+       x2="4456.8125"
+       y1="727.0586"
+       y2="727.0586"
+       id="line252" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="4456.8125"
+       x2="4456.8125"
+       y1="727.0586"
+       y2="749.0586"
+       id="line253" />
+    <polygon
+       fill="#222222"
+       points="4452.8125,739.0586,4456.8125,749.0586,4460.8125,739.0586,4456.8125,743.0586"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon253" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="857.1719"
+       x2="857.1719"
+       y1="1302.2461"
+       y2="1320.2461"
+       id="line254" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="857.1719"
+       x2="2603.1172"
+       y1="1320.2461"
+       y2="1320.2461"
+       id="line255" />
+    <polygon
+       fill="#222222"
+       points="2593.1172,1316.2461,2603.1172,1320.2461,2593.1172,1324.2461,2597.1172,1320.2461"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon255" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="4456.8125"
+       x2="4456.8125"
+       y1="1046.2461"
+       y2="1320.2461"
+       id="line256" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="4456.8125"
+       x2="2627.1172"
+       y1="1320.2461"
+       y2="1320.2461"
+       id="line257" />
+    <polygon
+       fill="#222222"
+       points="2637.1172,1316.2461,2627.1172,1320.2461,2637.1172,1324.2461,2633.1172,1320.2461"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon257" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="1239.5586"
+       x2="57"
+       y1="693.0586"
+       y2="693.0586"
+       id="line258" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="57"
+       x2="57"
+       y1="693.0586"
+       y2="715.0586"
+       id="line259" />
+    <polygon
+       fill="#222222"
+       points="53,705.0586,57,715.0586,61,705.0586,57,709.0586"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon259" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="1332.5586"
+       x2="2615.1172"
+       y1="693.0586"
+       y2="693.0586"
+       id="line260" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="2615.1172"
+       x2="2615.1172"
+       y1="693.0586"
+       y2="715.0586"
+       id="line261" />
+    <polygon
+       fill="#222222"
+       points="2611.1172,705.0586,2615.1172,715.0586,2619.1172,705.0586,2615.1172,709.0586"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon261" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="2615.1172"
+       x2="2615.1172"
+       y1="1332.2461"
+       y2="1354.2461"
+       id="line262" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="2615.1172"
+       x2="3179.2793"
+       y1="1354.2461"
+       y2="1354.2461"
+       id="line263" />
+    <polygon
+       fill="#222222"
+       points="3169.2793,1350.2461,3179.2793,1354.2461,3169.2793,1358.2461,3173.2793,1354.2461"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon263" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="1286.0586"
+       x2="1286.0586"
+       y1="661.0586"
+       y2="681.0586"
+       id="line264" />
+    <polygon
+       fill="#222222"
+       points="1282.0586,671.0586,1286.0586,681.0586,1290.0586,671.0586,1286.0586,675.0586"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon264" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="3112.7793"
+       x2="1286.0586"
+       y1="603.9648"
+       y2="603.9648"
+       id="line265" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="1286.0586"
+       x2="1286.0586"
+       y1="603.9648"
+       y2="625.9648"
+       id="line266" />
+    <polygon
+       fill="#222222"
+       points="1282.0586,615.9648,1286.0586,625.9648,1290.0586,615.9648,1286.0586,619.9648"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon266" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="3269.7793"
+       x2="5068.75"
+       y1="603.9648"
+       y2="603.9648"
+       id="line267" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="5068.75"
+       x2="5068.75"
+       y1="603.9648"
+       y2="625.9648"
+       id="line268" />
+    <polygon
+       fill="#222222"
+       points="5064.75,615.9648,5068.75,625.9648,5072.75,615.9648,5068.75,619.9648"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon268" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="5068.75"
+       x2="5068.75"
+       y1="661.0586"
+       y2="1354.2461"
+       id="line269" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="5068.75"
+       x2="3203.2793"
+       y1="1354.2461"
+       y2="1354.2461"
+       id="line270" />
+    <polygon
+       fill="#222222"
+       points="3213.2793,1350.2461,3203.2793,1354.2461,3213.2793,1358.2461,3209.2793,1354.2461"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon270" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="3191.2793"
+       x2="3191.2793"
+       y1="571.9648"
+       y2="591.9648"
+       id="line271" />
+    <polygon
+       fill="#222222"
+       points="3187.2793,581.9648,3191.2793,591.9648,3195.2793,581.9648,3191.2793,585.9648"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon271" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="3191.2793"
+       x2="3191.2793"
+       y1="406.6836"
+       y2="426.6836"
+       id="line272" />
+    <polygon
+       fill="#222222"
+       points="3187.2793,416.6836,3191.2793,426.6836,3195.2793,416.6836,3191.2793,420.6836"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon272" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="3239.7793"
+       x2="5185.75"
+       y1="1398.2461"
+       y2="1398.2461"
+       id="line273" />
+    <polygon
+       fill="#222222"
+       points="5181.75,877.4648,5185.75,867.4648,5189.75,877.4648,5185.75,873.4648"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon273" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="5185.75"
+       x2="5185.75"
+       y1="394.6836"
+       y2="1398.2461"
+       id="line274" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="5185.75"
+       x2="3203.2793"
+       y1="394.6836"
+       y2="394.6836"
+       id="line275" />
+    <polygon
+       fill="#222222"
+       points="3213.2793,390.6836,3203.2793,394.6836,3213.2793,398.6836,3209.2793,394.6836"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon275" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="3191.2793"
+       x2="3191.2793"
+       y1="1366.2461"
+       y2="1386.2461"
+       id="line276" />
+    <polygon
+       fill="#222222"
+       points="3187.2793,1376.2461,3191.2793,1386.2461,3195.2793,1376.2461,3191.2793,1380.2461"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon276" />
+    <line
+       style="stroke:#222222;stroke-width:1.0;"
+       x1="3191.2793"
+       x2="3191.2793"
+       y1="1410.2461"
+       y2="1430.2461"
+       id="line277" />
+    <polygon
+       fill="#222222"
+       points="3187.2793,1420.2461,3191.2793,1430.2461,3195.2793,1420.2461,3191.2793,1424.2461"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="polygon277" />
+    <rect
+       fill="none"
+       height="168.4844"
+       id="_legend"
+       rx="7.5"
+       ry="7.5"
+       style="stroke:#000000;stroke-width:1.0;"
+       width="385"
+       x="4801.75"
+       y="1463.2461" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14"
+       lengthAdjust="spacing"
+       textLength="48"
+       x="4806.75"
+       y="1482.7793"
+       id="text277">Legend</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14"
+       lengthAdjust="spacing"
+       textLength="210"
+       x="4806.75"
+       y="1500.3887"
+       id="text278">- Start/End      : start / stop nodes</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14"
+       lengthAdjust="spacing"
+       textLength="375"
+       x="4806.75"
+       y="1517.998"
+       id="text279">- Decision       : diamond (yes/no labels on outgoing arrows)</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14"
+       lengthAdjust="spacing"
+       textLength="322"
+       x="4806.75"
+       y="1535.6074"
+       id="text280">- Action         : rounded rectangle (processing step)</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14"
+       lengthAdjust="spacing"
+       textLength="287"
+       x="4806.75"
+       y="1553.2168"
+       id="text281">- Delta s &lt;= B   : Angle &lt;= 45°  (align &amp; cross)</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14"
+       lengthAdjust="spacing"
+       textLength="332"
+       x="4806.75"
+       y="1570.8262"
+       id="text282">- Delta s &gt;  B   : Angle &gt; 45°  (reverse + rotate, retry)</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14"
+       lengthAdjust="spacing"
+       textLength="256"
+       x="4806.75"
+       y="1588.4355"
+       id="text283">- SS             : Sensor inputs (colors, hits)</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14"
+       lengthAdjust="spacing"
+       textLength="272"
+       x="4806.75"
+       y="1606.0449"
+       id="text284">- MDPS           : Odometry / wheel feedback</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14"
+       lengthAdjust="spacing"
+       textLength="273"
+       x="4806.75"
+       y="1623.6543"
+       id="text285">- CMD            : Control commands to MDPS</text>
+    <!--SRC=[lLZlRXf74Fz-Jp5IfGHKY2CtJXMeNHr_7AESSNGuJTilQBaRO9NbzhgxcD8at_CuVOO-If-aCtk0WG1stBI9b2nxi_FtDxCpwwHJ2Dtmf-PL5uwWrst2kT8pA8M9apVIpQ4bnSY8IJa8x3kPvOBMC139kv7HqonjQgKDl1rBXslVnVBm-m2WvuHn1Tqtpy8NJzl7jDbU7eMrpOOmgysJanFQ2OtHiyNPusDFeqsAPdDhIvjlXj_pt-3ZcaQPTkYr-PnuE1pWystEwRFa-Fc0M0IMrG-2MemYNJYgtydogOFIqEW9z7hm22vRhtlbUk2b63aQk-1Seaejb1AT9PYxgL3bMb05PZyr_QYoN3LNgnZ-_lG9th-zw5otAn2tMnLu6RVRtGeqeZTj_ZTillf8FCwbiUv2EkQoMZVNrZ7KOA2r8jghLFSdamf5257rSiIKJwtzYYiG2UjYxOIJEkkdEA9ZZVv0M5GoGtywxO-4AvP3RMR2fFsPp58zyrij790_4-ntwUIbJh4mfDEAIEjcIF8kmrzfsVwvS_sn4CVeqbc0MUeZ4mHo22L_zFJKKqFORK4Yb1mOhnSaUf8hT5W6DyOCIh-WBGUeB4AfgyiKlbeu4zAnF4XrXWJc2wrIwAGAw_JPEfspF3aC0eCv2iTdV50fWZcX0frbmjhI7EZ2aA23nMuaN38cBJXKHEuScWp4aFvRUASU41cR4MPpCYgh-a2295sZIhCIb-773Tq9v51hAc6j7CvXI0fD3S9WlfHXqNcM1LE20-G6BMPk1n_Yr2FxOAATDbvVl-ST-aFLEtwvwVt0YtNVBQLul87Er7od4837KAK_q8olUhsm4RKXwdJRq8Z3RlF2VrfHChihPjHS68Jf7fwaQ1U5gUPeSWvGCbN2rDS_isr7DsZOKTKpQ1fjxIt1jY4hbu4WUAs9PqX5K8HbdofiOim9NBMIdNSApqw0SeAmIAgb5ESDOfRJq6uCUaf8e7IFg1XGgAaU7X31WISuqn7A7UL4ty8fVB2KjrMm_UW3b7Ig9-ZC78I38QTrbJYMwrjSMFgImTbcpXwKpi2VKjaFQqpZ11qkhApl84HolCKw6AuG257x_1geGiQTbnVNK18pGU3bEdYh9dkjOBUi5c0dGYcEdM6hjiNiYk12VA7VAWmx5BoKYT5Lwv0oqMalxLR-5bGMudmLk8y2jQvUHKZS2Ad4eAWc_qg3RVcxfNDmerqGZk-4C8Cumk4zCVnm5D-5uy-ZzN34VW5c_oVK7iBjVP3x8EpkGk_11BeFWl_ZB5fT1T7TLy5wg1i4H49n-G5LgeZprwj3AnFY-vgmPeI_JyeFn-tN1QPlKUYq6nl4-rl3r_1lKs6mEisXXBHKyWy4J4T4lnUiXrLPBtBnPf5htgF8hHGB9mCvckgffQPlHCq3rlTHTgUaxygDL10c7lTpCQj3Z5KhkCdSVVgm8SJxJJOcGnGPaB0pED6MZIBvHsTEPbEajYwpCXljaR4Zj_Vlxwm4dsVbzcspyNlH4UypqTyCD7smg_pySR09NUiGtuPHHD5eNLt5Ezl3HOl6cL7qcqItRDZsnxmMAZdAW4SwfP0mh676cK3pWS_uEfnhnUChmtBJnRNE40PAKvkVSkA8F2UXBvxwUv4wRsAgbKmsSkd0lKnbQQLsTAVQ1nNd53-WzuCqFz3H-7kU-m9E5gu3tzLWbTZr1VU9eDGks5AkFnazgHHJRPKH3eRgMhd-9I3ReGob2_wUO-8uNug9XqQyWQx3AyGSKYDlA4sMgLeFTd6-NQzWl2cgrY8sj_cUwOdCoEra59cRZ35vv-tO60jXDfQKkHlJQ1baCShx7EQd49wYWiVmUkeewFHHPhxNchCTQV5YKe6CnXh610jW3cwUIvff0uKZtYaU2YB_WoPd_qvorAOFXOF0lpnGb5WOwKuX8weM9jBoGBoa8caJJOTASxH7cGQwuSa9Z2pgvaQQdIZu5OKmMOLYxhuD0lYN40g1eKY8RCI6vqOdQBb8aMJCorueTH1W-IPg-6EX9_NDpLz_0ZLK7jwFYigtVk8CDawSBG-OugA3RnStNQMuolWeZUCRY8KUbKogFv8VNNmO50sv5UvElIX-UzcWlreEJqSKIwHi6oAc_6J5xo-NhKtcN9YDLWo-2O7RSceoHtuhAE8K1Fy0]-->
+  </g>
+</svg>

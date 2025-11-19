@@ -1,0 +1,183 @@
+@startuml NAVCON_Test_Flow
+!theme plain
+
+title MARV NAVCON Testing Suite - Complete Flow Diagram\nSCS Protocol Communication Between Python Tester and SNC ESP32
+
+actor "Python Tester\n(SS & MDPS Emulator)" as Tester
+participant "SNC ESP32\n(Your NAVCON)" as SNC
+database "Serial Port\n19200 baud" as Serial
+
+== Phase 1: System Initialization ==
+
+note over Tester : Launch GUI Application\nSelect COM port & baud rate\nConnect to ESP32
+
+Tester -> Serial : **Open Serial Connection**\n19200 baud, 8N1
+note right : COM port selection via GUI
+
+Tester -> SNC : **Initial HUB Packet**\nControl: 0x00 (0-0-0)\nDAT1: 0x00, DAT0: 0x00, DEC: 0x00\n[IDLE|HUB|IST=0]
+note right : Start communication sequence
+
+alt SNC Ready Response
+    SNC -> Tester : **SNC Ready Signal**\nControl: 0x10 (0-1-0)\nDAT1: 0x01, DAT0: 0x32, DEC: 0x00\n[IDLE|SNC|IST=0 with status data]
+    note left : SNC acknowledges ready state
+else Timeout (10 seconds)
+    note over Tester : **ERROR**: No SNC response\nTest terminated
+    Tester -> Tester : Log timeout error & stop test
+end
+
+== Phase 2: Calibration Sequence ==
+
+note over Tester : Begin SS & MDPS Calibration\nSimulate HUB behavior
+
+Tester -> SNC : **SS Start Calibration**\nControl: 0x70 (1-3-0)\nDAT1: 0x00, DAT0: 0x00, DEC: 0x00\n[CAL|SS|IST=0]
+note right : SS enters calibration
+
+Tester -> SNC : **MDPS Start Calibration**\nControl: 0x60 (1-2-0)\nDAT1: 0x0A, DAT0: 0x0A, DEC: 0x00\n[CAL|MDPS|IST=0 with speed=10,10]
+note right : MDPS calibration with speeds
+
+Tester -> SNC : **MDPS Rotation Calibration**\nControl: 0x61 (1-2-1)\nDAT1: 0x5A, DAT0: 0x00, DEC: 0x00\n[CAL|MDPS|IST=1 with 90° rotation]
+note right : 90° calibration rotation
+
+note over Tester : Wait 2.0 seconds for calibration
+
+Tester -> SNC : **SS Calibration Complete**\nControl: 0x71 (1-3-1)\nDAT1: 0x00, DAT0: 0x00, DEC: 0x00\n[CAL|SS|IST=1]
+note right : SS calibration finished
+
+alt SNC Calibration Response
+    SNC -> Tester : **SNC Calibration Ack**\nControl: 0x50 (1-1-0)\nDAT1: 0x00, DAT0: 0x00, DEC: 0x00\n[CAL|SNC|IST=0]
+    note left : SNC acknowledges calibration
+
+    SNC -> Tester : **SNC MAZE Transition**\nControl: 0x91 (2-1-1)\nDAT1: 0x00, DAT0: 0x00, DEC: 0x00\n[MAZE|SNC|IST=1]
+    note left : SNC enters MAZE state
+
+    SNC -> Tester : **SNC MAZE State 2**\nControl: 0x92 (2-1-2)\nDAT1: 0x00, DAT0: 0x00, DEC: 0x00\n[MAZE|SNC|IST=2]
+    note left : MAZE state progression
+
+    SNC -> Tester : **🎯 NAVCON ACTIVE**\nControl: 0x93 (2-1-3)\nDAT1: 0x32, DAT0: 0x32, DEC: 0x00\n[MAZE|SNC|IST=3 with speeds 50,50]
+    note left : **CRITICAL**: IST=3 indicates\nNAVCON is now active!
+else Timeout (15 seconds)
+    note over Tester : **ERROR**: No MAZE transition\nTest failed
+    Tester -> Tester : Log calibration failure
+end
+
+== Phase 3: NAVCON Test Execution ==
+
+note over Tester : **Execute Rotation Test Scenarios**\nBased on client log patterns
+
+group Rotation Test 1/2 - GREEN on RIGHT
+    note over Tester : **Test Scenario**: Green line detection\nwith right-side rotation sequence
+
+    Tester -> SNC : **MDPS Rotation Command**\nControl: 0xA1 (2-2-1)\nDAT1: 0x5A, DAT0: 0x00, DEC: 0x00\n[MAZE|MDPS|IST=1 with 90° rotation]
+    note right : 90° rotation command
+
+    Tester -> SNC : **MDPS Stop Rotation**\nControl: 0xA2 (2-2-2)\nDAT1: 0x00, DAT0: 0x00, DEC: 0x00\n[MAZE|MDPS|IST=2]
+    note right : Stop rotation command
+
+    Tester -> SNC : **MDPS Forward Movement**\nControl: 0xA3 (2-2-3)\nDAT1: 0x32, DAT0: 0x32, DEC: 0x00\n[MAZE|MDPS|IST=3 with speeds 50,50]
+    note right : Forward at 50mm/s both wheels
+
+    Tester -> SNC : **MDPS Speed Adjustment**\nControl: 0xA4 (2-2-4)\nDAT1: 0x00, DAT0: 0x64, DEC: 0x00\n[MAZE|MDPS|IST=4 with speed adjustment]
+    note right : Adjust to 100mm/s
+
+    Tester -> SNC : **🟢 SS Green Line Detection**\nControl: 0xB1 (2-3-1)\nDAT1: 0x00, DAT0: 0x02, DEC: 0x00\n[MAZE|SS|IST=1 with COLOR=GREEN(2)]
+    note right : **KEY**: Green line detected\non sensor with color code 2
+
+    Tester -> SNC : **SS Sensor Update**\nControl: 0xB2 (2-3-2)\nDAT1: 0x00, DAT0: 0x00, DEC: 0x00\n[MAZE|SS|IST=2]
+    note right : Sensor array update
+
+    alt Expected NAVCON Response
+        SNC -> Tester : **🎯 NAVCON Navigation Response**\nControl: 0x91 (2-1-1)\nDAT1: rotation_angle_high, DAT0: rotation_angle_low, DEC: direction\n[MAZE|SNC|IST=1 with rotation request]
+        note left : **SUCCESS**: SNC requests rotation\nangle in decidegrees (angle*10)
+
+        SNC -> Tester : **NAVCON State Update**\nControl: 0x92 (2-1-2)\nDAT1: 0x00, DAT0: 0x00, DEC: 0x00\n[MAZE|SNC|IST=2]
+        note left : Navigation state progression
+
+        SNC -> Tester : **NAVCON Speed Command**\nControl: 0x93 (2-1-3)\nDAT1: vR_speed, DAT0: vL_speed, DEC: special_flags\n[MAZE|SNC|IST=3 with wheel speeds]
+        note left : **CRITICAL**: Speed commands for\npost-rotation movement
+    else No Response / Timeout
+        note over Tester : **TEST FAILURE**\nNo NAVCON response to green line
+    end
+end
+
+group Rotation Test 2/2 - GREEN on RIGHT
+    note over Tester : **Test Scenario**: Second rotation test\nwith different speed parameters
+
+    Tester -> SNC : **MDPS Rotation Command**\nControl: 0xA1 (2-2-1)\nDAT1: 0x5A, DAT0: 0x00, DEC: 0x00\n[MAZE|MDPS|IST=1 with 90° rotation]
+
+    Tester -> SNC : **MDPS Stop Rotation**\nControl: 0xA2 (2-2-2)\nDAT1: 0x00, DAT0: 0x00, DEC: 0x00\n[MAZE|MDPS|IST=2]
+
+    Tester -> SNC : **MDPS Complete Stop**\nControl: 0xA3 (2-2-3)\nDAT1: 0x00, DAT0: 0x00, DEC: 0x00\n[MAZE|MDPS|IST=3 with full stop]
+    note right : Complete stop command
+
+    Tester -> SNC : **MDPS Higher Speed**\nControl: 0xA4 (2-2-4)\nDAT1: 0x00, DAT0: 0x69, DEC: 0x00\n[MAZE|MDPS|IST=4 with 105mm/s]
+    note right : Higher speed test (105mm/s)
+
+    Tester -> SNC : **🟢 SS Green Line Detection**\nControl: 0xB1 (2-3-1)\nDAT1: 0x00, DAT0: 0x02, DEC: 0x00\n[MAZE|SS|IST=1 with COLOR=GREEN(2)]
+
+    Tester -> SNC : **SS Sensor Update**\nControl: 0xB2 (2-3-2)\nDAT1: 0x00, DAT0: 0x00, DEC: 0x00\n[MAZE|SS|IST=2]
+
+    alt Expected Enhanced Response
+        SNC -> Tester : **Enhanced NAVCON Response**\nControl: 0x93 (2-1-3)\nDAT1: 0x32, DAT0: 0x32, DEC: 0x01\n[MAZE|SNC|IST=3 with special flag]
+        note left : **ADVANCED**: Enhanced response\nwith special conditions (DEC=1)
+    else Failure Case from Client Log
+        SNC -> Tester : **❌ Incorrect Response**\nControl: 0x93 (2-1-3)\nDAT1: 0x32, DAT0: 0x32, DEC: 0x01\n[Wrong expected state]
+        note left : **ERROR**: From client log:\n"Incorrect TX found in MAZE -> SNC\n(Error: Expected FORWARD after STOP)"
+
+        note over Tester : **TEST TERMINATED**\nError detected - log failure
+    end
+end
+
+== Phase 4: Advanced Test Scenarios ==
+
+opt QTP3 Advanced Testing
+    note over Tester : **Extended NAVCON Testing**\nMultiple line colors & complex scenarios
+
+    group Blue/Black Line Testing
+        Tester -> SNC : **SS Blue Line Detection**\nControl: 0xB1 (2-3-1)\nDAT1: 0x00, DAT0: 0x03, DEC: 0x00\n[MAZE|SS|IST=1 with COLOR=BLUE(3)]
+
+        SNC -> Tester : **Expected 90° Rotation**\nControl: 0x91 (2-1-1)\nDAT1: 0x03, DAT0: 0x84, DEC: 0x02\n[MAZE|SNC|IST=1 with 900 decidegrees RIGHT]
+        note left : 90° right turn for blue line
+    end
+
+    group Red Line (End of Maze)
+        Tester -> SNC : **SS Red Line Detection**\nControl: 0xB1 (2-3-1)\nDAT1: 0x00, DAT0: 0x01, DEC: 0x00\n[MAZE|SS|IST=1 with COLOR=RED(1)]
+
+        SNC -> Tester : **End of Maze Response**\nControl: 0x00 (0-1-0)\nDAT1: 0x00, DAT0: 0x00, DEC: 0x00\n[IDLE|SNC|IST=0]
+        note left : Transition to IDLE after red line\n(maze completion)
+    end
+end
+
+== Phase 5: Test Completion & Analysis ==
+
+note over Tester : **Test Analysis & Reporting**
+
+Tester -> Tester : Calculate Statistics:\n• Packets sent/received\n• Success rate percentage\n• Response time analysis\n• Protocol compliance score
+
+note over Tester : **Generate Test Report**:\n• Timestamp log of all packets\n• NAVCON performance metrics\n• Error analysis and recommendations\n• Protocol violation summary
+
+alt Test Success
+    note over Tester : **✅ TEST PASSED**\nAll NAVCON functions verified\nProtocol compliance confirmed
+else Test Failure
+    note over Tester : **❌ TEST FAILED**\nLog specific failure points:\n• Missing responses\n• Protocol violations\n• Timing issues\n• Logic errors
+end
+
+Tester -> Serial : **Close Connection**
+note over Tester : Save detailed log file:\nnavcon_test_log_YYYYMMDD_HHMMSS.txt
+
+== Data Interpretation Guide ==
+
+note over Tester, SNC
+**SCS Packet Format**: Control | DAT1 | DAT0 | DEC
+**Control Byte**: (SYS<1:0> | SUB<1:0> | IST<3:0>)
+
+**System States**: 0=IDLE, 1=CAL, 2=MAZE, 3=SOS
+**Subsystems**: 0=HUB, 1=SNC, 2=MDPS, 3=SS
+**IST Values**: Internal state (0-15)
+
+**Color Codes**: 0=WHITE, 1=RED, 2=GREEN, 3=BLUE, 4=BLACK
+**Direction Codes**: 1=LEFT, 2=RIGHT
+**Speed Units**: mm/s
+**Angle Units**: decidegrees (angle * 10)
+end note
+
+@enduml

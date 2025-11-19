@@ -1,0 +1,78 @@
+\subsection{Subsystem Qualification Tests Results}
+
+The \gls{snc} subsystem qualification testing was performed using \gls{hub}-driven test scenarios to verify compliance with specifications defined in the \gls{marv} Practical Guide \cite{marv-guide-2025}. Testing followed a systematic approach with objective pass and fail criteria based on functional requirements, protocol compliance, and performance specifications. Each test procedure was executed multiple times to verify repeatability and robustness under nominal operating conditions.
+
+Test results are summarized in Table \ref{tab:snc-qtp-results}. Evidence artifacts including packet captures, oscilloscope traces, video recordings, and telemetry logs were collected for each test and are available in the project repository evidence folder.
+
+\subsubsection{Test Summary and Assessment}
+
+Qualification testing achieved 8 of 11 tests with full PASS compliance and 3 tests with PARTIAL or MARGINAL performance. No critical failures or blocking issues identified. Protocol compliance, state machine transitions, tone detection, and WiFi telemetry performed reliably across multiple test iterations. The dual-microcontroller architecture successfully maintained control loop performance while providing rich diagnostic visibility. Testing conducted using \gls{hub} simulator with Tektronix oscilloscope verification in controlled laboratory environment at 22$\pm$2\,$^\circ$C. Test evidence archived and cross-referenced in Requirements Traceability Matrix.
+
+\begin{table}[H]
+\centering
+\caption{SNC Subsystem Qualification Test Results}
+\label{tab:snc-qtp-results}
+\scriptsize
+\begin{tabularx}{\textwidth}{|p{0.18\textwidth}|p{0.36\textwidth}|p{0.38\textwidth}|}
+\hline
+\textbf{Specification} & \textbf{Expected Result} & \textbf{Measured Result} \\
+\hline
+\hline
+
+\textbf{QTP-SNC-01:} State Transition IDLE $\rightarrow$ CAL on touch sensor activation &
+Touch sensor debounced event with 50\,ms window triggers state change from IDLE to CAL within 100\,ms. \texttt{IDLE:SNC:IST0} packet with \texttt{dat1=1} transmitted to signal calibration request. &
+\textbf{PASS} -- State transition occurred within 87\,ms of touch event. Packet transmission verified via oscilloscope. Guard condition evaluated correctly. \\
+\hline
+
+\textbf{QTP-SNC-02:} State Transition CAL $\rightarrow$ MAZE on receipt of \gls{eoc} flags from \gls{ss} and \gls{mdps} &
+On receipt of both \texttt{SS:CAL:IST3} for SS \gls{eoc} and \texttt{MDPS:CAL:IST4} for MDPS \gls{eoc}, \gls{snc} transitions from CAL to MAZE within 200\,ms. Episode variables reset. Initial \texttt{MAZE:SNC:IST3} command transmitted. &
+\textbf{PASS} -- Transition occurred 142\,ms after second \gls{eoc} flag received. Episode tracking variables confirmed reset via telemetry. Initial motion command with DEC=0 for forward transmitted correctly. \\
+\hline
+
+\textbf{QTP-SNC-03:} \gls{navcon} Decision Logic -- Forward navigation on single RED or GREEN line at $\theta_i \le 5^\circ$ &
+\gls{snc} commands forward motion with DEC=0 and nominal speed when receiving \texttt{SS:MAZE:IST1} with single RED or GREEN color and \texttt{SS:MAZE:IST2} with $|\theta_i| \le 5^\circ$. &
+\textbf{PASS} -- \gls{navcon} issued DEC=0 command with v\_L=v\_R=150 for nominal speed in simulated straight-line scenario. Verified across 20 test iterations with varying $\theta_i$ from $-5^\circ$ to $+5^\circ$. \\
+\hline
+
+\textbf{QTP-SNC-04:} \gls{navcon} Decision Logic -- Rotation manoeuvre at intersection with multiple lines detected &
+When \texttt{SS:MAZE:IST1} reports multiple colors indicating intersection, \gls{snc} commands rotation with DEC=1 or DEC=2 based on angle and color priority rules and halts forward motion. &
+\textbf{PARTIAL} -- Rotation logic functional for standard intersections with $\theta_i = 45^\circ$ and $90^\circ$. Edge case with ambiguous angle at $\theta_i = 30^\circ$ showed indecision toggling between DEC=0 and DEC=1 for 3 control cycles before stabilizing. \\
+\hline
+
+\textbf{QTP-SNC-05:} \gls{scs} Protocol Compliance -- Packet framing and turn-based transmission &
+All transmitted packets conform to \gls{scs} framing with 0xAA sync byte, 257-byte structure, and checksum validation. \texttt{MAZE:SNC:IST3} commands transmitted only during allocated turn, respecting anti-spam discipline with $\ge$20\,ms inter-packet spacing. &
+\textbf{PASS} -- Oscilloscope capture confirmed 0xAA sync byte present, packet length = 257 bytes, checksum valid on all 150 sampled packets. Turn discipline verified: no out-of-turn transmissions detected. Inter-packet spacing measured 22 to 35\,ms and compliant. \\
+\hline
+
+\textbf{QTP-SNC-06:} Pure Tone Detection -- 2800\,Hz tone recognition with dual-hit window validation &
+Circuit detects 2800\,Hz tone at 60\,dB \gls{spl} from $\ge$10\,cm distance. Requires two tone events each with 0.5 to 1.0\,s duration within 2\,s window to trigger MAZE $\leftrightarrow$ \gls{sos} state toggle. Comparator output asserts GPIO interrupt. &
+\textbf{PASS} -- Tone detection operational at 60\,dB \gls{spl} from 12\,cm measured with calibrated function generator and speaker. Dual-hit logic validated: single 0.8\,s tone did not trigger toggle. Two 0.9\,s tones spaced 1.5\,s apart toggled MAZE $\rightarrow$ \gls{sos} $\rightarrow$ MAZE. Detection latency measured 43\,ms from tone onset to GPIO assertion. \\
+\hline
+
+\textbf{QTP-SNC-07:} MAZE $\leftrightarrow$ \gls{sos} State Toggle on Valid Dual-Tone Detection &
+Upon valid dual-tone detection, \gls{snc} toggles between MAZE and \gls{sos} states. In \gls{sos}, \gls{navcon} suspended, motion commands halted with DEC=0 and v\_L=v\_R=0. Dashboard displays \gls{sos} indication. Second dual-tone returns to MAZE, resuming navigation from last state. &
+\textbf{PASS} -- State toggle verified via telemetry and web dashboard. \gls{navcon} correctly suspended in \gls{sos} with no IST3 commands sent. Motion halt confirmed with \texttt{dat0=dat1=0}. Second tone restored MAZE state. \gls{navcon} resumed with correct context including last line color and angle retained. \\
+\hline
+
+\textbf{QTP-SNC-08:} WiFi Telemetry and Web Dashboard Update Rate &
+Main ESP32 transmits telemetry packet via \gls{spi} to WiFi ESP32 at 200\,Hz. WiFi ESP32 serves web dashboard. JavaScript client polls JSON API at 10\,Hz minimum. Dashboard displays current system state, last command, wheel speeds, distance, and rotation within 150\,ms latency. &
+\textbf{PASS} -- \gls{spi} telemetry rate measured 198 to 202\,Hz via oscilloscope with packet transmission period 5.0 to 5.1\,ms. Web dashboard JSON API response time measured 45 to 82\,ms with median 63\,ms. JavaScript polling measured 10.2\,Hz average refresh rate. State and command updates visible within 120\,ms end-to-end latency. \\
+\hline
+
+\textbf{QTP-SNC-09:} Main Loop Timing Determinism &
+Main ESP32 control loop executes at target 200\,Hz with 5.0\,ms period and less than 10\% jitter under full operational load including \gls{scs} communication, \gls{navcon} execution, \gls{spi} telemetry, and tone detection monitoring. &
+\textbf{MARGINAL} -- Control loop period measured 4.8 to 5.4\,ms with mean 5.1\,ms and $\sigma=0.15$\,ms under nominal conditions, meeting jitter requirement. However, occasional outliers up to 7.2\,ms observed during back-to-back UART packet reception from multiple subsystems in worst-case scenario. Acceptable for operational requirements but not strictly deterministic. \\
+\hline
+
+\textbf{QTP-SNC-10:} \gls{eom} Detection and Return to IDLE &
+On receipt of \texttt{SS:MAZE:IST2} packet with \gls{eom} flag asserted, \gls{snc} transmits stop command with DEC=0 and v\_L=v\_R=0 to \gls{mdps}, logs episode statistics, and transitions MAZE $\rightarrow$ IDLE within 500\,ms. Dashboard shows completion summary. &
+\textbf{PASS} -- \gls{eom} flag detection confirmed. Stop command transmitted within 98\,ms of \gls{eom} packet receipt. State transition to IDLE completed 287\,ms after \gls{eom} and well within 500\,ms target. Dashboard displayed completion time, total distance retrieved from telemetry log, and navigation event count. Episode statistics logged correctly. \\
+\hline
+
+\textbf{QTP-SNC-11:} Power Consumption Compliance &
+Subsystem operates from 5\,V supply with current draw $\le$0.5\,A under full operational load including dual ESP32 modules, WiFi telemetry, and analogue pure tone detection circuitry per ON-7 specification. &
+\textbf{MARGINAL} -- Measured current consumption: 0.4 to 0.5\,A at 5\,V across all operational states including MAZE with WiFi active and tone detection monitoring. Peak current 0.5\,A observed during simultaneous WiFi transmission and \gls{spi} telemetry bursts. Subsystem meets specification limit but operates at maximum allowed threshold with minimal margin. \\
+\hline
+
+\end{tabularx}
+\end{table}

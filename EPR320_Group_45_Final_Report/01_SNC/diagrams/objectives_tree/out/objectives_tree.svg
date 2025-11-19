@@ -1,0 +1,643 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   contentStyleType="text/css"
+   height="356px"
+   preserveAspectRatio="none"
+   style="width:789px;height:356px;background:#FFFFFF;"
+   version="1.1"
+   viewBox="0 0 789 356"
+   width="789px"
+   zoomAndPan="magnify"
+   id="svg32"
+   sodipodi:docname="objectives_tree.svg"
+   inkscape:export-filename="objectives_tree.pdf"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview32"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="2.241573"
+     inkscape:cx="394.36591"
+     inkscape:cy="35.243108"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="2391"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg32" />
+  <defs
+     id="defs1" />
+  <g
+     id="g32">
+    <line
+       style="stroke:#181818;stroke-width:1.5;"
+       x1="73.0234"
+       x2="73.0234"
+       y1="80.1875"
+       y2="100.1875"
+       id="line1" />
+    <rect
+       fill="#F1F1F1"
+       height="50.1875"
+       style="stroke:#181818;stroke-width:1.5;"
+       width="126.0469"
+       x="10"
+       y="100.1875"
+       id="rect1" />
+    <path
+       d="M21,114.2813 L21,121.2813 L28,121.2813 L28,117.6913 L27,118.6913 L27,120.2813 L22,120.2813 L22,115.2813 L25.59,115.2813 L26.59,114.2813 L21,114.2813 M28,114.2813 L25,117.2813 L24,116.2813 L23,117.2813 L25,119.2813 L29,115.2813 L28,114.2813 "
+       fill="#000000"
+       style="stroke:;stroke-width:0.0;stroke-dasharray:;"
+       id="path1" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="92.7129"
+       x="33.334"
+       y="122.6445"
+       id="text1">O1: State Control</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="100.7051"
+       x="20"
+       y="137.7383"
+       id="text2">&amp; Communications</text>
+    <line
+       style="stroke:#181818;stroke-width:1.5;"
+       x1="73.0234"
+       x2="83.0234"
+       y1="190.4688"
+       y2="190.4688"
+       id="line2" />
+    <rect
+       fill="#F1F1F1"
+       height="50.1875"
+       style="stroke:#181818;stroke-width:1.5;"
+       width="96.7109"
+       x="83.0234"
+       y="165.375"
+       id="rect2" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="76.7109"
+       x="93.0234"
+       y="187.832"
+       id="text3">State Machine</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="28.6875"
+       x="93.0234"
+       y="202.9258"
+       id="text4">Logic</text>
+    <line
+       style="stroke:#181818;stroke-width:1.5;"
+       x1="73.0234"
+       x2="83.0234"
+       y1="255.6563"
+       y2="255.6563"
+       id="line4" />
+    <rect
+       fill="#F1F1F1"
+       height="50.1875"
+       style="stroke:#181818;stroke-width:1.5;"
+       width="92.0293"
+       x="83.0234"
+       y="230.5625"
+       id="rect4" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="72.0293"
+       x="93.0234"
+       y="253.0195"
+       id="text5">SCS Protocol</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="47.3672"
+       x="93.0234"
+       y="268.1133"
+       id="text6">Handling</text>
+    <line
+       style="stroke:#181818;stroke-width:1.5;"
+       x1="73.0234"
+       x2="83.0234"
+       y1="320.8438"
+       y2="320.8438"
+       id="line6" />
+    <rect
+       fill="#F1F1F1"
+       height="50.1875"
+       style="stroke:#181818;stroke-width:1.5;"
+       width="72.6875"
+       x="83.0234"
+       y="295.75"
+       id="rect6" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="52.6875"
+       x="93.0234"
+       y="318.207"
+       id="text7">Transition</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="39.3516"
+       x="93.0234"
+       y="333.3008"
+       id="text8">Guards</text>
+    <line
+       style="stroke:#181818;stroke-width:1.5;"
+       x1="73.0234"
+       x2="73.0234"
+       y1="150.375"
+       y2="320.8438"
+       id="line8" />
+    <line
+       style="stroke:#181818;stroke-width:1.5;"
+       x1="256.0898"
+       x2="256.0898"
+       y1="80.1875"
+       y2="100.1875"
+       id="line9" />
+    <rect
+       fill="#F1F1F1"
+       height="50.1875"
+       style="stroke:#181818;stroke-width:1.5;"
+       width="112.7109"
+       x="199.7344"
+       y="100.1875"
+       id="rect9" />
+    <path
+       d="M217.7644,114.2813 L214.7344,117.2813 L213.7344,116.2813 L210.7344,119.3113 L211.7344,120.3113 L213.7344,118.2813 L214.7344,119.2813 L218.7344,115.2813 L217.7644,114.2813 M210.7344,121.2813 L210.7344,122.2813 L218.7344,122.2813 L218.7344,121.2813 L210.7344,121.2813 "
+       fill="#000000"
+       style="stroke:;stroke-width:0.0;stroke-dasharray:;"
+       id="path9" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="79.377"
+       x="223.0684"
+       y="122.6445"
+       id="text9">O2: Navigation</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="38.6836"
+       x="209.7344"
+       y="137.7383"
+       id="text10">Control</text>
+    <line
+       style="stroke:#181818;stroke-width:1.5;"
+       x1="256.0898"
+       x2="266.0898"
+       y1="190.4688"
+       y2="190.4688"
+       id="line10" />
+    <rect
+       fill="#F1F1F1"
+       height="50.1875"
+       style="stroke:#181818;stroke-width:1.5;"
+       width="86.7031"
+       x="266.0898"
+       y="165.375"
+       id="rect10" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="66.7031"
+       x="276.0898"
+       y="187.832"
+       id="text11">Sensor Data</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="59.3613"
+       x="276.0898"
+       y="202.9258"
+       id="text12">Processing</text>
+    <line
+       style="stroke:#181818;stroke-width:1.5;"
+       x1="256.0898"
+       x2="266.0898"
+       y1="255.6563"
+       y2="255.6563"
+       id="line12" />
+    <rect
+       fill="#F1F1F1"
+       height="50.1875"
+       style="stroke:#181818;stroke-width:1.5;"
+       width="120.6934"
+       x="266.0898"
+       y="230.5625"
+       id="rect12" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="100.6934"
+       x="276.0898"
+       y="253.0195"
+       id="text13">NAVCON Decision</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="28.6875"
+       x="276.0898"
+       y="268.1133"
+       id="text14">Logic</text>
+    <line
+       style="stroke:#181818;stroke-width:1.5;"
+       x1="256.0898"
+       x2="266.0898"
+       y1="320.8438"
+       y2="320.8438"
+       id="line14" />
+    <rect
+       fill="#F1F1F1"
+       height="50.1875"
+       style="stroke:#181818;stroke-width:1.5;"
+       width="114.7051"
+       x="266.0898"
+       y="295.75"
+       id="rect14" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="94.7051"
+       x="276.0898"
+       y="318.207"
+       id="text15">Motion Command</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="59.373"
+       x="276.0898"
+       y="333.3008"
+       id="text16">Generation</text>
+    <line
+       style="stroke:#181818;stroke-width:1.5;"
+       x1="256.0898"
+       x2="256.0898"
+       y1="150.375"
+       y2="320.8438"
+       id="line16" />
+    <line
+       style="stroke:#181818;stroke-width:1.5;"
+       x1="451.7979"
+       x2="451.7979"
+       y1="80.1875"
+       y2="100.1875"
+       id="line17" />
+    <rect
+       fill="#F1F1F1"
+       height="50.1875"
+       style="stroke:#181818;stroke-width:1.5;"
+       width="90.0293"
+       x="406.7832"
+       y="100.1875"
+       id="rect17" />
+    <path
+       d="M420.8732,114.2813 C420.8132,114.2813 420.7732,114.3213 420.7432,114.3713 L417.8032,121.1813 C417.7832,121.2313 417.7732,121.3113 417.7732,121.3713 L417.7732,122.1813 C417.7732,122.2313 417.8132,122.2713 417.8632,122.2713 L424.6732,122.2713 C424.7232,122.2713 424.7632,122.2313 424.7632,122.1813 L424.7632,121.3713 C424.7632,121.3213 424.7532,121.2313 424.7332,121.1813 L421.7932,114.3713 C421.7732,114.3213 421.7232,114.2813 421.6632,114.2813 L420.8532,114.2813 M420.7832,117.2813 L421.7832,117.2813 L421.7832,119.2813 L420.7832,119.2813 L420.7832,117.2813 M420.7832,120.2813 L421.7832,120.2813 L421.7832,121.2813 L420.7832,121.2813 L420.7832,120.2813 "
+       fill="#000000"
+       style="stroke:;stroke-width:0.0;stroke-dasharray:;"
+       id="path17" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="56.6953"
+       x="430.1172"
+       y="122.6445"
+       id="text17">O3: Safety</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="33.334"
+       x="416.7832"
+       y="137.7383"
+       id="text18">&amp; HMI</text>
+    <line
+       style="stroke:#181818;stroke-width:1.5;"
+       x1="451.7979"
+       x2="461.7979"
+       y1="190.4688"
+       y2="190.4688"
+       id="line18" />
+    <rect
+       fill="#F1F1F1"
+       height="50.1875"
+       style="stroke:#181818;stroke-width:1.5;"
+       width="126.7168"
+       x="461.7979"
+       y="165.375"
+       id="rect18" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="56.6953"
+       x="471.7979"
+       y="187.832"
+       id="text19">Pure-Tone</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="106.7168"
+       x="471.7979"
+       y="202.9258"
+       id="text20">Detection (2800 Hz)</text>
+    <line
+       style="stroke:#181818;stroke-width:1.5;"
+       x1="451.7979"
+       x2="461.7979"
+       y1="255.6563"
+       y2="255.6563"
+       id="line20" />
+    <rect
+       fill="#F1F1F1"
+       height="50.1875"
+       style="stroke:#181818;stroke-width:1.5;"
+       width="118.707"
+       x="461.7979"
+       y="230.5625"
+       id="rect20" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="98.707"
+       x="471.7979"
+       y="253.0195"
+       id="text21">Diagnostic Display</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="90.0234"
+       x="471.7979"
+       y="268.1133"
+       id="text22">(PEC Compliant)</text>
+    <line
+       style="stroke:#181818;stroke-width:1.5;"
+       x1="451.7979"
+       x2="461.7979"
+       y1="320.8438"
+       y2="320.8438"
+       id="line22" />
+    <rect
+       fill="#F1F1F1"
+       height="50.1875"
+       style="stroke:#181818;stroke-width:1.5;"
+       width="67.3555"
+       x="461.7979"
+       y="295.75"
+       id="rect22" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="47.3555"
+       x="471.7979"
+       y="318.207"
+       id="text23">Operator</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="43.3418"
+       x="471.7979"
+       y="333.3008"
+       id="text24">Visibility</text>
+    <line
+       style="stroke:#181818;stroke-width:1.5;"
+       x1="451.7979"
+       x2="451.7979"
+       y1="150.375"
+       y2="320.8438"
+       id="line24" />
+    <line
+       style="stroke:#181818;stroke-width:1.5;"
+       x1="663.5283"
+       x2="663.5283"
+       y1="80.1875"
+       y2="100.1875"
+       id="line25" />
+    <rect
+       fill="#F1F1F1"
+       height="50.1875"
+       style="stroke:#181818;stroke-width:1.5;"
+       width="110.0273"
+       x="608.5146"
+       y="100.1875"
+       id="rect25" />
+    <path
+       d="M625.9246,115.2813 L625.2346,116.0013 L622.4546,118.7813 L621.6446,118.0013 L620.9246,117.2813 L619.5146,118.6913 L620.2346,119.4113 L621.7346,120.9113 L622.4246,121.6313 L623.1446,120.9113 L626.6446,117.4113 L627.3646,116.6913 L625.9246,115.2813 "
+       fill="#000000"
+       style="stroke:;stroke-width:0.0;stroke-dasharray:;"
+       id="path25" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="76.6934"
+       x="631.8486"
+       y="122.6445"
+       id="text25">O4: Testability</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="70.6992"
+       x="618.5146"
+       y="137.7383"
+       id="text26">&amp; Verification</text>
+    <line
+       style="stroke:#181818;stroke-width:1.5;"
+       x1="663.5283"
+       x2="673.5283"
+       y1="182.9219"
+       y2="182.9219"
+       id="line26" />
+    <rect
+       fill="#F1F1F1"
+       height="35.0938"
+       style="stroke:#181818;stroke-width:1.5;"
+       width="90.0313"
+       x="673.5283"
+       y="165.375"
+       id="rect26" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="70.0313"
+       x="683.5283"
+       y="187.832"
+       id="text27">QTP Support</text>
+    <line
+       style="stroke:#181818;stroke-width:1.5;"
+       x1="663.5283"
+       x2="673.5283"
+       y1="233.0156"
+       y2="233.0156"
+       id="line27" />
+    <rect
+       fill="#F1F1F1"
+       height="35.0938"
+       style="stroke:#181818;stroke-width:1.5;"
+       width="105.377"
+       x="673.5283"
+       y="215.4688"
+       id="rect27" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="85.377"
+       x="683.5283"
+       y="237.9258"
+       id="text28">HUB Integration</text>
+    <line
+       style="stroke:#181818;stroke-width:1.5;"
+       x1="663.5283"
+       x2="673.5283"
+       y1="290.6563"
+       y2="290.6563"
+       id="line28" />
+    <rect
+       fill="#F1F1F1"
+       height="50.1875"
+       style="stroke:#181818;stroke-width:1.5;"
+       width="94.7012"
+       x="673.5283"
+       y="265.5625"
+       id="rect28" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="74.7012"
+       x="683.5283"
+       y="288.0195"
+       id="text29">Requirements</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="61.3535"
+       x="683.5283"
+       y="303.1133"
+       id="text30">Traceability</text>
+    <line
+       style="stroke:#181818;stroke-width:1.5;"
+       x1="663.5283"
+       x2="663.5283"
+       y1="150.375"
+       y2="290.6563"
+       id="line30" />
+    <line
+       style="stroke:#181818;stroke-width:1.5;"
+       x1="73.0234"
+       x2="663.5283"
+       y1="80.1875"
+       y2="80.1875"
+       id="line31" />
+    <rect
+       fill="#F1F1F1"
+       height="50.1875"
+       style="stroke:#181818;stroke-width:1.5;"
+       width="108.0254"
+       x="314.2632"
+       y="10"
+       id="rect31" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="88.0254"
+       x="324.2632"
+       y="32.457"
+       id="text31">SNC Subsystem</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="12"
+       lengthAdjust="spacing"
+       textLength="56.0215"
+       x="324.2632"
+       y="47.5508"
+       id="text32">Objectives</text>
+    <line
+       style="stroke:#181818;stroke-width:1.5;"
+       x1="368.2759"
+       x2="368.2759"
+       y1="60.1875"
+       y2="80.1875"
+       id="line32" />
+    <!--SRC=[HLDTJ-Cm47pthzWdL2g1ce8E59rEq1GeNB-Eb3v5EhdEalf8rZdRAIhe_lkjam9vMk_EpiokdIldfVMl6mTcymULrpjqlxr55Ev5Kosjh82hOosB4BuBu6yarKjXJKDvOafZuNMhFNOLOtEqNNPJCgpDtXhogNv3YABFyrnM2DTMorBy4w8FwJo1jDculVDOPRJuT2FwVVX-vALx-G6BA8RKIu-GC8KrPKP775PLGrf9hmq5UF-0cKcrrOGPJKsXLLT8KbXQuuqAlHD9UQcfQ4ihAydfm97HNIDjVb3ckUijImzZcCkTBcG7EHZeM94S3poMNcR4z0gT-w2TNw-JnHp6gBHh6x_Cp4oWQlsp4LP5GjlITyglqXBJiFOPZosVqU_3l9FPVTk-R2oUh4mOS8m-R8l9UiFBmG0cRySj95mR6UUruj3LfMI2tl8c2PfrgINv3hUeWx2n6QtPvKQNskyx3sgBAYp-F8OLyblfQi766gr-Fcoz9VcrMl8DrhMnlZrFdaPmJnuB-uLvnB-DjbWXUPSHhrpXWLA8AwISdveGovADFSsci4CRTWRHwN0mF3-zwANIyx9h65n0T1P7bt5q0Ubrke9GFnQzk-KKd6ciGiYryrPlcY1zB1xaJi9ZGrvN68TnwM7yyoC1DxJJrb1m9HxMio_0j_EJaGwIbgt0UYR6-2oRqdE7CZdVJGnFgzkJIp6LL3IoO6uaaV2VuUq-XhlHVm00]-->
+  </g>
+</svg>

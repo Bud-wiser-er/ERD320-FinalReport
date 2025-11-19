@@ -1,0 +1,53 @@
+\documentclass{article}
+\usepackage[margin=0.5in, paperwidth=11in, paperheight=4in]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, fit, backgrounds}
+\pagestyle{empty}
+
+\begin{document}
+\centering
+
+\tikzset{
+    block/.style={rectangle, draw, fill=blue!20, text width=3.5em, text centered, minimum height=2.5em, font=\small},
+    decision/.style={diamond, draw, fill=orange!20, text width=3em, text centered, inner sep=0pt, font=\scriptsize},
+    arrow/.style={-{Stealth[length=2mm]}, thick},
+    label/.style={font=\scriptsize\itshape, text width=3.5em, align=center}
+}
+
+\begin{tikzpicture}[node distance=1.2cm, auto]
+
+% Analog Chain
+\node[block] (mic) {2800Hz\\Tone};
+\node[block, right=of mic] (preamp) {Mic +\\Preamp};
+\node[block, right=of preamp] (filter) {BPF\\2800Hz};
+\node[block, right=of filter] (envelope) {Envelope\\Detector};
+
+% Digital Validation
+\node[block, right=of envelope] (adc) {ESP32\\ADC};
+\node[decision, right=of adc] (threshold) {V$\geq$2.8V?};
+\node[decision, right=1.5cm of threshold] (duration) {500-\\1000ms?};
+\node[decision, right=1.5cm of duration] (second) {Within\\2s?};
+\node[block, right=of second, fill=green!30] (detected) {SOS\\Trigger};
+
+% Arrows
+\draw[arrow] (mic) -- (preamp);
+\draw[arrow] (preamp) -- (filter);
+\draw[arrow] (filter) -- (envelope);
+\draw[arrow] (envelope) -- (adc);
+\draw[arrow] (adc) -- (threshold);
+\draw[arrow] (threshold) -- node[above] {yes} (duration);
+\draw[arrow] (duration) -- node[above] {yes} (second);
+\draw[arrow] (second) -- node[above] {yes} (detected);
+
+% Reject paths
+\draw[arrow, dashed] (threshold.south) -- ++(0,-0.8) -| node[near start, below] {\tiny no} (mic.south);
+\draw[arrow, dashed] (duration.south) -- ++(0,-0.8) -| node[near start, below] {\tiny no} (mic.south);
+\draw[arrow, dashed] (second.south) -- ++(0,-1.2) -| node[near start, below] {\tiny no} (threshold.south);
+
+% Section labels
+\node[above=0.3cm of preamp, font=\small\bfseries] {Analog Signal Chain};
+\node[above=0.3cm of second, font=\small\bfseries] {Digital Validation};
+
+\end{tikzpicture}
+
+\end{document}

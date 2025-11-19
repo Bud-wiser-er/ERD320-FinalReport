@@ -1,0 +1,128 @@
+\subsection{Subsystem Engineering Design}
+% \textit{- Refer to Kossiakoff, Chapter 13, 15 and 16\\
+% -	In Section 2.8, attach a one-page excerpt from your handwritten lab book as an example for each heading in this section (eight pages in total)}
+
+\subsubsection{Constraints and trade-offs}
+
+
+\subsubsubsection{Design Constraints}
+Power supply is confined to 0V to 5V with 1V margin.
+\\
+Shape, the subsystem needs to be a rectangle with a much larger length than width to ensure integration at the front of the Marv as the sensor subsystem.
+\\
+Size, the length must be roughly equal to the wheel base of the Marv, and the width must be short enough for the subsystem to be mounted at the front while keeping the Marv small enough to turn inside the maze with ample room.
+% Write about design constraints here
+
+\subsubsubsection{Trade-offs}
+The speed of photodiodes vs the reduced complexity of the phototransistors. The phototransistor is its own amplifier, but has an inherently high output impedance, which reduces the reliable sample time of an ADC, while the photodiodes can be made to sample faster since the amplifier can be changed with much added complexity. Since size is a constraint, the phototransistor is chosen to reduce complexity in the physical circuit.
+
+% Write about trade-offs here
+
+\subsubsection{Tools and Methods}
+
+\subsubsubsection{Engineering tools}
+Osciliscope, used to monitor the reliability of the power supply, mapping out components for which no reliable datasheets could be found, and testing input/output signals during the developmental process.
+\\
+LtSpice, a simulation tool used to simulate complex circuits to test calculated values for components and confirm the function of designed circuits before physical testing is done.
+\\
+Python script, used to test soft functions like calculations in a code-friendly environment before implementing said functions in an embedded environment.
+\\
+SolidEdge, a CAD software to design physical hardware to be 3D printed for the subsystem.
+
+% Write about engineering tools here
+
+\subsubsubsection{Engineering methods}
+
+An agile prototyping approach is followed for any CAD designs for 3D printing. The material is cheap and there is no labour involved, meaning that multiple iterations can be implemented and tested in a short time at low developmental cost.
+\\
+A waterfall approach is followed for any circuitry, such as the real-time display, since the design and implementation of circuitry can be more expensive physically and in terms of labour. A more systematic approach is required. Requirements for the circuit are considered when using relevant literature like textbooks and datasheets, to design an initial concept. After this, a detailed design is achieved through simulations like LTspice to confirm the function. Implementation follows on a breadboard and is tested before being implemented as a prototype and tested again.
+\\
+A more agile approach is followed for soft functions, like angle calculation, since this is the cheapest part of development in terms of physical cost. After an initial concept is established, multiple iterations of simulation and testing in the Python script environment.
+
+% Write about engineering methods here
+
+\subsubsection{Selected design details}
+
+Sensor casing. This will be the only 3D printed element presented. It is necessary to protect the sensor array from the disturbance caused by a change in ambient light, as well as to maintain constant orientation of radiating LEDs and opto-coupled phototransistors to minimize disturbances.
+\\
+Circuit elements included will be the following:
+\\
+1. LED Array for the sensor array. The LED Array will be 3 RGB(red, green, and blue) LEDs that flash light down on the maze to be reflected.
+\\
+2. The phototransistor array. This will be opto-coupled with the LED array to record the reflected light from the maze to identify the colour currently being sensed.
+\\
+3. Real-time display. This will be implemented with an array of 3 RGB LEDs to interface the colour currently being detected by each sensor to the user.
+\\
+Software elements included will be the following:
+\\
+1. Data packet interpretation/generation. This is necessary to integrate with the communication protocol provided in the guide.  
+\\
+2. Calibration. This is a necessary algorithm to provide a dynamic and at all times accurate set of data to test and identify the light being reflected back from the maze. 
+\\
+3. Colour detection. This algorithm will use afore afore-mentioned acquired calibration data to identify the colour currently being seen on the maze to relay usable data to other functions like angle detection and data packet generation.
+\\
+4. Incident angle detection. This algorithm is necessary to calculate the angle of incidence of the Marv to compensate for small errors that can disorient the Marv.
+\\
+
+\subsubsubsection{Statements of requirements}
+\textit{Briefly state the high-level requirements of your individually designed circuits and / or code segments.}
+
+
+% Write your requirements here
+
+\subsubsubsection{Development}
+\textit{-	Demonstrate top-down definition with bottom-up implementation (or some other approach commensurate with your selected design approach) of your selected detail designs, motivated by flow charts, design equations, or some other guiding input. }
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.05\textwidth]{02_SS/figures/sensor_casing_front_veiw.png}
+\caption{Pure Tone Detection Flow: Analog Signal Chain and Digital Validation}
+\label{fig:pure-tone-detection-flow}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.05\textwidth]{02_SS/figures/sensor_casing_3d_veiw.png}
+\caption{Pure Tone Detection Flow: Analog Signal Chain and Digital Validation}
+\label{fig:pure-tone-detection-flow}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.05\textwidth]{02_SS/figures/circuit_simulations.png}
+\caption{Pure Tone Detection Flow: Analog Signal Chain and Digital Validation}
+\label{fig:pure-tone-detection-flow}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.05\textwidth]{02_SS/figures/sensor_led_array.png}
+\caption{Pure Tone Detection Flow: Analog Signal Chain and Digital Validation}
+\label{fig:pure-tone-detection-flow}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.05\textwidth]{02_SS/figures/sensor_opto_couple.png}
+\caption{Pure Tone Detection Flow: Analog Signal Chain and Digital Validation}
+\label{fig:pure-tone-detection-flow}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.05\textwidth]{02_SS/figures/display_led_array.png}
+\caption{Pure Tone Detection Flow: Analog Signal Chain and Digital Validation}
+\label{fig:pure-tone-detection-flow}
+\end{figure}
+
+% Write about development here
+
+\subsubsubsection{Simulations}
+\textit{-	Where appropriate, demonstrate circuit simulations, test bench operation, or some other form of computer verification of operation prior to deployment.}
+
+% Add simulations here
+
+\subsubsubsection{Approach to coding and testing}
+\textit{-	Describe your approach to microcontroller coding and code testing, with selected examples.}
+
+% Write about coding and testing here

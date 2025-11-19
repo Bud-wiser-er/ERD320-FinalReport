@@ -1,0 +1,5 @@
+\subsection{Introduction}
+
+The \gls{marv} is an autonomous mobile robot system designed for maze navigation and emergency signaling. The system integrates three subsystems: \gls{snc} for supervisory control and decision logic, \gls{ss} for environmental sensing and line detection, and \gls{mdps} for motion control and actuation. The robot operates through four primary states addressing calibration, autonomous navigation, and operator safety override requirements.
+
+The \gls{marv} executes a prescribed operational sequence beginning with system initialization in IDLE state, followed by sensor and actuator calibration in CAL state, autonomous maze traversal in MAZE state, and emergency halt capability via \gls{sos} state triggered by acoustic tone detection. Communication between subsystems employs the \gls{scs} protocol over UART at 19200 baud enabling coordinated operation. The complete system addresses requirements for line-following navigation, obstacle avoidance, and human-machine interaction as specified in the \gls{marv} Practical Guide \cite{marv-guide-2025}.

@@ -1,0 +1,19 @@
+\subsection{System Concept Definition}
+
+The \gls{marv} system implements a three-subsystem architecture with hierarchical control and distributed sensing. Figure~\ref{fig:system-functional} presents the system functional block diagram showing subsystem responsibilities and data flow. Figure~\ref{fig:system-architecture} presents the system architectural definition showing hardware components and communication interfaces.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{00_FullSystem/full_system_function_diagram.png}
+\caption{MARV System Functional Block Diagram}
+\label{fig:system-functional}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{00_FullSystem/full_system_architecural_duagram.png}
+\caption{MARV System Architectural Definition}
+\label{fig:system-architecture}
+\end{figure}
+
+The \gls{snc} subsystem executes supervisory control including state machine coordination, \gls{navcon} decision logic, and \gls{scs} protocol management. The \gls{ss} subsystem provides environmental sensing with camera-based line detection, color classification, and angle measurement. The \gls{mdps} subsystem implements motion control with differential drive kinematics, wheel odometry, and maneuver execution. Communication employs \gls{scs} protocol over UART with turn-based packet exchange enabling coordinated multi-subsystem operation.

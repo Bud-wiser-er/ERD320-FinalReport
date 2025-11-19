@@ -1,0 +1,97 @@
+@startuml architecture_main_esp32
+
+skinparam backgroundColor #FFFFFF
+skinparam componentStyle rectangle
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 10
+skinparam rectangleBorderColor #333333
+
+title Main ESP32 Functional Architecture (Control Processor)
+
+rectangle "Main ESP32 - Five Layer Architecture" #E6E6FA {
+
+  rectangle "Layer 5: Supervision & Diagnostics" as L5 #FFE4B5 {
+    component [Timing Budget\nMonitor] as TBM
+    component [Watchdog\nTimers] as WDT
+    component [Episode Data\nLogger] as EDL
+    component [QTP Test\nHooks] as QTP
+  }
+
+  rectangle "Layer 4: Touch/Tone Input" as L4 #E0FFE0 {
+    component [Touch Input\nHandler] as TIH
+    component [Dual-Tone\nDetector\n(2800 Hz)] as DTD
+  }
+
+  rectangle "Layer 3: Communication Protocol" as L3 #FFE0F0 {
+    component [SCS Frame\nEncoder] as ENC
+    component [SCS Frame\nDecoder] as DEC
+    component [SPI Telemetry\nEncoder] as SPIENC
+    component [Timing\nDiscipline] as TD
+  }
+
+  rectangle "Layer 2: Navigation Decision (NAVCON)" as L2 #FFF8DC {
+    component [Color Rule\nEngine] as CRE
+    component [Angle Rule\nEngine] as ARE
+    component [Motion\nPrimitive Gen] as MPG
+    component [Kinematic\nFeedback Proc] as KFP
+  }
+
+  rectangle "Layer 1: State Management Core" as L1 #E6E6FA {
+    component [FSM Controller\n(IDLE/CAL/MAZE/SOS)] as FSM
+    component [Guard\nEvaluator] as GE
+    component [Entry/Exit\nActions] as EA
+  }
+}
+
+' Layer interactions
+DTD --> GE : Tone\nDetected
+TIH --> GE : Touch\nEvent
+GE --> FSM : Guard\nEvaluation
+FSM --> L2 : Enable/Suspend\nNAVCON
+DEC --> L2 : Sensor\nData
+L2 --> ENC : Motion\nCommands
+FSM --> EDL : State\nTransitions
+TBM --> L5 : Timing\nData
+WDT --> FSM : Timeout\nEvents
+SPIENC --> L5 : Telemetry\nPackets
+
+note right of L5
+  **Layer 5 Functions:**
+  • Timing budget monitoring
+  • Watchdog timers (SS/MDPS)
+  • Episode state logging
+  • QTP test hook integration
+end note
+
+note right of L4
+  **Layer 4 Functions:**
+  • Touch sensor debouncing
+  • 2800 Hz tone detection
+  • Dual-tone window validation
+end note
+
+note right of L3
+  **Layer 3 Functions:**
+  • SCS frame encode/decode
+  • UART communication (19200 baud)
+  • SPI telemetry encoding (200 Hz)
+  • Anti-spam timing discipline
+end note
+
+note right of L2
+  **Layer 2 Functions:**
+  • Color-based navigation rules
+  • Angle-based navigation rules
+  • Motion primitive generation
+  • Kinematic feedback processing
+end note
+
+note right of L1
+  **Layer 1 Functions:**
+  • FSM state management
+  • Guard condition evaluation
+  • Entry/exit action execution
+end note
+
+@enduml

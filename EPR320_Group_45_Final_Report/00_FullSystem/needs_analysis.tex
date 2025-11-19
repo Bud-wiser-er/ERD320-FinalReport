@@ -1,0 +1,13 @@
+\subsection{System Needs Analysis}
+
+\subsubsection{Problem Context}
+
+Autonomous navigation in constrained environments requires integrated sensing, decision-making, and actuation with safety override mechanisms. Educational robotics platforms must demonstrate systems engineering principles including modular subsystem design, inter-module communication protocols, and hierarchical control architectures. The \gls{marv} system addresses the need for a practical demonstration platform combining line-following navigation, state machine coordination, and human-machine interaction.
+
+\subsubsection{Functional Needs}
+
+The system must execute autonomous maze navigation following colored line guidance with angle-dependent path selection. State management coordinates calibration, navigation, and emergency modes across distributed subsystems. Inter-subsystem communication enables sensor data exchange, motion command transmission, and completion signaling. Safety override provides operator intervention capability via acoustic tone detection enabling immediate navigation suspension.
+
+\subsubsection{Operational Needs}
+
+Deterministic state transitions ensure reproducible system behavior under nominal and fault conditions. Real-time decision latency maintains navigation responsiveness within control loop timing budgets. Communication protocol compliance prevents packet collisions and framing errors during multi-subsystem operation. Calibration procedures establish sensor baselines and actuator parameters before autonomous operation. Diagnostic visibility supports development, testing, and fault diagnosis through telemetry interfaces.

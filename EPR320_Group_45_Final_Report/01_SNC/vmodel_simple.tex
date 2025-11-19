@@ -1,0 +1,50 @@
+\documentclass[border=2mm]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta}
+
+\begin{document}
+\begin{tikzpicture}[
+  node distance=0.8cm and 1.5cm,
+  box/.style={rectangle, draw, text width=3.2cm, align=center, font=\footnotesize, minimum height=0.8cm},
+  arrow/.style={->, >=Stealth, thick},
+  dasharrow/.style={<->, >=Stealth, dashed, thick}
+]
+
+% Left side (Design)
+\node[box] (req) {\textbf{Requirements}\\2800Hz, 60dB SPL\\Dual-tone 0.5-1s};
+\node[box, below=of req] (arch) {\textbf{Architecture}\\4 stages: Mic→BPF\\→Envelope→Digital};
+\node[box, below=of arch] (comp) {\textbf{Component Design}\\MFB: C=8.2n/3.3n\\R=10k/220k/560$\Omega$};
+\node[box, below=of comp] (sim) {\textbf{Simulation}\\LTspice: f$_0$=2840Hz\\BW=1080Hz, Q=2.6};
+
+% Bottom (Implementation)
+\node[box, below=of sim, fill=gray!20] (impl) {\textbf{Build}\\Breadboard\\assembly};
+
+% Right side (Validation)
+\node[box, right=4cm of req] (sysval) {\textbf{System Validation}\\Range: 12cm $>$ 10cm\\50/50 tests PASS\\0 false alarms};
+\node[box, below=of sysval] (inttest) {\textbf{Integration Test}\\Preamp: 40.5dB\\Filter: 2835Hz\\Envelope: 31ms};
+\node[box, below=of inttest] (comptest) {\textbf{Component Test}\\Scope FFT verify\\BW=1080Hz\\-14dB @ 2kHz};
+\node[box, below=of comptest] (simval) {\textbf{Sim Validation}\\Monte Carlo 100x\\f$_0$: 2760-2910Hz\\Ripple $<$1mV};
+
+% Arrows - Left side descending
+\draw[arrow] (req) -- (arch);
+\draw[arrow] (arch) -- (comp);
+\draw[arrow] (comp) -- (sim);
+\draw[arrow] (sim) -- (impl);
+
+% Arrows - Right side ascending
+\draw[arrow] (impl) -| ($(impl)!0.5!(simval)$) |- (simval);
+\draw[arrow] (simval) -- (comptest);
+\draw[arrow] (comptest) -- (inttest);
+\draw[arrow] (inttest) -- (sysval);
+
+% Horizontal validation arrows
+\draw[dasharrow] (req) -- (sysval);
+\draw[dasharrow] (arch) -- (inttest);
+\draw[dasharrow] (comp) -- (comptest);
+\draw[dasharrow] (sim) -- (simval);
+
+% Title
+\node[above=0.3cm of req, font=\small\bfseries] {V-MODEL: PURE TONE DETECTION};
+
+\end{tikzpicture}
+\end{document}

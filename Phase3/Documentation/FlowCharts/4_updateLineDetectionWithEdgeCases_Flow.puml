@@ -1,0 +1,207 @@
+@startuml updateLineDetectionWithEdgeCases_Flow
+title updateLineDetectionWithEdgeCases() Function Flow
+
+start
+
+:updateLineDetectionWithEdgeCases() called;
+note right
+Called every FORWARD_SCAN state
+Monitors sensor changes
+end note
+
+if (Detection already active?) then (yes)
+  :Skip detection;
+  note right
+Already processing a line
+Don't detect another until
+current one is handled
+  end note
+  stop
+endif
+
+:Check all sensors for color;
+note right
+s1_detected = (S1 != WHITE)
+s2_detected = (S2 != WHITE)
+s3_detected = (S3 != WHITE)
+end note
+
+if (S2 changed to non-white?) then (yes)
+  :IMMEDIATE DETECTION;
+  note right
+S2 has ABSOLUTE priority
+detected_color = S2 color
+detecting_sensor = 2
+initial_angle = received_incidence_angle
+current_target_angle = received_incidence_angle
+angle_valid = TRUE
+detection_active = TRUE
+  end note
+
+  if (Color navigable?) then (yes)
+    :line_type = LINE_RED_GREEN;
+  else (no)
+    :line_type = LINE_BLACK_BLUE;
+  endif
+
+  :Return (detection active);
+  stop
+
+elseif (S1 AND S2 both detect?) then (yes)
+  :Detect line from left;
+  note right
+Line at angle from left side
+detected_color = S2 color (use center)
+detecting_sensor = 1 (mark as from left)
+initial_angle = received_incidence_angle
+angle_valid = TRUE
+detection_active = TRUE
+  end note
+
+  if (Color navigable?) then (yes)
+    :line_type = LINE_RED_GREEN;
+  else (no)
+    :line_type = LINE_BLACK_BLUE;
+  endif
+
+  :Return (detection active);
+  stop
+
+elseif (S2 AND S3 both detect?) then (yes)
+  :Detect line from right;
+  note right
+Line at angle from right side
+detected_color = S2 color (use center)
+detecting_sensor = 3 (mark as from right)
+initial_angle = received_incidence_angle
+angle_valid = TRUE
+detection_active = TRUE
+  end note
+
+  if (Color navigable?) then (yes)
+    :line_type = LINE_RED_GREEN;
+  else (no)
+    :line_type = LINE_BLACK_BLUE;
+  endif
+
+  :Return (detection active);
+  stop
+
+elseif (Only S1 detects?) then (yes)
+  :START DISTANCE TRACKING (S1);
+  note right
+Edge sensor detection - possible steep angle
+detected_color = S1 color
+detecting_sensor = 1
+detection_start_distance = current_distance
+detection_active = FALSE (not yet confirmed)
+angle_valid = FALSE (waiting)
+  end note
+  stop
+
+elseif (Only S3 detects?) then (yes)
+  :START DISTANCE TRACKING (S3);
+  note right
+Edge sensor detection - possible steep angle
+detected_color = S3 color
+detecting_sensor = 3
+detection_start_distance = current_distance
+detection_active = FALSE (not yet confirmed)
+angle_valid = FALSE (waiting)
+  end note
+  stop
+
+elseif (Already tracking AND S2 detects?) then (yes)
+  :S2 confirmation received;
+  note right
+S2 caught up - angle is valid
+initial_angle = received_incidence_angle
+current_target_angle = received_incidence_angle
+angle_valid = TRUE
+detection_active = TRUE
+  end note
+
+  if (Color navigable?) then (yes)
+    :line_type = LINE_RED_GREEN;
+  else (no)
+    :line_type = LINE_BLACK_BLUE;
+  endif
+
+  :Return (detection active);
+  stop
+
+elseif (Already tracking AND traveled more than 61mm?) then (yes)
+  :INFER STEEP ANGLE more than 45 degrees;
+  note right
+S2 never confirmed = very steep angle
+initial_angle = 46 degrees (inferred >45)
+current_target_angle = 46 degrees
+angle_valid = FALSE (no SS data)
+detection_active = TRUE (confirm detection)
+
+SNC must calculate correction from distance
+  end note
+
+  if (Color navigable?) then (yes)
+    :line_type = LINE_RED_GREEN;
+  else (no)
+    :line_type = LINE_BLACK_BLUE;
+  endif
+
+  :Return (detection active);
+  stop
+
+elseif (Already tracking?) then (yes)
+  :Continue tracking;
+  note right
+Keep monitoring:
+Wait for S2 confirmation OR
+Travel 61mm to infer steep angle
+  end note
+  stop
+
+else (no detection)
+  :No detection;
+  note right
+All sensors WHITE
+Continue forward scan
+  end note
+  stop
+endif
+
+legend right
+Priority Order:
+1. S2 (center) - Immediate response
+2. S1+S2 or S2+S3 - Adjacent sensors
+3. S1 or S3 alone - Distance tracking
+4. All WHITE - Continue scanning
+
+Key Variables:
+detection_active: Line confirmed for processing
+angle_valid: TRUE if SS provided angle
+detecting_sensor: 1=left, 2=center, 3=right
+SENSOR_SPACING: 61mm (S2 to S1/S3 distance)
+
+Steep Angle Protocol (more than 45 degrees):
+Edge sensor (S1/S3) detects first
+Robot travels more than 61mm
+S2 never confirms = steep angle
+Angle inferred as 46 degrees (more than 45)
+angle_valid = FALSE (no SS data)
+end legend
+
+floating note right
+Function Usage:
+This function IS actively used in your NAVCON.
+Called from FORWARD_SCAN state (line 453).
+
+Implements the same priority logic as original
+updateLineDetection() but with enhanced debug output.
+
+The edge_case_matrix lookup table exists but
+is NOT called by this function.
+end note
+
+stop
+
+@enduml

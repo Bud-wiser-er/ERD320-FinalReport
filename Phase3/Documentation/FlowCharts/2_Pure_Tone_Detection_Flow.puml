@@ -1,0 +1,174 @@
+@startuml Pure_Tone_Detection_Flow
+title Pure Tone Detection - State Machine Flow
+
+start
+
+:checkPureToneADC() called;
+note right
+  Called every main loop iteration
+  Monitors GPIO 36 ADC pin
+end note
+
+:Read ADC value (GPIO 36);
+note right
+  12-bit ADC: 0-4095
+  With 11dB attenuation
+end note
+
+:Convert to voltage;
+note right
+  voltage = (adcValue / 4095.0) × 3.3V
+  Range: 0.0V - 3.3V
+end note
+
+if (Time for debug output?\nEvery 100ms) then (Yes)
+  :Print debug info;
+  note right
+    [PURE-TONE-ADC] Raw=XXXX Voltage=X.XXV
+    >>> ACTIVE <<< if ≥2.8V
+    (idle) if <2.8V
+  end note
+endif
+
+:Compare to threshold;
+note right
+  THRESHOLD_VOLTAGE = 2.8V
+  currentlyDetected = (voltage ≥ 2.8V)
+end note
+
+if (Check state transition) then (Rising Edge:\ncurrentlyDetected && !toneActive)
+
+  :TONE STARTED;
+  note right
+    - toneActive = true
+    - toneStartTime = millis()
+    - peakADC = adcValue
+    - peakVoltage = voltage
+    - Print: "Tone started - ADC=XXXX V=X.XXV"
+  end note
+
+  :Return false;
+  stop
+
+elseif (Tone Active:\ntoneActive && currentlyDetected) then (Track Peak)
+
+  :Update peak values;
+  note right
+    if (adcValue > peakADC):
+      peakADC = adcValue
+      peakVoltage = voltage
+  end note
+
+  :Return false;
+  stop
+
+elseif (Falling Edge:\ntoneActive && !currentlyDetected) then (Tone Ended)
+
+  :TONE ENDED;
+  note right
+    - toneActive = false
+    - toneDuration = millis() - toneStartTime
+    - Print: "Duration=XXXms Peak: ADC=XXXX V=X.XXV"
+  end note
+
+  if (Duration valid?\n500ms ≤ duration ≤ 1000ms) then (Invalid)
+    :Print invalid duration;
+    note right
+      "Invalid duration (XXXms).
+      Must be 500-1000ms. Resetting."
+    end note
+    :Reset firstToneDetected = false;
+    :Return false;
+    stop
+
+  else (Valid)
+    :Print valid tone detected;
+    note right
+      "Valid tone detected!
+      Peak was ADC=XXXX V=X.XXV"
+    end note
+
+    if (First tone already detected?) then (No - This is first tone)
+      :Mark as first tone;
+      note right
+        - firstToneDetected = true
+        - firstToneEndTime = millis()
+        - firstToneDuration = duration
+        - Print: "FIRST TONE VALID (duration=XXXms).
+                  Waiting for second tone..."
+      end note
+
+      :Return false;
+      stop
+
+    else (Yes - This is second tone)
+      :Calculate gap between tones;
+      note right
+        timeBetweenTones = millis() - firstToneEndTime
+      end note
+
+      if (Gap valid?\ntimeBetweenTones ≤ 2000ms) then (No - Gap too long)
+        :Print gap too long;
+        note right
+          "Gap too long (XXXXms).
+          Resetting. This tone is now first."
+        end note
+
+        :Reset to first tone;
+        note right
+          - firstToneDetected = true
+          - firstToneEndTime = millis()
+          - firstToneDuration = current duration
+        end note
+
+        :Return false;
+        stop
+
+      else (Yes - Gap valid)
+        :🎵 TWO TONES DETECTED! 🎵;
+        note right
+          Print success banner:
+          ════════════════════════════════
+          🎵 TWO TONES DETECTED! 🎵
+             First tone:  XXXms
+             Second tone: XXXms
+             Gap between: XXXms
+          ════════════════════════════════
+        end note
+
+        :Set systemStatus.pureToneDetected = true;
+        :Reset firstToneDetected = false;
+
+        :Return TRUE;
+        stop
+      endif
+    endif
+  endif
+
+else (No Tone:\n!toneActive && !currentlyDetected)
+
+  if (Waiting for second tone?\nfirstToneDetected == true) then (Yes)
+    if (Timeout?\nmillis - firstToneEndTime > 2000ms) then (Yes - Timeout)
+      :Print timeout message;
+      note right
+        "Timeout waiting for second tone.
+        Resetting."
+      end note
+
+      :Reset firstToneDetected = false;
+      :Return false;
+      stop
+
+    else (No - Still waiting)
+      :Return false;
+      stop
+    endif
+
+  else (No - Idle state)
+    :Return false;
+    stop
+  endif
+
+endif
+
+@enduml

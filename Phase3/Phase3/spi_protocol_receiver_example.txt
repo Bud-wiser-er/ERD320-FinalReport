@@ -1,0 +1,439 @@
+/*
+ * client_esp32_receiver.ino
+ * Complete ESP32 Client - Upload to SEPARATE ESP32
+ * 
+ * Wiring:
+ * MARV GPIO 23 -> Client GPIO 23 (MOSI)
+ * MARV GPIO 18 -> Client GPIO 18 (SCK)
+ * MARV GPIO 15 -> Client GPIO 5  (CS)
+ * MARV GND     -> Client GND
+ */
+
+#include <Arduino.h>
+#include <SPI.h>
+
+#define CS_PIN 5
+#define SPI_SPEED 2000000
+
+// ============================================================================
+// COPY ALL STRUCTURES FROM spi_protocol.h
+// ============================================================================
+
+enum PacketType : uint8_t {
+    PKT_SYSTEM_STATE = 0x01,
+    PKT_TOUCH_DETECTED = 0x02,
+    PKT_PURE_TONE = 0x03,
+    PKT_SENSOR_COLORS = 0x10,
+    PKT_INCIDENCE_ANGLE = 0x11,
+    PKT_END_OF_MAZE = 0x12,
+    PKT_WHEEL_SPEEDS = 0x20,
+    PKT_DISTANCE = 0x21,
+    PKT_ROTATION_ANGLE = 0x22,
+    PKT_LINE_DETECTION = 0x30,
+    PKT_NAVCON_STATE = 0x31,
+    PKT_ROTATION_COMMAND = 0x32,
+    PKT_ROTATION_FEEDBACK = 0x33,
+    PKT_ANGLE_EVALUATION = 0x34,
+    PKT_DEBUG_MESSAGE = 0x40,
+    PKT_HEARTBEAT = 0x42
+};
+
+struct SPIPacketHeader {
+    uint8_t sync1;
+    uint8_t sync2;
+    uint8_t packet_type;
+    uint8_t data_length;
+    uint16_t sequence;
+    uint8_t flags;
+    uint8_t checksum_header;
+} __attribute__((packed));
+
+#define MAX_PAYLOAD_SIZE 248
+
+struct SPIPacket {
+    SPIPacketHeader header;
+    uint8_t payload[MAX_PAYLOAD_SIZE];
+    uint8_t checksum_payload;
+} __attribute__((packed));
+
+// All payload structures
+struct LineDetectionPayload {
+    uint32_t timestamp;
+    uint8_t color;
+    uint8_t first_sensor;
+    uint16_t angle;
+    uint8_t line_type;
+    uint8_t reserved[3];
+} __attribute__((packed));
+
+struct NavconStatePayload {
+    uint32_t timestamp;
+    uint8_t old_state;
+    uint8_t new_state;
+    uint16_t reason_code;
+    char reason_text[32];
+} __attribute__((packed));
+
+struct RotationCommandPayload {
+    uint32_t timestamp;
+    uint16_t target_angle;
+    uint8_t direction;
+    uint8_t command_reason;
+    uint16_t original_angle;
+    uint16_t corrections_done;
+} __attribute__((packed));
+
+struct RotationFeedbackPayload {
+    uint32_t timestamp;
+    uint16_t actual_angle;
+    uint16_t target_angle;
+    int16_t error;
+    uint8_t reserved[2];
+} __attribute__((packed));
+
+struct AngleEvaluationPayload {
+    uint32_t timestamp;
+    uint16_t original_angle;
+    uint16_t remaining_angle;
+    uint8_t decision;
+    uint8_t correction_count;
+    uint16_t threshold_used;
+} __attribute__((packed));
+
+struct SensorColorsPayload {
+    uint32_t timestamp;
+    uint8_t sensor1_color;
+    uint8_t sensor2_color;
+    uint8_t sensor3_color;
+    uint8_t reserved;
+} __attribute__((packed));
+
+struct WheelSpeedsPayload {
+    uint32_t timestamp;
+    uint8_t vR;
+    uint8_t vL;
+    uint8_t vop_setpoint;
+    uint8_t reserved;
+} __attribute__((packed));
+
+struct DistancePayload {
+    uint32_t timestamp;
+    uint16_t distance_mm;
+    uint8_t reserved[2];
+} __attribute__((packed));
+
+struct RotationAnglePayload {
+    uint32_t timestamp;
+    uint16_t angle;
+    uint8_t direction;
+    uint8_t reserved;
+} __attribute__((packed));
+
+struct DebugMessagePayload {
+    uint32_t timestamp;
+    uint8_t severity;
+    char message[115];
+} __attribute__((packed));
+
+// ============================================================================
+// HELPER FUNCTIONS
+// ============================================================================
+
+const char* getColorName(uint8_t color) {
+    switch(color) {
+        case 0: return "WHITE";
+        case 1: return "RED";
+        case 2: return "GREEN";
+        case 3: return "BLUE";
+        case 4: return "BLACK";
+        default: return "UNKNOWN";
+    }
+}
+
+const char* getNavconStateName(uint8_t state) {
+    switch(state) {
+        case 0: return "FORWARD_SCAN";
+        case 1: return "STOP";
+        case 2: return "REVERSE";
+        case 3: return "STOP_BEFORE_ROTATE";
+        case 4: return "ROTATE";
+        case 5: return "EVALUATE_CORRECTION";
+        case 6: return "CROSSING_LINE";
+        default: return "UNKNOWN";
+    }
+}
+
+const char* getDirectionName(uint8_t dir) {
+    return (dir == 2) ? "LEFT" : "RIGHT";
+}
+
+const char* getLineTypeName(uint8_t type) {
+    return (type == 0) ? "NAVIGABLE" : "WALL";
+}
+
+// ============================================================================
+// CLIENT CLASS
+// ============================================================================
+
+class MarvSPIClient {
+private:
+    SPIClass* spi;
+    uint8_t cs_pin;
+    SPIPacket rx_packet;
+    
+    struct {
+        uint32_t packets_received;
+        uint32_t packets_corrupted;
+        uint16_t last_sequence;
+    } stats;
+    
+    uint8_t calculateChecksum(const uint8_t* data, size_t length) {
+        uint8_t checksum = 0;
+        for (size_t i = 0; i < length; i++) {
+            checksum ^= data[i];
+        }
+        return checksum;
+    }
+    
+    bool verifyPacket() {
+        if (rx_packet.header.sync1 != 0xAA || rx_packet.header.sync2 != 0x55) {
+            return false;
+        }
+        
+        uint8_t calc_header = calculateChecksum(
+            (uint8_t*)&rx_packet.header, 
+            sizeof(SPIPacketHeader) - 1
+        );
+        if (calc_header != rx_packet.header.checksum_header) {
+            return false;
+        }
+        
+        uint8_t calc_payload = calculateChecksum(
+            rx_packet.payload, 
+            rx_packet.header.data_length
+        );
+        if (calc_payload != rx_packet.checksum_payload) {
+            return false;
+        }
+        
+        return true;
+    }
+    
+    void processPacket() {
+        if (!verifyPacket()) {
+            stats.packets_corrupted++;
+            Serial.println("[ERROR] Packet corrupted");
+            return;
+        }
+        
+        stats.packets_received++;
+        stats.last_sequence = rx_packet.header.sequence;
+        
+        switch (rx_packet.header.packet_type) {
+            case PKT_LINE_DETECTION:
+                processLineDetection();
+                break;
+            case PKT_NAVCON_STATE:
+                processNavconState();
+                break;
+            case PKT_ROTATION_COMMAND:
+                processRotationCommand();
+                break;
+            case PKT_ROTATION_FEEDBACK:
+                processRotationFeedback();
+                break;
+            case PKT_ANGLE_EVALUATION:
+                processAngleEvaluation();
+                break;
+            case PKT_SENSOR_COLORS:
+                processSensorColors();
+                break;
+            case PKT_WHEEL_SPEEDS:
+                processWheelSpeeds();
+                break;
+            case PKT_DISTANCE:
+                processDistance();
+                break;
+            case PKT_ROTATION_ANGLE:
+                processRotationAngle();
+                break;
+            case PKT_DEBUG_MESSAGE:
+                processDebug();
+                break;
+            case PKT_HEARTBEAT:
+                processHeartbeat();
+                break;
+            case PKT_END_OF_MAZE:
+                processEndOfMaze();
+                break;
+            default:
+                Serial.printf("[WARN] Unknown packet: 0x%02X\n", 
+                            rx_packet.header.packet_type);
+                break;
+        }
+    }
+    
+    void processLineDetection() {
+        LineDetectionPayload* p = (LineDetectionPayload*)rx_packet.payload;
+        Serial.printf("┌─ LINE DETECTION ──────────────────────────────────────┐\n");
+        Serial.printf("│ [%lu ms] Color: %s  Sensor: S%d                      \n",
+                     p->timestamp, getColorName(p->color), p->first_sensor);
+        Serial.printf("│ Angle: %.1f°  Type: %s                                \n",
+                     p->angle / 10.0, getLineTypeName(p->line_type));
+        Serial.printf("└───────────────────────────────────────────────────────┘\n");
+    }
+    
+    void processNavconState() {
+        NavconStatePayload* p = (NavconStatePayload*)rx_packet.payload;
+        Serial.printf("┌─ NAVCON STATE ────────────────────────────────────────┐\n");
+        Serial.printf("│ [%lu ms] %s -> %s                                     \n",
+                     p->timestamp,
+                     getNavconStateName(p->old_state),
+                     getNavconStateName(p->new_state));
+        Serial.printf("│ Reason: %s                                            \n",
+                     p->reason_text);
+        Serial.printf("└───────────────────────────────────────────────────────┘\n");
+    }
+    
+    void processRotationCommand() {
+        RotationCommandPayload* p = (RotationCommandPayload*)rx_packet.payload;
+        Serial.printf("┌─ ROTATION COMMAND ────────────────────────────────────┐\n");
+        Serial.printf("│ [%lu ms] Target: %.1f° %s                            \n",
+                     p->timestamp, p->target_angle / 10.0, 
+                     getDirectionName(p->direction));
+        Serial.printf("│ Original: %.1f°  Corrections: %d                      \n",
+                     p->original_angle / 10.0, p->corrections_done);
+        Serial.printf("└───────────────────────────────────────────────────────┘\n");
+    }
+    
+    void processRotationFeedback() {
+        RotationFeedbackPayload* p = (RotationFeedbackPayload*)rx_packet.payload;
+        Serial.printf("┌─ ROTATION FEEDBACK ───────────────────────────────────┐\n");
+        Serial.printf("│ [%lu ms] Actual: %.1f°  Target: %.1f°                \n",
+                     p->timestamp, p->actual_angle / 10.0, p->target_angle / 10.0);
+        Serial.printf("│ Error: %.1f°                                          \n",
+                     p->error / 10.0);
+        Serial.printf("└───────────────────────────────────────────────────────┘\n");
+    }
+    
+    void processAngleEvaluation() {
+        AngleEvaluationPayload* p = (AngleEvaluationPayload*)rx_packet.payload;
+        Serial.printf("┌─ ANGLE EVALUATION ────────────────────────────────────┐\n");
+        Serial.printf("│ [%lu ms] Original: %.1f°  Remaining: %.1f°           \n",
+                     p->timestamp, p->original_angle / 10.0, p->remaining_angle / 10.0);
+        Serial.printf("│ Decision: %s  Corrections: %d                         \n",
+                     p->decision ? "CROSS" : "CORRECT AGAIN", p->correction_count);
+        Serial.printf("└───────────────────────────────────────────────────────┘\n");
+    }
+    
+    void processSensorColors() {
+        SensorColorsPayload* p = (SensorColorsPayload*)rx_packet.payload;
+        Serial.printf("[SENSORS] S1=%s S2=%s S3=%s\n",
+                     getColorName(p->sensor1_color),
+                     getColorName(p->sensor2_color),
+                     getColorName(p->sensor3_color));
+    }
+    
+    void processWheelSpeeds() {
+        WheelSpeedsPayload* p = (WheelSpeedsPayload*)rx_packet.payload;
+        Serial.printf("[SPEEDS] vR=%d mm/s  vL=%d mm/s  Setpoint=%d mm/s\n",
+                     p->vR, p->vL, p->vop_setpoint);
+    }
+    
+    void processDistance() {
+        DistancePayload* p = (DistancePayload*)rx_packet.payload;
+        Serial.printf("[DISTANCE] %d mm (since last stop)\n", p->distance_mm);
+    }
+    
+    void processRotationAngle() {
+        RotationAnglePayload* p = (RotationAnglePayload*)rx_packet.payload;
+        Serial.printf("[ROTATION] Last executed: %.1f° %s\n",
+                     p->angle / 10.0, getDirectionName(p->direction));
+    }
+    
+    void processDebug() {
+        DebugMessagePayload* p = (DebugMessagePayload*)rx_packet.payload;
+        const char* severity[] = {"INFO", "WARN", "ERROR"};
+        Serial.printf("[DEBUG-%s] %s\n", severity[p->severity % 3], p->message);
+    }
+    
+    void processHeartbeat() {
+        uint32_t* uptime = (uint32_t*)rx_packet.payload;
+        Serial.printf("[HEARTBEAT] MARV uptime: %lu ms\n", *uptime);
+    }
+    
+    void processEndOfMaze() {
+        Serial.println("\n╔═══════════════════════════════════════════════════════╗");
+        Serial.println("║           🎉 END OF MAZE DETECTED! 🎉                ║");
+        Serial.println("╚═══════════════════════════════════════════════════════╝\n");
+    }
+
+public:
+    MarvSPIClient(SPIClass* spi_instance, uint8_t chip_select)
+        : spi(spi_instance), cs_pin(chip_select) {
+        memset(&stats, 0, sizeof(stats));
+    }
+    
+    void begin() {
+        pinMode(cs_pin, OUTPUT);
+        digitalWrite(cs_pin, HIGH);
+        spi->begin();
+        
+        Serial.println("\n╔═══════════════════════════════════════════════════════╗");
+        Serial.println("║        MARV SPI CLIENT - System Monitor              ║");
+        Serial.println("╚═══════════════════════════════════════════════════════╝\n");
+        Serial.println("Waiting for packets...\n");
+    }
+    
+    void poll() {
+        size_t packet_size = sizeof(SPIPacketHeader) + MAX_PAYLOAD_SIZE + 1;
+        
+        digitalWrite(cs_pin, LOW);
+        delayMicroseconds(10);
+        
+        spi->beginTransaction(SPISettings(SPI_SPEED, MSBFIRST, SPI_MODE0));
+        spi->transfer((uint8_t*)&rx_packet, packet_size);
+        spi->endTransaction();
+        
+        delayMicroseconds(10);
+        digitalWrite(cs_pin, HIGH);
+        
+        if (rx_packet.header.sync1 == 0xAA && rx_packet.header.sync2 == 0x55) {
+            processPacket();
+        }
+    }
+    
+    void printStats() {
+        Serial.println("\n--- SPI Client Stats ---");
+        Serial.printf("Packets Received: %lu\n", stats.packets_received);
+        Serial.printf("Packets Corrupted: %lu\n", stats.packets_corrupted);
+        Serial.printf("Last Sequence: %d\n", stats.last_sequence);
+        Serial.println("------------------------\n");
+    }
+};
+
+// ============================================================================
+// MAIN PROGRAM
+// ============================================================================
+
+SPIClass spi(HSPI);
+MarvSPIClient client(&spi, CS_PIN);
+
+void setup() {
+    Serial.begin(115200);
+    delay(1000);
+    client.begin();
+}
+
+void loop() {
+    client.poll();
+    
+    // Print stats every 30 seconds
+    static unsigned long last_stats = 0;
+    if (millis() - last_stats > 30000) {
+        client.printStats();
+        last_stats = millis();
+    }
+    
+    delay(1);
+}

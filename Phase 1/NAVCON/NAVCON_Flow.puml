@@ -1,0 +1,153 @@
+@startuml
+title NAVCON / SNC Flow (Activity Diagram)
+
+skinparam backgroundColor White
+skinparam activity {
+  StartColor #4A90E2
+  EndColor   #4A90E2
+  BarColor   #555
+  ArrowColor #222
+  BorderColor #222
+  BackgroundColor #f7f7f7
+}
+skinparam note {
+  BackgroundColor #fffbe6
+  BorderColor #d4c26b
+}
+
+start
+
+:Read NAVCON_Input (from SS & MDPS);
+note right
+Fields (conceptual):
+- Colour_L, Colour_C, Colour_R ∈ {WHITE, RED, GREEN, BLUE, BLACK}
+- FirstHit_L, FirstHit_C, FirstHit_R : bool
+- Odo_mm, WheelSpeed_L, WheelSpeed_R, LastRotation_deg
+- B_baseline_mm, d_gate_mm, forward_window_mm, Debounce_N
+- Mode ∈ {IDLE, CAL, MAZE, EXIT}, LastAction
+end note
+
+if (Mode == MAZE AND calibration complete) then (Yes)
+else (No)
+  :Await CAL done / Hold Idle;
+  stop
+endif
+
+repeat
+  :Read SS packets;
+  :Debounce N frames;
+  :Latch colour pattern after d_gate;
+
+  if (Any non-WHITE in (L,C,R) ?) then (Yes)
+    :Classify feature by colour set;
+
+    if (RED present ?) then (Yes)
+      :Stop motors;
+      :Mode <- EXIT;
+      stop
+    else (No)
+      if (GREEN only ?) then (Yes)
+        ' ---- CROSSABLE LINE BRANCH ----
+        if (Only C coloured ?) then (Yes)
+          :Near-perpendicular;
+          :Stop/verify -> Cross;
+        else (No)
+          if (R and C coloured AND L WHITE ?) then (Yes)
+            ' Right-side <= 45 deg candidate
+            if (Both outers (L & R) hit ?) then (Yes)
+              :Compute Delta_s = |s_R - s_L| (odometry at first-hit);
+              if (Delta_s > B_baseline_mm ?) then (Yes)
+                :Rule A: theta > 45 deg;
+                :Reverse; rotate LEFT or RIGHT (away from first-hit) <= 5 deg; forward small -> retry;
+              else (No)
+                :theta <= 45 deg;
+                :Micro-steer toward <= 5 deg; Cross;
+              endif
+            else (No)
+              :No Delta_s available;
+              :Micro-steer toward <= 5 deg; Cross;
+            endif
+          else (No)
+            if (L and C coloured AND R WHITE ?) then (Yes)
+              ' Left-side <= 45 deg candidate
+              if (Both outers (L & R) hit ?) then (Yes)
+                :Compute Delta_s = |s_R - s_L|;
+                if (Delta_s > B_baseline_mm ?) then (Yes)
+                  :Rule A: theta > 45 deg;
+                  :Reverse; rotate LEFT or RIGHT (away from first-hit) <= 5 deg; forward small -> retry;
+                else (No)
+                  :theta <= 45 deg;
+                  :Micro-steer toward <= 5 deg; Cross;
+                endif
+              else (No)
+                :No Delta_s available;
+                :Micro-steer toward <= 5 deg; Cross;
+              endif
+            else (No)
+              if (Only L coloured ?) then (Yes)
+                :Rule B (Left): theta > 45 deg;
+                :Reverse; rotate RIGHT <= 5 deg; forward small -> retry;
+              else (No)
+                if (Only R coloured ?) then (Yes)
+                  :Rule B (Right): theta > 45 deg;
+                  :Reverse; rotate LEFT <= 5 deg; forward small -> retry;
+                else (No)
+                  if (All three coloured ?) then (Yes)
+                    :Square-up (equalize edges); Cross;
+                  else (No)
+                    if (L and R coloured AND C WHITE ?) then (Yes)
+                      :Ambiguous / glare;
+                      :Nudge forward or micro-yaw; Re-sample;
+                    else (No)
+                      :Unhandled crossable pattern; Continue sensing;
+                    endif
+                  endif
+                endif
+              endif
+            endif
+          endif
+        endif
+
+      else (No)
+        if (BLUE or BLACK present ?) then (Yes)
+          ' ---- WALL / DOOR BRANCH ----
+          if (Right only OR R and C ?) then (Yes)
+            :Align parallel to wall on RIGHT; Follow edge;
+            :If blocked -> apply 90 deg turn policy;
+          else (No)
+            if (Left only OR L and C ?) then (Yes)
+              :Align parallel to wall on LEFT; Follow edge;
+              :If blocked -> apply 90 deg turn policy;
+            else (No)
+              :Both sides / All 3: Square-up; apply maze policy (e.g., right-hand rule);
+            endif
+          endif
+        else (No)
+          :Unexpected colour combo; Keep driving forward;
+        endif
+      endif
+    endif
+
+  else (No)
+    :Drive forward nominally (re-check);
+  endif
+
+repeat while (Mode == MAZE) is (continue)
+
+stop
+
+' Put this inside your diagram, near the end is typical
+legend right
+Legend
+- Start/End      : start / stop nodes
+- Decision       : diamond (yes/no labels on outgoing arrows)
+- Action         : rounded rectangle (processing step)
+- Delta s <= B   : Angle <= 45°  (align & cross)
+- Delta s >  B   : Angle > 45°  (reverse + rotate, retry)
+- SS             : Sensor inputs (colors, hits)
+- MDPS           : Odometry / wheel feedback
+- CMD            : Control commands to MDPS
+endlegend
+
+
+@enduml

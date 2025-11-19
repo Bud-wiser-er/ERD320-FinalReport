@@ -1,0 +1,20 @@
+\vspace{-1.5em}
+\subsection{Subsystem Conclusions and Recommendations}
+
+\subsubsection{Requirements Adherence}
+
+The \gls{snc} subsystem meets all primary functional requirements defined in the \gls{marv} project specification \cite{marv-guide-2025}. The hierarchical state machine with IDLE, CAL, MAZE, and \gls{sos} states operates with deterministic transitions. The \gls{navcon} decision logic processes \gls{ss} inputs to command motion primitives via \gls{scs} protocol. Pure tone detection achieves 2800\,Hz recognition with dual-tone validation. Dual-microcontroller architecture maintains real-time control with WiFi telemetry dashboard. Known limitations include incomplete high-noise environment testing and occasional 2 to 5\,ms timing jitter during UART interrupt servicing.
+
+\subsubsection{Benefits and Shortcomings}
+
+\paragraph{Key Benefits}
+
+Dual-microcontroller architecture enabled independent development with separated control and telemetry functions. Web-based \gls{hmi} provided real-time diagnostics superior to serial output. Explicit state machine with guarded transitions maintained reproducible behaviour. Cascaded 4th-order \gls{mfb} bandpass filter achieved greater than 70\,dB rejection at 400\,Hz without precision components. \gls{scs} protocol compliance prevented integration issues observed in peer subsystems.
+
+\paragraph{Shortcomings and Challenges}
+
+Component availability required moderate-sensitivity electret microphone necessitating higher preamplifier gain. Single-supply operation required careful biasing compared to dual-supply alternatives. Limited field testing restricted validation to \gls{hub} simulation. WiFi 2.4\,GHz operation susceptible to interference causing dashboard drops. Dual-microcontroller architecture increases power consumption by 250\,mW.
+
+\subsubsection{Recommended Future Work}
+
+Qualification testing identified three optimisation opportunities: hysteresis in \gls{navcon} angle classification to prevent decision oscillation, FreeRTOS task prioritisation with \gls{dma}-based UART to reduce timing jitter from 7.2\,ms to under 6\,ms, and selective WiFi operation to reduce peak power from 0.5\,A to 0.35\,A. Future enhancements could include Extended Kalman Filter integration for improved state estimation, digital FFT-based tone detection with MEMS microphones to eliminate analogue noise sensitivity, and Hardware-in-the-Loop simulation for automated regression testing.

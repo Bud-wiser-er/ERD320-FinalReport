@@ -1,0 +1,141 @@
+\thispagestyle {plain}
+\contentsline {section}{\numberline {1}Full System}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Introduction}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Referenced Documents}{1}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}System Needs Analysis}{1}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Problem Context}{1}{subsubsection.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.2}Functional Needs}{1}{subsubsection.1.3.2}%
+\contentsline {subsubsection}{\numberline {1.3.3}Operational Needs}{2}{subsubsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.4}System Concept Definition}{2}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}System Qualification Test Results}{3}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}System Conclusions and Recommendations}{4}{subsection.1.6}%
+\contentsline {subsubsection}{\numberline {1.6.1}Requirements Adherence}{4}{subsubsection.1.6.1}%
+\contentsline {subsubsection}{\numberline {1.6.2}System Benefits and Shortcomings}{5}{subsubsection.1.6.2}%
+\contentsline {subsubsection}{\numberline {1.6.3}Future Work Recommendations}{5}{subsubsection.1.6.3}%
+\contentsline {section}{\numberline {2}Subsystem 1: SNC}{6}{section.2}%
+\contentsline {subsection}{\numberline {2.1}\gls {snc} Subsystem Needs Analysis}{6}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Design Problem Context}{6}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Stakeholders}{6}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Functional and Operational Needs}{6}{subsubsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.2}SNC Subsystem Concept Exploration}{7}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Platform Selection}{7}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Architecture}{7}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}Communication Protocol}{8}{subsubsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.4}\gls {hmi}}{8}{subsubsection.2.2.4}%
+\contentsline {subsubsection}{\numberline {2.2.5}Tone Detection}{8}{subsubsection.2.2.5}%
+\contentsline {subsubsection}{\numberline {2.2.6}Filter Topology}{9}{subsubsection.2.2.6}%
+\contentsline {subsubsection}{\numberline {2.2.7}Touch Sensor}{9}{subsubsection.2.2.7}%
+\contentsline {subsection}{\numberline {2.3}SNC Subsystem Concept Definition}{9}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Operational Concept}{9}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Architecture Overview}{10}{subsubsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.4}Subsystem Engineering Design}{11}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Design Constraints and Trade-offs}{11}{subsubsection.2.4.1}%
+\contentsline {paragraph}{\numberline {2.4.1a}Design Constraints}{11}{paragraph.2.4.1.1}%
+\contentsline {paragraph}{\numberline {2.4.1b}Key Trade-offs}{11}{paragraph.2.4.1.2}%
+\contentsline {subsubsection}{\numberline {2.4.2}Development Methodology}{11}{subsubsection.2.4.2}%
+\contentsline {paragraph}{\numberline {2.4.2a}Tools}{11}{paragraph.2.4.2.1}%
+\contentsline {paragraph}{\numberline {2.4.2b}Approach}{11}{paragraph.2.4.2.2}%
+\contentsline {paragraph}{\numberline {2.4.2c}Version Control}{11}{paragraph.2.4.2.3}%
+\contentsline {paragraph}{\numberline {2.4.2d}Modular Architecture}{12}{paragraph.2.4.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.3}Pure Tone Detection Circuit Design}{12}{subsubsection.2.4.3}%
+\contentsline {paragraph}{\numberline {2.4.3a}Architectural Overview}{12}{paragraph.2.4.3.1}%
+\contentsline {paragraph}{\numberline {2.4.3b}Component Selection Rationale}{13}{paragraph.2.4.3.2}%
+\contentsline {subparagraph}{MCP6024 Op-Amp}{13}{section*.10}%
+\contentsline {subparagraph}{BAT48 Schottky Diode}{13}{section*.10}%
+\contentsline {subparagraph}{Dual-MCU Architecture}{13}{section*.10}%
+\contentsline {paragraph}{\numberline {2.4.3c}Analogue Signal Chain and Power Distribution}{13}{paragraph.2.4.3.3}%
+\contentsline {subparagraph}{Power Supply Architecture}{14}{figure.caption.11}%
+\contentsline {subparagraph}{Preamplifier}{14}{figure.caption.11}%
+\contentsline {subparagraph}{Bandpass Filter}{14}{figure.caption.11}%
+\contentsline {subparagraph}{Envelope Detector}{14}{figure.caption.11}%
+\contentsline {paragraph}{\numberline {2.4.3d}Digital Validation State Machine}{14}{paragraph.2.4.3.4}%
+\contentsline {paragraph}{\numberline {2.4.3e}Simulation and Analysis}{14}{paragraph.2.4.3.5}%
+\contentsline {paragraph}{\numberline {2.4.3f}Experimental Validation}{15}{paragraph.2.4.3.6}%
+\contentsline {subparagraph}{Component-Level Testing}{15}{section*.12}%
+\contentsline {subparagraph}{Oscilloscope Measurements and Validation}{15}{section*.12}%
+\contentsline {subparagraph}{System Integration}{15}{figure.caption.13}%
+\contentsline {subparagraph}{ESP32 Integration}{15}{figure.caption.13}%
+\contentsline {subsubsection}{\numberline {2.4.4}NAVCON State Machine Implementation}{16}{subsubsection.2.4.4}%
+\contentsline {paragraph}{\numberline {2.4.4a}Architectural Design}{16}{paragraph.2.4.4.1}%
+\contentsline {paragraph}{\numberline {2.4.4b}State Machine Architecture}{17}{paragraph.2.4.4.2}%
+\contentsline {paragraph}{\numberline {2.4.4c}Decision Logic Implementation}{17}{paragraph.2.4.4.3}%
+\contentsline {subparagraph}{Line Classification}{17}{section*.16}%
+\contentsline {subparagraph}{Angle Categorization}{17}{section*.16}%
+\contentsline {subparagraph}{Motion Primitive Selection}{18}{section*.16}%
+\contentsline {subparagraph}{Command Encoding}{18}{section*.16}%
+\contentsline {paragraph}{\numberline {2.4.4d}State Guards and Transitions}{18}{paragraph.2.4.4.4}%
+\contentsline {paragraph}{\numberline {2.4.4e}Verification}{18}{paragraph.2.4.4.5}%
+\contentsline {subparagraph}{Test Bench Design}{18}{section*.17}%
+\contentsline {subparagraph}{HUB Integration}{18}{section*.17}%
+\contentsline {subsubsection}{\numberline {2.4.5}SPI Telemetry Protocol Implementation}{18}{subsubsection.2.4.5}%
+\contentsline {paragraph}{\numberline {2.4.5a}Implementation}{18}{paragraph.2.4.5.1}%
+\contentsline {subparagraph}{Protocol}{18}{section*.18}%
+\contentsline {subparagraph}{Packet Structure}{19}{section*.18}%
+\contentsline {subparagraph}{Error Handling}{19}{section*.18}%
+\contentsline {paragraph}{\numberline {2.4.5b}Verification}{19}{paragraph.2.4.5.2}%
+\contentsline {subsubsection}{\numberline {2.4.6}Main System State Machine}{19}{subsubsection.2.4.6}%
+\contentsline {paragraph}{\numberline {2.4.6a}Implementation}{19}{paragraph.2.4.6.1}%
+\contentsline {subparagraph}{SCS Protocol Integration}{19}{section*.19}%
+\contentsline {paragraph}{\numberline {2.4.6b}Verification}{19}{paragraph.2.4.6.2}%
+\contentsline {subsubsection}{\numberline {2.4.7}SCS Protocol Implementation}{20}{subsubsection.2.4.7}%
+\contentsline {paragraph}{\numberline {2.4.7a}Implementation}{20}{paragraph.2.4.7.1}%
+\contentsline {subparagraph}{Packet Parser}{20}{section*.20}%
+\contentsline {subparagraph}{Transmission Scheduler}{20}{section*.20}%
+\contentsline {subparagraph}{Error Detection}{20}{section*.20}%
+\contentsline {paragraph}{\numberline {2.4.7b}Verification}{20}{paragraph.2.4.7.2}%
+\contentsline {subsubsection}{\numberline {2.4.8}Code Development and Testing Methodology}{20}{subsubsection.2.4.8}%
+\contentsline {paragraph}{\numberline {2.4.8a}Code Requirements and Interfaces}{20}{paragraph.2.4.8.1}%
+\contentsline {subparagraph}{SCS Protocol Module}{20}{section*.21}%
+\contentsline {subparagraph}{NAVCON Module}{21}{section*.21}%
+\contentsline {subparagraph}{State Machine Module}{21}{section*.21}%
+\contentsline {subparagraph}{Pure Tone Module}{21}{section*.21}%
+\contentsline {paragraph}{\numberline {2.4.8b}Unit Testing Framework}{21}{paragraph.2.4.8.2}%
+\contentsline {subparagraph}{SCS Test Harness}{21}{section*.22}%
+\contentsline {subparagraph}{NAVCON Test Harness}{21}{section*.22}%
+\contentsline {subparagraph}{State Machine Test Harness}{21}{section*.22}%
+\contentsline {subparagraph}{Pure Tone Test Suite}{21}{section*.22}%
+\contentsline {paragraph}{\numberline {2.4.8c}Code Implementation Examples}{22}{paragraph.2.4.8.3}%
+\contentsline {subparagraph}{SCS Packet Parser}{22}{section*.23}%
+\contentsline {subparagraph}{Pure Tone Dual-Tone Detection}{22}{lstnumber.-1.4}%
+\contentsline {paragraph}{\numberline {2.4.8d}Integration Testing}{22}{paragraph.2.4.8.4}%
+\contentsline {subsubsection}{\numberline {2.4.9}Design Challenges and Solutions}{22}{subsubsection.2.4.9}%
+\contentsline {subsubsection}{\numberline {2.4.10}Performance and Timing Budget Analysis}{22}{subsubsection.2.4.10}%
+\contentsline {paragraph}{\numberline {2.4.10a}Measurements}{22}{paragraph.2.4.10.1}%
+\contentsline {paragraph}{\numberline {2.4.10b}Optimisation Techniques}{23}{paragraph.2.4.10.2}%
+\contentsline {paragraph}{\numberline {2.4.10c}Validation}{23}{paragraph.2.4.10.3}%
+\contentsline {subsection}{\numberline {2.5}Subsystem Qualification Tests Results}{23}{subsection.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.1}Test Summary and Assessment}{23}{subsubsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.6}Subsystem Conclusions and Recommendations}{25}{subsection.2.6}%
+\contentsline {subsubsection}{\numberline {2.6.1}Requirements Adherence}{25}{subsubsection.2.6.1}%
+\contentsline {subsubsection}{\numberline {2.6.2}Benefits and Shortcomings}{25}{subsubsection.2.6.2}%
+\contentsline {paragraph}{\numberline {2.6.2a}Key Benefits}{25}{paragraph.2.6.2.1}%
+\contentsline {paragraph}{\numberline {2.6.2b}Shortcomings and Challenges}{25}{paragraph.2.6.2.2}%
+\contentsline {subsubsection}{\numberline {2.6.3}Recommended Future Work}{25}{subsubsection.2.6.3}%
+\contentsline {subsection}{\numberline {2.7}Lab Book Excerpts}{25}{subsection.2.7}%
+\contentsline {section}{\numberline {3}Subsystem 2}{35}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Subsystem Needs Analysis}{35}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Subsystem Concept Exploration}{36}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Colour Detection Sensors}{36}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Incidence Angle Detection}{36}{subsubsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.3}Subsystem Concept Definition: Planning}{36}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Subsystem Engineering Design}{38}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Constraints and trade-offs}{38}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Tools and Methods}{38}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Selected design details}{39}{subsubsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.5}Subsystem Qualification Tests Results}{44}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Subsystem Conclusions and Recommendations}{44}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Lab Book Excerpts}{45}{subsection.3.7}%
+\contentsline {section}{\numberline {4}Subsystem 3: MDPS}{53}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Subsystem Needs Analysis}{53}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Subsystem Concept Exploration}{53}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Movement}{53}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Power}{54}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Communication}{54}{subsubsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.3}Subsystem Concept Definition: Planning}{55}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Subsystem Engineering Design}{56}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Constraints and trade-offs}{56}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}Tools and Methods}{57}{subsubsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.3}Selected design details}{57}{subsubsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.5}Subsystem Qualification Tests Results}{57}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Subsystem Conclusions and Recommendations}{57}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}Lab Book Excerpts}{58}{subsection.4.7}%

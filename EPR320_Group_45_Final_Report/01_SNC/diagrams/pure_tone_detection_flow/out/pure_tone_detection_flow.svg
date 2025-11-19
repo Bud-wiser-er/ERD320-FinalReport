@@ -1,0 +1,2172 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   contentStyleType="text/css"
+   height="1336px"
+   preserveAspectRatio="none"
+   style="width:2699px;height:1336px;background:#FFFFFF;"
+   version="1.1"
+   viewBox="0 0 2699 1336"
+   width="2699px"
+   zoomAndPan="magnify"
+   id="svg179"
+   sodipodi:docname="pure_tone_detection_flow.svg"
+   inkscape:export-filename="pure_tone_detection_flow.pdf"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview179"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.21117935"
+     inkscape:cx="-227.29496"
+     inkscape:cy="-857.09139"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="2391"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g179" />
+  <title
+     id="title1">Pure Tone Detection Signal Flow with ADC Monitoring</title>
+  <defs
+     id="defs1" />
+  <g
+     id="g179">
+    <ellipse
+       cx="1086.3426"
+       cy="58.6094"
+       fill="#222222"
+       rx="10"
+       ry="10"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="ellipse1" />
+    <rect
+       fill="none"
+       height="517.2305"
+       style="stroke:#000000;stroke-width:1.5;"
+       width="367.7192"
+       x="1008.8182"
+       y="78.6094"
+       id="rect1" />
+    <path
+       d="M1145.6863,78.6094 L1145.6863,89.2188 L1135.6863,99.2188 L1008.8182,99.2188 "
+       fill="none"
+       style="stroke:#000000;stroke-width:1.5;"
+       id="path1" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14"
+       lengthAdjust="spacing"
+       textLength="126.8682"
+       x="1011.8182"
+       y="94.1426"
+       id="text2">Analog Signal Chain</text>
+    <path
+       d="M1164.4627,116.2188 L1164.4627,141.7461 L1144.4627,145.7461 L1164.4627,149.7461 L1164.4627,175.2734 A0,0 0 0 0 1164.4627,175.2734 L1352.3807,175.2734 A0,0 0 0 0 1352.3807,175.2734 L1352.3807,126.2188 L1342.3807,116.2188 L1164.4627,116.2188 A0,0 0 0 0 1164.4627,116.2188 "
+       fill="#FEFFDD"
+       style="stroke:#181818;stroke-width:0.5;"
+       id="path2" />
+    <path
+       d="M1342.3807,116.2188 L1342.3807,126.2188 L1352.3807,126.2188 L1342.3807,116.2188 "
+       fill="#FEFFDD"
+       style="stroke:#181818;stroke-width:0.5;"
+       id="path3" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="153.918"
+       x="1170.4627"
+       y="134.7139"
+       id="text3">Target frequency: 2800 Hz</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="166.918"
+       x="1170.4627"
+       y="151.0654"
+       id="text4">Duration: 0.5-1.0 s (per tone)</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="164.7407"
+       x="1170.4627"
+       y="167.417"
+       id="text5">Two tones within 2 s window</text>
+    <rect
+       fill="#ADD8E6"
+       height="54.4971"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#000000;stroke-width:0.5;"
+       width="116.2402"
+       x="1028.2225"
+       y="118.4976"
+       id="rect5" />
+    <text
+       fill="#000000"
+       font-family="Arial"
+       font-size="10"
+       lengthAdjust="spacing"
+       textLength="78.916"
+       x="1038.2225"
+       y="137.8774"
+       id="text6">Acoustic Stimulus</text>
+    <text
+       fill="#000000"
+       font-family="Arial"
+       font-size="10"
+       lengthAdjust="spacing"
+       textLength="62.8174"
+       x="1038.2225"
+       y="149.3765"
+       id="text7">2800 Hz Tone</text>
+    <text
+       fill="#000000"
+       font-family="Arial"
+       font-size="10"
+       lengthAdjust="spacing"
+       textLength="96.2402"
+       x="1038.2225"
+       y="160.8755"
+       id="text8">60 dB SPL @ ≥10 cm</text>
+    <path
+       d="M1160.8079,195.4209 L1160.8079,212.7725 L1140.8079,216.7725 L1160.8079,220.7725 L1160.8079,238.124 A0,0 0 0 0 1160.8079,238.124 L1366.5374,238.124 A0,0 0 0 0 1366.5374,238.124 L1366.5374,205.4209 L1356.5374,195.4209 L1160.8079,195.4209 A0,0 0 0 0 1160.8079,195.4209 "
+       fill="#FEFFDD"
+       style="stroke:#181818;stroke-width:0.5;"
+       id="path8" />
+    <path
+       d="M1356.5374,195.4209 L1356.5374,205.4209 L1366.5374,205.4209 L1356.5374,195.4209 "
+       fill="#FEFFDD"
+       style="stroke:#181818;stroke-width:0.5;"
+       id="path9" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="146.5928"
+       x="1166.8079"
+       y="213.916"
+       id="text9">Sensitivity: -60±3 dBV/Pa</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="184.7295"
+       x="1166.8079"
+       y="230.2676"
+       id="text10">Output @ 60 dB SPL: 20 µV AC</text>
+    <rect
+       fill="#ADD8E6"
+       height="42.998"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#000000;stroke-width:0.5;"
+       width="108.9307"
+       x="1031.8773"
+       y="195.2734"
+       id="rect10" />
+    <text
+       fill="#000000"
+       font-family="Arial"
+       font-size="10"
+       lengthAdjust="spacing"
+       textLength="88.9307"
+       x="1041.8773"
+       y="214.6533"
+       id="text11">Electret Microphone</text>
+    <text
+       fill="#000000"
+       font-family="Arial"
+       font-size="10"
+       lengthAdjust="spacing"
+       textLength="63.3398"
+       x="1041.8773"
+       y="226.1523"
+       id="text12">(MIC E1 PCB)</text>
+    <path
+       d="M1143.0174,250.2432 L1143.0174,275.7705 L1123.0174,279.7705 L1143.0174,283.7705 L1143.0174,309.2979 A0,0 0 0 0 1143.0174,309.2979 L1296.6199,309.2979 A0,0 0 0 0 1296.6199,309.2979 L1296.6199,260.2432 L1286.6199,250.2432 L1143.0174,250.2432 A0,0 0 0 0 1143.0174,250.2432 "
+       fill="#FEFFDD"
+       style="stroke:#181818;stroke-width:0.5;"
+       id="path12" />
+    <path
+       d="M1286.6199,250.2432 L1286.6199,260.2432 L1296.6199,260.2432 L1286.6199,250.2432 "
+       fill="#FEFFDD"
+       style="stroke:#181818;stroke-width:0.5;"
+       id="path13" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="132.6025"
+       x="1149.0174"
+       y="268.7383"
+       id="text13">Gain: 40 dB (Av = 101)</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="108.3926"
+       x="1149.0174"
+       y="285.0898"
+       id="text14">Bandwidth: 99 kHz</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="109.1035"
+       x="1149.0174"
+       y="301.4414"
+       id="text15">Output: 2.0 mV AC</text>
+    <rect
+       fill="#ADD8E6"
+       height="42.998"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#000000;stroke-width:0.5;"
+       width="73.3496"
+       x="1049.6678"
+       y="258.2715"
+       id="rect15" />
+    <text
+       fill="#000000"
+       font-family="Arial"
+       font-size="10"
+       lengthAdjust="spacing"
+       textLength="53.3496"
+       x="1059.6678"
+       y="277.6514"
+       id="text16">Preamplifier</text>
+    <text
+       fill="#000000"
+       font-family="Arial"
+       font-size="10"
+       lengthAdjust="spacing"
+       textLength="51.1279"
+       x="1059.6678"
+       y="289.1504"
+       id="text17">(MCP6024)</text>
+    <path
+       d="M1173.867,319.2979 L1173.867,361.1768 L1153.867,365.1768 L1173.867,369.1768 L1173.867,411.0557 A0,0 0 0 0 1173.867,411.0557 L1359.4617,411.0557 A0,0 0 0 0 1359.4617,411.0557 L1359.4617,329.2979 L1349.4617,319.2979 L1173.867,319.2979 A0,0 0 0 0 1173.867,319.2979 "
+       fill="#FEFFDD"
+       style="stroke:#181818;stroke-width:0.5;"
+       id="path17" />
+    <path
+       d="M1349.4617,319.2979 L1349.4617,329.2979 L1359.4617,329.2979 L1349.4617,319.2979 "
+       fill="#FEFFDD"
+       style="stroke:#181818;stroke-width:0.5;"
+       id="path18" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="155.3652"
+       x="1179.867"
+       y="337.793"
+       id="text18">Center frequency: 2800 Hz</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="44.5796"
+       x="1179.867"
+       y="354.1445"
+       id="text19">Q ≈ 2.6</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="111.2681"
+       x="1179.867"
+       y="370.4961"
+       id="text20">-3 dB BW: 1080 Hz</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="164.5947"
+       x="1179.867"
+       y="386.8477"
+       id="text21">Rejection: &gt;70 dB @ 400 Hz</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="95.2148"
+       x="1219.597"
+       y="403.1992"
+       id="text22">&gt;65 dB @ 1 kHz</text>
+    <rect
+       fill="#ADD8E6"
+       height="42.998"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#000000;stroke-width:0.5;"
+       width="135.0488"
+       x="1018.8182"
+       y="343.6777"
+       id="rect22" />
+    <text
+       fill="#000000"
+       font-family="Arial"
+       font-size="10"
+       lengthAdjust="spacing"
+       textLength="115.0488"
+       x="1028.8182"
+       y="363.0576"
+       id="text23">4th-Order Bandpass Filter</text>
+    <text
+       fill="#000000"
+       font-family="Arial"
+       font-size="10"
+       lengthAdjust="spacing"
+       textLength="75.5762"
+       x="1028.8182"
+       y="374.5566"
+       id="text24">(Cascaded MFB)</text>
+    <path
+       d="M1168.4422,421.0557 L1168.4422,462.9346 L1148.4422,466.9346 L1168.4422,470.9346 L1168.4422,512.8135 A0,0 0 0 0 1168.4422,512.8135 L1339.7674,512.8135 A0,0 0 0 0 1339.7674,512.8135 L1339.7674,431.0557 L1329.7674,421.0557 L1168.4422,421.0557 A0,0 0 0 0 1168.4422,421.0557 "
+       fill="#FEFFDD"
+       style="stroke:#181818;stroke-width:0.5;"
+       id="path24" />
+    <path
+       d="M1329.7674,421.0557 L1329.7674,431.0557 L1339.7674,431.0557 L1329.7674,421.0557 "
+       fill="#FEFFDD"
+       style="stroke:#181818;stroke-width:0.5;"
+       id="path25" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="99.6963"
+       x="1174.4422"
+       y="439.5508"
+       id="text25">Precision rectifier</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="141.9526"
+       x="1174.4422"
+       y="455.9023"
+       id="text26">RC: R=100kΩ, C=330nF</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="136.9951"
+       x="1174.4422"
+       y="472.2539"
+       id="text27">Time constant: τ=33 ms</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="96.8018"
+       x="1174.4422"
+       y="488.6055"
+       id="text28">Rise time: 68 ms</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="150.3252"
+       x="1174.4422"
+       y="504.957"
+       id="text29">Ripple attenuation: -61 dB</text>
+    <rect
+       fill="#ADD8E6"
+       height="42.998"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#000000;stroke-width:0.5;"
+       width="124.1992"
+       x="1024.243"
+       y="445.4355"
+       id="rect29" />
+    <text
+       fill="#000000"
+       font-family="Arial"
+       font-size="10"
+       lengthAdjust="spacing"
+       textLength="82.2705"
+       x="1034.243"
+       y="464.8154"
+       id="text30">Envelope Detector</text>
+    <text
+       fill="#000000"
+       font-family="Arial"
+       font-size="10"
+       lengthAdjust="spacing"
+       textLength="104.1992"
+       x="1034.243"
+       y="476.3145"
+       id="text31">(BAT48 Schottky + RC)</text>
+    <path
+       d="M1161.0911,524.7852 L1161.0911,550.3125 L1141.0911,554.3125 L1161.0911,558.3125 L1161.0911,583.8398 A0,0 0 0 0 1161.0911,583.8398 L1355.5345,583.8398 A0,0 0 0 0 1355.5345,583.8398 L1355.5345,534.7852 L1345.5345,524.7852 L1161.0911,524.7852 A0,0 0 0 0 1161.0911,524.7852 "
+       fill="#FEFFDD"
+       style="stroke:#181818;stroke-width:0.5;"
+       id="path31" />
+    <path
+       d="M1345.5345,524.7852 L1345.5345,534.7852 L1355.5345,534.7852 L1345.5345,524.7852 "
+       fill="#FEFFDD"
+       style="stroke:#181818;stroke-width:0.5;"
+       id="path32" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="173.4434"
+       x="1167.0911"
+       y="543.2803"
+       id="text32">Proportional to tone amplitude</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="166.2007"
+       x="1167.0911"
+       y="559.6318"
+       id="text33">Smooth DC level during tone</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="141.9907"
+       x="1167.0911"
+       y="575.9834"
+       id="text34">Low ripple (&lt;0.8 mV_pp)</text>
+    <rect
+       fill="#ADD8E6"
+       height="42.998"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#000000;stroke-width:0.5;"
+       width="109.4971"
+       x="1031.5941"
+       y="532.8135"
+       id="rect34" />
+    <text
+       fill="#000000"
+       font-family="Arial"
+       font-size="10"
+       lengthAdjust="spacing"
+       textLength="89.4971"
+       x="1041.5941"
+       y="552.1934"
+       id="text35">DC Envelope Signal</text>
+    <text
+       fill="#000000"
+       font-family="Arial"
+       font-size="10"
+       lengthAdjust="spacing"
+       textLength="36.123"
+       x="1041.5941"
+       y="563.6924"
+       id="text36">(0-3.3V)</text>
+    <rect
+       fill="none"
+       height="719.3735"
+       style="stroke:#000000;stroke-width:1.5;"
+       width="2677.3892"
+       x="11"
+       y="605.8398"
+       id="rect36" />
+    <path
+       d="M219.4404,605.8398 L219.4404,616.4492 L209.4404,626.4492 L11,626.4492 "
+       fill="none"
+       style="stroke:#000000;stroke-width:1.5;"
+       id="path36" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14"
+       lengthAdjust="spacing"
+       textLength="198.4404"
+       x="14"
+       y="621.373"
+       id="text37">Digital Monitoring and Detection</text>
+    <path
+       d="M1168.0272,636.4492 L1168.0272,670.1523 L1148.0272,674.1523 L1168.0272,678.1523 L1168.0272,711.8555 A0,0 0 0 0 1168.0272,711.8555 L1399.325,711.8555 A0,0 0 0 0 1399.325,711.8555 L1399.325,646.4492 L1389.325,636.4492 L1168.0272,636.4492 A0,0 0 0 0 1168.0272,636.4492 "
+       fill="#FEFFDD"
+       style="stroke:#181818;stroke-width:0.5;"
+       id="path37" />
+    <path
+       d="M1389.325,636.4492 L1389.325,646.4492 L1399.325,646.4492 L1389.325,636.4492 "
+       fill="#FEFFDD"
+       style="stroke:#181818;stroke-width:0.5;"
+       id="path38" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="210.2979"
+       x="1174.0272"
+       y="654.9443"
+       id="text38">ADC reads envelope detector output</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="151.7979"
+       x="1174.0272"
+       y="671.2959"
+       id="text39">11 dB attenuation enabled</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="137.3188"
+       x="1174.0272"
+       y="687.6475"
+       id="text40">Voltage range: 0.0-3.3V</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="196.5488"
+       x="1174.0272"
+       y="703.999"
+       id="text41">Sampled every main loop iteration</text>
+    <rect
+       fill="#ADD8E6"
+       height="42.998"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#000000;stroke-width:0.5;"
+       width="123.3691"
+       x="1024.658"
+       y="652.6533"
+       id="rect41" />
+    <text
+       fill="#000000"
+       font-family="Arial"
+       font-size="10"
+       lengthAdjust="spacing"
+       textLength="103.3691"
+       x="1034.658"
+       y="672.0332"
+       id="text42">ESP32 ADC (GPIO 36)</text>
+    <text
+       fill="#000000"
+       font-family="Arial"
+       font-size="10"
+       lengthAdjust="spacing"
+       textLength="61.709"
+       x="1034.658"
+       y="683.5322"
+       id="text43">12-bit, 0-4095</text>
+    <path
+       d="M1177.4852,726.2534 L1177.4852,743.605 L1157.4852,747.605 L1177.4852,751.605 L1177.4852,768.9565 A0,0 0 0 0 1177.4852,768.9565 L1451.3441,768.9565 A0,0 0 0 0 1451.3441,768.9565 L1451.3441,736.2534 L1441.3441,726.2534 L1177.4852,726.2534 A0,0 0 0 0 1177.4852,726.2534 "
+       fill="#FEFFDD"
+       style="stroke:#181818;stroke-width:0.5;"
+       id="path43" />
+    <path
+       d="M1441.3441,726.2534 L1441.3441,736.2534 L1451.3441,736.2534 L1441.3441,726.2534 "
+       fill="#FEFFDD"
+       style="stroke:#181818;stroke-width:0.5;"
+       id="path44" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="211.7578"
+       x="1183.4852"
+       y="744.7485"
+       id="text44">voltage = (adcValue / 4095.0) × 3.3V</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="252.8589"
+       x="1183.4852"
+       y="761.1001"
+       id="text45">Threshold: 2.8V (THRESHOLD_VOLTAGE)</text>
+    <rect
+       fill="#ADD8E6"
+       height="31.499"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#000000;stroke-width:0.5;"
+       width="142.2852"
+       x="1015.2"
+       y="731.8555"
+       id="rect45" />
+    <text
+       fill="#000000"
+       font-family="Arial"
+       font-size="10"
+       lengthAdjust="spacing"
+       textLength="122.2852"
+       x="1025.2"
+       y="751.2354"
+       id="text46">ADC to Voltage Conversion</text>
+    <polygon
+       fill="#ADD8E6"
+       points="1050.7957,788.9565,1121.8895,788.9565,1133.8895,800.9565,1121.8895,812.9565,1050.7957,812.9565,1038.7957,800.9565,1050.7957,788.9565"
+       style="stroke:#000000;stroke-width:0.5;"
+       id="polygon46" />
+    <text
+       fill="#000000"
+       font-family="Arial"
+       font-size="10"
+       lengthAdjust="spacing"
+       textLength="71.0938"
+       x="1050.7957"
+       y="804.5869"
+       id="text47">Voltage ≥ 2.8V?</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="9"
+       lengthAdjust="spacing"
+       textLength="77.5371"
+       x="961.2586"
+       y="798.979"
+       id="text48">Yes - Tone Present</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="9"
+       lengthAdjust="spacing"
+       textLength="70.5366"
+       x="1133.8895"
+       y="798.979"
+       id="text49">No - Tone Absent</text>
+    <polygon
+       fill="#ADD8E6"
+       points="166.1838,822.9565,285.134,822.9565,297.134,834.9565,285.134,846.9565,166.1838,846.9565,154.1838,834.9565,166.1838,822.9565"
+       style="stroke:#000000;stroke-width:0.5;"
+       id="polygon49" />
+    <text
+       fill="#000000"
+       font-family="Arial"
+       font-size="10"
+       lengthAdjust="spacing"
+       textLength="59.4824"
+       x="166.1838"
+       y="832.8374"
+       id="text50">Rising Edge?</text>
+    <text
+       fill="#000000"
+       font-family="Arial"
+       font-size="10"
+       lengthAdjust="spacing"
+       textLength="118.9502"
+       x="166.1838"
+       y="844.3364"
+       id="text51">Previously below threshold</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="9"
+       lengthAdjust="spacing"
+       textLength="15.5083"
+       x="138.6755"
+       y="832.979"
+       id="text52">Yes</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="9"
+       lengthAdjust="spacing"
+       textLength="77.0273"
+       x="297.134"
+       y="832.979"
+       id="text53">No - Already Active</text>
+    <path
+       d="M140.2266,856.9565 L140.2266,890.6597 L120.2266,894.6597 L140.2266,898.6597 L140.2266,932.3628 A0,0 0 0 0 140.2266,932.3628 L304.1187,932.3628 A0,0 0 0 0 304.1187,932.3628 L304.1187,866.9565 L294.1187,856.9565 L140.2266,856.9565 A0,0 0 0 0 140.2266,856.9565 "
+       fill="#FEFFDD"
+       style="stroke:#181818;stroke-width:0.5;"
+       id="path53" />
+    <path
+       d="M294.1187,856.9565 L294.1187,866.9565 L304.1187,866.9565 L294.1187,856.9565 "
+       fill="#FEFFDD"
+       style="stroke:#181818;stroke-width:0.5;"
+       id="path54" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="106.812"
+       x="146.2266"
+       y="875.4517"
+       id="text54">• toneActive = true</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="142.8921"
+       x="146.2266"
+       y="891.8032"
+       id="text55">• toneStartTime = millis()</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="133.5547"
+       x="146.2266"
+       y="908.1548"
+       id="text56">• peakADC = adcValue</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="137.9092"
+       x="146.2266"
+       y="924.5063"
+       id="text57">• peakVoltage = voltage</text>
+    <rect
+       fill="#ADD8E6"
+       height="31.499"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#000000;stroke-width:0.5;"
+       width="97.2266"
+       x="23"
+       y="878.9102"
+       id="rect57" />
+    <text
+       fill="#000000"
+       font-family="Arial"
+       font-size="10"
+       lengthAdjust="spacing"
+       textLength="77.2266"
+       x="33"
+       y="898.29"
+       id="text58">TONE STARTED</text>
+    <path
+       d="M455.2905,856.9565 L455.2905,874.3081 L435.2905,878.3081 L455.2905,882.3081 L455.2905,899.6597 A0,0 0 0 0 455.2905,899.6597 L645.3286,899.6597 A0,0 0 0 0 645.3286,899.6597 L645.3286,866.9565 L635.3286,856.9565 L455.2905,856.9565 A0,0 0 0 0 455.2905,856.9565 "
+       fill="#FEFFDD"
+       style="stroke:#181818;stroke-width:0.5;"
+       id="path58" />
+    <path
+       d="M635.3286,856.9565 L635.3286,866.9565 L645.3286,866.9565 L635.3286,856.9565 "
+       fill="#FEFFDD"
+       style="stroke:#181818;stroke-width:0.5;"
+       id="path59" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="169.0381"
+       x="461.2905"
+       y="875.4517"
+       id="text59">Track maximum ADC/voltage</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="115.6416"
+       x="461.2905"
+       y="891.8032"
+       id="text60">during tone duration</text>
+    <rect
+       fill="#ADD8E6"
+       height="31.499"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#000000;stroke-width:0.5;"
+       width="111.1719"
+       x="324.1187"
+       y="862.5586"
+       id="rect60" />
+    <text
+       fill="#000000"
+       font-family="Arial"
+       font-size="10"
+       lengthAdjust="spacing"
+       textLength="91.1719"
+       x="334.1187"
+       y="881.9385"
+       id="text61">Update Peak Values</text>
+    <polygon
+       fill="#ADD8E6"
+       points="225.6589,938.3628,237.6589,950.3628,225.6589,962.3628,213.6589,950.3628,225.6589,938.3628"
+       style="stroke:#000000;stroke-width:0.5;"
+       id="polygon61" />
+    <polygon
+       fill="#ADD8E6"
+       points="1906.9921,822.9565,2027.0604,822.9565,2039.0604,834.9565,2027.0604,846.9565,1906.9921,846.9565,1894.9921,834.9565,1906.9921,822.9565"
+       style="stroke:#000000;stroke-width:0.5;"
+       id="polygon62" />
+    <text
+       fill="#000000"
+       font-family="Arial"
+       font-size="10"
+       lengthAdjust="spacing"
+       textLength="61.1523"
+       x="1906.9921"
+       y="832.8374"
+       id="text62">Falling Edge?</text>
+    <text
+       fill="#000000"
+       font-family="Arial"
+       font-size="10"
+       lengthAdjust="spacing"
+       textLength="120.0684"
+       x="1906.9921"
+       y="844.3364"
+       id="text63">Previously above threshold</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="9"
+       lengthAdjust="spacing"
+       textLength="15.5083"
+       x="1879.4838"
+       y="832.979"
+       id="text64">Yes</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="9"
+       lengthAdjust="spacing"
+       textLength="57.5288"
+       x="2039.0604"
+       y="832.979"
+       id="text65">No - Idle State</text>
+    <path
+       d="M1501.0471,856.9565 L1501.0471,874.3081 L1481.0471,878.3081 L1501.0471,882.3081 L1501.0471,899.6597 A0,0 0 0 0 1501.0471,899.6597 L1750.9309,899.6597 A0,0 0 0 0 1750.9309,899.6597 L1750.9309,866.9565 L1740.9309,856.9565 L1501.0471,856.9565 A0,0 0 0 0 1501.0471,856.9565 "
+       fill="#FEFFDD"
+       style="stroke:#181818;stroke-width:0.5;"
+       id="path65" />
+    <path
+       d="M1740.9309,856.9565 L1740.9309,866.9565 L1750.9309,866.9565 L1740.9309,856.9565 "
+       fill="#FEFFDD"
+       style="stroke:#181818;stroke-width:0.5;"
+       id="path66" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="113.6802"
+       x="1507.0471"
+       y="875.4517"
+       id="text66">• Calculate duration</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="228.8838"
+       x="1507.0471"
+       y="891.8032"
+       id="text67">• toneDuration = millis() - toneStartTime</text>
+    <rect
+       fill="#ADD8E6"
+       height="31.499"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#000000;stroke-width:0.5;"
+       width="85.5615"
+       x="1395.4856"
+       y="862.5586"
+       id="rect67" />
+    <text
+       fill="#000000"
+       font-family="Arial"
+       font-size="10"
+       lengthAdjust="spacing"
+       textLength="65.5615"
+       x="1405.4856"
+       y="881.9385"
+       id="text68">TONE ENDED</text>
+    <polygon
+       fill="#ADD8E6"
+       points="1376.3572,934.6597,1500.1755,934.6597,1512.1755,946.6597,1500.1755,958.6597,1376.3572,958.6597,1364.3572,946.6597,1376.3572,934.6597"
+       style="stroke:#000000;stroke-width:0.5;"
+       id="polygon68" />
+    <text
+       fill="#000000"
+       font-family="Arial"
+       font-size="10"
+       lengthAdjust="spacing"
+       textLength="68.374"
+       x="1376.3572"
+       y="944.5405"
+       id="text69">Duration Valid?</text>
+    <text
+       fill="#000000"
+       font-family="Arial"
+       font-size="10"
+       lengthAdjust="spacing"
+       textLength="123.8184"
+       x="1376.3572"
+       y="956.0396"
+       id="text70">500ms ≤ duration ≤ 1000ms</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="9"
+       lengthAdjust="spacing"
+       textLength="15.5083"
+       x="1348.8489"
+       y="944.6821"
+       id="text71">Yes</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="9"
+       lengthAdjust="spacing"
+       textLength="82.0371"
+       x="1512.1755"
+       y="944.6821"
+       id="text72">No - Invalid Duration</text>
+    <polygon
+       fill="#ADD8E6"
+       points="949.5054,968.6597,1037.8892,968.6597,1049.8892,980.6597,1037.8892,992.6597,949.5054,992.6597,937.5054,980.6597,949.5054,968.6597"
+       style="stroke:#000000;stroke-width:0.5;"
+       id="polygon72" />
+    <text
+       fill="#000000"
+       font-family="Arial"
+       font-size="10"
+       lengthAdjust="spacing"
+       textLength="88.3838"
+       x="949.5054"
+       y="984.29"
+       id="text73">First tone detected?</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="9"
+       lengthAdjust="spacing"
+       textLength="11.5049"
+       x="926.0005"
+       y="978.6821"
+       id="text74">No</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="9"
+       lengthAdjust="spacing"
+       textLength="77.0449"
+       x="1049.8892"
+       y="978.6821"
+       id="text75">Yes - Second Tone</text>
+    <path
+       d="M778.6782,1002.6597 L778.6782,1028.187 L758.6782,1032.187 L778.6782,1036.187 L778.6782,1061.7144 A0,0 0 0 0 778.6782,1061.7144 L963.5176,1061.7144 A0,0 0 0 0 963.5176,1061.7144 L963.5176,1012.6597 L953.5176,1002.6597 L778.6782,1002.6597 A0,0 0 0 0 778.6782,1002.6597 "
+       fill="#FEFFDD"
+       style="stroke:#181818;stroke-width:0.5;"
+       id="path75" />
+    <path
+       d="M953.5176,1002.6597 L953.5176,1012.6597 L963.5176,1012.6597 L953.5176,1002.6597 "
+       fill="#FEFFDD"
+       style="stroke:#181818;stroke-width:0.5;"
+       id="path76" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="148.7129"
+       x="784.6782"
+       y="1021.1548"
+       id="text76">• firstToneDetected = true</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="163.8394"
+       x="784.6782"
+       y="1037.5063"
+       id="text77">• firstToneEndTime = millis()</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="128.1211"
+       x="784.6782"
+       y="1053.8579"
+       id="text78">• Wait for second tone</text>
+    <rect
+       fill="#ADD8E6"
+       height="31.499"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#000000;stroke-width:0.5;"
+       width="103.3496"
+       x="655.3286"
+       y="1016.4375"
+       id="rect78" />
+    <text
+       fill="#000000"
+       font-family="Arial"
+       font-size="10"
+       lengthAdjust="spacing"
+       textLength="83.3496"
+       x="665.3286"
+       y="1035.8174"
+       id="text79">Mark as First Tone</text>
+    <polygon
+       fill="#ADD8E6"
+       points="1244.8491,1002.6597,1315.9331,1002.6597,1327.9331,1014.6597,1315.9331,1026.6597,1244.8491,1026.6597,1232.8491,1014.6597,1244.8491,1002.6597"
+       style="stroke:#000000;stroke-width:0.5;"
+       id="polygon79" />
+    <text
+       fill="#000000"
+       font-family="Arial"
+       font-size="10"
+       lengthAdjust="spacing"
+       textLength="71.084"
+       x="1244.8491"
+       y="1018.29"
+       id="text80">Gap ≤ 2000ms?</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="9"
+       lengthAdjust="spacing"
+       textLength="15.5083"
+       x="1217.3408"
+       y="1012.6821"
+       id="text81">Yes</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="9"
+       lengthAdjust="spacing"
+       textLength="77.0449"
+       x="1327.9331"
+       y="1012.6821"
+       id="text82">No - Gap Too Long</text>
+    <path
+       d="M1147.9707,1036.6597 L1147.9707,1062.187 L1127.9707,1066.187 L1147.9707,1070.187 L1147.9707,1095.7144 A0,0 0 0 0 1147.9707,1095.7144 L1427.5234,1095.7144 A0,0 0 0 0 1427.5234,1095.7144 L1427.5234,1046.6597 L1417.5234,1036.6597 L1147.9707,1036.6597 A0,0 0 0 0 1147.9707,1036.6597 "
+       fill="#FEFFDD"
+       style="stroke:#181818;stroke-width:0.5;"
+       id="path82" />
+    <path
+       d="M1417.5234,1036.6597 L1417.5234,1046.6597 L1427.5234,1046.6597 L1417.5234,1036.6597 "
+       fill="#FEFFDD"
+       style="stroke:#181818;stroke-width:0.5;"
+       id="path83" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="258.5527"
+       x="1153.9707"
+       y="1055.1548"
+       id="text83">• Set systemStatus.pureToneDetected = true</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="169.292"
+       x="1153.9707"
+       y="1071.5063"
+       id="text84">• Trigger SOS state transition</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="131.022"
+       x="1153.9707"
+       y="1087.8579"
+       id="text85">• Reset detection state</text>
+    <rect
+       fill="#ADD8E6"
+       height="31.499"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#000000;stroke-width:0.5;"
+       width="134.4531"
+       x="993.5176"
+       y="1050.4375"
+       id="rect85" />
+    <text
+       fill="#000000"
+       font-family="Arial"
+       font-size="10"
+       lengthAdjust="spacing"
+       textLength="114.4531"
+       x="1003.5176"
+       y="1069.8174"
+       id="text86">DUAL-TONE DETECTED</text>
+    <rect
+       fill="#ADD8E6"
+       height="31.499"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#000000;stroke-width:0.5;"
+       width="110.6104"
+       x="1005.439"
+       y="1115.7144"
+       id="rect86" />
+    <text
+       fill="#000000"
+       font-family="Arial"
+       font-size="10"
+       lengthAdjust="spacing"
+       textLength="90.6104"
+       x="1015.439"
+       y="1135.0942"
+       id="text87">Return to Main Loop</text>
+    <ellipse
+       cx="1060.7441"
+       cy="1178.2134"
+       fill="none"
+       rx="11"
+       ry="11"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="ellipse87" />
+    <ellipse
+       cx="1060.7441"
+       cy="1178.2134"
+       fill="#222222"
+       rx="6"
+       ry="6"
+       style="stroke:#222222;stroke-width:1.0;"
+       id="ellipse88" />
+    <path
+       d="M1572.5527,1036.6597 L1572.5527,1054.0112 L1552.5527,1058.0112 L1572.5527,1062.0112 L1572.5527,1079.3628 A0,0 0 0 0 1572.5527,1079.3628 L1803.1016,1079.3628 A0,0 0 0 0 1803.1016,1079.3628 L1803.1016,1046.6597 L1793.1016,1036.6597 L1572.5527,1036.6597 A0,0 0 0 0 1572.5527,1036.6597 "
+       fill="#FEFFDD"
+       style="stroke:#181818;stroke-width:0.5;"
+       id="path88" />
+    <path
+       d="M1793.1016,1036.6597 L1793.1016,1046.6597 L1803.1016,1046.6597 L1793.1016,1036.6597 "
+       fill="#FEFFDD"
+       style="stroke:#181818;stroke-width:0.5;"
+       id="path89" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="148.8716"
+       x="1578.5527"
+       y="1055.1548"
+       id="text89">Gap exceeded 2s window</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="209.5488"
+       x="1578.5527"
+       y="1071.5063"
+       id="text90">Current tone becomes new first tone</text>
+    <rect
+       fill="#ADD8E6"
+       height="31.499"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#000000;stroke-width:0.5;"
+       width="105.0293"
+       x="1447.5234"
+       y="1042.2617"
+       id="rect90" />
+    <text
+       fill="#000000"
+       font-family="Arial"
+       font-size="10"
+       lengthAdjust="spacing"
+       textLength="85.0293"
+       x="1457.5234"
+       y="1061.6416"
+       id="text91">Reset to First Tone</text>
+    <polygon
+       fill="#ADD8E6"
+       points="993.6973,1199.2134,1005.6973,1211.2134,993.6973,1223.2134,981.6973,1211.2134,993.6973,1199.2134"
+       style="stroke:#000000;stroke-width:0.5;"
+       id="polygon91" />
+    <path
+       d="M1912.5693,968.6597 L1912.5693,986.0112 L1892.5693,990.0112 L1912.5693,994.0112 L1912.5693,1011.3628 A0,0 0 0 0 1912.5693,1011.3628 L2140.979,1011.3628 A0,0 0 0 0 2140.979,1011.3628 L2140.979,978.6597 L2130.979,968.6597 L1912.5693,968.6597 A0,0 0 0 0 1912.5693,968.6597 "
+       fill="#FEFFDD"
+       style="stroke:#181818;stroke-width:0.5;"
+       id="path91" />
+    <path
+       d="M2130.979,968.6597 L2130.979,978.6597 L2140.979,978.6597 L2130.979,968.6597 "
+       fill="#FEFFDD"
+       style="stroke:#181818;stroke-width:0.5;"
+       id="path92" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="207.4097"
+       x="1918.5693"
+       y="987.1548"
+       id="text92">Duration outside 500-1000ms range</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="182.4507"
+       x="1918.5693"
+       y="1003.5063"
+       id="text93">Reset firstToneDetected = false</text>
+    <rect
+       fill="#ADD8E6"
+       height="31.499"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#000000;stroke-width:0.5;"
+       width="79.4678"
+       x="1813.1016"
+       y="974.2617"
+       id="rect93" />
+    <text
+       fill="#000000"
+       font-family="Arial"
+       font-size="10"
+       lengthAdjust="spacing"
+       textLength="59.4678"
+       x="1823.1016"
+       y="993.6416"
+       id="text94">Discard Tone</text>
+    <polygon
+       fill="#ADD8E6"
+       points="1438.2664,1229.2134,1450.2664,1241.2134,1438.2664,1253.2134,1426.2664,1241.2134,1438.2664,1229.2134"
+       style="stroke:#000000;stroke-width:0.5;"
+       id="polygon94" />
+    <polygon
+       fill="#ADD8E6"
+       points="2430.4761,856.9565,2541.0962,856.9565,2553.0962,868.9565,2541.0962,880.9565,2430.4761,880.9565,2418.4761,868.9565,2430.4761,856.9565"
+       style="stroke:#000000;stroke-width:0.5;"
+       id="polygon95" />
+    <text
+       fill="#000000"
+       font-family="Arial"
+       font-size="10"
+       lengthAdjust="spacing"
+       textLength="110.6201"
+       x="2430.4761"
+       y="872.5869"
+       id="text95">Waiting for second tone?</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="9"
+       lengthAdjust="spacing"
+       textLength="15.5083"
+       x="2402.9678"
+       y="866.979"
+       id="text96">Yes</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="9"
+       lengthAdjust="spacing"
+       textLength="11.5049"
+       x="2553.0962"
+       y="866.979"
+       id="text97">No</text>
+    <polygon
+       fill="#ADD8E6"
+       points="2291.9727,890.9565,2400.6396,890.9565,2412.6396,902.9565,2400.6396,914.9565,2291.9727,914.9565,2279.9727,902.9565,2291.9727,890.9565"
+       style="stroke:#000000;stroke-width:0.5;"
+       id="polygon97" />
+    <text
+       fill="#000000"
+       font-family="Arial"
+       font-size="10"
+       lengthAdjust="spacing"
+       textLength="41.6846"
+       x="2291.9727"
+       y="900.8374"
+       id="text98">Timeout?</text>
+    <text
+       fill="#000000"
+       font-family="Arial"
+       font-size="10"
+       lengthAdjust="spacing"
+       textLength="108.667"
+       x="2291.9727"
+       y="912.3364"
+       id="text99">&gt;2000ms since first tone</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="9"
+       lengthAdjust="spacing"
+       textLength="15.5083"
+       x="2264.4644"
+       y="900.979"
+       id="text100">Yes</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="9"
+       lengthAdjust="spacing"
+       textLength="11.5049"
+       x="2412.6396"
+       y="900.979"
+       id="text101">No</text>
+    <path
+       d="M2262.1118,924.9565 L2262.1118,942.3081 L2242.1118,946.3081 L2262.1118,950.3081 L2262.1118,967.6597 A0,0 0 0 0 2262.1118,967.6597 L2427.9907,967.6597 A0,0 0 0 0 2427.9907,967.6597 L2427.9907,934.9565 L2417.9907,924.9565 L2262.1118,924.9565 A0,0 0 0 0 2262.1118,924.9565 "
+       fill="#FEFFDD"
+       style="stroke:#181818;stroke-width:0.5;"
+       id="path101" />
+    <path
+       d="M2417.9907,924.9565 L2417.9907,934.9565 L2427.9907,934.9565 L2417.9907,924.9565 "
+       fill="#FEFFDD"
+       style="stroke:#181818;stroke-width:0.5;"
+       id="path102" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="122.1289"
+       x="2268.1118"
+       y="943.4517"
+       id="text102">Exceeded 2s window</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacing"
+       textLength="144.8789"
+       x="2268.1118"
+       y="959.8032"
+       id="text103">firstToneDetected = false</text>
+    <rect
+       fill="#ADD8E6"
+       height="31.499"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#000000;stroke-width:0.5;"
+       width="91.1328"
+       x="2150.979"
+       y="930.5586"
+       id="rect103" />
+    <text
+       fill="#000000"
+       font-family="Arial"
+       font-size="10"
+       lengthAdjust="spacing"
+       textLength="71.1328"
+       x="2160.979"
+       y="949.9385"
+       id="text104">Timeout - Reset</text>
+    <rect
+       fill="#ADD8E6"
+       height="31.499"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#000000;stroke-width:0.5;"
+       width="96.1523"
+       x="2447.9907"
+       y="924.9565"
+       id="rect104" />
+    <text
+       fill="#000000"
+       font-family="Arial"
+       font-size="10"
+       lengthAdjust="spacing"
+       textLength="76.1523"
+       x="2457.9907"
+       y="944.3364"
+       id="text105">Continue Waiting</text>
+    <polygon
+       fill="#ADD8E6"
+       points="2346.3062,973.6597,2358.3062,985.6597,2346.3062,997.6597,2334.3062,985.6597,2346.3062,973.6597"
+       style="stroke:#000000;stroke-width:0.5;"
+       id="polygon105" />
+    <rect
+       fill="#ADD8E6"
+       height="31.499"
+       rx="12.5"
+       ry="12.5"
+       style="stroke:#000000;stroke-width:0.5;"
+       width="102.2461"
+       x="2574.1431"
+       y="890.9565"
+       id="rect105" />
+    <text
+       fill="#000000"
+       font-family="Arial"
+       font-size="10"
+       lengthAdjust="spacing"
+       textLength="82.2461"
+       x="2584.1431"
+       y="910.3364"
+       id="text106">Idle - Monitor ADC</text>
+    <polygon
+       fill="#ADD8E6"
+       points="2485.7861,1003.6597,2497.7861,1015.6597,2485.7861,1027.6597,2473.7861,1015.6597,2485.7861,1003.6597"
+       style="stroke:#000000;stroke-width:0.5;"
+       id="polygon106" />
+    <polygon
+       fill="#ADD8E6"
+       points="1967.0262,1259.2134,1979.0262,1271.2134,1967.0262,1283.2134,1955.0262,1271.2134,1967.0262,1259.2134"
+       style="stroke:#000000;stroke-width:0.5;"
+       id="polygon107" />
+    <polygon
+       fill="#ADD8E6"
+       points="1086.3426,1289.2134,1098.3426,1301.2134,1086.3426,1313.2134,1074.3426,1301.2134,1086.3426,1289.2134"
+       style="stroke:#000000;stroke-width:0.5;"
+       id="polygon108" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="1086.3426"
+       x2="1086.3426"
+       y1="172.9946"
+       y2="195.2734"
+       id="line108" />
+    <polygon
+       fill="#000000"
+       points="1082.3426,185.2734,1086.3426,195.2734,1090.3426,185.2734,1086.3426,189.2734"
+       style="stroke:#000000;stroke-width:1.0;"
+       id="polygon109" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="1086.3426"
+       x2="1086.3426"
+       y1="238.2715"
+       y2="258.2715"
+       id="line109" />
+    <polygon
+       fill="#000000"
+       points="1082.3426,248.2715,1086.3426,258.2715,1090.3426,248.2715,1086.3426,252.2715"
+       style="stroke:#000000;stroke-width:1.0;"
+       id="polygon110" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="1086.3426"
+       x2="1086.3426"
+       y1="301.2695"
+       y2="343.6777"
+       id="line110" />
+    <polygon
+       fill="#000000"
+       points="1082.3426,333.6777,1086.3426,343.6777,1090.3426,333.6777,1086.3426,337.6777"
+       style="stroke:#000000;stroke-width:1.0;"
+       id="polygon111" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="1086.3426"
+       x2="1086.3426"
+       y1="386.6758"
+       y2="445.4355"
+       id="line111" />
+    <polygon
+       fill="#000000"
+       points="1082.3426,435.4355,1086.3426,445.4355,1090.3426,435.4355,1086.3426,439.4355"
+       style="stroke:#000000;stroke-width:1.0;"
+       id="polygon112" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="1086.3426"
+       x2="1086.3426"
+       y1="488.4336"
+       y2="532.8135"
+       id="line112" />
+    <polygon
+       fill="#000000"
+       points="1082.3426,522.8135,1086.3426,532.8135,1090.3426,522.8135,1086.3426,526.8135"
+       style="stroke:#000000;stroke-width:1.0;"
+       id="polygon113" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="1086.3426"
+       x2="1086.3426"
+       y1="68.6094"
+       y2="118.4976"
+       id="line113" />
+    <polygon
+       fill="#000000"
+       points="1082.3426,108.4976,1086.3426,118.4976,1090.3426,108.4976,1086.3426,112.4976"
+       style="stroke:#000000;stroke-width:1.0;"
+       id="polygon114" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="1086.3426"
+       x2="1086.3426"
+       y1="695.6514"
+       y2="731.8555"
+       id="line114" />
+    <polygon
+       fill="#000000"
+       points="1082.3426,721.8555,1086.3426,731.8555,1090.3426,721.8555,1086.3426,725.8555"
+       style="stroke:#000000;stroke-width:1.0;"
+       id="polygon115" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="154.1838"
+       x2="71.6133"
+       y1="834.9565"
+       y2="834.9565"
+       id="line115" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="71.6133"
+       x2="71.6133"
+       y1="834.9565"
+       y2="878.9102"
+       id="line116" />
+    <polygon
+       fill="#000000"
+       points="67.6133,868.9102,71.6133,878.9102,75.6133,868.9102,71.6133,872.9102"
+       style="stroke:#000000;stroke-width:1.0;"
+       id="polygon116" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="297.134"
+       x2="379.7046"
+       y1="834.9565"
+       y2="834.9565"
+       id="line117" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="379.7046"
+       x2="379.7046"
+       y1="834.9565"
+       y2="862.5586"
+       id="line118" />
+    <polygon
+       fill="#000000"
+       points="375.7046,852.5586,379.7046,862.5586,383.7046,852.5586,379.7046,856.5586"
+       style="stroke:#000000;stroke-width:1.0;"
+       id="polygon118" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="71.6133"
+       x2="71.6133"
+       y1="910.4092"
+       y2="950.3628"
+       id="line119" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="71.6133"
+       x2="213.6589"
+       y1="950.3628"
+       y2="950.3628"
+       id="line120" />
+    <polygon
+       fill="#000000"
+       points="203.6589,946.3628,213.6589,950.3628,203.6589,954.3628,207.6589,950.3628"
+       style="stroke:#000000;stroke-width:1.0;"
+       id="polygon120" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="379.7046"
+       x2="379.7046"
+       y1="894.0576"
+       y2="950.3628"
+       id="line121" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="379.7046"
+       x2="237.6589"
+       y1="950.3628"
+       y2="950.3628"
+       id="line122" />
+    <polygon
+       fill="#000000"
+       points="247.6589,946.3628,237.6589,950.3628,247.6589,954.3628,243.6589,950.3628"
+       style="stroke:#000000;stroke-width:1.0;"
+       id="polygon122" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="1060.7441"
+       x2="1060.7441"
+       y1="1081.9365"
+       y2="1115.7144"
+       id="line123" />
+    <polygon
+       fill="#000000"
+       points="1056.7441,1105.7144,1060.7441,1115.7144,1064.7441,1105.7144,1060.7441,1109.7144"
+       style="stroke:#000000;stroke-width:1.0;"
+       id="polygon123" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="1060.7441"
+       x2="1060.7441"
+       y1="1147.2134"
+       y2="1167.2134"
+       id="line124" />
+    <polygon
+       fill="#000000"
+       points="1056.7441,1157.2134,1060.7441,1167.2134,1064.7441,1157.2134,1060.7441,1161.2134"
+       style="stroke:#000000;stroke-width:1.0;"
+       id="polygon124" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="1232.8491"
+       x2="1060.7441"
+       y1="1014.6597"
+       y2="1014.6597"
+       id="line125" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="1060.7441"
+       x2="1060.7441"
+       y1="1014.6597"
+       y2="1050.4375"
+       id="line126" />
+    <polygon
+       fill="#000000"
+       points="1056.7441,1040.4375,1060.7441,1050.4375,1064.7441,1040.4375,1060.7441,1044.4375"
+       style="stroke:#000000;stroke-width:1.0;"
+       id="polygon126" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="1327.9331"
+       x2="1500.0381"
+       y1="1014.6597"
+       y2="1014.6597"
+       id="line127" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="1500.0381"
+       x2="1500.0381"
+       y1="1014.6597"
+       y2="1042.2617"
+       id="line128" />
+    <polygon
+       fill="#000000"
+       points="1496.0381,1032.2617,1500.0381,1042.2617,1504.0381,1032.2617,1500.0381,1036.2617"
+       style="stroke:#000000;stroke-width:1.0;"
+       id="polygon128" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="1500.0381"
+       x2="1500.0381"
+       y1="1073.7607"
+       y2="1211.2134"
+       id="line129" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="1500.0381"
+       x2="1005.6973"
+       y1="1211.2134"
+       y2="1211.2134"
+       id="line130" />
+    <polygon
+       fill="#000000"
+       points="1015.6973,1207.2134,1005.6973,1211.2134,1015.6973,1215.2134,1011.6973,1211.2134"
+       style="stroke:#000000;stroke-width:1.0;"
+       id="polygon130" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="937.5054"
+       x2="707.0034"
+       y1="980.6597"
+       y2="980.6597"
+       id="line131" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="707.0034"
+       x2="707.0034"
+       y1="980.6597"
+       y2="1016.4375"
+       id="line132" />
+    <polygon
+       fill="#000000"
+       points="703.0034,1006.4375,707.0034,1016.4375,711.0034,1006.4375,707.0034,1010.4375"
+       style="stroke:#000000;stroke-width:1.0;"
+       id="polygon132" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="1049.8892"
+       x2="1280.3911"
+       y1="980.6597"
+       y2="980.6597"
+       id="line133" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="1280.3911"
+       x2="1280.3911"
+       y1="980.6597"
+       y2="1002.6597"
+       id="line134" />
+    <polygon
+       fill="#000000"
+       points="1276.3911,992.6597,1280.3911,1002.6597,1284.3911,992.6597,1280.3911,996.6597"
+       style="stroke:#000000;stroke-width:1.0;"
+       id="polygon134" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="707.0034"
+       x2="707.0034"
+       y1="1047.9365"
+       y2="1211.2134"
+       id="line135" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="707.0034"
+       x2="981.6973"
+       y1="1211.2134"
+       y2="1211.2134"
+       id="line136" />
+    <polygon
+       fill="#000000"
+       points="971.6973,1207.2134,981.6973,1211.2134,971.6973,1215.2134,975.6973,1211.2134"
+       style="stroke:#000000;stroke-width:1.0;"
+       id="polygon136" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="1364.3572"
+       x2="993.6973"
+       y1="946.6597"
+       y2="946.6597"
+       id="line137" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="993.6973"
+       x2="993.6973"
+       y1="946.6597"
+       y2="968.6597"
+       id="line138" />
+    <polygon
+       fill="#000000"
+       points="989.6973,958.6597,993.6973,968.6597,997.6973,958.6597,993.6973,962.6597"
+       style="stroke:#000000;stroke-width:1.0;"
+       id="polygon138" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="1512.1755"
+       x2="1852.8354"
+       y1="946.6597"
+       y2="946.6597"
+       id="line139" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="1852.8354"
+       x2="1852.8354"
+       y1="946.6597"
+       y2="974.2617"
+       id="line140" />
+    <polygon
+       fill="#000000"
+       points="1848.8354,964.2617,1852.8354,974.2617,1856.8354,964.2617,1852.8354,968.2617"
+       style="stroke:#000000;stroke-width:1.0;"
+       id="polygon140" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="993.6973"
+       x2="993.6973"
+       y1="1223.2134"
+       y2="1241.2134"
+       id="line141" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="993.6973"
+       x2="1426.2664"
+       y1="1241.2134"
+       y2="1241.2134"
+       id="line142" />
+    <polygon
+       fill="#000000"
+       points="1416.2664,1237.2134,1426.2664,1241.2134,1416.2664,1245.2134,1420.2664,1241.2134"
+       style="stroke:#000000;stroke-width:1.0;"
+       id="polygon142" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="1852.8354"
+       x2="1852.8354"
+       y1="1005.7607"
+       y2="1241.2134"
+       id="line143" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="1852.8354"
+       x2="1450.2664"
+       y1="1241.2134"
+       y2="1241.2134"
+       id="line144" />
+    <polygon
+       fill="#000000"
+       points="1460.2664,1237.2134,1450.2664,1241.2134,1460.2664,1245.2134,1456.2664,1241.2134"
+       style="stroke:#000000;stroke-width:1.0;"
+       id="polygon144" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="1438.2664"
+       x2="1438.2664"
+       y1="894.0576"
+       y2="934.6597"
+       id="line145" />
+    <polygon
+       fill="#000000"
+       points="1434.2664,924.6597,1438.2664,934.6597,1442.2664,924.6597,1438.2664,928.6597"
+       style="stroke:#000000;stroke-width:1.0;"
+       id="polygon145" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="2279.9727"
+       x2="2196.5454"
+       y1="902.9565"
+       y2="902.9565"
+       id="line146" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="2196.5454"
+       x2="2196.5454"
+       y1="902.9565"
+       y2="930.5586"
+       id="line147" />
+    <polygon
+       fill="#000000"
+       points="2192.5454,920.5586,2196.5454,930.5586,2200.5454,920.5586,2196.5454,924.5586"
+       style="stroke:#000000;stroke-width:1.0;"
+       id="polygon147" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="2412.6396"
+       x2="2496.0669"
+       y1="902.9565"
+       y2="902.9565"
+       id="line148" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="2496.0669"
+       x2="2496.0669"
+       y1="902.9565"
+       y2="924.9565"
+       id="line149" />
+    <polygon
+       fill="#000000"
+       points="2492.0669,914.9565,2496.0669,924.9565,2500.0669,914.9565,2496.0669,918.9565"
+       style="stroke:#000000;stroke-width:1.0;"
+       id="polygon149" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="2196.5454"
+       x2="2196.5454"
+       y1="962.0576"
+       y2="985.6597"
+       id="line150" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="2196.5454"
+       x2="2334.3062"
+       y1="985.6597"
+       y2="985.6597"
+       id="line151" />
+    <polygon
+       fill="#000000"
+       points="2324.3062,981.6597,2334.3062,985.6597,2324.3062,989.6597,2328.3062,985.6597"
+       style="stroke:#000000;stroke-width:1.0;"
+       id="polygon151" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="2496.0669"
+       x2="2496.0669"
+       y1="956.4556"
+       y2="985.6597"
+       id="line152" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="2496.0669"
+       x2="2358.3062"
+       y1="985.6597"
+       y2="985.6597"
+       id="line153" />
+    <polygon
+       fill="#000000"
+       points="2368.3062,981.6597,2358.3062,985.6597,2368.3062,989.6597,2364.3062,985.6597"
+       style="stroke:#000000;stroke-width:1.0;"
+       id="polygon153" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="2418.4761"
+       x2="2346.3062"
+       y1="868.9565"
+       y2="868.9565"
+       id="line154" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="2346.3062"
+       x2="2346.3062"
+       y1="868.9565"
+       y2="890.9565"
+       id="line155" />
+    <polygon
+       fill="#000000"
+       points="2342.3062,880.9565,2346.3062,890.9565,2350.3062,880.9565,2346.3062,884.9565"
+       style="stroke:#000000;stroke-width:1.0;"
+       id="polygon155" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="2553.0962"
+       x2="2625.2661"
+       y1="868.9565"
+       y2="868.9565"
+       id="line156" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="2625.2661"
+       x2="2625.2661"
+       y1="868.9565"
+       y2="890.9565"
+       id="line157" />
+    <polygon
+       fill="#000000"
+       points="2621.2661,880.9565,2625.2661,890.9565,2629.2661,880.9565,2625.2661,884.9565"
+       style="stroke:#000000;stroke-width:1.0;"
+       id="polygon157" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="2346.3062"
+       x2="2346.3062"
+       y1="997.6597"
+       y2="1015.6597"
+       id="line158" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="2346.3062"
+       x2="2473.7861"
+       y1="1015.6597"
+       y2="1015.6597"
+       id="line159" />
+    <polygon
+       fill="#000000"
+       points="2463.7861,1011.6597,2473.7861,1015.6597,2463.7861,1019.6597,2467.7861,1015.6597"
+       style="stroke:#000000;stroke-width:1.0;"
+       id="polygon159" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="2625.2661"
+       x2="2625.2661"
+       y1="922.4556"
+       y2="1015.6597"
+       id="line160" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="2625.2661"
+       x2="2497.7861"
+       y1="1015.6597"
+       y2="1015.6597"
+       id="line161" />
+    <polygon
+       fill="#000000"
+       points="2507.7861,1011.6597,2497.7861,1015.6597,2507.7861,1019.6597,2503.7861,1015.6597"
+       style="stroke:#000000;stroke-width:1.0;"
+       id="polygon161" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="1894.9921"
+       x2="1438.2664"
+       y1="834.9565"
+       y2="834.9565"
+       id="line162" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="1438.2664"
+       x2="1438.2664"
+       y1="834.9565"
+       y2="862.5586"
+       id="line163" />
+    <polygon
+       fill="#000000"
+       points="1434.2664,852.5586,1438.2664,862.5586,1442.2664,852.5586,1438.2664,856.5586"
+       style="stroke:#000000;stroke-width:1.0;"
+       id="polygon163" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="2039.0604"
+       x2="2485.7861"
+       y1="834.9565"
+       y2="834.9565"
+       id="line164" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="2485.7861"
+       x2="2485.7861"
+       y1="834.9565"
+       y2="856.9565"
+       id="line165" />
+    <polygon
+       fill="#000000"
+       points="2481.7861,846.9565,2485.7861,856.9565,2489.7861,846.9565,2485.7861,850.9565"
+       style="stroke:#000000;stroke-width:1.0;"
+       id="polygon165" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="1438.2664"
+       x2="1438.2664"
+       y1="1253.2134"
+       y2="1271.2134"
+       id="line166" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="1438.2664"
+       x2="1955.0262"
+       y1="1271.2134"
+       y2="1271.2134"
+       id="line167" />
+    <polygon
+       fill="#000000"
+       points="1945.0262,1267.2134,1955.0262,1271.2134,1945.0262,1275.2134,1949.0262,1271.2134"
+       style="stroke:#000000;stroke-width:1.0;"
+       id="polygon167" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="2485.7861"
+       x2="2485.7861"
+       y1="1027.6597"
+       y2="1271.2134"
+       id="line168" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="2485.7861"
+       x2="1979.0262"
+       y1="1271.2134"
+       y2="1271.2134"
+       id="line169" />
+    <polygon
+       fill="#000000"
+       points="1989.0262,1267.2134,1979.0262,1271.2134,1989.0262,1275.2134,1985.0262,1271.2134"
+       style="stroke:#000000;stroke-width:1.0;"
+       id="polygon169" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="1038.7957"
+       x2="225.6589"
+       y1="800.9565"
+       y2="800.9565"
+       id="line170" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="225.6589"
+       x2="225.6589"
+       y1="800.9565"
+       y2="822.9565"
+       id="line171" />
+    <polygon
+       fill="#000000"
+       points="221.6589,812.9565,225.6589,822.9565,229.6589,812.9565,225.6589,816.9565"
+       style="stroke:#000000;stroke-width:1.0;"
+       id="polygon171" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="1133.8895"
+       x2="1967.0262"
+       y1="800.9565"
+       y2="800.9565"
+       id="line172" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="1967.0262"
+       x2="1967.0262"
+       y1="800.9565"
+       y2="822.9565"
+       id="line173" />
+    <polygon
+       fill="#000000"
+       points="1963.0262,812.9565,1967.0262,822.9565,1971.0262,812.9565,1967.0262,816.9565"
+       style="stroke:#000000;stroke-width:1.0;"
+       id="polygon173" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="225.6589"
+       x2="225.6589"
+       y1="962.3628"
+       y2="1301.2134"
+       id="line174" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="225.6589"
+       x2="1074.3426"
+       y1="1301.2134"
+       y2="1301.2134"
+       id="line175" />
+    <polygon
+       fill="#000000"
+       points="1064.3426,1297.2134,1074.3426,1301.2134,1064.3426,1305.2134,1068.3426,1301.2134"
+       style="stroke:#000000;stroke-width:1.0;"
+       id="polygon175" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="1967.0262"
+       x2="1967.0262"
+       y1="1283.2134"
+       y2="1301.2134"
+       id="line176" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="1967.0262"
+       x2="1098.3426"
+       y1="1301.2134"
+       y2="1301.2134"
+       id="line177" />
+    <polygon
+       fill="#000000"
+       points="1108.3426,1297.2134,1098.3426,1301.2134,1108.3426,1305.2134,1104.3426,1301.2134"
+       style="stroke:#000000;stroke-width:1.0;"
+       id="polygon177" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="1086.3426"
+       x2="1086.3426"
+       y1="763.3545"
+       y2="788.9565"
+       id="line178" />
+    <polygon
+       fill="#000000"
+       points="1082.3426,778.9565,1086.3426,788.9565,1090.3426,778.9565,1086.3426,782.9565"
+       style="stroke:#000000;stroke-width:1.0;"
+       id="polygon178" />
+    <line
+       style="stroke:#000000;stroke-width:1.0;"
+       x1="1086.3426"
+       x2="1086.3426"
+       y1="575.8115"
+       y2="652.6533"
+       id="line179" />
+    <polygon
+       fill="#000000"
+       points="1082.3426,642.6533,1086.3426,652.6533,1090.3426,642.6533,1086.3426,646.6533"
+       style="stroke:#000000;stroke-width:1.0;"
+       id="polygon179" />
+    <!--SRC=[dLV1Sk964Btp5PqzGMNn2cCJ6yVh286zMuLj0bgsKkMghR4qXWdIZ38QcVMcjYg7798lo3sL77BC8J-mkIV_i5-IdX48n4hO3YUGUdgwNxz-tNpcqnl6AGnxZcjVdFLxu0KaZYkLUCPuH2G9WNYAtJ9r1zzN03yTuiqcKYJSTqGW9FJPPAewGKBJjqBwLAPlEW6QcgUdWgiHUqUXOMM_BqX8mPQC19NtwzVPKehvkeEDLvclmqf5CHLG62IIWYimYovL5ACL74Pimaa0fu6OmvofATXT1yu5Pqf8nYTueI9ILIhe69te4qziF20covFEb33-P95ps_P44YlcmKYnC0cI-8hl7bWMl7XdBhxYBGly3em6VVWAFlxyUyC2BpmoPxbG5AG6oVpK7vV82LLm8-bt2UNUNHiMpZABRYA9ZgeDriv-lR5ZGGpLY4fGU5jjvMWkp9FOvCWux8B-odqnDpQK- -R-Iff5Bq1q9DvypZmfegc9l7h-qe5U0mPEfrOQyOZocAKqQ4EzPNtuiudvZfyDI6PocQWeKPX-1WMcPS67lyPWEqNH32GbOHIm6qQb3iCPjApTlV8Oph0WRTWptglsBHmZcnehB3g4-tFcgsaR3WzXjWPc6Xb6Wp26PT7igMdzKdFNE8gm1-2K1Sg4vf3O8pxruVnq2qOEvMY-hQfV8pL-mZ1QsPEwXX4whzkOoq7ETaY_JQdSXkTVc9o_mjnp9ckVvwtzrAIHPRvPUtvB0n4jUqJel3gsktS08sygb9hTmUSmTChJmt9vBDQT8dLWkcghO9qs38yRbZNxvu-du1mtcnO_NR6KOQTxWcFBSIp3lp_YUmZZrMaMKy2-ecre7UHVH17sDr6AycJH3_LM0pCjoX0RF4ioRM9CqQetTvhZRLc9I4Zj6djUfTq4XfOgyUcA_w4GA29uHK3n2l0JhIB6EhFfezJ8DEBgbzOEPZ9-4qMrVAZlSvBJPHEcyEALC06IRoLZcVxqHeFchj6mwjdWvIKqMxKhtjYjNpFr5ApwddMuNvgYFeMjviSOnG8UVy414AOrCjE6ndOTRpn2hWFgPnPZ4IWomIi8dr2jJYd0Aw0qTjWfY9AyWn1R5W8X8c3O6iPZKULqX8ZzqhSZC4wfgLQQq-t2z1YgnFV61CSFF0CDmuvLWxz_WLnGxbJIU2e2Nsl0mHYgxejXR_JYijzzCxxik_PPhrOG5hk1wZ8ab7HpzAG6QaevLBz1pQsdGmSR8yRMNocHFeYSrjNi-HDwSiNHv9RX10dku9hgaQIM4Qtvg-KQk-rUNlHWvDf3jzSzohqgm6Fv-VZ3huQKjfxP6Xub4rfgDT8pq7JdCOGi25XShHKQHvJCT96EOObsgTaugyoYHZdB3E7iGO2zNxqG2AOTQ9RUGHhx1Xgl8fzWrWEy0Km0yOCnSILk4KZ5jpYvGzqDpueYqv-rhjRVLtmj3v_xxAQoaOXXXNtzAIbE2M9So0foBR1S3sL5xwBxI4uu9F2IG2DOcDSwAPQhnnedCASSNOenoJtLwMQUi63CnuJtBIkCiPT-ow8mFt1kuFFId3Fqc8pLeZX6lwYVjUE5g1MDHMYV4pa3ecUvFgmhSrHek0M_TO1kj1ljfRk8eAp52W_rk7zVjwsVUqqOBeceqZ75wUddfyrMMkQxAzMgKUh4pIsGcnYVaSYKPDUKv6HhJJACkw_iVjqGizjpyN_49ZSVYVCo_H4kgl5Th6Y8n5D9l1FXdlyOx9UENBnlWflPw784k8DW00h7LymAss3py135NIq8fmbh79IUAgr41jQGgaHoFUxEzN3iut0iHojM8Ygk-4fjTCbS8T0JdzIstQlpm6llwuH7L4bVJTzwbEhTU3VtpwFiuoHIeYwcRNoDb0oHd9pEqoOff_YzuAwKUFlJDUHUybijJDcVhK_HQtSPRlxIBu7h7fWo_SCjAsO-1TI_UYfswVvKU2ejL97Gt12ClV8WLF9vh-Viutgg-sb317JpQxtHusb3SaxkLMOjQfWZAlppL3W0bn-FhjNqNY5fBtnWY0Q0_wtIlOVpyU4OFq1aIoSGRhE8Akwd2tYF7a7I0aQQ0jQN_nZqEdEqhVAh_SHyUr_v3m00]-->
+  </g>
+</svg>

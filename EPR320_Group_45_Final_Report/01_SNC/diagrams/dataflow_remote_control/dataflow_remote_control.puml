@@ -1,0 +1,130 @@
+@startuml dataflow_remote_control
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 11
+
+title Remote Command Injection Data Flow (WiFi ESP32 to Main ESP32)
+
+actor "Operator\n(Browser)" as OP
+
+' WiFi ESP32
+rectangle "WiFi ESP32" #FFFFE0 {
+  component [WiFi Access\nPoint\nERD-Byron] as AP
+  component [HTTP Web\nServer] as WEB
+
+  rectangle "GPIO Command\nInjection" as GPIOCMD {
+    component [Touch\nInject] as TI
+    component [Tone\nInject] as TNI
+    component [Send\nCommand] as SEND
+  }
+}
+
+' Main ESP32
+rectangle "Main ESP32" #E6E6FA {
+  rectangle "Touch/Tone\nInterface" as TTI {
+    component [Touch\nHandler] as TH
+    component [Tone\nDetector] as TD
+  }
+
+  component [Guard\nEvaluator] as GE
+  component [FSM\nController] as FSM
+}
+
+' Remote command flow
+OP --> AP : **WiFi**\nDashboard\nButton Click
+
+AP --> WEB : HTTP\nRequest
+
+WEB --> GPIOCMD : Command\nSignal
+
+' GPIO injection to Main ESP32
+TI ..> TH : **GPIO Pin 4**\nTouch Inject\n(Simulates\nphysical touch)
+
+TNI ..> TD : **GPIO Pin 2**\nTone Inject\n(Simulates\n2800 Hz tone)
+
+SEND ..> GE : **GPIO Pin 15**\nSend Command\n(Trigger action)
+
+' Main ESP32 processing
+TH --> GE : Touch\nEvent\n(Physical\nor Remote)
+
+TD --> GE : Tone\nEvent\n(Physical\nor Remote)
+
+GE --> FSM : Guard\nEvaluation
+
+FSM --> FSM : State\nTransition
+
+note right of OP
+  **Web Dashboard Controls:**
+
+  Available Buttons:
+  • Inject Touch
+    (IDLE → CAL transition)
+
+  • Inject Tone
+    (MAZE ⇄ SOS toggle)
+
+  • Send Test Command
+    (QTP scenario injection)
+
+  Enables remote testing
+  without physical access
+  to robot hardware
+end note
+
+note right of GPIOCMD
+  **GPIO Command Interface:**
+
+  3-wire control from
+  WiFi ESP32 to Main ESP32
+
+  Pin 4: Touch inject
+  Pin 2: Tone inject
+  Pin 15: Send command
+
+  Active-high signaling
+  Debounced in software
+
+  Use Cases:
+  • Remote operation
+  • Automated testing
+  • QTP scenario replay
+  • Demonstration mode
+end note
+
+note left of GE
+  **Transparent Integration:**
+
+  Main ESP32 Guard Evaluator
+  processes both:
+
+  1. Physical inputs
+     (touch sensor, microphone)
+
+  2. Remote inputs
+     (GPIO from WiFi ESP32)
+
+  No special handling required -
+  remote commands appear
+  identical to physical inputs
+
+  Maintains state machine
+  integrity and safety logic
+end note
+
+note bottom of FSM
+  **State Transitions:**
+
+  Touch (physical or remote):
+    IDLE → CAL
+
+  Tone (physical or remote):
+    MAZE ⇄ SOS
+
+  Same guard conditions
+  apply regardless of
+  input source
+end note
+
+@enduml

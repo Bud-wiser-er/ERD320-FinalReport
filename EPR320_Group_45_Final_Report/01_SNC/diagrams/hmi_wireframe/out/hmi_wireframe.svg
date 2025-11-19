@@ -1,0 +1,989 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   contentStyleType="text/css"
+   height="554px"
+   preserveAspectRatio="none"
+   style="width:3618px;height:554px;background:#FFFFFF;"
+   version="1.1"
+   viewBox="0 0 3618 554"
+   width="3618px"
+   zoomAndPan="magnify"
+   id="svg50"
+   sodipodi:docname="hmi_wireframe.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview50"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.99391929"
+     inkscape:cx="3033.4455"
+     inkscape:cy="236.43771"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="2391"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="cluster_SNC Human-Machine Interface" />
+  <defs
+     id="defs1" />
+  <g
+     id="g50">
+    <!--cluster SNC Human-Machine Interface-->
+    <g
+       id="cluster_SNC Human-Machine Interface">
+      <rect
+         fill="#E8F4F8"
+         height="470"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#333333;stroke-width:1.0;"
+         width="3221"
+         x="7"
+         y="78.38"
+         id="rect1" />
+    </g>
+    <!--cluster STATE-->
+    <g
+       id="cluster_STATE">
+      <rect
+         fill="#FFE4B5"
+         height="203"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#333333;stroke-width:1.0;"
+         width="361"
+         x="2843"
+         y="129.88"
+         id="rect2" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="14"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="3.8896"
+         x="3021.5552"
+         y="145.0118"
+         id="text2"> </text>
+    </g>
+    <!--cluster STATEVALUE-->
+    <g
+       id="cluster_STATEVALUE">
+      <rect
+         fill="#FFFF00"
+         height="136"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#333333;stroke-width:1.0;"
+         width="164"
+         x="3016"
+         y="172.88"
+         id="rect3" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="14"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="39.6621"
+         x="3078.1689"
+         y="188.0118"
+         id="text3">MAZE</text>
+    </g>
+    <!--cluster SENSORBOX-->
+    <g
+       id="cluster_SENSORBOX">
+      <rect
+         fill="#E0FFE0"
+         height="221.5"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#333333;stroke-width:1.0;"
+         width="528"
+         x="2291"
+         y="197.38"
+         id="rect4" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="14"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="133.7861"
+         x="2488.1069"
+         y="212.5118"
+         id="text4">SENSOR DATA (SS)</text>
+    </g>
+    <!--cluster MOTIONBOX-->
+    <g
+       id="cluster_MOTIONBOX">
+      <rect
+         fill="#FFF8DC"
+         height="327"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#333333;stroke-width:1.0;"
+         width="656"
+         x="1611"
+         y="197.38"
+         id="rect5" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="14"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="152.4277"
+         x="1862.7861"
+         y="212.5118"
+         id="text5">MOTION DATA (MDPS)</text>
+    </g>
+    <!--cluster CONTROLBOX-->
+    <g
+       id="cluster_CONTROLBOX">
+      <rect
+         fill="#FFE0F0"
+         height="204"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#333333;stroke-width:1.0;"
+         width="470"
+         x="1109"
+         y="129.38"
+         id="rect6" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="14"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="161.7793"
+         x="1263.1104"
+         y="144.5118"
+         id="text6">OPERATOR CONTROLS</text>
+    </g>
+    <!--cluster TOUCHBUTTON-->
+    <g
+       id="cluster_TOUCHBUTTON">
+      <rect
+         fill="#CCCCCC"
+         height="91"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#333333;stroke-width:1.0;"
+         width="184"
+         x="1363"
+         y="195.38"
+         id="rect7" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="14"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="107.7344"
+         x="1401.1328"
+         y="210.5118"
+         id="text7">🔘 Touch Sensor</text>
+    </g>
+    <!--cluster TONEINFO-->
+    <g
+       id="cluster_TONEINFO">
+      <rect
+         fill="#CCCCCC"
+         height="121"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#333333;stroke-width:1.0;"
+         width="190"
+         x="1149"
+         y="180.38"
+         id="rect8" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="14"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="174.665"
+         x="1156.6675"
+         y="195.5118"
+         id="text8">🔊 Tone Override (2800 Hz)</text>
+    </g>
+    <!--entity SEPARATOR-->
+    <g
+       id="elem_SEPARATOR">
+      <rect
+         fill="#F1F1F1"
+         height="36.0986"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#333333;stroke-width:0.5;"
+         width="367.1631"
+         x="326.5"
+         y="232.38"
+         id="rect9" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="14"
+         lengthAdjust="spacing"
+         textLength="347.1631"
+         x="336.5"
+         y="255.5118"
+         id="text9">───────────────────────────────────</text>
+    </g>
+    <!--entity FOOTER-->
+    <g
+       id="elem_FOOTER">
+      <rect
+         fill="#DDDDDD"
+         height="36.0986"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#333333;stroke-width:0.5;"
+         width="353.3408"
+         x="728.5"
+         y="232.38"
+         id="rect10" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="14"
+         lengthAdjust="spacing"
+         textLength="333.3408"
+         x="738.5"
+         y="255.5118"
+         id="text10">Update Rate: 5 Hz  |  Uptime: 00:04:32  |  Loop: 47ms</text>
+    </g>
+    <!--entity TITLE-->
+    <g
+       id="elem_TITLE">
+      <rect
+         fill="#4A90E2"
+         height="51.0474"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#333333;stroke-width:0.5;"
+         width="267.5283"
+         x="23"
+         y="224.88"
+         id="rect11" />
+      <line
+         style="stroke:#333333;stroke-width:1.0;"
+         x1="24"
+         x2="37"
+         y1="245.2291"
+         y2="245.2291"
+         id="line11" />
+      <line
+         style="stroke:#333333;stroke-width:1.0;"
+         x1="24"
+         x2="37"
+         y1="247.2291"
+         y2="247.2291"
+         id="line12" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="18"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="239.5283"
+         x="37"
+         y="251.2638"
+         id="text12">MARV - SNC SUBSYSTEM =</text>
+      <line
+         style="stroke:#333333;stroke-width:1.0;"
+         x1="276.5283"
+         x2="289.5283"
+         y1="245.2291"
+         y2="245.2291"
+         id="line13" />
+      <line
+         style="stroke:#333333;stroke-width:1.0;"
+         x1="276.5283"
+         x2="289.5283"
+         y1="247.2291"
+         y2="247.2291"
+         id="line14" />
+    </g>
+    <!--entity STATELABEL-->
+    <g
+       id="elem_STATELABEL">
+      <rect
+         fill="#FFA500"
+         height="36.0986"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#333333;stroke-width:0.5;"
+         width="138.2207"
+         x="2859"
+         y="232.38"
+         id="rect14" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="14"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="118.2207"
+         x="2869"
+         y="255.5118"
+         id="text14">CURRENT STATE</text>
+    </g>
+    <g
+       id="elem_GMN7">
+      <path
+         d="M3032,207.88 L3032,246.38 L2997.06,250.38 L3032,254.38 L3032,292.6237 A0,0 0 0 0 3032,292.6237 L3164.249,292.6237 A0,0 0 0 0 3164.249,292.6237 L3164.249,217.88 L3154.249,207.88 L3032,207.88 A0,0 0 0 0 3032,207.88 "
+         fill="#FEFFDD"
+         style="stroke:#181818;stroke-width:0.5;"
+         id="path14" />
+      <path
+         d="M3154.249,207.88 L3154.249,217.88 L3164.249,217.88 L3154.249,207.88 "
+         fill="#FEFFDD"
+         style="stroke:#181818;stroke-width:0.5;"
+         id="path15" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="13"
+         lengthAdjust="spacing"
+         textLength="99.728"
+         x="3038"
+         y="225.0738"
+         id="text15">Font: Large, Bold</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="13"
+         lengthAdjust="spacing"
+         textLength="111.249"
+         x="3038"
+         y="240.0226"
+         id="text16">Colors: IDLE (gray)</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="13"
+         lengthAdjust="spacing"
+         textLength="73.6836"
+         x="3066.8945"
+         y="254.9713"
+         id="text17">CAL (yellow)</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="13"
+         lengthAdjust="spacing"
+         textLength="81.6309"
+         x="3066.8945"
+         y="269.92"
+         id="text18">MAZE (green)</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="13"
+         lengthAdjust="spacing"
+         textLength="58.5127"
+         x="3066.8945"
+         y="284.8688"
+         id="text19">SOS (red)</text>
+    </g>
+    <!--entity COLORLABEL-->
+    <g
+       id="elem_COLORLABEL">
+      <rect
+         fill="#F1F1F1"
+         height="36.0986"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#333333;stroke-width:0.5;"
+         width="144.4619"
+         x="2307"
+         y="232.38"
+         id="rect19" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="14"
+         lengthAdjust="spacing"
+         textLength="124.4619"
+         x="2317"
+         y="255.5118"
+         id="text20">Colors [W/R/G/B/K]:</text>
+    </g>
+    <!--entity COLORVALUE-->
+    <g
+       id="elem_COLORVALUE">
+      <rect
+         fill="#F1F1F1"
+         height="36.0986"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#333333;stroke-width:0.5;"
+         width="144.0586"
+         x="2486"
+         y="232.38"
+         id="rect20" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="14"
+         lengthAdjust="spacing"
+         textLength="108.5"
+         x="2503.7793"
+         y="255.5118"
+         id="text21">⬜ W    🟥 R    🟩 G</text>
+    </g>
+    <!--entity ANGLELABEL-->
+    <g
+       id="elem_ANGLELABEL">
+      <rect
+         fill="#F1F1F1"
+         height="36.0986"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#333333;stroke-width:0.5;"
+         width="137.3936"
+         x="2665.5"
+         y="232.38"
+         id="rect21" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="14"
+         lengthAdjust="spacing"
+         textLength="117.3936"
+         x="2675.5"
+         y="255.5118"
+         id="text22">Incidence Angle θᵢ:</text>
+    </g>
+    <!--entity ANGLEVALUE-->
+    <g
+       id="elem_ANGLEVALUE">
+      <rect
+         fill="#F1F1F1"
+         height="36.0986"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#333333;stroke-width:0.5;"
+         width="64.9053"
+         x="2346.5"
+         y="366.88"
+         id="rect22" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="14"
+         lengthAdjust="spacing"
+         textLength="29.3467"
+         x="2364.2793"
+         y="390.0118"
+         id="text23">+23°</text>
+    </g>
+    <!--entity EOMLABEL-->
+    <g
+       id="elem_EOMLABEL">
+      <rect
+         fill="#F1F1F1"
+         height="36.0986"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#333333;stroke-width:0.5;"
+         width="135.1582"
+         x="2446.5"
+         y="366.88"
+         id="rect23" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="14"
+         lengthAdjust="spacing"
+         textLength="115.1582"
+         x="2456.5"
+         y="390.0118"
+         id="text24">End-of-Maze Flag:</text>
+    </g>
+    <!--entity EOMVALUE-->
+    <g
+       id="elem_EOMVALUE">
+      <rect
+         fill="#F1F1F1"
+         height="36.0986"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#333333;stroke-width:0.5;"
+         width="79.9102"
+         x="2617"
+         y="366.88"
+         id="rect24" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="14"
+         lengthAdjust="spacing"
+         textLength="44.3516"
+         x="2634.7793"
+         y="390.0118"
+         id="text25">FALSE</text>
+    </g>
+    <!--entity VLEFTLABEL-->
+    <g
+       id="elem_VLEFTLABEL">
+      <rect
+         fill="#F1F1F1"
+         height="36.0986"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#333333;stroke-width:0.5;"
+         width="161.6475"
+         x="1627"
+         y="232.38"
+         id="rect25" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="14"
+         lengthAdjust="spacing"
+         textLength="141.6475"
+         x="1637"
+         y="255.5118"
+         id="text26">Left Wheel Speed v_L:</text>
+    </g>
+    <!--entity VLEFTVALUE-->
+    <g
+       id="elem_VLEFTVALUE">
+      <rect
+         fill="#F1F1F1"
+         height="36.0986"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#333333;stroke-width:0.5;"
+         width="97.0205"
+         x="1945.5"
+         y="232.38"
+         id="rect26" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="14"
+         lengthAdjust="spacing"
+         textLength="61.4619"
+         x="1963.2793"
+         y="255.5118"
+         id="text27">120 mm/s</text>
+    </g>
+    <!--entity VRIGHTLABEL-->
+    <g
+       id="elem_VRIGHTLABEL">
+      <rect
+         fill="#F1F1F1"
+         height="36.0986"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#333333;stroke-width:0.5;"
+         width="173.3027"
+         x="2077.5"
+         y="232.38"
+         id="rect27" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="14"
+         lengthAdjust="spacing"
+         textLength="153.3027"
+         x="2087.5"
+         y="255.5118"
+         id="text28">Right Wheel Speed v_R:</text>
+    </g>
+    <!--entity VRIGHTVALUE-->
+    <g
+       id="elem_VRIGHTVALUE">
+      <rect
+         fill="#F1F1F1"
+         height="36.0986"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#333333;stroke-width:0.5;"
+         width="97.0205"
+         x="1659.5"
+         y="366.88"
+         id="rect28" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="14"
+         lengthAdjust="spacing"
+         textLength="61.4619"
+         x="1677.2793"
+         y="390.0118"
+         id="text29">115 mm/s</text>
+    </g>
+    <!--entity ROTLABEL-->
+    <g
+       id="elem_ROTLABEL">
+      <rect
+         fill="#F1F1F1"
+         height="36.0986"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#333333;stroke-width:0.5;"
+         width="174.8545"
+         x="1791.5"
+         y="366.88"
+         id="rect29" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="14"
+         lengthAdjust="spacing"
+         textLength="154.8545"
+         x="1801.5"
+         y="390.0118"
+         id="text30">Last Rotation Command:</text>
+    </g>
+    <!--entity ROTVALUE-->
+    <g
+       id="elem_ROTVALUE">
+      <rect
+         fill="#F1F1F1"
+         height="36.0986"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#333333;stroke-width:0.5;"
+         width="64.9053"
+         x="2001.5"
+         y="366.88"
+         id="rect30" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="14"
+         lengthAdjust="spacing"
+         textLength="29.3467"
+         x="2019.2793"
+         y="390.0118"
+         id="text31">+45°</text>
+    </g>
+    <!--entity DISTLABEL-->
+    <g
+       id="elem_DISTLABEL">
+      <rect
+         fill="#F1F1F1"
+         height="36.0986"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#333333;stroke-width:0.5;"
+         width="149.958"
+         x="1633"
+         y="472.38"
+         id="rect31" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="14"
+         lengthAdjust="spacing"
+         textLength="129.958"
+         x="1643"
+         y="495.5118"
+         id="text32">Distance Since Stop:</text>
+    </g>
+    <!--entity DISTVALUE-->
+    <g
+       id="elem_DISTVALUE">
+      <rect
+         fill="#F1F1F1"
+         height="36.0986"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#333333;stroke-width:0.5;"
+         width="86.1309"
+         x="1824"
+         y="232.38"
+         id="rect32" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="14"
+         lengthAdjust="spacing"
+         textLength="50.5723"
+         x="1841.7793"
+         y="255.5118"
+         id="text33">340 mm</text>
+    </g>
+    <g
+       id="elem_GMN28">
+      <path
+         d="M1379,230.38 L1379,270.2775 L1530.7744,270.2775 L1530.7744,240.38 L1520.7744,230.38 L1379,230.38 "
+         fill="#FEFFDD"
+         style="stroke:#181818;stroke-width:0.5;"
+         id="path33" />
+      <path
+         d="M1520.7744,230.38 L1520.7744,240.38 L1530.7744,240.38 L1520.7744,230.38 "
+         fill="#FEFFDD"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="path34" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="13"
+         lengthAdjust="spacing"
+         textLength="115.6226"
+         x="1385"
+         y="247.5738"
+         id="text34">Physical touch input</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="13"
+         lengthAdjust="spacing"
+         textLength="130.7744"
+         x="1385"
+         y="262.5226"
+         id="text35">IDLE → CAL transition</text>
+    </g>
+    <g
+       id="elem_GMN32">
+      <path
+         d="M1171.5,215.38 L1171.5,285.1749 L1322.8999,285.1749 L1322.8999,225.38 L1312.8999,215.38 L1171.5,215.38 "
+         fill="#FEFFDD"
+         style="stroke:#181818;stroke-width:0.5;"
+         id="path35" />
+      <path
+         d="M1312.8999,215.38 L1312.8999,225.38 L1322.8999,225.38 L1312.8999,215.38 "
+         fill="#FEFFDD"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="path36" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="13"
+         lengthAdjust="spacing"
+         textLength="112.7407"
+         x="1177.5"
+         y="232.5738"
+         id="text36">Dual-tone detection</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="13"
+         lengthAdjust="spacing"
+         textLength="98.2871"
+         x="1177.5"
+         y="247.5226"
+         id="text37">0.5-1.0s per tone</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="13"
+         lengthAdjust="spacing"
+         textLength="87.3501"
+         x="1177.5"
+         y="262.4713"
+         id="text38">Δt ≤ 2s window</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="13"
+         lengthAdjust="spacing"
+         textLength="130.3999"
+         x="1177.5"
+         y="277.42"
+         id="text39">Toggles MAZE ⇄ SOS</text>
+    </g>
+    <g
+       id="elem_GMN37">
+      <path
+         d="M3244,215.38 L3244,285.1749 L3412.3799,285.1749 L3412.3799,225.38 L3402.3799,215.38 L3244,215.38 "
+         fill="#FEFFDD"
+         style="stroke:#181818;stroke-width:0.5;"
+         id="path39" />
+      <path
+         d="M3402.3799,215.38 L3402.3799,225.38 L3412.3799,225.38 L3402.3799,215.38 "
+         fill="#FEFFDD"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="path40" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="13"
+         lengthAdjust="spacing"
+         textLength="147.3799"
+         x="3250"
+         y="232.5738"
+         id="text40">Display Type: LCD/OLED</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="13"
+         lengthAdjust="spacing"
+         textLength="140.9053"
+         x="3250"
+         y="247.5226"
+         id="text41">Resolution: Sufficient for</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="13"
+         lengthAdjust="spacing"
+         textLength="130.7935"
+         x="3250"
+         y="262.4713"
+         id="text42">all fields (e.g., 128x64)</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="13"
+         lengthAdjust="spacing"
+         textLength="147.2974"
+         x="3250"
+         y="277.42"
+         id="text43">Update: ≥5 Hz (no flicker)</text>
+    </g>
+    <g
+       id="elem_GMN40">
+      <path
+         d="M3447,215.38 L3447,285.1749 L3611.1714,285.1749 L3611.1714,225.38 L3601.1714,215.38 L3447,215.38 "
+         fill="#FEFFDD"
+         style="stroke:#181818;stroke-width:0.5;"
+         id="path43" />
+      <path
+         d="M3601.1714,215.38 L3601.1714,225.38 L3611.1714,225.38 L3601.1714,215.38 "
+         fill="#FEFFDD"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="path44" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="13"
+         lengthAdjust="spacing"
+         textLength="119.2217"
+         x="3453"
+         y="232.5738"
+         id="text44">Touch: Capacitive or</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="13"
+         lengthAdjust="spacing"
+         textLength="105.5107"
+         x="3478.2827"
+         y="247.5226"
+         id="text45">Mechanical button</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="13"
+         lengthAdjust="spacing"
+         textLength="117.7554"
+         x="3453"
+         y="262.4713"
+         id="text46">Mic: Omnidirectional</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="13"
+         lengthAdjust="spacing"
+         textLength="125.1123"
+         x="3471.0591"
+         y="277.42"
+         id="text47">60 dB SPL @ ≥10 cm</text>
+    </g>
+    <g
+       id="elem_GMN43">
+      <path
+         d="M3244,357.38 L3244,412.2262 L3453.6079,412.2262 L3453.6079,367.38 L3443.6079,357.38 L3244,357.38 "
+         fill="#FEFFDD"
+         style="stroke:#181818;stroke-width:0.5;"
+         id="path47" />
+      <path
+         d="M3443.6079,357.38 L3443.6079,367.38 L3453.6079,367.38 L3443.6079,357.38 "
+         fill="#FEFFDD"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="path48" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="13"
+         lengthAdjust="spacing"
+         textLength="188.6079"
+         x="3250"
+         y="374.5738"
+         id="text48">All fields updated simultaneously</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="13"
+         lengthAdjust="spacing"
+         textLength="173.3926"
+         x="3250"
+         y="389.5226"
+         id="text49">Format per PEC requirements</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="13"
+         lengthAdjust="spacing"
+         textLength="158.958"
+         x="3250"
+         y="404.4713"
+         id="text50">Clear visibility in lab lighting</text>
+    </g>
+    <!--link DISTVALUE to GMN28-->
+    <g
+       id="link_DISTVALUE_GMN28">
+      <path
+         d="M1867.03,232.3 C1865.98,187.51 1856.09,71.98 1783.67,30.38 C1754.89,13.85 1664.31,16.14 1634.33,30.38 C1544.87,72.88 1485.34,184.26 1463.89,230.16 "
+         fill="none"
+         id="DISTVALUE-GMN28"
+         style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;" />
+    </g>
+    <!--link GMN28 to GMN32-->
+    <g
+       id="link_GMN28_GMN32">
+      <path
+         d="M1378.95,250.38 C1360.16,250.38 1341.36,250.38 1322.56,250.38 "
+         fill="none"
+         id="GMN28-GMN32"
+         style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;" />
+    </g>
+    <!--link GMN37 to TITLE-->
+    <g
+       id="link_GMN37_TITLE">
+      <path
+         d="M3312.58,215.07 C3288.67,165.36 3237.47,76.75 3162.5,40.38 C3091.62,6 397.58,6.41 326.5,40.38 C245.34,79.17 190.57,177.9 168.27,224.84 "
+         fill="none"
+         id="GMN37-TITLE"
+         style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;" />
+    </g>
+    <!--link CONTROLBOX to GMN40-->
+    <g
+       id="link_CONTROLBOX_GMN40">
+      <path
+         d="M1134.0826,128.3621 C1134.1623,127.9896 1134.2423,127.6174 1134.3226,127.2455 C1134.644,125.7577 1134.9704,124.2745 1135.302,122.797 C1135.9652,119.8421 1136.649,116.91 1137.3538,114.0105 C1140.1729,102.4127 1143.3282,91.3359 1146.8455,81.3981 C1153.88,61.5225 1162.3625,46.2025 1172.5,40.38 C1226.46,9.39 3358.54,9.39 3412.5,40.38 C3477.4,77.65 3508.56,165.9 3521.39,215.32 "
+         fill="none"
+         id="CONTROLBOX-GMN40"
+         style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;" />
+    </g>
+    <!--link FOOTER to GMN43-->
+    <g
+       id="link_FOOTER_GMN43">
+      <path
+         d="M929.85,268.55 C965.71,292.19 1034.94,333.62 1101,349.38 C1147.42,360.45 2771.3,356.08 2819,357.38 C2966.58,361.41 3137.08,370.78 3243.97,377.22 "
+         fill="none"
+         id="FOOTER-GMN43"
+         style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;" />
+    </g>
+    <!--SRC=[lLRFRkD46B_xAJwrXqsxcyPDawL4geJZE6s44qUsq_9724tiIJ9QsnCyTfSiLEA0G714FN10geJO0n87BaYSUO1z1_e4-mXyC_QwRPekd1X5IJpV_z_tp-8PIvOa9J5CIV1idl8y2KqUyHIs- -feek8G2nBovooPmun4WjwYX7H6yYZhyoGRaPY2aJ8ItQAdDCX8CezebwSXJKi31-fesYCO4fP0oCGo8YkOeGJLAX7OyaOcdEGnIUf34YnOGc6GP3ITaO1kmRPrs6_r3-4BJGDu13xBK6HAKdowfUBew0Y6XdiATP3Ql4dN-z3phI4WOGk807_WsnPijuntTQk9oW0k2eLUHZ9Q-LQ7PSfZT279xXe0fSNp3T-Io5cjRbjfkSEqksjENDSQ-GNZxkwDa6rqBLjA6crTNvUJZqFZ8ql-teYS6lR4AjAawwKnW8IZkocRBxBo0a2cfGCsIUVq2NHv55OKbGZHWK4FWw_DKxBQgMWLZs53RKMZY3-_JrHUeI2boNsYvtXGIsduXaAJKBcd7YzkGKmJWVKGaeo0mAWPJ-w2wraZpt6XP_W6r3nlfy10NNQT3x04T4HSluzt4HvyVDPm6yUDRkFzJpfAr7HinrM8tqVw-hUVu4pUlhwwUWbk-UzNE2wXLx8AUcrTU904BAH9WFMlBbxz-VSVFnSMZT6nRJrWyN7puA_VI-sARxDsAmdhV8Ojy892FoBpGh7b31zGspTipohL8bUXjC9yo2NCRy5ywFW3PrHYFkoDIzIBQuKwrjrXpxoFkard6PmjA8t0Mr8QmlcdTk7igMtr_GVStM_g4CSDKNgiM3S3uShYNZFWbWRSmV79WnRsstSiADxD9cmYCd0vjhu4oUGn3f-mCE4w3-b_t6fNUKIkpPfxJE1VB16FgU-CBmkzlO7taEA3beIcr2pvrd8vI9Pv1W5sUSeZiJcTpjXo3H-Ro7H6lklONbdCwg5C9xRHXYPwVNNv8_Wy3nPbenRpqfcO9zs9xsEDR9lgl6q4ZHShmG8IGQOKCUbnHLJJv_gR7zIeoLAI25O6i65gR73lUtGFbu9pJjCK6n1gpKCSY2SlTafFHzPWr7V-Yvkzd4JrJ2eBQLR1M1nzhrtVtzC5B6aAagUYlBhCuFgxNw0f0BSZhiYAulCvEYcACNdzxTTo9FxRCCIYomNCEDBMbjZrvLV_pwUShsD3bOnsrul9CfGRqSMl3hGHPe0l0IRBZCLueUiTlTKvQAfBcsDrG-kTM2YDVSVnBHUsU-fe5tBpLuM1svLZ5Kj8XAPI4yavmcV5QaOVUkKEzbTBD6IRlOPZMpqak5JmA9V9we2NpsOiOBYV4KA97uaYc34QXG9gT6- -zmGdpU7dJrjoAHMXT31vBrKWjOJ3B6B1CvhkQ5M2j9j2aUxSz8m6HLzqm2HB4c3HdbDGHjziHneiIAB2c-PPfeffo88EE772GfOM5OPlIYN_Knt2BdXZ6zwJFkth4CJhVamvAegb8mMSA6lSX9YhY48GBCRtCP9GdejefSbtW3GccQhTiMLYFZ_BqNwCE0cacX4bAPmpmQOiOjaA6nGJCeL81eqlV3TE_0C0]-->
+  </g>
+</svg>

@@ -1,0 +1,28 @@
+\subsection{Subsystem Needs Analysis}
+
+
+% Write your subsystem needs analysis here
+A crucial element of the autonomous vehicle known as MARV is the SS(sensor subsystem). In this context, one that is capable of navigating a maze for which the only guides to the end are coloured lines, representing different obstacles on a PVC mat.
+
+The MARV will need to identify the obstacles by interpreting the colour of the lines on the maze. This means that SS will need some form of colour detection.
+
+To prevent the disturbance of changing ambient light, SS will need to minimise its influence when performing colour detection.
+
+The MARV will need to keep track of the MARVs orientation inside the maze. This means that SS will need to calculate the angle of incidence when crossing the lines. 
+
+SS will need to integrate with the full system with minimal change in functionality and operation.
+
+For SS to integrate with the full system, SS will need to use the communication protocol provided, which will enable seamless communication with other subsystems.
+
+Though SS is a subsystem, it needs to work independently as well for testing during development. This means that SS will need its own power supply. 
+
+The afore mentioned needs for SS are shown in a context diagram to better illustrate the subsystem's place in the system as a whole.
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{02_SS/figures/context_diagram.png}
+\caption{Context Diagram For The SS(Sensor Subsystem)}
+\label{fig:pure-tone-detection-flow}
+\end{figure}
+

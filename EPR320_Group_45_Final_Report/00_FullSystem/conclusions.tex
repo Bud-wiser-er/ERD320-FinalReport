@@ -1,0 +1,17 @@
+\subsection{System Conclusions and Recommendations}
+
+\subsubsection{Requirements Adherence}
+
+The \gls{marv} system meets primary functional requirements for autonomous maze navigation, state management, and safety override. System-level qualification testing demonstrated compliant operation across all seven test specifications with integrated subsystem coordination. The \gls{scs} protocol enabled reliable inter-subsystem communication. State machine transitions executed deterministically. Navigation decision logic produced correct motion commands for line-following and obstacle avoidance scenarios.
+
+Known limitations include incomplete physical maze testing under competition conditions due to timeline constraints. The system validated under \gls{hub} simulation and controlled laboratory testing but full environmental characterization including lighting variations and surface irregularities remains incomplete.
+
+\subsubsection{System Benefits and Shortcomings}
+
+System benefits include modular three-subsystem architecture enabling independent development and testing. The \gls{scs} protocol provided standardized communication interface reducing integration complexity. Hierarchical control separated high-level decision logic from low-level sensing and actuation. WiFi telemetry dashboard enabled real-time diagnostic visibility during development and testing.
+
+System shortcomings include dependency on precise line detection requiring controlled lighting conditions. Differential drive kinematics limit maneuverability in tight maze configurations. Single-point-of-failure in \gls{snc} subsystem creates system-level vulnerability. Power consumption approximately 2\,W limits battery operation duration to 2 hours with standard cell capacity.
+
+\subsubsection{Future Work Recommendations}
+
+Future enhancements could include sensor fusion combining camera data with ultrasonic ranging for robust obstacle detection under varied lighting. Implement Extended Kalman Filter for state estimation fusing odometry with visual landmarks improving localization accuracy. Add battery monitoring with low-voltage shutdown protecting cells from over-discharge. Implement \gls{scs} protocol error recovery with packet retransmission improving communication robustness under interference conditions. Develop automated maze generation tools enabling diverse test scenario synthesis for systematic validation coverage.

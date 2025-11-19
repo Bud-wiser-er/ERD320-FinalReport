@@ -1,0 +1,1943 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   contentStyleType="text/css"
+   height="1026px"
+   preserveAspectRatio="none"
+   style="width:1941px;height:1026px;background:#FFFFFF;"
+   version="1.1"
+   viewBox="0 0 1941 1026"
+   width="1941px"
+   zoomAndPan="magnify"
+   id="svg113"
+   sodipodi:docname="architecture_block.svg"
+   inkscape:export-filename="architecture_block.pdf"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview113"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.77777778"
+     inkscape:cx="1105.7143"
+     inkscape:cy="583.71429"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="2391"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g113" />
+  <title
+     id="title1">SNC Subsystem Functional Block Diagram</title>
+  <defs
+     id="defs1" />
+  <g
+     id="g113">
+    <!--cluster SNC Subsystem-->
+    <g
+       id="cluster_SNC Subsystem">
+      <rect
+         fill="#F0F0F0"
+         height="849.5"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#333333;stroke-width:1.0;"
+         width="1494"
+         x="79.5"
+         y="170.9438"
+         id="rect1" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="77.2461"
+         x="787.877"
+         y="182.3237"
+         id="text2">SNC Subsystem</text>
+    </g>
+    <path
+       d="m 1599.6973,328.29555 c -13.2667,28.02444 -34.6105,65.85552 -59.2977,82.30432 -25.7996,17.19228 -474.3689,22.11586 -498.8311,0 -6.555,-5.92589 -10.8765,-15.61736 -13.6568,-26.94326 -0.6949,-2.83162 -1.2937,-5.76514 -1.8069,-8.76763 -0.2566,-1.50176 -0.4919,-3.01978 -0.707,-4.55128 -0.053,-0.38178 -0.1065,-0.76776 -0.1577,-1.15164 -0.026,-0.18987 -0.052,-0.38387 -0.076,-0.57792"
+       fill="none"
+       id="GMN62-L1-4"
+       style="stroke:#181818;stroke-width:0.771091;stroke-dasharray:5.39765, 5.39765" />
+    <!--cluster L1-->
+    <g
+       id="cluster_L1">
+      <rect
+         fill="#E6E6FA"
+         height="421.5"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#333333;stroke-width:1.0;"
+         width="184"
+         x="627.5"
+         y="560.9438"
+         id="rect2" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="168.9307"
+         x="635.0347"
+         y="572.3237"
+         id="text3">Layer 1: System State Coordination</text>
+    </g>
+    <!--cluster L2-->
+    <g
+       id="cluster_L2">
+      <rect
+         fill="#FFF8DC"
+         height="614.5"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#333333;stroke-width:1.0;"
+         width="187"
+         x="851.5"
+         y="373.9438"
+         id="rect3" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="171.6992"
+         x="859.1504"
+         y="385.3237"
+         id="text4">Layer 2: Navigation &amp; Path Planning</text>
+    </g>
+    <!--cluster L3-->
+    <g
+       id="cluster_L3">
+      <rect
+         fill="#FFE0F0"
+         height="276"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#333333;stroke-width:1.0;"
+         width="243"
+         x="576.5"
+         y="208.9438"
+         id="rect4" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="184.4775"
+         x="605.7612"
+         y="220.3237"
+         id="text5">Layer 3: Inter-Subsystem Coordination</text>
+    </g>
+    <!--cluster L4-->
+    <g
+       id="cluster_L4">
+      <rect
+         fill="#E0FFE0"
+         height="119"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#333333;stroke-width:1.0;"
+         width="439"
+         x="1102.5"
+         y="560.9438"
+         id="rect5" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="162.8271"
+         x="1240.5864"
+         y="572.3237"
+         id="text6">Layer 4: Human-Machine Interface</text>
+    </g>
+    <!--cluster L5-->
+    <g
+       id="cluster_L5">
+      <rect
+         fill="#FFE4B5"
+         height="236.5"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#333333;stroke-width:1.0;"
+         width="339"
+         x="198.5"
+         y="743.9438"
+         id="rect6" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="179.5068"
+         x="278.2466"
+         y="755.3237"
+         id="text7">Layer 5: System Health &amp; Diagnostics</text>
+    </g>
+    <!--entity MPM-->
+    <g
+       id="elem_MPM">
+      <rect
+         fill="#F1F1F1"
+         height="42.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="85.0293"
+         x="702"
+         y="787.9438"
+         id="rect7" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="65.0293"
+         x="712"
+         y="807.3237"
+         id="text8">Mission Phase</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="58.3691"
+         x="712"
+         y="818.8227"
+         id="text9">Management</text>
+    </g>
+    <!--entity STC-->
+    <g
+       id="elem_STC">
+      <rect
+         fill="#F1F1F1"
+         height="42.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="90.0342"
+         x="697.5"
+         y="612.9438"
+         id="rect9" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="70.0342"
+         x="707.5"
+         y="632.3237"
+         id="text10">State Transition</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="32.2363"
+         x="707.5"
+         y="643.8227"
+         id="text11">Control</text>
+    </g>
+    <!--entity MS-->
+    <g
+       id="elem_MS">
+      <rect
+         fill="#F1F1F1"
+         height="31.499"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="100.0439"
+         x="687.5"
+         y="927.4438"
+         id="rect11" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="80.0439"
+         x="697.5"
+         y="946.8237"
+         id="text12">Mode Supervision</text>
+    </g>
+    <!--entity EI-->
+    <g
+       id="elem_EI">
+      <rect
+         fill="#F1F1F1"
+         height="42.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="83.9209"
+         x="894.5"
+         y="425.9438"
+         id="rect12" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="63.9209"
+         x="904.5"
+         y="445.3237"
+         id="text13">Environmental</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="58.9258"
+         x="904.5"
+         y="456.8227"
+         id="text14">Interpretation</text>
+    </g>
+    <!--entity NDL-->
+    <g
+       id="elem_NDL">
+      <rect
+         fill="#F1F1F1"
+         height="42.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="85.0342"
+         x="884"
+         y="612.9438"
+         id="rect14" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="47.251"
+         x="894"
+         y="632.3237"
+         id="text15">Navigation</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="65.0342"
+         x="894"
+         y="643.8227"
+         id="text16">Decision Logic</text>
+    </g>
+    <!--entity PBS-->
+    <g
+       id="elem_PBS">
+      <rect
+         fill="#F1F1F1"
+         height="42.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="82.8174"
+         x="887"
+         y="787.9438"
+         id="rect16" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="62.8174"
+         x="897"
+         y="807.3237"
+         id="text17">Path Behavior</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="41.1377"
+         x="897"
+         y="818.8227"
+         id="text18">Selection</text>
+    </g>
+    <!--entity MSG-->
+    <g
+       id="elem_MSG">
+      <rect
+         fill="#F1F1F1"
+         height="42.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="90.0342"
+         x="885.5"
+         y="921.4438"
+         id="rect18" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="70.0342"
+         x="895.5"
+         y="940.8237"
+         id="text19">Motion Strategy</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="49.4775"
+         x="895.5"
+         y="952.3227"
+         id="text20">Generation</text>
+    </g>
+    <!--entity SDA-->
+    <g
+       id="elem_SDA">
+      <rect
+         fill="#F1F1F1"
+         height="42.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="75.5859"
+         x="592.5"
+         y="252.9438"
+         id="rect20" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="55.5859"
+         x="602.5"
+         y="272.3237"
+         id="text21">Sensor Data</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="48.3594"
+         x="602.5"
+         y="283.8227"
+         id="text22">Acquisition</text>
+    </g>
+    <!--entity MCD-->
+    <g
+       id="elem_MCD">
+      <rect
+         fill="#F1F1F1"
+         height="42.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="98.9209"
+         x="704"
+         y="252.9438"
+         id="rect22" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="78.9209"
+         x="714"
+         y="272.3237"
+         id="text23">Motion Command</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="38.9063"
+         x="714"
+         y="283.8227"
+         id="text24">Dispatch</text>
+    </g>
+    <!--entity SSM-->
+    <g
+       id="elem_SSM">
+      <rect
+         fill="#F1F1F1"
+         height="42.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="100.5908"
+         x="668"
+         y="425.9438"
+         id="rect24" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="80.5908"
+         x="678"
+         y="445.3237"
+         id="text25">Subsystem Status</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="46.6895"
+         x="678"
+         y="456.8227"
+         id="text26">Monitoring</text>
+    </g>
+    <!--entity OCP-->
+    <g
+       id="elem_OCP">
+      <rect
+         fill="#F1F1F1"
+         height="42.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="108.3691"
+         x="1265.5"
+         y="612.9438"
+         id="rect26" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="88.3691"
+         x="1275.5"
+         y="632.3237"
+         id="text27">Operator Command</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="49.4678"
+         x="1275.5"
+         y="643.8227"
+         id="text28">Processing</text>
+    </g>
+    <!--entity SOD-->
+    <g
+       id="elem_SOD">
+      <rect
+         fill="#F1F1F1"
+         height="42.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="89.4727"
+         x="1409"
+         y="612.9438"
+         id="rect28" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="69.4727"
+         x="1419"
+         y="632.3237"
+         id="text29">Safety Override</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="42.2461"
+         x="1419"
+         y="643.8227"
+         id="text30">Detection</text>
+    </g>
+    <!--entity RMI-->
+    <g
+       id="elem_RMI">
+      <rect
+         fill="#F1F1F1"
+         height="42.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="104.4824"
+         x="1126.5"
+         y="612.9438"
+         id="rect30" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="84.4824"
+         x="1136.5"
+         y="632.3237"
+         id="text31">Remote Monitoring</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="38.9111"
+         x="1136.5"
+         y="643.8227"
+         id="text32">Interface</text>
+    </g>
+    <!--entity PM-->
+    <g
+       id="elem_PM">
+      <rect
+         fill="#F1F1F1"
+         height="42.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="77.2461"
+         x="331"
+         y="787.9438"
+         id="rect32" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="57.2461"
+         x="341"
+         y="807.3237"
+         id="text33">Performance</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="46.6895"
+         x="341"
+         y="818.8227"
+         id="text34">Monitoring</text>
+    </g>
+    <!--entity FD-->
+    <g
+       id="elem_FD">
+      <rect
+         fill="#F1F1F1"
+         height="42.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="62.2461"
+         x="338.5"
+         y="921.4438"
+         id="rect34" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="22.2314"
+         x="348.5"
+         y="940.8237"
+         id="text35">Fault</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="42.2461"
+         x="348.5"
+         y="952.3227"
+         id="text36">Detection</text>
+    </g>
+    <!--entity MDL-->
+    <g
+       id="elem_MDL">
+      <rect
+         fill="#F1F1F1"
+         height="42.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="77.7979"
+         x="443.5"
+         y="787.9438"
+         id="rect36" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="57.7979"
+         x="453.5"
+         y="807.3237"
+         id="text37">Mission Data</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="35.5908"
+         x="453.5"
+         y="818.8227"
+         id="text38">Logging</text>
+    </g>
+    <!--entity TI-->
+    <g
+       id="elem_TI">
+      <rect
+         fill="#F1F1F1"
+         height="31.499"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="81.1377"
+         x="215"
+         y="793.9438"
+         id="rect38" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="61.1377"
+         x="225"
+         y="813.3237"
+         id="text39">Test Interface</text>
+    </g>
+    <!--entity OP-->
+    <g
+       id="elem_OP">
+      <ellipse
+         cx="1723.7314"
+         cy="420.4438"
+         fill="#F1F1F1"
+         rx="8"
+         ry="8"
+         style="stroke:#181818;stroke-width:0.5;"
+         id="ellipse39" />
+      <path
+         d="M1723.7314,428.4438 L1723.7314,455.4438 M1710.7314,436.4438 L1736.7314,436.4438 M1723.7314,455.4438 L1710.7314,470.4438 M1723.7314,455.4438 L1736.7314,470.4438 "
+         fill="none"
+         style="stroke:#181818;stroke-width:0.5;"
+         id="path39" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="39.4629"
+         x="1704"
+         y="481.3237"
+         id="text40">Operator</text>
+    </g>
+    <!--entity SS-->
+    <g
+       id="elem_SS"
+       transform="translate(0,22)">
+      <path
+         d="m 601.1458,57.7328 c 2.4902,-8.0649 7.0643,-10.0269 14.2036,-5.0716 3.5496,-7.9299 10.2331,-8.5909 15.5543,-1.8824 5.5622,-7.6802 13.2768,-4.7962 16.5228,2.5474 6.9228,-7.2148 12.0285,-4.9256 15.4138,3.4887 10.1971,4.2166 10.6974,10.4381 4.7455,18.7433 6.2,6.9677 5.4825,15.8444 -4.903,18.3903 -4.2929,8.258 -8.9052,7.6794 -14.3569,1.123 -3.9447,6.8615 -10.0263,9.9238 -15.7468,1.8756 -5.6481,6.8457 -13.6165,5.9945 -17.0951,-2.4289 -3.808,6.1295 -10.8846,5.8595 -14.4371,-0.3003 -12.6181,-0.3559 -13.856,-8.1996 -9.7788,-17.7521 -5.3409,-11.1709 -2.5352,-16.9236 9.8777,-18.733"
+         fill="#f1f1f1"
+         style="stroke:#181818;stroke-width:0.5"
+         id="path40" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="36.137699"
+         x="606"
+         y="72.3237"
+         id="text41">Sensing</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="49.462898"
+         x="606"
+         y="83.822701"
+         id="text42">Subsystem</text>
+    </g>
+    <!--entity MDPS-->
+    <g
+       id="elem_MDPS">
+      <path
+         d="M1600.1458,430.7328 C1602.636,422.6679 1607.2101,420.7059 1614.3494,425.6612 C1617.899,417.7313 1624.5825,417.0703 1629.9037,423.7788 C1635.4659,416.0986 1643.1805,418.9826 1646.4265,426.3262 C1653.3493,419.1114 1658.455,421.4006 1661.8403,429.8149 C1672.0374,434.0315 1672.5377,440.253 1666.5858,448.5582 C1672.7858,455.5259 1672.0683,464.4026 1661.6828,466.9485 C1657.3899,475.2065 1652.7776,474.6279 1647.3259,468.0715 C1643.3812,474.933 1637.2996,477.9953 1631.5791,469.9471 C1625.931,476.7928 1617.9626,475.9416 1614.484,467.5182 C1610.676,473.6477 1603.5994,473.3777 1600.0469,467.2179 C1587.4288,466.862 1586.1909,459.0183 1590.2681,449.4658 C1584.9272,438.2949 1587.7329,432.5422 1600.1458,430.7328 "
+         fill="#F1F1F1"
+         style="stroke:#181818;stroke-width:0.5;"
+         id="path42" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="33.8965"
+         x="1605"
+         y="445.3237"
+         id="text43">Mobility</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="49.4629"
+         x="1605"
+         y="456.8227"
+         id="text44">Subsystem</text>
+    </g>
+    <!--entity HUB-->
+    <g
+       id="elem_HUB">
+      <path
+         d="M6,618.4438 C6,608.4438 34.6182,608.4438 34.6182,608.4438 C34.6182,608.4438 63.2363,608.4438 63.2363,618.4438 L63.2363,650.4419 C63.2363,660.4419 34.6182,660.4419 34.6182,660.4419 C34.6182,660.4419 6,660.4419 6,650.4419 L6,618.4438 "
+         fill="#F1F1F1"
+         style="stroke:#181818;stroke-width:0.5;"
+         id="path44" />
+      <path
+         d="M6,618.4438 C6,628.4438 34.6182,628.4438 34.6182,628.4438 C34.6182,628.4438 63.2363,628.4438 63.2363,618.4438 "
+         fill="none"
+         style="stroke:#181818;stroke-width:0.5;"
+         id="path45" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="19.4482"
+         x="16"
+         y="641.8237"
+         id="text45">Test</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="37.2363"
+         x="16"
+         y="653.3227"
+         id="text46">Harness</text>
+    </g>
+    <g
+       id="elem_GMN59"
+       transform="translate(-177.42857,-153)">
+      <path
+         d="m 1778,413.9438 v 67.4951 h 156.7861 v -57.4951 l -10,-10 H 1778"
+         fill="#feffdd"
+         style="stroke:#181818;stroke-width:0.5"
+         id="path46" />
+      <path
+         d="m 1924.7861,413.9438 v 10 h 10 l -10,-10"
+         fill="#feffdd"
+         style="stroke:#181818;stroke-width:1"
+         id="path47" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="105"
+         x="1784"
+         y="428.3237"
+         id="text47">Navigation Functions:</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="121.3379"
+         x="1784"
+         y="439.82269"
+         id="text48">• Classify detected features</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="96.870102"
+         x="1784"
+         y="451.32181"
+         id="text49">• Apply traversal rules</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="113.0029"
+         x="1784"
+         y="462.8208"
+         id="text50">• Select motion behaviors</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="135.7861"
+         x="1784"
+         y="474.31979"
+         id="text51">• Generate movement strategy</text>
+    </g>
+    <g
+       id="elem_GMN62">
+      <path
+         d="M1590,600.9438 L1590,668.4389 L1723.4561,668.4389 L1723.4561,610.9438 L1713.4561,600.9438 L1590,600.9438 "
+         fill="#FEFFDD"
+         style="stroke:#181818;stroke-width:0.5;"
+         id="path51" />
+      <path
+         d="M1713.4561,600.9438 L1713.4561,610.9438 L1723.4561,610.9438 L1713.4561,600.9438 "
+         fill="#FEFFDD"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="path52" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="78.3594"
+         x="1596"
+         y="615.3237"
+         id="text52">Mission Phases:</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="58.5303"
+         x="1596"
+         y="626.8227"
+         id="text53">• Initialization</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="54.082"
+         x="1596"
+         y="638.3218"
+         id="text54">• Calibration</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="112.4561"
+         x="1596"
+         y="649.8208"
+         id="text55">• Autonomous Navigation</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="75.752"
+         x="1596"
+         y="661.3198"
+         id="text56">• Safety Override</text>
+    </g>
+    <g
+       id="elem_GMN65">
+      <path
+         d="M1589.5,781.4438 L1589.5,837.4399 L1705.7197,837.4399 L1705.7197,791.4438 L1695.7197,781.4438 L1589.5,781.4438 "
+         fill="#FEFFDD"
+         style="stroke:#181818;stroke-width:0.5;"
+         id="path56" />
+      <path
+         d="M1695.7197,781.4438 L1695.7197,791.4438 L1705.7197,791.4438 L1695.7197,781.4438 "
+         fill="#FEFFDD"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="path57" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="90.0244"
+         x="1595.5"
+         y="795.8237"
+         id="text57">Operator Interface:</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="81.3086"
+         x="1595.5"
+         y="807.3227"
+         id="text58">• Physical controls</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="95.2197"
+         x="1595.5"
+         y="818.8218"
+         id="text59">• Audio safety signals</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="94.1016"
+         x="1595.5"
+         y="830.3208"
+         id="text60">• Remote diagnostics</text>
+    </g>
+    <!--link OP to OCP-->
+    <g
+       id="link_OP_OCP">
+      <path
+         d="M1703.62,478.0838 C1698.63,483.7438 1692.86,489.0838 1686.5,492.9438 C1650.73,514.6538 1634.75,501.5138 1594.5,512.9438 C1563.67,521.6938 1557.92,530.6038 1526.5,536.9438 C1497.04,542.8938 1418.25,531.2438 1391.5,544.9438 C1362.77,559.6638 1344.3291,586.2707 1332.6291,607.4707 "
+         fill="none"
+         id="OP-to-OCP"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="1329.73,612.7238,1337.5807,606.7769,1332.1459,608.3462,1330.5766,602.9114,1329.73,612.7238"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon60" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="44.4678"
+         x="1598.8301"
+         y="523.3237"
+         id="text61">Start/Stop</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="51.1279"
+         x="1595.5"
+         y="534.8227"
+         id="text62">Commands</text>
+    </g>
+    <!--link OP to SOD-->
+    <g
+       id="link_OP_SOD">
+      <path
+         d="M1706.5,483.1438 C1694.98,502.5838 1677.8,525.2238 1655.5,536.9438 C1625.36,552.7838 1531.37,526.8938 1502.5,544.9438 C1478.23,560.1138 1466.7478,586.104 1460.3378,607.154 "
+         fill="none"
+         id="OP-to-SOD"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="1458.59,612.8938,1465.0383,605.4494,1460.0465,608.1107,1457.3852,603.1189,1458.59,612.8938"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon62" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="50.5762"
+         x="1684.5"
+         y="523.3237"
+         id="text63">Emergency</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="38.3447"
+         x="1690.6157"
+         y="534.8227"
+         id="text64">Override</text>
+    </g>
+    <!--link SS to SDA-->
+    <g
+       id="link_SS_SDA"
+       transform="matrix(1.0004675,0,0,0.90707926,-0.31062987,23.57595)">
+      <path
+         d="m 630.5,101.3338 c 0,39.72 0,108.95 0,145.34"
+         fill="none"
+         id="SS-to-SDA"
+         style="stroke:#181818;stroke-width:1" />
+      <polygon
+         fill="#181818"
+         points="634.5,243.6738 630.5,247.6738 626.5,243.6738 630.5,252.6738 "
+         style="stroke:#181818;stroke-width:1"
+         id="polygon64" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="56.137699"
+         x="639.28558"
+         y="141.3237"
+         id="text65">Environment</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="71.709"
+         x="631.5"
+         y="152.82269"
+         id="text66">Perception Data</text>
+    </g>
+    <!--link MDPS to SDA-->
+    <g
+       id="link_MDPS_SDA">
+      <path
+         d="M1589.75,438.9138 C1483.12,418.8738 1181.72,363.2038 929.5,325.9438 C821.85,310.0438 792.28,321.4838 686.5,295.9438 C680.66,294.5338 680.2882,294.6228 674.3882,292.6428 "
+         fill="none"
+         id="MDPS-to-SDA"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="668.7,290.7338,675.9597,297.3894,673.4402,292.3246,678.505,289.8051,668.7,290.7338"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon66" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="45.0244"
+         x="1085.4409"
+         y="336.3237"
+         id="text67">Position &amp;</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="48.9063"
+         x="1083.5"
+         y="347.8227"
+         id="text68">Kinematics</text>
+    </g>
+    <!--link HUB to TI-->
+    <g
+       id="link_HUB_TI">
+      <path
+         d="M68.4418,654.5613 C100.2918,673.0113 147.25,702.0838 187.5,735.9438 C209.03,754.0538 226.851,773.8995 239.761,789.2695 "
+         fill="none"
+         id="HUB-TI"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="63.25,651.5538,69.0327,659.5263,67.5765,654.0601,73.0427,652.6039,63.25,651.5538"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon68" />
+      <polygon
+         fill="#181818"
+         points="243.62,793.8638,240.8944,784.3996,240.4042,790.0352,234.7686,789.545,243.62,793.8638"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon69" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="19.4482"
+         x="205.6821"
+         y="714.32373"
+         id="text69"
+         transform="translate(35.839286,2.5714286)">Test</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="77.8125"
+         x="176.5"
+         y="725.82269"
+         id="text70"
+         transform="translate(38.732142,0.32142862)">Stimuli/Response</text>
+    </g>
+    <!--link OCP to STC-->
+    <g
+       id="link_OCP_STC">
+      <path
+         d="M1307.34,612.6038 C1295,592.3238 1274.09,562.6838 1248.5,544.9438 C1236.6,536.6938 1231.8,537.1938 1217.5,534.9438 C1140.64,522.8538 941.16,519.8638 867.5,544.9438 C826.57,558.8838 791.7635,586.9169 768.5135,608.6469 "
+         fill="none"
+         id="OCP-to-STC"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="764.13,612.7438,773.4366,609.5208,767.7829,609.3297,767.974,603.6761,764.13,612.7438"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon70" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="62.8223"
+         x="1154.5"
+         y="523.32373"
+         id="text71"
+         transform="translate(0.34092648,-7.727667)">Mode Change</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="42.246101"
+         x="1164.7881"
+         y="534.82269"
+         id="text72"
+         transform="translate(0.45456864,-11.02329)">Requests</text>
+    </g>
+    <!--link SOD to STC-->
+    <g
+       id="link_SOD_STC">
+      <path
+         d="M1445.12,612.8938 C1435.59,591.6238 1417.87,560.1438 1391.5,544.9438 C1343.79,517.4438 1323.02,537.1638 1268,534.9438 C1090.09,527.7538 1036.25,488.1338 867.5,544.9438 C826.52,558.7438 791.7289,586.8119 768.4889,608.5819 "
+         fill="none"
+         id="SOD-to-STC"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="764.11,612.6838,773.4129,609.4502,767.7591,609.2656,767.9437,603.6117,764.11,612.6838"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon72" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="38.3447"
+         x="1226.5049"
+         y="523.32373"
+         id="text73"
+         transform="translate(-0.45456865,-6.5912454)">Override</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="43.3545"
+         x="1224"
+         y="534.82269"
+         id="text74"
+         transform="translate(0.90913729,-10.00051)">Activation</text>
+    </g>
+    <!--link STC to MPM-->
+    <g
+       id="link_STC_MPM">
+      <path
+         d="M736.34,656.2138 C732.67,669.6838 728.37,687.6838 726.5,703.9438 C723.13,733.2038 729.2566,760.9727 735.6366,781.9827 "
+         fill="none"
+         id="STC-to-MPM"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="737.38,787.7238,738.5924,777.9499,735.9272,782.9395,730.9375,780.2744,737.38,787.7238"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon74" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="23.3496"
+         x="740.2783"
+         y="714.3237"
+         id="text75">State</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="48.9063"
+         x="727.5"
+         y="725.8227"
+         id="text76">Transitions</text>
+    </g>
+    <!--link MPM to MS-->
+    <g
+       id="link_MPM_MS">
+      <path
+         d="M743.41,830.9938 C741.98,857.7138 739.849,897.7723 738.599,921.2523 "
+         fill="none"
+         id="MPM-to-MS"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="738.28,927.2438,742.7528,918.4692,738.5458,922.2509,734.7641,918.0439,738.28,927.2438"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon76" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="55.0244"
+         x="741.5"
+         y="883.3237"
+         id="text77">Active Mode</text>
+    </g>
+    <!--link SSM to STC-->
+    <g
+       id="link_SSM_STC">
+      <path
+         d="M721.16,468.9538 C725.77,504.5138 734.4382,571.2737 739.0582,606.8937 "
+         fill="none"
+         id="SSM-to-STC"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="739.83,612.8438,742.6391,603.4041,739.1869,607.8854,734.7056,604.4331,739.83,612.8438"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon77" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="47.8027"
+         x="730.5"
+         y="523.3237"
+         id="text78">Calibration</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="42.7979"
+         x="733.0024"
+         y="534.8227"
+         id="text79">Complete</text>
+    </g>
+    <!--link SSM to STC-->
+    <g
+       id="g81">
+      <path
+         d="M695.81,469.2738 C678.53,487.7338 659.98,515.0738 674.5,536.9438 C679.57,544.5738 686.68,538.8238 693.5,544.9438 C714.14,563.4838 725.826,587.25 733.386,607.01 "
+         fill="none"
+         id="SSM-to-STC-1"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="735.53,612.6138,736.0499,602.7787,733.7433,607.9439,728.5781,605.6374,735.53,612.6138"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon79" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="33.8965"
+         x="679.9507"
+         y="523.3237"
+         id="text80">Mission</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="42.7979"
+         x="675.5"
+         y="534.8227"
+         id="text81">Complete</text>
+    </g>
+    <!--link SDA to EI-->
+    <g
+       id="link_SDA_EI">
+      <path
+         d="M668.66,289.7338 C674.61,291.8738 680.71,294.0038 686.5,295.9438 C776.36,326.0238 817.61,297.3838 890.5,357.9438 C911.81,375.6538 922.6081,400.0835 929.0981,420.2035 "
+         fill="none"
+         id="SDA-to-EI"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="930.94,425.9138,931.984,416.1205,929.4051,421.1553,924.3702,418.5764,930.94,425.9138"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon81" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="31.6846"
+         x="883.7832"
+         y="336.3237"
+         id="text82">Sensor</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="42.251"
+         x="878.5"
+         y="347.8227"
+         id="text83">Readings</text>
+    </g>
+    <!--link EI to NDL-->
+    <g
+       id="link_EI_NDL">
+      <path
+         d="M935.39,468.9538 C933.47,504.5138 929.8646,571.2326 927.9346,606.8526 "
+         fill="none"
+         id="EI-to-NDL"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="927.61,612.8438,932.0911,604.0734,927.8805,607.8512,924.1028,603.6406,927.61,612.8438"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon83" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="48.3643"
+         x="937.38672"
+         y="523.32373"
+         id="text84"
+         transform="translate(-4.0911178,50.911688)">Interpreted</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="56.137699"
+         x="933.5"
+         y="534.82269"
+         id="text85"
+         transform="translate(-0.45456865,51.820826)">Environment</text>
+    </g>
+    <!--link NDL to PBS-->
+    <g
+       id="link_NDL_PBS">
+      <path
+         d="M926.74,655.9638 C927.12,689.1738 927.7999,748.3142 928.1899,781.6742 "
+         fill="none"
+         id="NDL-to-PBS"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="928.26,787.6738,932.1545,778.6277,928.2016,782.6742,924.1551,778.7212,928.26,787.6738"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon85" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="47.251"
+         x="930.1626"
+         y="714.3237"
+         id="text86">Navigation</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="50.5762"
+         x="928.5"
+         y="725.8227"
+         id="text87">Constraints</text>
+    </g>
+    <!--link PBS to MSG-->
+    <g
+       id="link_PBS_MSG">
+      <path
+         d="M928.81,830.9938 C929.19,855.5538 929.7201,890.4245 930.0901,915.1045 "
+         fill="none"
+         id="PBS-to-MSG"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="930.18,921.1038,934.0446,912.0449,930.105,916.1044,926.0455,912.1648,930.18,921.1038"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon87" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="38.916"
+         x="930.7759"
+         y="877.8237"
+         id="text88">Selected</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="39.4678"
+         x="930.5"
+         y="889.3227"
+         id="text89">Behavior</text>
+    </g>
+    <!--link MPM to NDL-->
+    <g
+       id="link_MPM_NDL">
+      <path
+         d="M765.21,787.8138 C786.62,766.5838 821.11,732.6438 851.5,703.9438 C868.68,687.7138 883.968,673.7362 898.888,660.2562 "
+         fill="none"
+         id="MPM-to-NDL"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="903.34,656.2338,893.9804,659.2993,899.63,659.5858,899.3435,665.2354,903.34,656.2338"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon89" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="65.0293"
+         x="852.5"
+         y="719.8237"
+         id="text90">Mission Phase</text>
+    </g>
+    <!--link MSG to MCD-->
+    <g
+       id="link_MSG_MCD">
+      <path
+         d="M954.66,921.2838 C963.27,912.8038 972.35,902.4138 978.5,891.4438 C1056.5,752.3738 946.44,643.8638 1071.5,544.9438 C1094.87,526.4638 1318.75,558.3238 1339.5,536.9438 C1346.93,529.2938 1345.27,521.9138 1339.5,512.9438 C1219.13,325.7338 927.835,286.5182 809.375,278.1182 "
+         fill="none"
+         id="MSG-to-MCD"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="803.39,277.6938,812.0845,282.3204,808.3775,278.0475,812.6504,274.3404,803.39,277.6938"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon90" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="30.0146"
+         x="1076.1133"
+         y="632.8237"
+         id="text91">Motion</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="37.2412"
+         x="1072.5"
+         y="644.3227"
+         id="text92">Strategy</text>
+    </g>
+    <!--link MCD to MDPS-->
+    <g
+       id="link_MCD_MDPS">
+      <path
+         d="M803.05,276.3138 C964.69,279.4838 1469.96,292.0238 1534.5,325.9438 C1574.12,346.7638 1599.884,386.8294 1614.814,415.5694 "
+         fill="none"
+         id="MCD-to-MDPS"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="1617.58,420.8938,1616.9807,411.0632,1615.275,416.4568,1609.8814,414.7512,1617.58,420.8938"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon92" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="30.014601"
+         x="1576.0566"
+         y="336.3237"
+         id="text93"
+         transform="translate(-141.82542,-48.184276)">Motion</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="51.127899"
+         x="1565.5"
+         y="347.82269"
+         id="text94"
+         transform="translate(-143.64369,-48.184276)">Commands</text>
+    </g>
+    <!--link SDA to SSM-->
+    <g
+       id="link_SDA_SSM">
+      <path
+         d="M641.11,296.0738 C658.03,328.9338 688.164,387.4991 705.104,420.4091 "
+         fill="none"
+         id="SDA-to-SSM"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="707.85,425.7438,707.2875,415.911,705.5617,421.2982,700.1745,419.5724,707.85,425.7438"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon94" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="49.4629"
+         x="667.5"
+         y="336.3237"
+         id="text95">Subsystem</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="28.3496"
+         x="678.0566"
+         y="347.8227"
+         id="text96">Status</text>
+    </g>
+    <!--link MPM to RMI-->
+    <g
+       id="link_MPM_RMI">
+      <path
+         d="M771.07,787.7438 C794.87,770.4838 831.48,746.9938 867.5,735.9438 C921.57,719.3538 939.06,739.1138 994.5,727.9438 C1036.94,719.3938 1047.67,715.0938 1086.5,695.9438 C1109.3,684.6938 1128.3565,672.2897 1146.1065,659.6197 "
+         fill="none"
+         id="MPM-to-RMI"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="1150.99,656.1338,1141.3408,658.107,1146.9204,659.0387,1145.9886,664.6183,1150.99,656.1338"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon96" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="59.4678"
+         x="1070.5"
+         y="719.8237"
+         id="text97">System State</text>
+    </g>
+    <!--link EI to RMI-->
+    <g
+       id="link_EI_RMI">
+      <path
+         d="M978.61,450.1738 C1059.77,454.4838 1233.06,468.7638 1269.5,512.9438 C1276.29,521.1738 1275.55,528.1638 1269.5,536.9438 C1263.83,545.1638 1256.55,539.0338 1248.5,544.9438 C1223.38,563.3638 1205.6103,587.9374 1193.3703,607.7774 "
+         fill="none"
+         id="EI-to-RMI"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="1190.22,612.8838,1198.3498,607.3244,1192.8453,608.6285,1191.5412,603.124,1190.22,612.8838"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon97" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="56.137699"
+         x="1274.5"
+         y="523.32373"
+         id="text98"
+         transform="translate(6.75,-7.0714286)">Environment</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="28.3496"
+         x="1288.394"
+         y="534.82269"
+         id="text99"
+         transform="translate(7.3928572,-8.0357143)">Status</text>
+    </g>
+    <!--link SSM to RMI-->
+    <g
+       id="link_SSM_RMI">
+      <path
+         d="M768.55,468.9838 C791.12,477.5338 818.31,486.8638 843.5,492.9438 C950.86,518.8538 992.36,487.1838 1086.5,544.9438 C1116.53,563.3738 1140.8368,588.5056 1157.9068,608.3456 "
+         fill="none"
+         id="SSM-to-RMI"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="1161.82,612.8938,1158.9823,603.4626,1158.559,609.1036,1152.918,608.6803,1161.82,612.8938"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon99" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="49.462898"
+         x="1070.5"
+         y="523.32373"
+         id="text100"
+         transform="translate(-8.6785714,-10.446429)">Subsystem</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="28.9063"
+         x="1080.7783"
+         y="534.82269"
+         id="text101"
+         transform="translate(-20.571429,-9.9642857)">Health</text>
+    </g>
+    <!--reverse link OP to RMI-->
+    <g
+       id="link_OP_RMI">
+      <path
+         d="M1699.953,483.1286 C1694.933,488.7486 1693.07,489.4538 1686.5,492.9438 C1646.66,514.0938 1529,505.5838 1484.5,512.9438 C1438.13,520.6138 1428.01,530.1738 1381.5,536.9438 C1352.2,541.2038 1274.75,531.2538 1248.5,544.9438 C1220.19,559.7138 1199.55,591.5538 1188.29,612.7338 "
+         fill="none"
+         id="OP-backto-RMI"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="1703.95,478.6538,1694.9712,482.7013,1700.6191,482.3828,1700.9376,488.0307,1703.95,478.6538"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon101" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="28.3496"
+         x="1487.7192"
+         y="523.3237"
+         id="text102">Status</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="32.7881"
+         x="1485.5"
+         y="534.8227"
+         id="text103">Display</text>
+    </g>
+    <!--link MPM to MDL-->
+    <g
+       id="link_MPM_MDL">
+      <path
+         d="M732.02,787.6738 C718.13,766.4538 693.44,736.7638 662,732.4438 C612,725.5738 593.91,713.9138 548.5,735.9438 C525.35,747.1738 509.9809,765.47 498.4809,782.85 "
+         fill="none"
+         id="MPM-to-MDL"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="495.17,787.8538,503.4722,782.5554,497.9291,783.684,496.8005,778.1409,495.17,787.8538"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon103" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="57.2412"
+         x="604"
+         y="719.8237"
+         id="text104">State History</text>
+    </g>
+    <!--link NDL to MDL-->
+    <g
+       id="link_NDL_MDL">
+      <path
+         d="M894.31,656.0638 C870.32,670.2138 836.19,687.8438 803.5,695.9438 C788.39,699.6838 536.23,694.9938 523.5,703.9438 C496.24,723.1138 487.8412,757.3398 484.7812,781.9198 "
+         fill="none"
+         id="NDL-to-MDL"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="484.04,787.8738,489.1212,779.4369,484.6577,782.9121,481.1825,778.4486,484.04,787.8738"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon104" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="57.8125"
+         x="524.5"
+         y="719.8237"
+         id="text105">Decision Log</text>
+    </g>
+    <!--link STC to PM-->
+    <g
+       id="link_STC_PM">
+      <path
+         d="M732.06,655.9938 C723.72,670.0038 710.59,687.5038 693.5,695.9438 C664.9,710.0738 432.29,685.1738 406.5,703.9438 C379.89,723.3138 372.83,757.4555 370.74,781.9555 "
+         fill="none"
+         id="STC-to-PM"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="370.23,787.9338,374.9805,779.3064,370.655,782.9519,367.0095,778.6264,370.23,787.9338"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon105" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="53.9063"
+         x="407.5"
+         y="719.8237"
+         id="text106">Timing Data</text>
+    </g>
+    <!--link PM to FD-->
+    <g
+       id="link_PM_FD">
+      <path
+         d="M369.5,830.9938 C369.5,855.5538 369.5,890.4238 369.5,915.1038 "
+         fill="none"
+         id="PM-to-FD"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="369.5,921.1038,373.5,912.1038,369.5,916.1038,365.5,912.1038,369.5,921.1038"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon106" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="57.2461"
+         x="370.5"
+         y="877.8237"
+         id="text107">Performance</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="32.2217"
+         x="383.0122"
+         y="889.3227"
+         id="text108">Metrics</text>
+    </g>
+    <!--link FD to MS-->
+    <g
+       id="link_FD_MS">
+      <path
+         d="M400.56,942.9438 C464.24,942.9438 604.1,942.9438 681.35,942.9438 "
+         fill="none"
+         id="FD-to-MS"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="687.35,942.9438,678.35,938.9438,682.35,942.9438,678.35,946.9438,687.35,942.9438"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon108" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="22.2314"
+         x="533.1182"
+         y="926.3237"
+         id="text109">Fault</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="54.4678"
+         x="517"
+         y="937.8227"
+         id="text110">Notifications</text>
+    </g>
+    <!--link MS to NDL-->
+    <g
+       id="link_MS_NDL">
+      <path
+         d="M708.84,927.2938 C678.59,910.1638 632.21,878.8138 609.5,837.4438 C575.19,774.9638 587.01,713.8038 596.5,703.9438 C604.48,695.6538 792.34,698.7638 803.5,695.9438 C836.14,687.6838 865.1077,673.1147 889.1077,659.0047 "
+         fill="none"
+         id="MS-to-NDL"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="894.28,655.9638,884.4942,657.077,889.9697,658.4979,888.5488,663.9734,894.28,655.9638"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon110" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="73.3936"
+         x="610.5"
+         y="813.3237"
+         id="text111">Enable/Suspend</text>
+    </g>
+    <!--link FD to STC-->
+    <g
+       id="link_FD_STC">
+      <path
+         d="M338.44,937.7338 C288.26,929.0838 190.74,904.1338 148.5,837.4438 C124.36,799.3338 118.88,769.9738 148.5,735.9438 C182.38,697.0238 327.07,708.1638 378.5,703.9438 C395.95,702.5138 677.8,703.6838 693.5,695.9438 C710.6,687.5238 720.6498,675.1788 728.9998,661.1588 "
+         fill="none"
+         id="FD-to-STC"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="732.07,656.0038,724.028,661.6895,729.5115,660.2997,730.9014,665.7831,732.07,656.0038"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon111" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="22.2217"
+         x="162.0146"
+         y="807.8237"
+         id="text112">Error</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="47.251"
+         x="149.5"
+         y="819.3227"
+         id="text113">Conditions</text>
+    </g>
+    <!--link L2 to GMN59-->
+    <g
+       id="link_L2_GMN59"
+       transform="matrix(0.73096125,0,0,1.3370655,230.41988,-171.55515)" />
+    <!--link GMN62 to L1-->
+    <g
+       id="link_GMN62_L1">
+      <path
+         d="M1632.21,600.8538 C1609.79,572.9638 1573.72,535.3138 1532,518.9438 C1488.4,501.8338 730.34,496.9338 689,518.9438 C677.9225,524.8413 670.6194,534.4863 665.9209,545.758 C664.7463,548.576 663.7345,551.4956 662.8672,554.4837 C662.4336,555.9778 662.036,557.489 661.6724,559.0132 C661.5814,559.3942 661.4926,559.7761 661.4059,560.1587 C661.3626,560.35 661.3197,560.5415 661.2774,560.7331 "
+         fill="none"
+         id="GMN62-L1"
+         style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;" />
+    </g>
+    <!--link L4 to GMN65-->
+    <g
+       id="link_L4_GMN65">
+      <path
+         d="M1541.5258,648.0153 C1541.574,648.0906 1541.6223,648.166 1541.6707,648.2418 C1541.7677,648.3933 1541.8653,648.5458 1541.9636,648.6993 C1543.5359,651.1557 1545.2759,653.8713 1547.1388,656.7738 C1554.59,668.3838 1564.005,682.9838 1572.5,695.9438 C1591.68,725.1938 1613.94,758.5038 1629.2,781.2438 "
+         fill="none"
+         id="L4-GMN65"
+         style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;" />
+    </g>
+    <!--SRC=[VLRRRkCs47tNLmooG0e4279V54PHm9RjZT4u4IBtgUu3BT4o4OhqabHQRx50lwMVrY_f3AcRxRZUbqLcE7FEpE6Xx9jGMsPO2IkMlHL6LogFjTG6FatzBx9jHgRBhLPSkTJj90V3CyTK8NalnMvOhlyGge0raxOVoVcQLT9DjNBFhEGmD8B9Z-Ef-CRXvheNR5kDjCcvgG7U-LyKEU4GJleSGrgjxCuwNiAqKfaJMZ498wcpDnWBLc2fAFe19dywRYWoKNXKS1knp671ivSjDmp_TmRCmaiIPL9NEPobN5caj5HjUP-Gfat2NA-456vtc34V9scKCyTMp78uMt3hbkgH6SMjzGcFluu8q9m9vV4VehPHonnXz0cUuNwkwH_y5KK0lRGdjkC6RWQGXacaZZaEiSR92SMekc_zT0EV9fyddwT3h03uQxSBlys5jPW7oGPnBzMSALRm4aE_UrR9_F10wB4m30T57POgnZqQBVs1T14VTT0vRgp2URyBQXKAfvZs_KCwjmDuPk-YyFZX71BcDf18fXGk9l2vzOhzSHmVyvceTs6q8WPCBjLCuVwtXZjVpRUUp0xFTEsMQimpZnAUT24oV-1v_7HumcCQyGqUr0Qbm2NFsWR9A3sUWIUJEjGSBr0yNxWY_NNZ-79o7dS3y2mkEyKVR_YE9Z896ZbS64eQ5Jz6RIxLCFjQYR2uiA_ny0JMM9SbKpbEHDWjSzac08t7H_LRM2IDogA8j19ujN1TeKSwFqdkVW2F5VQvdBDi8nGFLDSiuu7NFIhtcfWTysfkS8SqCJh3wzRqVOcJ8wnipTqENjwvCIBdj6xNsrpwSiJkbPSQzTvHgZL54FsPr_di9Bk7zcO-SYPHCkVUcvIsJcJ15fuU_ERkHm_731Diemroo_ZHK8ylvfGyzP3HT7pgmWSzeCgBfkJyMETaOx3FTn7eVjzprvdQLiw2qsHjqKi2bvS_q_nXGA8mxYfrUajEuJTbcmoSDsPCIcuAhZAy5irYeZGD2UCX9NHt6fVCJSQthg4GaV7sSXCTr0tdI_KB2gfaDEe8tHT-egp539E2EwTEb9KKLw_S8bzymP1HxQXmUTfI8-Bb6ovYhENjBTxWtd59h_nhXRLjHCowd4vlGrpDUoX38Kf1ZmrZSXZlVDL65F09ASRzGUwxuN3clU8nas9bMEF5vLQY0WvowgNtuYtNM-HwscyZcYhLcT3SWfKGJORJA6o4VwKWEYJKBaLUo_4kzdOMKPZIq1YXR-x-wR3eYKBXo2WQw7xnhSXIgL9Zi-qyGhUzXwkZSuTq_iyk8ohlsyHZlxq0f77cYFximoIhBjugjva7pNVGlT5KWSol0tAFG4vOMyi4lGFs7-zceY6o9_owGRFO-cm785WCNIqKUXEk7PayNB9TX-wXK_X7rjHfpyywN897OT60TkqwGwp_OBQQzf9UY9A-3lqjhSjDQURxjiQTeORJSQVrsicUSVPhaR5m6n1wRBIrbz8JoFPtsXF6HB6Lv5TfPRTSvKtXS0ycnf1-KNQvQCi-yO8I5Vcy4SN6WLxZDmRQtCL5xsOq7snsS761iN___WTYoL24wnr-qJglLbXp7BZ1pyoGCDnkvGvGMsW05dtILBAD1OL36PxRLQto9bf_872Cl_llCR2DH14i4DWeG9Py7H3VUCHxzwA7TORF1tw6YszXP3M1pZiQn9NJIfUwihsBsY3UVpqFWQoqSxhqKEuzbFQ5RfNVmKasEukxbRX8__NOJgpAXGOREbbHuElIXEgdEE_9j4Nm7m00]-->
+  </g>
+</svg>

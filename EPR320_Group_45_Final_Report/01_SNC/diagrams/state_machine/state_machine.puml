@@ -1,0 +1,71 @@
+@startuml state_machine
+skinparam state {
+    BackgroundColor<<IDLE>> LightBlue
+    BackgroundColor<<CAL>> LightYellow
+    BackgroundColor<<MAZE>> LightGreen
+    BackgroundColor<<SOS>> Orange
+    BorderColor Black
+    FontSize 11
+    FontName Arial
+}
+
+skinparam ArrowColor Black
+skinparam ArrowFontSize 9
+
+[*] --> IDLE : Power-Up
+
+state IDLE <<IDLE>> {
+    IDLE : System ready
+    IDLE : Waiting for activation
+}
+
+state CAL <<CAL>> {
+    CAL : Calibration mode
+    CAL : SS & MDPS calibrating
+}
+
+state MAZE <<MAZE>> {
+    MAZE : Navigation active
+    MAZE : NAVCON decisions
+    MAZE : Executing maneuvers
+}
+
+state SOS <<SOS>> {
+    SOS : Emergency state
+    SOS : NAVCON frozen
+    SOS : Awaiting dual-tone
+}
+
+IDLE --> CAL : **Touch Activation**\n(Valid touch detected)
+
+CAL --> MAZE : **EoC Guard**\nSS.EoC = TRUE\nAND\nMDPS.EoC = TRUE
+
+MAZE --> SOS : **Dual-Tone Detect**\nTwo tones @ 2800 Hz\n(0.5-1.0s each, Δt≤2s)\n≤60 dB @ ≥10 cm
+
+SOS --> MAZE : **Dual-Tone Detect**\n(Same criteria)
+
+MAZE --> IDLE : **EoM Signal**\nFrom SS subsystem\nExecute end behavior
+
+note right of IDLE
+    **Initial State**
+    • Display IDLE
+    • SCS timing active
+    • No spam in wait loops
+end note
+
+note right of MAZE
+    **Active Navigation**
+    • Process SS colors & θᵢ
+    • Process MDPS kinematics
+    • Issue IST=3 commands
+    • Display diagnostics
+end note
+
+note right of SOS
+    **Safety State**
+    • Navigation paused
+    • Maintains position
+    • Reject off-frequency tones
+end note
+
+@enduml

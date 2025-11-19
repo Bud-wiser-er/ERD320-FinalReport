@@ -1,0 +1,93 @@
+@startuml navcon_state_machine
+
+skinparam state {
+    BackgroundColor<<IDLE>> LightGray
+    BackgroundColor<<SCANNING>> LightBlue
+    BackgroundColor<<DETECTED>> Yellow
+    BackgroundColor<<ALIGNMENT>> LightYellow
+    BackgroundColor<<DECISION>> Orange
+    BackgroundColor<<AVOIDANCE>> LightCoral
+    BackgroundColor<<EXECUTION>> LightGreen
+    BorderColor Black
+    FontSize 10
+    FontName Arial
+}
+
+skinparam ArrowColor Black
+skinparam ArrowFontSize 8
+
+[*] --> IDLE : NAVCON Start
+
+state IDLE <<IDLE>> {
+    IDLE : Waiting for\nMAZE state activation
+}
+
+state FORWARD_SCAN <<SCANNING>> {
+    FORWARD_SCAN : Monitoring SS\nfor line detection
+    FORWARD_SCAN : Forward motion active
+}
+
+state LINE_DETECTED <<DETECTED>> {
+    LINE_DETECTED : Color classification:\nNAVIGABLE (RED/GREEN)\nor WALL (BLACK/BLUE)
+    LINE_DETECTED : Record sensor position\n(S1/S2/S3)
+}
+
+state ANGLE_ALIGNMENT <<ALIGNMENT>> {
+    ANGLE_ALIGNMENT : Categorize θᵢ:\n• ≤5° (direct crossing)\n• 5-45° (alignment needed)\n• >45° (steep approach)
+}
+
+state TRAVERSAL_DECISION <<DECISION>> {
+    TRAVERSAL_DECISION : Evaluate navigation rules:\nRED/GREEN: crossing logic\nBLACK/BLUE: avoidance logic
+    TRAVERSAL_DECISION : Select motion primitive:\nFORWARD, REVERSE, STOP,\nROTATE_L/R, INCREMENTAL
+}
+
+state OBSTACLE_AVOIDANCE <<AVOIDANCE>> {
+    OBSTACLE_AVOIDANCE : Execute avoidance maneuver:\nθᵢ ≤45°: 90°±θᵢ turn (parallel)\nθᵢ >45°: incremental corrections
+}
+
+state MANEUVER_EXECUTION <<EXECUTION>> {
+    MANEUVER_EXECUTION : Encode DEC command:\n0=forward, 1=reverse,\n2=rotate left, 3=rotate right
+    MANEUVER_EXECUTION : Send to MDPS via SCS
+    MANEUVER_EXECUTION : Await completion
+}
+
+IDLE --> FORWARD_SCAN : **MAZE state active**
+
+FORWARD_SCAN --> LINE_DETECTED : **Line detected**\nSS color change\n(any sensor S1/S2/S3)
+
+LINE_DETECTED --> ANGLE_ALIGNMENT : **Color classified**\nθᵢ available from SS
+
+ANGLE_ALIGNMENT --> TRAVERSAL_DECISION : **Angle categorized**\n(≤5°, 5-45°, >45°)
+
+TRAVERSAL_DECISION --> MANEUVER_EXECUTION : **NAVIGABLE line**\n(RED/GREEN)\nθᵢ ≤5°: cross directly\n5°<θᵢ≤45°: reverse + steer\nθᵢ>45°: iterative correction
+
+TRAVERSAL_DECISION --> OBSTACLE_AVOIDANCE : **WALL line**\n(BLACK/BLUE)\nAvoidance required
+
+OBSTACLE_AVOIDANCE --> MANEUVER_EXECUTION : **Maneuver selected**
+
+MANEUVER_EXECUTION --> FORWARD_SCAN : **Completion from MDPS**
+
+FORWARD_SCAN --> IDLE : **MAZE→IDLE**\n(End-of-maze)
+
+note right of TRAVERSAL_DECISION
+    **Decision Latency:**
+    • Average: 18 µs
+    • Max: 87 µs
+    • 111× margin vs 20 ms budget
+end note
+
+note right of MANEUVER_EXECUTION
+    **Guard Conditions:**
+    • Wheel position rules enforced
+    • Illegal crossings prevented
+    • SCS packet validation
+end note
+
+note bottom
+    **Navigation Rules:**
+    • RED/GREEN traversal: θᵢ-dependent crossing logic
+    • BLACK/BLUE avoidance: parallel run or incremental corrections
+    • Test coverage: 47 scenario variations validated
+end note
+
+@enduml

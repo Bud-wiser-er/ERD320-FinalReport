@@ -1,0 +1,1417 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   contentStyleType="text/css"
+   height="656px"
+   preserveAspectRatio="none"
+   style="width:1501px;height:656px;background:#FFFFFF;"
+   version="1.1"
+   viewBox="0 0 1501 656"
+   width="1501px"
+   zoomAndPan="magnify"
+   id="svg93"
+   sodipodi:docname="snc_architecture.svg"
+   inkscape:export-filename="snc_architecture.pdf"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview93"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.59893404"
+     inkscape:cx="886.57508"
+     inkscape:cy="267.14127"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="2391"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g93" />
+  <title
+     id="title1">SNC Subsystem Architecture</title>
+  <defs
+     id="defs3">
+    <filter
+       height="1"
+       id="bakyzzenwe0j30"
+       width="1"
+       x="0"
+       y="0">
+      <feFlood
+         flood-color="#90EE90"
+         result="flood"
+         id="feFlood1" />
+      <feComposite
+         in="SourceGraphic"
+         in2="flood"
+         operator="over"
+         id="feComposite1" />
+    </filter>
+    <filter
+       height="1"
+       id="bakyzzenwe0j31"
+       width="1"
+       x="0"
+       y="0">
+      <feFlood
+         flood-color="#FFE4B5"
+         result="flood"
+         id="feFlood2" />
+      <feComposite
+         in="SourceGraphic"
+         in2="flood"
+         operator="over"
+         id="feComposite2" />
+    </filter>
+    <filter
+       height="1"
+       id="bakyzzenwe0j32"
+       width="1"
+       x="0"
+       y="0">
+      <feFlood
+         flood-color="#D3D3D3"
+         result="flood"
+         id="feFlood3" />
+      <feComposite
+         in="SourceGraphic"
+         in2="flood"
+         operator="over"
+         id="feComposite3" />
+    </filter>
+  </defs>
+  <g
+     id="g93"
+     transform="translate(13.357063,1.2522247)">
+    <!--cluster SNC Subsystem Boundary-->
+    <g
+       id="cluster_SNC Subsystem Boundary">
+      <rect
+         fill="#f5f5f5"
+         height="423"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#000000;stroke-width:1"
+         width="1251"
+         x="7"
+         y="134.10941"
+         id="rect3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="11px"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="139.3638"
+         x="562.81812"
+         y="147.52831"
+         id="text4">SNC Subsystem Boundary</text>
+    </g>
+    <!--cluster MAIN-->
+    <g
+       id="cluster_MAIN">
+      <rect
+         fill="#f5f5f5"
+         height="237.5"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#000000;stroke-width:1"
+         width="529"
+         x="528"
+         y="295.60941"
+         id="rect4" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="11px"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="139.3423"
+         x="722.82892"
+         y="309.02829"
+         id="text5">Main ESP32 (Off-the-Shelf)</text>
+    </g>
+    <!--cluster WIFI-->
+    <g
+       id="cluster_WIFI">
+      <rect
+         fill="#f5f5f5"
+         height="352.5"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#000000;stroke-width:1"
+         width="153"
+         x="1081"
+         y="174.10941"
+         id="rect5" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="11px"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="137.5"
+         x="1088.75"
+         y="187.52831"
+         id="text6">WiFi ESP32 (Off-the-Shelf)</text>
+    </g>
+    <!--cluster ANALOG-->
+    <g
+       id="cluster_ANALOG">
+      <rect
+         fill="#f5f5f5"
+         height="116"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#000000;stroke-width:1"
+         width="473"
+         x="31"
+         y="289.10941"
+         id="rect6" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="11px"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="141.1792"
+         x="196.9104"
+         y="302.52829"
+         id="text7">Analog Circuit (Developed)</text>
+    </g>
+    <!--entity SM-->
+    <g
+       id="elem_SM">
+      <rect
+         fill="#90ee90"
+         height="55.1563"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#006400;stroke-width:0.5"
+         width="103.9258"
+         x="739"
+         y="327.60941"
+         id="rect7" />
+      <rect
+         fill="#90ee90"
+         height="10"
+         style="stroke:#006400;stroke-width:0.5"
+         width="15"
+         x="822.92578"
+         y="332.60941"
+         id="rect8" />
+      <rect
+         fill="#90ee90"
+         height="2"
+         style="stroke:#006400;stroke-width:0.5"
+         width="4"
+         x="820.92578"
+         y="334.60941"
+         id="rect9" />
+      <rect
+         fill="#90ee90"
+         height="2"
+         style="stroke:#006400;stroke-width:0.5"
+         width="4"
+         x="820.92578"
+         y="338.60941"
+         id="rect10" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="10px"
+         font-style="italic"
+         lengthAdjust="spacing"
+         textLength="57.275398"
+         x="757.3252"
+         y="357.9902"
+         id="text10">«developed»</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="63.9258"
+         x="754"
+         y="370.56839"
+         id="text11">State Machine</text>
+    </g>
+    <!--entity NAV-->
+    <g
+       id="elem_NAV">
+      <rect
+         fill="#90ee90"
+         height="55.1563"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#006400;stroke-width:0.5"
+         width="97.275398"
+         x="808.5"
+         y="455.60941"
+         id="rect11" />
+      <rect
+         fill="#90ee90"
+         height="10"
+         style="stroke:#006400;stroke-width:0.5"
+         width="15"
+         x="885.77539"
+         y="460.60941"
+         id="rect12" />
+      <rect
+         fill="#90ee90"
+         height="2"
+         style="stroke:#006400;stroke-width:0.5"
+         width="4"
+         x="883.77539"
+         y="462.60941"
+         id="rect13" />
+      <rect
+         fill="#90ee90"
+         height="2"
+         style="stroke:#006400;stroke-width:0.5"
+         width="4"
+         x="883.77539"
+         y="466.60941"
+         id="rect14" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="10px"
+         font-style="italic"
+         lengthAdjust="spacing"
+         textLength="57.275398"
+         x="823.5"
+         y="485.9902"
+         id="text14">«developed»</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="42.783199"
+         x="830.74609"
+         y="498.56839"
+         id="text15">NAVCON</text>
+    </g>
+    <!--entity SCS-->
+    <g
+       id="elem_SCS">
+      <rect
+         fill="#90ee90"
+         height="55.1563"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#006400;stroke-width:0.5"
+         width="100.0244"
+         x="941"
+         y="455.60941"
+         id="rect15" />
+      <rect
+         fill="#90ee90"
+         height="10"
+         style="stroke:#006400;stroke-width:0.5"
+         width="15"
+         x="1021.0244"
+         y="460.60941"
+         id="rect16" />
+      <rect
+         fill="#90ee90"
+         height="2"
+         style="stroke:#006400;stroke-width:0.5"
+         width="4"
+         x="1019.0244"
+         y="462.60941"
+         id="rect17" />
+      <rect
+         fill="#90ee90"
+         height="2"
+         style="stroke:#006400;stroke-width:0.5"
+         width="4"
+         x="1019.0244"
+         y="466.60941"
+         id="rect18" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="10px"
+         font-style="italic"
+         lengthAdjust="spacing"
+         textLength="57.275398"
+         x="957.37451"
+         y="485.9902"
+         id="text18">«developed»</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="60.024399"
+         x="956"
+         y="498.56839"
+         id="text19">SCS Protocol</text>
+    </g>
+    <!--entity PTD-->
+    <g
+       id="elem_PTD">
+      <rect
+         fill="#90ee90"
+         height="67.734398"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#006400;stroke-width:0.5"
+         width="97.275398"
+         x="544.5"
+         y="449.10941"
+         id="rect19" />
+      <rect
+         fill="#90ee90"
+         height="10"
+         style="stroke:#006400;stroke-width:0.5"
+         width="15"
+         x="621.77539"
+         y="454.10941"
+         id="rect20" />
+      <rect
+         fill="#90ee90"
+         height="2"
+         style="stroke:#006400;stroke-width:0.5"
+         width="4"
+         x="619.77539"
+         y="456.10941"
+         id="rect21" />
+      <rect
+         fill="#90ee90"
+         height="2"
+         style="stroke:#006400;stroke-width:0.5"
+         width="4"
+         x="619.77539"
+         y="460.10941"
+         id="rect22" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="10px"
+         font-style="italic"
+         lengthAdjust="spacing"
+         textLength="57.275398"
+         x="559.5"
+         y="479.4902"
+         id="text22">«developed»</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="46.694302"
+         x="564.79053"
+         y="492.06839"
+         id="text23">Pure Tone</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="42.246101"
+         x="564.79053"
+         y="504.64651"
+         id="text24">Detection</text>
+    </g>
+    <!--entity SPIM-->
+    <g
+       id="elem_SPIM">
+      <rect
+         fill="#90ee90"
+         height="55.1563"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#006400;stroke-width:0.5"
+         width="97.275398"
+         x="676.5"
+         y="455.60941"
+         id="rect24" />
+      <rect
+         fill="#90ee90"
+         height="10"
+         style="stroke:#006400;stroke-width:0.5"
+         width="15"
+         x="753.77539"
+         y="460.60941"
+         id="rect25" />
+      <rect
+         fill="#90ee90"
+         height="2"
+         style="stroke:#006400;stroke-width:0.5"
+         width="4"
+         x="751.77539"
+         y="462.60941"
+         id="rect26" />
+      <rect
+         fill="#90ee90"
+         height="2"
+         style="stroke:#006400;stroke-width:0.5"
+         width="4"
+         x="751.77539"
+         y="466.60941"
+         id="rect27" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="10px"
+         font-style="italic"
+         lengthAdjust="spacing"
+         textLength="57.275398"
+         x="691.5"
+         y="485.9902"
+         id="text27">«developed»</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="49.458"
+         x="695.40869"
+         y="498.56839"
+         id="text28">SPI Master</text>
+    </g>
+    <!--entity SPIS-->
+    <g
+       id="elem_SPIS">
+      <rect
+         fill="#90ee90"
+         height="55.1563"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#006400;stroke-width:0.5"
+         width="97.275398"
+         x="1097.5"
+         y="455.60941"
+         id="rect28" />
+      <rect
+         fill="#90ee90"
+         height="10"
+         style="stroke:#006400;stroke-width:0.5"
+         width="15"
+         x="1174.7754"
+         y="460.60941"
+         id="rect29" />
+      <rect
+         fill="#90ee90"
+         height="2"
+         style="stroke:#006400;stroke-width:0.5"
+         width="4"
+         x="1172.7754"
+         y="462.60941"
+         id="rect30" />
+      <rect
+         fill="#90ee90"
+         height="2"
+         style="stroke:#006400;stroke-width:0.5"
+         width="4"
+         x="1172.7754"
+         y="466.60941"
+         id="rect31" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="10px"
+         font-style="italic"
+         lengthAdjust="spacing"
+         textLength="57.275398"
+         x="1112.5"
+         y="485.9902"
+         id="text31">«developed»</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="43.911098"
+         x="1119.1821"
+         y="498.56839"
+         id="text32">SPI Slave</text>
+    </g>
+    <!--entity WEB-->
+    <g
+       id="elem_WEB">
+      <rect
+         fill="#90ee90"
+         height="55.1563"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#006400;stroke-width:0.5"
+         width="97.275398"
+         x="1097.5"
+         y="206.10941"
+         id="rect32" />
+      <rect
+         fill="#90ee90"
+         height="10"
+         style="stroke:#006400;stroke-width:0.5"
+         width="15"
+         x="1174.7754"
+         y="211.10941"
+         id="rect33" />
+      <rect
+         fill="#90ee90"
+         height="2"
+         style="stroke:#006400;stroke-width:0.5"
+         width="4"
+         x="1172.7754"
+         y="213.10941"
+         id="rect34" />
+      <rect
+         fill="#90ee90"
+         height="2"
+         style="stroke:#006400;stroke-width:0.5"
+         width="4"
+         x="1172.7754"
+         y="217.10941"
+         id="rect35" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="10px"
+         font-style="italic"
+         lengthAdjust="spacing"
+         textLength="57.275398"
+         x="1112.5"
+         y="236.4902"
+         id="text35">«developed»</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="52.792999"
+         x="1114.7412"
+         y="249.06841"
+         id="text36">Web Server</text>
+    </g>
+    <!--entity DASH-->
+    <g
+       id="elem_DASH">
+      <rect
+         fill="#90ee90"
+         height="55.1563"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#006400;stroke-width:0.5"
+         width="97.275398"
+         x="1097.5"
+         y="327.60941"
+         id="rect36" />
+      <rect
+         fill="#90ee90"
+         height="10"
+         style="stroke:#006400;stroke-width:0.5"
+         width="15"
+         x="1174.7754"
+         y="332.60941"
+         id="rect37" />
+      <rect
+         fill="#90ee90"
+         height="2"
+         style="stroke:#006400;stroke-width:0.5"
+         width="4"
+         x="1172.7754"
+         y="334.60941"
+         id="rect38" />
+      <rect
+         fill="#90ee90"
+         height="2"
+         style="stroke:#006400;stroke-width:0.5"
+         width="4"
+         x="1172.7754"
+         y="338.60941"
+         id="rect39" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="10px"
+         font-style="italic"
+         lengthAdjust="spacing"
+         textLength="57.275398"
+         x="1112.5"
+         y="357.9902"
+         id="text39">«developed»</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="48.920898"
+         x="1116.6772"
+         y="370.56839"
+         id="text40">Dashboard</text>
+    </g>
+    <!--entity MIC-->
+    <g
+       id="elem_MIC">
+      <rect
+         fill="#ffe4b5"
+         height="55.1563"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#ffa500;stroke-width:0.5"
+         width="83.364304"
+         x="47.5"
+         y="327.60941"
+         id="rect40" />
+      <rect
+         fill="#ffe4b5"
+         height="10"
+         style="stroke:#ffa500;stroke-width:0.5"
+         width="15"
+         x="110.8643"
+         y="332.60941"
+         id="rect41" />
+      <rect
+         fill="#ffe4b5"
+         height="2"
+         style="stroke:#ffa500;stroke-width:0.5"
+         width="4"
+         x="108.8643"
+         y="334.60941"
+         id="rect42" />
+      <rect
+         fill="#ffe4b5"
+         height="2"
+         style="stroke:#ffa500;stroke-width:0.5"
+         width="4"
+         x="108.8643"
+         y="338.60941"
+         id="rect43" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="10px"
+         font-style="italic"
+         lengthAdjust="spacing"
+         textLength="43.3643"
+         x="62.5"
+         y="357.9902"
+         id="text43">«offshelf»</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="15.5518"
+         x="76.406303"
+         y="370.56839"
+         id="text44">Mic</text>
+    </g>
+    <!--entity PRE-->
+    <g
+       id="elem_PRE">
+      <rect
+         fill="#ffe4b5"
+         height="67.734398"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#ffa500;stroke-width:0.5"
+         width="84.467796"
+         x="166"
+         y="321.10941"
+         id="rect44" />
+      <rect
+         fill="#ffe4b5"
+         height="10"
+         style="stroke:#ffa500;stroke-width:0.5"
+         width="15"
+         x="230.4678"
+         y="326.10941"
+         id="rect45" />
+      <rect
+         fill="#ffe4b5"
+         height="2"
+         style="stroke:#ffa500;stroke-width:0.5"
+         width="4"
+         x="228.4678"
+         y="328.10941"
+         id="rect46" />
+      <rect
+         fill="#ffe4b5"
+         height="2"
+         style="stroke:#ffa500;stroke-width:0.5"
+         width="4"
+         x="228.4678"
+         y="332.10941"
+         id="rect47" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="10px"
+         font-style="italic"
+         lengthAdjust="spacing"
+         textLength="43.3643"
+         x="181.5518"
+         y="351.4902"
+         id="text47">«offshelf»</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="35.014599"
+         x="181"
+         y="364.06839"
+         id="text48">Preamp</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="44.4678"
+         x="181"
+         y="376.64651"
+         id="text49">MCP6024</text>
+    </g>
+    <!--entity BPF-->
+    <g
+       id="elem_BPF">
+      <rect
+         fill="#ffe4b5"
+         height="67.734398"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#ffa500;stroke-width:0.5"
+         width="84.467796"
+         x="285"
+         y="321.10941"
+         id="rect49" />
+      <rect
+         fill="#ffe4b5"
+         height="10"
+         style="stroke:#ffa500;stroke-width:0.5"
+         width="15"
+         x="349.4678"
+         y="326.10941"
+         id="rect50" />
+      <rect
+         fill="#ffe4b5"
+         height="2"
+         style="stroke:#ffa500;stroke-width:0.5"
+         width="4"
+         x="347.4678"
+         y="328.10941"
+         id="rect51" />
+      <rect
+         fill="#ffe4b5"
+         height="2"
+         style="stroke:#ffa500;stroke-width:0.5"
+         width="4"
+         x="347.4678"
+         y="332.10941"
+         id="rect52" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="10px"
+         font-style="italic"
+         lengthAdjust="spacing"
+         textLength="43.3643"
+         x="300.55179"
+         y="351.4902"
+         id="text52">«offshelf»</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="19.4482"
+         x="300"
+         y="364.06839"
+         id="text53">BPF</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="44.4678"
+         x="300"
+         y="376.64651"
+         id="text54">MCP6024</text>
+    </g>
+    <!--entity ENV-->
+    <g
+       id="elem_ENV">
+      <rect
+         fill="#ffe4b5"
+         height="67.734398"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#ffa500;stroke-width:0.5"
+         width="83.364304"
+         x="404.5"
+         y="321.10941"
+         id="rect54" />
+      <rect
+         fill="#ffe4b5"
+         height="10"
+         style="stroke:#ffa500;stroke-width:0.5"
+         width="15"
+         x="467.86429"
+         y="326.10941"
+         id="rect55" />
+      <rect
+         fill="#ffe4b5"
+         height="2"
+         style="stroke:#ffa500;stroke-width:0.5"
+         width="4"
+         x="465.86429"
+         y="328.10941"
+         id="rect56" />
+      <rect
+         fill="#ffe4b5"
+         height="2"
+         style="stroke:#ffa500;stroke-width:0.5"
+         width="4"
+         x="465.86429"
+         y="332.10941"
+         id="rect57" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="10px"
+         font-style="italic"
+         lengthAdjust="spacing"
+         textLength="43.3643"
+         x="419.5"
+         y="351.4902"
+         id="text57">«offshelf»</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="41.6992"
+         x="420.33249"
+         y="364.06839"
+         id="text58">Envelope</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="30.571301"
+         x="420.33249"
+         y="376.64651"
+         id="text59">BAT48</text>
+    </g>
+    <!--entity SS-->
+    <g
+       id="elem_SS">
+      <rect
+         fill="#d3d3d3"
+         height="67.734398"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#696969;stroke-width:0.5"
+         width="86.699203"
+         x="1274.5"
+         y="321.10941"
+         id="rect59" />
+      <rect
+         fill="#d3d3d3"
+         height="10"
+         style="stroke:#696969;stroke-width:0.5"
+         width="15"
+         x="1341.1992"
+         y="326.10941"
+         id="rect60" />
+      <rect
+         fill="#d3d3d3"
+         height="2"
+         style="stroke:#696969;stroke-width:0.5"
+         width="4"
+         x="1339.1992"
+         y="328.10941"
+         id="rect61" />
+      <rect
+         fill="#d3d3d3"
+         height="2"
+         style="stroke:#696969;stroke-width:0.5"
+         width="4"
+         x="1339.1992"
+         y="332.10941"
+         id="rect62" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="10px"
+         font-style="italic"
+         lengthAdjust="spacing"
+         textLength="46.6992"
+         x="1289.5"
+         y="351.4902"
+         id="text62">«external»</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="13.3398"
+         x="1290.9038"
+         y="364.06839"
+         id="text63">SS</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="43.891602"
+         x="1290.9038"
+         y="376.64651"
+         id="text64">UART RX</text>
+    </g>
+    <!--entity MDPS-->
+    <g
+       id="elem_MDPS"
+       transform="translate(-20)">
+      <rect
+         fill="#d3d3d3"
+         height="67.734398"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#696969;stroke-width:0.5"
+         width="99.448196"
+         x="1396.5"
+         y="321.10941"
+         id="rect64" />
+      <rect
+         fill="#d3d3d3"
+         height="10"
+         style="stroke:#696969;stroke-width:0.5"
+         width="15"
+         x="1475.9482"
+         y="326.10941"
+         id="rect65" />
+      <rect
+         fill="#d3d3d3"
+         height="2"
+         style="stroke:#696969;stroke-width:0.5"
+         width="4"
+         x="1473.9482"
+         y="328.10941"
+         id="rect66" />
+      <rect
+         fill="#d3d3d3"
+         height="2"
+         style="stroke:#696969;stroke-width:0.5"
+         width="4"
+         x="1473.9482"
+         y="332.10941"
+         id="rect67" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="10px"
+         font-style="italic"
+         lengthAdjust="spacing"
+         textLength="46.6992"
+         x="1417.8745"
+         y="351.4902"
+         id="text67">«external»</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="28.8916"
+         x="1411.5"
+         y="364.06839"
+         id="text68">MDPS</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="59.4482"
+         x="1411.5"
+         y="376.64651"
+         id="text69">UART TX/RX</text>
+    </g>
+    <!--entity OP-->
+    <g
+       id="elem_OP">
+      <circle
+         cx="1146.2046"
+         cy="52.609402"
+         fill="#f1f1f1"
+         style="stroke:#181818;stroke-width:0.5"
+         id="ellipse69"
+         r="8" />
+      <path
+         d="m 1146.2046,60.6094 v 27 m -13,-19 h 26 m -13,19 -13,15 m 13,-15 13,15"
+         fill="none"
+         style="stroke:#181818;stroke-width:0.5"
+         id="path69" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="11px"
+         lengthAdjust="spacing"
+         textLength="43.409199"
+         x="1124.5"
+         y="115.5283"
+         id="text70">Operator</text>
+    </g>
+    <!--reverse link SM to SCS-->
+    <g
+       id="link_SM_SCS">
+      <path
+         d="m 849.03,355.1094 c 51.59,0 116.97,0 116.97,0 0,0 0,62.58 0,100.23"
+         fill="none"
+         id="SM-backto-SCS"
+         style="stroke:#181818;stroke-width:1" />
+      <polygon
+         fill="#181818"
+         points="852.03,359.1094 848.03,355.1094 852.03,351.1094 843.03,355.1094 "
+         style="stroke:#181818;stroke-width:1"
+         id="polygon70" />
+    </g>
+    <!--reverse link SM to NAV-->
+    <g
+       id="link_SM_NAV">
+      <path
+         d="m 825.75,388.8794 c 0,21.47 0,45.05 0,66.51"
+         fill="none"
+         id="SM-backto-NAV"
+         style="stroke:#181818;stroke-width:1" />
+      <polygon
+         fill="#181818"
+         points="821.75,391.8794 825.75,387.8794 829.75,391.8794 825.75,382.8794 "
+         style="stroke:#181818;stroke-width:1"
+         id="polygon71" />
+    </g>
+    <!--reverse link SM to PTD-->
+    <g
+       id="link_SM_PTD">
+      <path
+         d="m 732.98,355.1094 c -58.67,0 -139.98,0 -139.98,0 0,0 0,55.78 0,93.7"
+         fill="none"
+         id="SM-backto-PTD"
+         style="stroke:#181818;stroke-width:1" />
+      <polygon
+         fill="#181818"
+         points="729.98,351.1094 733.98,355.1094 729.98,359.1094 738.98,355.1094 "
+         style="stroke:#181818;stroke-width:1"
+         id="polygon72" />
+    </g>
+    <!--link SM to SPIM-->
+    <g
+       id="link_SM_SPIM">
+      <path
+         d="m 750.5,382.8794 c 0,21.47 0,45.05 0,66.51"
+         fill="none"
+         id="SM-to-SPIM"
+         style="stroke:#181818;stroke-width:1" />
+      <polygon
+         fill="#181818"
+         points="754.5,446.3894 750.5,450.3894 746.5,446.3894 750.5,455.3894 "
+         style="stroke:#181818;stroke-width:1"
+         id="polygon73" />
+    </g>
+    <!--reverse link DASH to SPIS-->
+    <g
+       id="link_DASH_SPIS">
+      <path
+         d="m 1162.17,388.8794 c 0,21.47 0,45.05 0,66.51"
+         fill="none"
+         id="DASH-backto-SPIS"
+         style="stroke:#181818;stroke-width:1" />
+      <polygon
+         fill="#181818"
+         points="1158.17,391.8794 1162.17,387.8794 1166.17,391.8794 1162.17,382.8794 "
+         style="stroke:#181818;stroke-width:1"
+         id="polygon74" />
+    </g>
+    <!--reverse link WEB to DASH-->
+    <g
+       id="link_WEB_DASH">
+      <path
+         d="m 1146,267.1794 c 0,19.74 0,40.23 0,60.05"
+         fill="none"
+         id="WEB-backto-DASH"
+         style="stroke:#181818;stroke-width:1" />
+      <polygon
+         fill="#181818"
+         points="1142,270.1794 1146,266.1794 1150,270.1794 1146,261.1794 "
+         style="stroke:#181818;stroke-width:1"
+         id="polygon75" />
+    </g>
+    <!--link MIC to PRE-->
+    <g
+       id="link_MIC_PRE">
+      <path
+         d="m 130.62,355.1094 c 11.39,0 17.75,0 29.18,0"
+         fill="none"
+         id="MIC-to-PRE"
+         style="stroke:#181818;stroke-width:1" />
+      <polygon
+         fill="#181818"
+         points="156.8,351.1094 160.8,355.1094 156.8,359.1094 165.8,355.1094 "
+         style="stroke:#181818;stroke-width:1"
+         id="polygon76" />
+    </g>
+    <!--link PRE to BPF-->
+    <g
+       id="link_PRE_BPF">
+      <path
+         d="m 250.29,355.1094 c 11.22,0 17.34,0 28.56,0"
+         fill="none"
+         id="PRE-to-BPF"
+         style="stroke:#181818;stroke-width:1" />
+      <polygon
+         fill="#181818"
+         points="275.85,351.1094 279.85,355.1094 275.85,359.1094 284.85,355.1094 "
+         style="stroke:#181818;stroke-width:1"
+         id="polygon77" />
+    </g>
+    <!--link BPF to ENV-->
+    <g
+       id="link_BPF_ENV">
+      <path
+         d="m 369.29,355.1094 c 11.36,0 17.63,0 28.96,0"
+         fill="none"
+         id="BPF-to-ENV"
+         style="stroke:#181818;stroke-width:1" />
+      <polygon
+         fill="#181818"
+         points="395.25,351.1094 399.25,355.1094 395.25,359.1094 404.25,355.1094 "
+         style="stroke:#181818;stroke-width:1"
+         id="polygon78" />
+    </g>
+    <!--link ENV to PTD-->
+    <g
+       id="link_ENV_PTD">
+      <path
+         d="m 446,389.4094 c 0,37.92 0,93.7 0,93.7 0,0 49.64,0 92.46,0"
+         fill="none"
+         id="ENV-to-PTD"
+         style="stroke:#181818;stroke-width:1" />
+      <polygon
+         fill="#181818"
+         points="535.46,479.1094 539.46,483.1094 535.46,487.1094 544.46,483.1094 "
+         style="stroke:#181818;stroke-width:1"
+         id="polygon79" />
+    </g>
+    <!--link SS to SCS-->
+    <g
+       id="link_SS_SCS"
+       transform="translate(11.806088,1.1806088)">
+      <path
+         d="m 1318,389.3594 c 0,15.21 0,29.75 0,29.75 0,0 -327,0 -327,0 0,0 0,13.14 0,30.49"
+         fill="none"
+         id="SS-to-SCS"
+         style="stroke:#181818;stroke-width:1" />
+      <polygon
+         fill="#181818"
+         points="991,450.5994 987,446.5994 991,455.5994 995,446.5994 "
+         style="stroke:#181818;stroke-width:1"
+         id="polygon80" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="11px"
+         lengthAdjust="spacing"
+         textLength="29.9438"
+         x="1120.4523"
+         y="402.52829"
+         id="text80"
+         transform="translate(158.71948,3.3392659)">UART</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="11px"
+         lengthAdjust="spacing"
+         textLength="30.5884"
+         x="1120.13"
+         y="416.36429"
+         id="text81"
+         transform="translate(158.71948,-0.10435206)">19200</text>
+    </g>
+    <!--link MDPS to SCS-->
+    <g
+       id="link_MDPS_SCS">
+      <path
+         d="m 1446,389.5294 c 0,21.29 0,44.58 0,44.58 0,0 -430,0 -430,0 0,0 0,4.24 0,15.35"
+         fill="none"
+         id="MDPS-to-SCS"
+         style="stroke:#181818;stroke-width:1" />
+      <polygon
+         fill="#181818"
+         points="1020,446.4594 1016,450.4594 1012,446.4594 1016,455.4594 "
+         style="stroke:#181818;stroke-width:1"
+         id="polygon81" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="11px"
+         lengthAdjust="spacing"
+         textLength="29.9438"
+         x="1211.9323"
+         y="417.52829"
+         id="text82"
+         transform="translate(196.71893,2.9515219)">UART</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="11px"
+         lengthAdjust="spacing"
+         textLength="30.5884"
+         x="1211.61"
+         y="431.36429"
+         id="text83"
+         transform="translate(196.49005,-1.1657766)">19200</text>
+    </g>
+    <!--link SPIM to SPIS-->
+    <g
+       id="link_SPIM_SPIS">
+      <path
+         d="m 762,455.4794 c 0,-22.78 0,-51.37 0,-51.37 0,0 367.83,0 367.83,0 0,0 0,22.59 0,45.37"
+         fill="none"
+         id="SPIM-to-SPIS"
+         style="stroke:#181818;stroke-width:1" />
+      <polygon
+         fill="#181818"
+         points="1133.83,446.4794 1129.83,450.4794 1125.83,446.4794 1129.83,455.4794 "
+         style="stroke:#181818;stroke-width:1"
+         id="polygon83" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="11px"
+         lengthAdjust="spacing"
+         textLength="49.5107"
+         x="895.91998"
+         y="387.52829"
+         id="text84">SPI 2MHz</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="11px"
+         lengthAdjust="spacing"
+         textLength="31.7969"
+         x="904.77692"
+         y="401.36429"
+         id="text85">200Hz</text>
+    </g>
+    <!--reverse link OP to WEB-->
+    <g
+       id="link_OP_WEB">
+      <path
+         d="m 1146,124.4194 c 0,26.98 0,56.85 0,81.36"
+         fill="none"
+         id="OP-backto-WEB"
+         style="stroke:#181818;stroke-width:1" />
+      <polygon
+         fill="#181818"
+         points="1142,127.4194 1146,123.4194 1150,127.4194 1146,118.4194 "
+         style="stroke:#181818;stroke-width:1"
+         id="polygon85" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="11px"
+         lengthAdjust="spacing"
+         textLength="39.7192"
+         x="1100.8877"
+         y="145.5183"
+         id="text86">WiFi AP</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="11px"
+         lengthAdjust="spacing"
+         textLength="49.494598"
+         x="1096"
+         y="159.35429"
+         id="text87">HTTP/WS</text>
+    </g>
+    <rect
+       fill="none"
+       height="62.828098"
+       id="_legend"
+       rx="7.5"
+       ry="7.5"
+       style="stroke:#000000;stroke-width:1"
+       width="165.10741"
+       x="1288.8408"
+       y="488.10938" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14px"
+       lengthAdjust="spacing"
+       textLength="3.6366999"
+       x="1315.8408"
+       y="593.64258"
+       id="text88"
+       transform="translate(-22,-86)">|</text>
+    <text
+       fill="#000000"
+       filter="url(#bakyzzenwe0j30)"
+       font-family="sans-serif"
+       font-size="14px"
+       lengthAdjust="spacing"
+       textLength="133.60159"
+       x="1319.4775"
+       y="593.64258"
+       id="text89"
+       transform="translate(-22,-86)">| Developed Software</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14px"
+       lengthAdjust="spacing"
+       textLength="3.6366999"
+       x="1315.8408"
+       y="611.25201"
+       id="text90"
+       transform="translate(-22,-86)">|</text>
+    <text
+       fill="#000000"
+       filter="url(#bakyzzenwe0j31)"
+       font-family="sans-serif"
+       font-size="14px"
+       lengthAdjust="spacing"
+       textLength="151.4707"
+       x="1319.4775"
+       y="611.25201"
+       id="text91"
+       transform="translate(-22,-86)">| Off-the-Shelf Hardware</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14px"
+       lengthAdjust="spacing"
+       textLength="3.6366999"
+       x="1315.8408"
+       y="628.86133"
+       id="text92"
+       transform="translate(-22,-86)">|</text>
+    <text
+       fill="#000000"
+       filter="url(#bakyzzenwe0j32)"
+       font-family="sans-serif"
+       font-size="14px"
+       lengthAdjust="spacing"
+       textLength="139.02251"
+       x="1319.4775"
+       y="628.86133"
+       id="text93"
+       transform="translate(-22,-86)">| External Subsystems</text>
+    <!--SRC=[VLLjJzim4FxkNt7gbx4F5OMXQKC8ANs1LbhQ27SKYUw3crnRYzIk71TM1lzzvxms9KAAvEZyt7FFdU_iv4cghJ1Y0riHFeaLShkF4Go6LgXLZ2mf0H4knIwsDrfPBbyHpiuEDXValJ9wfwAUZhM1bxMqXywnL6ZtMmHjx5gpWvrGRxPQeRBmZm5qwpnNLn4-Owot65rVmo-vMjjRWwWSKfi8JGEgBynJ2JgcqyjbiiPuIJXVXw58v0Uk0yZ4K16mYGV_MZHAn9KgiJycEi3qvIP7LENhiFV3EkJrRwe2p5mr-KO_OJq6T6D25gpfoIrq7DN2dBamLbhQu-CUyDqYsISMD-2PqD66TcUGiVB4eLM7TPqCOVOjKaR4XSoMBwI20G- -dSF9PBbispMskQlRrnQ817nlD4vp0NZaLbW4Nr0yXN-WVbo4vNw66tltlScu0K0RELEFGs2qrQ6EcuXwFCC5b1DCgQtcgeykHwbL0pwOzdFUO4JwA5_Jn1gCV9RYNFZsRjk-BYIJiBg16Ei6xaCxqY_AMHmFm7kjZ3Dv8pyfusnqCohBI29vB9wnMMEU-WmNmD4yDwOo6tGpL5yawuKM9ce0zJq-pFCbrZoTrEXixYUtPMprV3ngUBs2dZJXJbeuwHVSMJxUsFirkSqpgaQ_vSkm1RNPSpqqwXtZ0eDYivqhlnTyxvnVVFG9xWR7FjtWvXC7sZrs6AXCyrnrlUd5Zuy-W_5zLY1I26tZBW0gHn6QrifOqDDQ6Pr_MZZwghYFdC_LR-zk2dSFxbWExWztmlmGwlU30ZnzE6t2EmGJeQLROh958zmFcIS1OryWFoMh8P8hQKNCI5BPg6ui23J8-I0D4sgbia5Ad5yr_eppgiLfG2vJ_5oT_JplT9YJyScs2vCsFr5cFzHpp4rALQsq2o_T0kV-y7Mko77uwbpJuI7F8a567PdtvYGWbtJV2-PgE9q6fpFEM8mhL16ar7G4RrVkuRgi7fRhDoWx5hXUsXTXi08MRmR1QiCAGngbEhHy5WXRLhAyLXD6CZ8nx3y0]-->
+  </g>
+</svg>

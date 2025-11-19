@@ -1,0 +1,99 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36" version="28.0.7">
+  <diagram name="Page-1" id="dzJKUiMzw4sci-UYEraN">
+    <mxGraphModel dx="1268" dy="693" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="rC76a49MkvBCOQrIZC_7-35" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="30" width="520" height="660" as="geometry" />
+        </mxCell>
+        <mxCell id="rC76a49MkvBCOQrIZC_7-1" value="MDPS" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="70" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC76a49MkvBCOQrIZC_7-2" value="SNC" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="240" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC76a49MkvBCOQrIZC_7-3" value="SS" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="70" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC76a49MkvBCOQrIZC_7-18" value="&lt;h2&gt;&lt;i&gt;System connection with no HUB&lt;/i&gt;&lt;/h2&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="135" y="300" width="490" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="rC76a49MkvBCOQrIZC_7-21" value="HUB" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="360" width="80" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC76a49MkvBCOQrIZC_7-23" value="HUB" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="360" width="80" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC76a49MkvBCOQrIZC_7-24" value="SYNC" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="490" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC76a49MkvBCOQrIZC_7-29" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;" edge="1" parent="1" source="rC76a49MkvBCOQrIZC_7-21" target="rC76a49MkvBCOQrIZC_7-24">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="270" y="380" as="sourcePoint" />
+            <mxPoint x="320" y="330" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="250" y="500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC76a49MkvBCOQrIZC_7-30" value="Serial 1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rC76a49MkvBCOQrIZC_7-29">
+          <mxGeometry x="-0.2534" y="15" relative="1" as="geometry">
+            <mxPoint x="-28" y="2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC76a49MkvBCOQrIZC_7-31" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;curved=1;" edge="1" parent="1" source="rC76a49MkvBCOQrIZC_7-23" target="rC76a49MkvBCOQrIZC_7-24">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="270" y="380" as="sourcePoint" />
+            <mxPoint x="320" y="330" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="500" y="510" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC76a49MkvBCOQrIZC_7-32" value="Serial 2" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rC76a49MkvBCOQrIZC_7-31">
+          <mxGeometry x="-0.1556" y="-8" relative="1" as="geometry">
+            <mxPoint x="28" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC76a49MkvBCOQrIZC_7-33" value="&lt;h2&gt;System connection with HUB&lt;br&gt;&lt;/h2&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="125" y="570" width="500" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="rC76a49MkvBCOQrIZC_7-34" value="NOTE: the HUB can connect to either Serial 1 or Serial 2. The other line will be the same in terms of data." style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="210" y="610" width="370" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="rC76a49MkvBCOQrIZC_7-36" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;curved=1;" edge="1" parent="1" source="rC76a49MkvBCOQrIZC_7-1" target="rC76a49MkvBCOQrIZC_7-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="270" y="380" as="sourcePoint" />
+            <mxPoint x="320" y="330" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="240" y="240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC76a49MkvBCOQrIZC_7-37" value="Serial 1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rC76a49MkvBCOQrIZC_7-36">
+          <mxGeometry x="-0.1446" y="15" relative="1" as="geometry">
+            <mxPoint x="-20" y="5" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC76a49MkvBCOQrIZC_7-38" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;curved=1;" edge="1" parent="1" source="rC76a49MkvBCOQrIZC_7-2" target="rC76a49MkvBCOQrIZC_7-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="270" y="380" as="sourcePoint" />
+            <mxPoint x="320" y="330" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="510" y="240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC76a49MkvBCOQrIZC_7-39" value="Serial 2" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rC76a49MkvBCOQrIZC_7-38">
+          <mxGeometry x="0.0576" y="12" relative="1" as="geometry">
+            <mxPoint x="24" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC76a49MkvBCOQrIZC_7-40" value="Each Serial consists of a TX and RX line" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=3" vertex="1" parent="1">
+          <mxGeometry x="302.5" y="650" width="145" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

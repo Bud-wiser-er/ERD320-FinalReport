@@ -1,0 +1,27 @@
+@startwbs objectives_tree
+skinparam wbsDiagram {
+    BackgroundColor white
+    BorderColor black
+    FontSize 11
+    FontName Arial
+}
+
+* SNC Subsystem\nObjectives
+** <&task> O1: State Control\n& Communications
+*** State Machine\nLogic
+*** SCS Protocol\nHandling
+*** Transition\nGuards
+** <&graph> O2: Navigation\nControl
+*** Sensor Data\nProcessing
+*** NAVCON Decision\nLogic
+*** Motion Command\nGeneration
+** <&warning> O3: Safety\n& HMI
+*** Pure-Tone\nDetection (2800 Hz)
+*** Diagnostic Display\n(PEC Compliant)
+*** Operator\nVisibility
+** <&check> O4: Testability\n& Verification
+*** QTP Support
+*** HUB Integration
+*** Requirements\nTraceability
+
+@endwbs

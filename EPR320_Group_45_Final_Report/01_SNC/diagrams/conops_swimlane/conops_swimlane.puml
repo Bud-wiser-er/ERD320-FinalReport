@@ -1,0 +1,137 @@
+@startuml conops_swimlane
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+skinparam swimlaneWidth 200
+
+' Swimlane colors
+skinparam activityBackgroundColor<<Operator>> #E8F4F8
+skinparam activityBorderColor<<Operator>> #5DADE2
+skinparam activityBackgroundColor<<SNC>> #FFF8DC
+skinparam activityBorderColor<<SNC>> #F39C12
+skinparam activityBackgroundColor<<SS>> #E0FFE0
+skinparam activityBorderColor<<SS>> #52BE80
+skinparam activityBackgroundColor<<MDPS>> #FFE4E1
+skinparam activityBorderColor<<MDPS>> #E74C3C
+skinparam activityBackgroundColor<<HUB>> #F0E68C
+skinparam activityBorderColor<<HUB>> #F4D03F
+
+title SNC Operational Concept (ConOps) - Phase 4 Integrated Operation
+
+|Operator|
+start
+:Power-up MARV;<<Operator>>
+
+|SNC|
+:Initialize to IDLE;<<SNC>>
+note right
+  **IDLE State**
+  All subsystems ready
+end note
+:Setup SCS, HMI, Timing;<<SNC>>
+
+|Operator|
+:Touch activation;<<Operator>>
+note right
+  Physical touch sensor
+  or remote command
+end note
+
+|SNC|
+:Transition to CAL;<<SNC>>
+note right
+  **CAL State**
+  Calibration mode
+end note
+:Broadcast CAL request;<<SNC>>
+
+|SS|
+:Calibrate sensors;<<SS>>
+note right
+  Color sensor calibration
+  White/black reference
+end note
+
+|MDPS|
+:Calibrate motors;<<MDPS>>
+:Dead-reckoning zero;<<MDPS>>
+note right
+  Encoder zeroing
+  Motor characterization
+end note
+
+|SS|
+:Signal EoC;<<SS>>
+
+|MDPS|
+:Signal EoC;<<MDPS>>
+
+|SNC|
+:Check both EoC flags;<<SNC>>
+:Transition to MAZE;<<SNC>>
+note right
+  **MAZE State**
+  Autonomous navigation
+end note
+:Reset episode vars;<<SNC>>
+
+while (Navigate maze?) is (yes)
+  |SS|
+  :Send COLOURS, θᵢ, EoM;<<SS>>
+  note right
+    19200 baud UART
+    SCS framed
+  end note
+
+  |MDPS|
+  :Send SPEED, DISTANCE, ROTATION;<<MDPS>>
+  note right
+    19200 baud UART
+    SCS framed
+  end note
+
+  |SNC|
+  :Run NAVCON logic;<<SNC>>
+  :Compute v_L, v_R or rotation;<<SNC>>
+  note right
+    Color rules + Angle rules
+    Motion primitive generation
+  end note
+
+  |MDPS|
+  :Execute motion command;<<MDPS>>
+
+  |Operator|
+  if (Dual-tone detected?) then (yes)
+    note right
+      2800 Hz tone
+      Two hits within 2 s
+    end note
+    |SNC|
+    :Toggle MAZE ⇄ SOS;<<SNC>>
+    if (SOS active?) then (yes)
+      :Suspend NAVCON;<<SNC>>
+      note right
+        **SOS State**
+        Emergency override
+        NAVCON suspended
+      end note
+    else (MAZE active)
+      :Resume NAVCON;<<SNC>>
+    endif
+  endif
+endwhile (EoM flag from SS)
+
+|SNC|
+:Perform end behavior;<<SNC>>
+:Return to IDLE;<<SNC>>
+note right
+  Back to **IDLE State**
+  Ready for next run
+end note
+
+stop
+
+@enduml

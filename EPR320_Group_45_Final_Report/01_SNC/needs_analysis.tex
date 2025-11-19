@@ -1,0 +1,59 @@
+%======================================================================
+\subsection{\gls{snc} Subsystem Needs Analysis}
+\label{subsec:snc-needs}
+%======================================================================
+
+\subsubsection{Design Problem Context}
+The \gls{marv} autonomous maze navigation platform requires a supervisory control subsystem to coordinate state management, human--machine interaction, and navigation decision logic across distributed subsystems \gls{ss} for sensing and \gls{mdps} for motion control. The system executes a prescribed state sequence with calibration, autonomous navigation, and safety override modes, responding to acoustic triggers and enforcing navigation rules based on sensor measurements \cite{marv-guide-2025,marv-qtp-2025}.
+
+%----------------------------------------------------------------------
+\subsubsection{Stakeholders}
+\begin{itemize}
+  \item Byron has who designed the \gls{snc} sub-system to these requirements 
+  \item Project evaluators assessing \gls{qtp} compliance
+  \item Peer subsystems \gls{ss} and \gls{mdps} with interface dependencies
+  \item \gls{hub} testing infrastructure for Phase 3 verification
+\end{itemize}
+
+%----------------------------------------------------------------------
+\subsubsection{Functional and Operational Needs}
+
+The \gls{snc} subsystem addresses functional capabilities required for supervisory control and operational characteristics necessary for reliable maze navigation performance.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{p{0.15\textwidth}p{0.75\textwidth}}
+\toprule
+\textbf{Need ID} & \textbf{Description} \\
+\midrule
+FN-1 & State Machine Coordination: Coordinate four system states IDLE, CAL, MAZE, and \gls{sos} with guarded transitions including touch activation, dual \gls{eoc} assertion, dual-tone detection, and \gls{eom} signal \\
+FN-2 & Navigation Decision Logic: Implement \gls{navcon} angle-dependent navigation rules for RED/GREEN traversal and BLACK/BLUE avoidance with parallel manoeuvres. RED/GREEN rules specify cross when $\theta_i \le 5^\circ$, align when $5^\circ < \theta_i \le 45^\circ$, and correct when $\theta_i > 45^\circ$ \\
+FN-3 & External Subsystem Communication: Generate and parse \gls{scs} protocol messages over UART at 19200 baud encoding motion commands and consuming kinematic feedback from \gls{mdps} and sensor data from \gls{ss} \cite{marv-guide-2025} \\
+FN-4 & Internal Diagnostic Telemetry: Transfer real-time system state, sensor measurements, and navigation decisions to display subsystem at sufficient bandwidth and update rate for operator visibility during development and debugging without impacting control loop timing \\
+FN-5 & Safety Override and Diagnostics: Implement dual-tone detection at 2800~Hz for \gls{sos} activation and display real-time diagnostics per \gls{pec} requirements. Detection requires two 0.5--1.0~s tones within 2~s at $\le$60~dB SPL from $\ge$10~cm distance \\
+\bottomrule
+\end{tabular}
+\caption{Functional needs for \gls{snc} subsystem}
+\label{tab:snc-functional-needs}
+\end{table}
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{p{0.15\textwidth}p{0.75\textwidth}}
+\toprule
+\textbf{Need ID} & \textbf{Description} \\
+\midrule
+ON-1 & Deterministic State Control: Manage state transitions without spurious behaviour under nominal and fault conditions \\
+ON-2 & Real-Time Decision Latency: Maintain decision latency from sensor data receipt to command transmission within one main-loop period under both \gls{hub} testing and integrated operation \\
+ON-3 & Rapid Diagnostic Communication: Achieve telemetry transmission latency under 10~ms to display subsystem for minimal delay during manual intervention scenarios and fault diagnosis \\
+ON-4 & Tone Detection Robustness: Achieve reliable 2800~Hz tone detection at 60~dB SPL, rejecting transient noise and off-frequency signals \\
+ON-5 & Navigation Rule Compliance: Enforce angle-dependent navigation rules at 5° and 45° thresholds without line-crossing violations and support 90°, 180°, 360° turns and incremental corrections \cite{marv-guide-2025} \\
+ON-6 & Interface Protocol Conformance: Generate compliant \gls{scs} packets with correct message type identification and data field encoding for external subsystem communication \\
+ON-7 & Power Consumption Constraint: Operate from 5\,V supply without exceeding 0.5\,A current draw across dual microcontroller architecture and analogue circuitry \\
+\bottomrule
+\end{tabular}
+\caption{Operational needs for \gls{snc} subsystem}
+\label{tab:snc-operational-needs}
+\end{table}
+
+%======================================================================

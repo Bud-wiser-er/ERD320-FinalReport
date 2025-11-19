@@ -1,0 +1,155 @@
+@startuml pure_tone_detection_flow
+!define RECTANGLE class
+
+skinparam activity {
+    BackgroundColor LightBlue
+    BorderColor Black
+    FontSize 10
+    FontName Arial
+}
+
+skinparam ArrowColor Black
+skinparam ArrowFontSize 9
+
+title Pure Tone Detection Signal Flow with ADC Monitoring
+
+start
+
+partition "Analog Signal Chain" {
+    :Acoustic Stimulus\n2800 Hz Tone\n60 dB SPL @ ≥10 cm;
+    note right
+        Target frequency: 2800 Hz
+        Duration: 0.5-1.0 s (per tone)
+        Two tones within 2 s window
+    end note
+
+    :Electret Microphone\n(MIC E1 PCB);
+    note right
+        Sensitivity: -60±3 dBV/Pa
+        Output @ 60 dB SPL: 20 µV AC
+    end note
+
+    :Preamplifier\n(MCP6024);
+    note right
+        Gain: 40 dB (Av = 101)
+        Bandwidth: 99 kHz
+        Output: 2.0 mV AC
+    end note
+
+    :4th-Order Bandpass Filter\n(Cascaded MFB);
+    note right
+        Center frequency: 2800 Hz
+        Q ≈ 2.6
+        -3 dB BW: 1080 Hz
+        Rejection: >70 dB @ 400 Hz
+                   >65 dB @ 1 kHz
+    end note
+
+    :Envelope Detector\n(BAT48 Schottky + RC);
+    note right
+        Precision rectifier
+        RC: R=100kΩ, C=330nF
+        Time constant: τ=33 ms
+        Rise time: 68 ms
+        Ripple attenuation: -61 dB
+    end note
+
+    :DC Envelope Signal\n(0-3.3V);
+    note right
+        Proportional to tone amplitude
+        Smooth DC level during tone
+        Low ripple (<0.8 mV_pp)
+    end note
+}
+
+partition "Digital Monitoring and Detection" {
+    :ESP32 ADC (GPIO 36)\n12-bit, 0-4095;
+    note right
+        ADC reads envelope detector output
+        11 dB attenuation enabled
+        Voltage range: 0.0-3.3V
+        Sampled every main loop iteration
+    end note
+
+    :ADC to Voltage Conversion;
+    note right
+        voltage = (adcValue / 4095.0) × 3.3V
+        Threshold: 2.8V (THRESHOLD_VOLTAGE)
+    end note
+
+    if (Voltage ≥ 2.8V?) then (Yes - Tone Present)
+        if (Rising Edge?\nPreviously below threshold) then (Yes)
+            :TONE STARTED;
+            note right
+                • toneActive = true
+                • toneStartTime = millis()
+                • peakADC = adcValue
+                • peakVoltage = voltage
+            end note
+        else (No - Already Active)
+            :Update Peak Values;
+            note right
+                Track maximum ADC/voltage
+                during tone duration
+            end note
+        endif
+    else (No - Tone Absent)
+        if (Falling Edge?\nPreviously above threshold) then (Yes)
+            :TONE ENDED;
+            note right
+                • Calculate duration
+                • toneDuration = millis() - toneStartTime
+            end note
+
+            if (Duration Valid?\n500ms ≤ duration ≤ 1000ms) then (Yes)
+                if (First tone detected?) then (No)
+                    :Mark as First Tone;
+                    note right
+                        • firstToneDetected = true
+                        • firstToneEndTime = millis()
+                        • Wait for second tone
+                    end note
+                else (Yes - Second Tone)
+                    if (Gap ≤ 2000ms?) then (Yes)
+                        :DUAL-TONE DETECTED;
+                        note right
+                            • Set systemStatus.pureToneDetected = true
+                            • Trigger SOS state transition
+                            • Reset detection state
+                        end note
+                        :Return to Main Loop;
+                        stop
+                    else (No - Gap Too Long)
+                        :Reset to First Tone;
+                        note right
+                            Gap exceeded 2s window
+                            Current tone becomes new first tone
+                        end note
+                    endif
+                endif
+            else (No - Invalid Duration)
+                :Discard Tone;
+                note right
+                    Duration outside 500-1000ms range
+                    Reset firstToneDetected = false
+                end note
+            endif
+        else (No - Idle State)
+            if (Waiting for second tone?) then (Yes)
+                if (Timeout?\n>2000ms since first tone) then (Yes)
+                    :Timeout - Reset;
+                    note right
+                        Exceeded 2s window
+                        firstToneDetected = false
+                    end note
+                else (No)
+                    :Continue Waiting;
+                endif
+            else (No)
+                :Idle - Monitor ADC;
+            endif
+        endif
+    endif
+}
+
+@enduml

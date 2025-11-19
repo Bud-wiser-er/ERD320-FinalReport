@@ -1,0 +1,3226 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   contentStyleType="text/css"
+   height="2133px"
+   preserveAspectRatio="none"
+   style="width:1984px;height:2133px;background:#FFFFFF;"
+   version="1.1"
+   viewBox="0 0 1984 2133"
+   width="1984px"
+   zoomAndPan="magnify"
+   id="svg219"
+   sodipodi:docname="dataflow.svg"
+   inkscape:export-filename="dataflow.pdf"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview219"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.74824191"
+     inkscape:cx="1197.4737"
+     inkscape:cy="1539.609"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="2391"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g219" />
+  <defs
+     id="defs1" />
+  <g
+     id="g219">
+    <!--cluster Main ESP32 (Control Processor)-->
+    <g
+       id="cluster_Main ESP32 (Control Processor)">
+      <rect
+         fill="#E6E6FA"
+         height="1151"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:1.0;"
+         width="1077"
+         x="647"
+         y="883.87"
+         id="rect1" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="153.3691"
+         x="1108.8154"
+         y="895.2499"
+         id="text1">Main ESP32 (Control Processor)</text>
+    </g>
+    <!--cluster SM-->
+    <g
+       id="cluster_SM">
+      <rect
+         fill="none"
+         height="395"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:1.0;"
+         width="120"
+         x="1052"
+         y="1205.87"
+         id="rect2" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="24.4531"
+         x="1099.7734"
+         y="1217.2499"
+         id="text2">State</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="41.123"
+         x="1091.4385"
+         y="1228.7489"
+         id="text3">Manager</text>
+    </g>
+    <!--cluster NAV-->
+    <g
+       id="cluster_NAV">
+      <rect
+         fill="none"
+         height="175"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:1.0;"
+         width="409"
+         x="1204"
+         y="1439.87"
+         id="rect3" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="43.335"
+         x="1386.8325"
+         y="1451.2499"
+         id="text4">NAVCON</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="41.6797"
+         x="1387.6602"
+         y="1462.7489"
+         id="text5">Decision</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="33.335"
+         x="1391.8325"
+         y="1474.2479"
+         id="text6">Engine</text>
+    </g>
+    <!--cluster SCS-->
+    <g
+       id="cluster_SCS">
+      <rect
+         fill="none"
+         height="159"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:1.0;"
+         width="223"
+         x="1286"
+         y="1181.87"
+         id="rect6" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="20.5615"
+         x="1387.2192"
+         y="1193.2499"
+         id="text7">SCS</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="40.5566"
+         x="1377.2217"
+         y="1204.7489"
+         id="text8">Protocol</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="37.2314"
+         x="1378.8843"
+         y="1216.2479"
+         id="text9">Handler</text>
+    </g>
+    <!--cluster TTI-->
+    <g
+       id="cluster_TTI">
+      <rect
+         fill="none"
+         height="135"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:1.0;"
+         width="221"
+         x="1308"
+         y="921.87"
+         id="rect9" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="56.6602"
+         x="1390.1699"
+         y="933.2499"
+         id="text10">Touch/Tone</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="41.6846"
+         x="1397.6577"
+         y="944.7489"
+         id="text11">Interface</text>
+    </g>
+    <!--cluster SPITX-->
+    <g
+       id="cluster_SPITX">
+      <rect
+         fill="#FFE0F0"
+         height="332"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:1.0;"
+         width="113"
+         x="1164"
+         y="1678.87"
+         id="rect11" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="16.1182"
+         x="1212.4409"
+         y="1690.2499"
+         id="text12">SPI</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="47.2461"
+         x="1196.877"
+         y="1701.7489"
+         id="text13">Telemetry</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="40.0098"
+         x="1200.4951"
+         y="1713.2479"
+         id="text14">Encoder</text>
+    </g>
+    <!--cluster ES-->
+    <g
+       id="cluster_ES">
+      <path
+         d="M679,1454.87 C679,1444.87 849.5,1444.87 849.5,1444.87 C849.5,1444.87 1020,1444.87 1020,1454.87 L1020,1830.87 C1020,1840.87 849.5,1840.87 849.5,1840.87 C849.5,1840.87 679,1840.87 679,1830.87 L679,1454.87 "
+         fill="none"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="path14" />
+      <path
+         d="M679,1454.87 C679,1464.87 849.5,1464.87 849.5,1464.87 C849.5,1464.87 1020,1464.87 1020,1454.87 "
+         fill="none"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="path15" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="38.8965"
+         x="830.0518"
+         y="1476.2499"
+         id="text15">Episode</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="24.4531"
+         x="837.2734"
+         y="1487.7489"
+         id="text16">State</text>
+    </g>
+    <!--cluster WiFi ESP32 (Telemetry & Diagnostics)-->
+    <g
+       id="cluster_WiFi ESP32 (Telemetry &amp; Diagnostics)">
+      <rect
+         fill="#FFFFE0"
+         height="1050"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:1.0;"
+         width="350"
+         x="187"
+         y="40.87"
+         id="rect16" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="181.1572"
+         x="271.4214"
+         y="52.2499"
+         id="text17">WiFi ESP32 (Telemetry &amp; Diagnostics)</text>
+    </g>
+    <!--cluster SPIRX-->
+    <g
+       id="cluster_SPIRX">
+      <rect
+         fill="none"
+         height="363"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:1.0;"
+         width="147"
+         x="353"
+         y="86.87"
+         id="rect17" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="16.1182"
+         x="418.4409"
+         y="98.2499"
+         id="text18">SPI</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="26.1328"
+         x="413.4336"
+         y="109.7489"
+         id="text19">Slave</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="41.6846"
+         x="405.6577"
+         y="121.2479"
+         id="text20">Interface</text>
+    </g>
+    <!--cluster WEB-->
+    <g
+       id="cluster_WEB">
+      <rect
+         fill="none"
+         height="289"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:1.0;"
+         width="118"
+         x="377"
+         y="525.87"
+         id="rect20" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="21.1084"
+         x="425.4458"
+         y="537.2499"
+         id="text21">Web</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="31.1377"
+         x="420.4312"
+         y="548.7489"
+         id="text22">Server</text>
+    </g>
+    <!--cluster WIFI-->
+    <g
+       id="cluster_WIFI">
+      <rect
+         fill="none"
+         height="135"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:1.0;"
+         width="142"
+         x="211"
+         y="525.87"
+         id="rect22" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="21.1035"
+         x="271.4482"
+         y="537.2499"
+         id="text23">WiFi</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="62.8027"
+         x="250.5986"
+         y="548.7489"
+         id="text24">Access Point</text>
+    </g>
+    <!--cluster GPIOCMD-->
+    <g
+       id="cluster_GPIOCMD">
+      <rect
+         fill="none"
+         height="163"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:1.0;"
+         width="286"
+         x="219"
+         y="895.87"
+         id="rect24" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="25.0049"
+         x="349.4976"
+         y="907.2499"
+         id="text25">GPIO</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="48.8916"
+         x="337.5542"
+         y="918.7489"
+         id="text26">Command</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="41.1133"
+         x="341.4434"
+         y="930.2479"
+         id="text27">Injection</text>
+    </g>
+    <!--entity FSM-->
+    <g
+       id="elem_FSM">
+      <rect
+         fill="#F1F1F1"
+         height="41.499"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="87.793"
+         x="1068"
+         y="1543.87"
+         id="rect27" />
+      <rect
+         fill="#F1F1F1"
+         height="10"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="15"
+         x="1135.793"
+         y="1548.87"
+         id="rect28" />
+      <rect
+         fill="#F1F1F1"
+         height="2"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="4"
+         x="1133.793"
+         y="1550.87"
+         id="rect29" />
+      <rect
+         fill="#F1F1F1"
+         height="2"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="4"
+         x="1133.793"
+         y="1554.87"
+         id="rect30" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="47.793"
+         x="1083"
+         y="1573.2499"
+         id="text30">FSM Logic</text>
+    </g>
+    <!--entity GE-->
+    <g
+       id="elem_GE">
+      <rect
+         fill="#F1F1F1"
+         height="52.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="82.2461"
+         x="1068"
+         y="1271.87"
+         id="rect31" />
+      <rect
+         fill="#F1F1F1"
+         height="10"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="15"
+         x="1130.2461"
+         y="1276.87"
+         id="rect32" />
+      <rect
+         fill="#F1F1F1"
+         height="2"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="4"
+         x="1128.2461"
+         y="1278.87"
+         id="rect33" />
+      <rect
+         fill="#F1F1F1"
+         height="2"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="4"
+         x="1128.2461"
+         y="1282.87"
+         id="rect34" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="27.793"
+         x="1083"
+         y="1301.2499"
+         id="text34">Guard</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="42.2461"
+         x="1083"
+         y="1312.7489"
+         id="text35">Evaluator</text>
+    </g>
+    <!--entity CR-->
+    <g
+       id="elem_CR">
+      <rect
+         fill="#F1F1F1"
+         height="41.499"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="92.2412"
+         x="1478"
+         y="1543.87"
+         id="rect35" />
+      <rect
+         fill="#F1F1F1"
+         height="10"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="15"
+         x="1550.2412"
+         y="1548.87"
+         id="rect36" />
+      <rect
+         fill="#F1F1F1"
+         height="2"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="4"
+         x="1548.2412"
+         y="1550.87"
+         id="rect37" />
+      <rect
+         fill="#F1F1F1"
+         height="2"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="4"
+         x="1548.2412"
+         y="1554.87"
+         id="rect38" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="52.2412"
+         x="1493"
+         y="1573.2499"
+         id="text38">Color Rules</text>
+    </g>
+    <!--entity AR-->
+    <g
+       id="elem_AR">
+      <rect
+         fill="#F1F1F1"
+         height="41.499"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="93.9209"
+         x="1349"
+         y="1543.87"
+         id="rect39" />
+      <rect
+         fill="#F1F1F1"
+         height="10"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="15"
+         x="1422.9209"
+         y="1548.87"
+         id="rect40" />
+      <rect
+         fill="#F1F1F1"
+         height="2"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="4"
+         x="1420.9209"
+         y="1550.87"
+         id="rect41" />
+      <rect
+         fill="#F1F1F1"
+         height="2"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="4"
+         x="1420.9209"
+         y="1554.87"
+         id="rect42" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="53.9209"
+         x="1364"
+         y="1573.2499"
+         id="text42">Angle Rules</text>
+    </g>
+    <!--entity MG-->
+    <g
+       id="elem_MG">
+      <rect
+         fill="#F1F1F1"
+         height="52.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="85.0244"
+         x="1228.5"
+         y="1537.87"
+         id="rect43" />
+      <rect
+         fill="#F1F1F1"
+         height="10"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="15"
+         x="1293.5244"
+         y="1542.87"
+         id="rect44" />
+      <rect
+         fill="#F1F1F1"
+         height="2"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="4"
+         x="1291.5244"
+         y="1544.87"
+         id="rect45" />
+      <rect
+         fill="#F1F1F1"
+         height="2"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="4"
+         x="1291.5244"
+         y="1548.87"
+         id="rect46" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="30.0146"
+         x="1243.5"
+         y="1567.2499"
+         id="text46">Motion</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="45.0244"
+         x="1243.5"
+         y="1578.7489"
+         id="text47">Generator</text>
+    </g>
+    <!--entity FD-->
+    <g
+       id="elem_FD">
+      <rect
+         fill="#F1F1F1"
+         height="52.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="77.7979"
+         x="1415"
+         y="1271.87"
+         id="rect47" />
+      <rect
+         fill="#F1F1F1"
+         height="10"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="15"
+         x="1472.7979"
+         y="1276.87"
+         id="rect48" />
+      <rect
+         fill="#F1F1F1"
+         height="2"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="4"
+         x="1470.7979"
+         y="1278.87"
+         id="rect49" />
+      <rect
+         fill="#F1F1F1"
+         height="2"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="4"
+         x="1470.7979"
+         y="1282.87"
+         id="rect50" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="28.8916"
+         x="1430"
+         y="1301.2499"
+         id="text50">Frame</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="37.7979"
+         x="1430"
+         y="1312.7489"
+         id="text51">Decoder</text>
+    </g>
+    <!--entity FE-->
+    <g
+       id="elem_FE">
+      <rect
+         fill="#F1F1F1"
+         height="52.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="77.2461"
+         x="1302.5"
+         y="1271.87"
+         id="rect51" />
+      <rect
+         fill="#F1F1F1"
+         height="10"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="15"
+         x="1359.7461"
+         y="1276.87"
+         id="rect52" />
+      <rect
+         fill="#F1F1F1"
+         height="2"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="4"
+         x="1357.7461"
+         y="1278.87"
+         id="rect53" />
+      <rect
+         fill="#F1F1F1"
+         height="2"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="4"
+         x="1357.7461"
+         y="1282.87"
+         id="rect54" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="28.8916"
+         x="1317.5"
+         y="1301.2499"
+         id="text54">Frame</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="37.2461"
+         x="1317.5"
+         y="1312.7489"
+         id="text55">Encoder</text>
+    </g>
+    <!--entity TH-->
+    <g
+       id="elem_TH">
+      <rect
+         fill="#F1F1F1"
+         height="52.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="75.0195"
+         x="1324.5"
+         y="987.87"
+         id="rect55" />
+      <rect
+         fill="#F1F1F1"
+         height="10"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="15"
+         x="1379.5195"
+         y="992.87"
+         id="rect56" />
+      <rect
+         fill="#F1F1F1"
+         height="2"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="4"
+         x="1377.5195"
+         y="994.87"
+         id="rect57" />
+      <rect
+         fill="#F1F1F1"
+         height="2"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="4"
+         x="1377.5195"
+         y="998.87"
+         id="rect58" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="27.793"
+         x="1339.5"
+         y="1017.2499"
+         id="text58">Touch</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="35.0195"
+         x="1339.5"
+         y="1028.7489"
+         id="text59">Handler</text>
+    </g>
+    <!--entity TD-->
+    <g
+       id="elem_TD">
+      <rect
+         fill="#F1F1F1"
+         height="52.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="77.793"
+         x="1435"
+         y="987.87"
+         id="rect59" />
+      <rect
+         fill="#F1F1F1"
+         height="10"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="15"
+         x="1492.793"
+         y="992.87"
+         id="rect60" />
+      <rect
+         fill="#F1F1F1"
+         height="2"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="4"
+         x="1490.793"
+         y="994.87"
+         id="rect61" />
+      <rect
+         fill="#F1F1F1"
+         height="2"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="4"
+         x="1490.793"
+         y="998.87"
+         id="rect62" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="22.793"
+         x="1450"
+         y="1017.2499"
+         id="text62">Tone</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="37.793"
+         x="1450"
+         y="1028.7489"
+         id="text63">Detector</text>
+    </g>
+    <!--entity PB-->
+    <g
+       id="elem_PB">
+      <rect
+         fill="#F1F1F1"
+         height="52.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="71.1279"
+         x="1184.5"
+         y="1768.87"
+         id="rect63" />
+      <rect
+         fill="#F1F1F1"
+         height="10"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="15"
+         x="1235.6279"
+         y="1773.87"
+         id="rect64" />
+      <rect
+         fill="#F1F1F1"
+         height="2"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="4"
+         x="1233.6279"
+         y="1775.87"
+         id="rect65" />
+      <rect
+         fill="#F1F1F1"
+         height="2"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="4"
+         x="1233.6279"
+         y="1779.87"
+         id="rect66" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="30.5713"
+         x="1199.5"
+         y="1798.2499"
+         id="text66">Packet</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="31.1279"
+         x="1199.5"
+         y="1809.7489"
+         id="text67">Builder</text>
+    </g>
+    <!--entity RL-->
+    <g
+       id="elem_RL">
+      <rect
+         fill="#F1F1F1"
+         height="64.4971"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="78.3447"
+         x="1180"
+         y="1930.87"
+         id="rect67" />
+      <rect
+         fill="#F1F1F1"
+         height="10"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="15"
+         x="1238.3447"
+         y="1935.87"
+         id="rect68" />
+      <rect
+         fill="#F1F1F1"
+         height="2"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="4"
+         x="1236.3447"
+         y="1937.87"
+         id="rect69" />
+      <rect
+         fill="#F1F1F1"
+         height="2"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="4"
+         x="1236.3447"
+         y="1941.87"
+         id="rect70" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="21.123"
+         x="1195"
+         y="1960.2499"
+         id="text70">Rate</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="30.0049"
+         x="1195"
+         y="1971.7489"
+         id="text71">Limiter</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="38.3447"
+         x="1195"
+         y="1983.2479"
+         id="text72">(200 Hz)</text>
+    </g>
+    <!--entity Last Colors-->
+    <g
+       id="elem_Last Colors">
+      <rect
+         fill="#F1F1F1"
+         height="31.499"
+         rx="35"
+         ry="35"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="70.5762"
+         x="703.5"
+         y="1548.87"
+         id="rect72" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="50.5762"
+         x="713.5"
+         y="1568.2499"
+         id="text73">Last Colors</text>
+    </g>
+    <!--entity Last ??-->
+    <g
+       id="elem_Last θᵢ">
+      <rect
+         fill="#F1F1F1"
+         height="31.499"
+         rx="35"
+         ry="35"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="48.8135"
+         x="809.5"
+         y="1548.87"
+         id="rect73" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="28.8135"
+         x="819.5"
+         y="1568.2499"
+         id="text74">Last θᵢ</text>
+    </g>
+    <!--entity Last Rotation-->
+    <g
+       id="elem_Last Rotation">
+      <rect
+         fill="#F1F1F1"
+         height="31.499"
+         rx="35"
+         ry="35"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="78.9258"
+         x="893.5"
+         y="1548.87"
+         id="rect74" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="58.9258"
+         x="903.5"
+         y="1568.2499"
+         id="text75">Last Rotation</text>
+    </g>
+    <!--entity Since-Stop\nDistance-->
+    <g
+       id="elem_Since-Stop\nDistance">
+      <rect
+         fill="#F1F1F1"
+         height="42.998"
+         rx="35"
+         ry="35"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="68.916"
+         x="703.5"
+         y="1773.87"
+         id="rect75" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="48.916"
+         x="713.5"
+         y="1793.2499"
+         id="text76">Since-Stop</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="38.9063"
+         x="713.5"
+         y="1804.7489"
+         id="text77">Distance</text>
+    </g>
+    <!--entity Last v_L, v_R-->
+    <g
+       id="elem_Last v_L, v_R">
+      <rect
+         fill="#F1F1F1"
+         height="31.499"
+         rx="35"
+         ry="35"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="81.1426"
+         x="807.5"
+         y="1779.87"
+         id="rect77" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="61.1426"
+         x="817.5"
+         y="1799.2499"
+         id="text78">Last v_L, v_R</text>
+    </g>
+    <!--entity Nav State-->
+    <g
+       id="elem_Nav State">
+      <rect
+         fill="#F1F1F1"
+         height="31.499"
+         rx="35"
+         ry="35"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="63.9111"
+         x="924"
+         y="1779.87"
+         id="rect78" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="43.9111"
+         x="934"
+         y="1799.2499"
+         id="text79">Nav State</text>
+    </g>
+    <!--entity PR-->
+    <g
+       id="elem_PR">
+      <rect
+         fill="#F1F1F1"
+         height="52.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="79.458"
+         x="396.5"
+         y="184.87"
+         id="rect79" />
+      <rect
+         fill="#F1F1F1"
+         height="10"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="15"
+         x="455.958"
+         y="189.87"
+         id="rect80" />
+      <rect
+         fill="#F1F1F1"
+         height="2"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="4"
+         x="453.958"
+         y="191.87"
+         id="rect81" />
+      <rect
+         fill="#F1F1F1"
+         height="2"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="4"
+         x="453.958"
+         y="195.87"
+         id="rect82" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="30.5713"
+         x="411.5"
+         y="214.2499"
+         id="text82">Packet</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="39.458"
+         x="411.5"
+         y="225.7489"
+         id="text83">Receiver</text>
+    </g>
+    <!--entity PD-->
+    <g
+       id="elem_PD">
+      <rect
+         fill="#F1F1F1"
+         height="52.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="77.7979"
+         x="397"
+         y="372.87"
+         id="rect83" />
+      <rect
+         fill="#F1F1F1"
+         height="10"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="15"
+         x="454.7979"
+         y="377.87"
+         id="rect84" />
+      <rect
+         fill="#F1F1F1"
+         height="2"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="4"
+         x="452.7979"
+         y="379.87"
+         id="rect85" />
+      <rect
+         fill="#F1F1F1"
+         height="2"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="4"
+         x="452.7979"
+         y="383.87"
+         id="rect86" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="30.5713"
+         x="412"
+         y="402.2499"
+         id="text86">Packet</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="37.7979"
+         x="412"
+         y="413.7489"
+         id="text87">Decoder</text>
+    </g>
+    <!--entity HTTP-->
+    <g
+       id="elem_HTTP">
+      <rect
+         fill="#F1F1F1"
+         height="52.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="69.4531"
+         x="393.5"
+         y="745.87"
+         id="rect87" />
+      <rect
+         fill="#F1F1F1"
+         height="10"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="15"
+         x="442.9531"
+         y="750.87"
+         id="rect88" />
+      <rect
+         fill="#F1F1F1"
+         height="2"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="4"
+         x="440.9531"
+         y="752.87"
+         id="rect89" />
+      <rect
+         fill="#F1F1F1"
+         height="2"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="4"
+         x="440.9531"
+         y="756.87"
+         id="rect90" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="26.1084"
+         x="408.5"
+         y="775.2499"
+         id="text90">HTTP</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="29.4531"
+         x="408.5"
+         y="786.7489"
+         id="text91">Server</text>
+    </g>
+    <!--entity JSON-->
+    <g
+       id="elem_JSON">
+      <rect
+         fill="#F1F1F1"
+         height="52.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="85.5664"
+         x="393"
+         y="591.87"
+         id="rect91" />
+      <rect
+         fill="#F1F1F1"
+         height="10"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="15"
+         x="458.5664"
+         y="596.87"
+         id="rect92" />
+      <rect
+         fill="#F1F1F1"
+         height="2"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="4"
+         x="456.5664"
+         y="598.87"
+         id="rect93" />
+      <rect
+         fill="#F1F1F1"
+         height="2"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="4"
+         x="456.5664"
+         y="602.87"
+         id="rect94" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="45.5664"
+         x="408"
+         y="621.2499"
+         id="text94">JSON API</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="32.7832"
+         x="408"
+         y="632.7489"
+         id="text95">(10 Hz)</text>
+    </g>
+    <!--entity AP-->
+    <g
+       id="elem_AP">
+      <rect
+         fill="#F1F1F1"
+         height="52.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="109.4629"
+         x="227.5"
+         y="591.87"
+         id="rect95" />
+      <rect
+         fill="#F1F1F1"
+         height="10"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="15"
+         x="316.9629"
+         y="596.87"
+         id="rect96" />
+      <rect
+         fill="#F1F1F1"
+         height="2"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="4"
+         x="314.9629"
+         y="598.87"
+         id="rect97" />
+      <rect
+         fill="#F1F1F1"
+         height="2"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="4"
+         x="314.9629"
+         y="602.87"
+         id="rect98" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="69.4629"
+         x="242.5"
+         y="621.2499"
+         id="text98">AP: ERD-Byron</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="52.8271"
+         x="242.5"
+         y="632.7489"
+         id="text99">192.168.4.1</text>
+    </g>
+    <!--entity TI-->
+    <g
+       id="elem_TI">
+      <rect
+         fill="#F1F1F1"
+         height="41.499"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="94.4727"
+         x="262"
+         y="993.87"
+         id="rect99" />
+      <rect
+         fill="#F1F1F1"
+         height="10"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="15"
+         x="336.4727"
+         y="998.87"
+         id="rect100" />
+      <rect
+         fill="#F1F1F1"
+         height="2"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="4"
+         x="334.4727"
+         y="1000.87"
+         id="rect101" />
+      <rect
+         fill="#F1F1F1"
+         height="2"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="4"
+         x="334.4727"
+         y="1004.87"
+         id="rect102" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="54.4727"
+         x="277"
+         y="1023.2499"
+         id="text102">Touch Inject</text>
+    </g>
+    <!--entity TNI-->
+    <g
+       id="elem_TNI">
+      <rect
+         fill="#F1F1F1"
+         height="41.499"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="89.4727"
+         x="391.5"
+         y="993.87"
+         id="rect103" />
+      <rect
+         fill="#F1F1F1"
+         height="10"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="15"
+         x="460.9727"
+         y="998.87"
+         id="rect104" />
+      <rect
+         fill="#F1F1F1"
+         height="2"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="4"
+         x="458.9727"
+         y="1000.87"
+         id="rect105" />
+      <rect
+         fill="#F1F1F1"
+         height="2"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="4"
+         x="458.9727"
+         y="1004.87"
+         id="rect106" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="49.4727"
+         x="406.5"
+         y="1023.2499"
+         id="text106">Tone Inject</text>
+    </g>
+    <!--entity SS-->
+    <g
+       id="elem_SS">
+      <rect
+         fill="#FFE4B5"
+         height="54.4971"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="72.793"
+         x="1740.5"
+         y="987.37"
+         id="rect107" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="13.3398"
+         x="1750.5"
+         y="1006.7499"
+         id="text107">SS</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="35.0146"
+         x="1750.5"
+         y="1018.2489"
+         id="text108">(Sensor</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="52.793"
+         x="1750.5"
+         y="1029.7479"
+         id="text109">Subsystem)</text>
+    </g>
+    <!--entity MDPS-->
+    <g
+       id="elem_MDPS">
+      <rect
+         fill="#E0FFE0"
+         height="42.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="78.335"
+         x="553"
+         y="992.87"
+         id="rect109" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="28.8916"
+         x="563"
+         y="1012.2499"
+         id="text110">MDPS</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="58.335"
+         x="563"
+         y="1023.7489"
+         id="text111">(Motor Drive)</text>
+    </g>
+    <!--entity OP-->
+    <g
+       id="elem_OP">
+      <ellipse
+         cx="1417.9482"
+         cy="739.37"
+         fill="#FFF8DC"
+         style="stroke:#181818;stroke-width:0.5;"
+         id="ellipse111"
+         ry="8"
+         rx="8" />
+      <path
+         d="M1417.9482,747.37 L1417.9482,774.37 M1404.9482,755.37 L1430.9482,755.37 M1417.9482,774.37 L1404.9482,789.37 M1417.9482,774.37 L1430.9482,789.37 "
+         fill="none"
+         style="stroke:#181818;stroke-width:0.5;"
+         id="path111" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="39.4629"
+         x="1396"
+         y="800.2499"
+         id="text112">Operator</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="43.8965"
+         x="1396"
+         y="811.7489"
+         id="text113">(Physical)</text>
+    </g>
+    <!--entity OP_REMOTE-->
+    <g
+       id="elem_OP_REMOTE">
+      <ellipse
+         cx="149.8374"
+         cy="366.37"
+         fill="#F0E68C"
+         style="stroke:#181818;stroke-width:0.5;"
+         id="ellipse113"
+         ry="8"
+         rx="8" />
+      <path
+         d="M149.8374,374.37 L149.8374,401.37 M136.8374,382.37 L162.8374,382.37 M149.8374,401.37 L136.8374,416.37 M149.8374,401.37 L162.8374,416.37 "
+         fill="none"
+         style="stroke:#181818;stroke-width:0.5;"
+         id="path113" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="39.4629"
+         x="129"
+         y="427.2499"
+         id="text114">Operator</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="41.6748"
+         x="129"
+         y="438.7489"
+         id="text115">(Remote)</text>
+    </g>
+    <g
+       id="elem_GMN75">
+      <path
+         d="M1743,1542.37 L1743,1586.8671 L1849.0586,1586.8671 L1849.0586,1552.37 L1839.0586,1542.37 L1743,1542.37 "
+         fill="#FEFFDD"
+         style="stroke:#181818;stroke-width:0.5;"
+         id="path115" />
+      <path
+         d="M1839.0586,1542.37 L1839.0586,1552.37 L1849.0586,1552.37 L1839.0586,1542.37 "
+         fill="#FEFFDD"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="path116" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="58.916"
+         x="1749"
+         y="1556.7499"
+         id="text116">Active only in</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="52.2363"
+         x="1749"
+         y="1568.2489"
+         id="text117">MAZE state</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="85.0586"
+         x="1749"
+         y="1579.7479"
+         id="text118">Suspended in SOS</text>
+    </g>
+    <g
+       id="elem_GMN78"
+       transform="translate(-120.28196,-132.31015)">
+      <path
+         d="m 1884,1542.37 v 44.4971 h 93.8223 V 1552.37 l -10,-10 H 1884"
+         fill="#feffdd"
+         style="stroke:#181818;stroke-width:0.5"
+         id="path118" />
+      <path
+         d="m 1967.8223,1542.37 v 10 h 10 l -10,-10"
+         fill="#feffdd"
+         style="stroke:#181818;stroke-width:1"
+         id="path119" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="61.127899"
+         x="1890"
+         y="1556.7499"
+         id="text119">RAM-resident</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="72.822304"
+         x="1890"
+         y="1568.2489"
+         id="text120">episode tracking</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="62.246101"
+         x="1890"
+         y="1579.7479"
+         id="text121">(Main ESP32)</text>
+    </g>
+    <g
+       id="elem_GMN81"
+       transform="matrix(1.0806794,0,0,0.76980946,-70.962845,430.91308)">
+      <path
+         d="m 1160.5,2081.87 v 44.4971 h 117.1523 V 2091.87 l -10,-10 H 1223 l -4,-86.81 -4,86.81 h -54.5"
+         fill="#feffdd"
+         style="stroke:#181818;stroke-width:0.5"
+         id="path121" />
+      <path
+         d="m 1267.6523,2081.87 v 10 h 10 l -10,-10"
+         fill="#feffdd"
+         style="stroke:#181818;stroke-width:0.5"
+         id="path122" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="96.152298"
+         x="1166.5"
+         y="2096.25"
+         id="text122">Rate limiting prevents</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="95.039101"
+         x="1166.5"
+         y="2107.7488"
+         id="text123">WiFi ESP32 overload</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="60.014599"
+         x="1166.5"
+         y="2119.2478"
+         id="text124">(200 Hz max)</text>
+    </g>
+    <g
+       id="elem_GMN84">
+      <path
+         d="M553,148.87 L553,273.8602 L660.7041,273.8602 L660.7041,158.87 L650.7041,148.87 L553,148.87 "
+         fill="#FEFFDD"
+         style="stroke:#181818;stroke-width:0.5;"
+         id="path124" />
+      <path
+         d="M650.7041,148.87 L650.7041,158.87 L660.7041,158.87 L650.7041,148.87 "
+         fill="#FEFFDD"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="path125" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="86.7041"
+         x="559"
+         y="163.2499"
+         id="text125">SPI Slave receives:</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="65.7471"
+         x="559"
+         y="174.7489"
+         id="text126">• System State</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="69.6387"
+         x="559"
+         y="186.2479"
+         id="text127">• Sensor Colors</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="71.3184"
+         x="559"
+         y="197.747"
+         id="text128">• Wheel Speeds</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="71.8799"
+         x="559"
+         y="209.246"
+         id="text129">• Rotation Angle</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="75.1904"
+         x="559"
+         y="220.745"
+         id="text130">• NAVCON State</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="70.21"
+         x="559"
+         y="232.244"
+         id="text131">• Line Detection</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="62.4219"
+         x="559"
+         y="243.743"
+         id="text132">• End of Maze</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="66.8506"
+         x="559"
+         y="255.2421"
+         id="text133">• Comm Status</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="66.4209"
+         x="559"
+         y="266.7411"
+         id="text134">+ 5 more types</text>
+    </g>
+    <g
+       id="elem_GMN87">
+      <path
+         d="M59,744.37 L59,800.3661 A0,0 0 0 0 59,800.3661 L170.6055,800.3661 A0,0 0 0 0 170.6055,800.3661 L170.6055,754.37 L160.6055,744.37 L148.88,744.37 L253.67,645.15 L140.88,744.37 L59,744.37 A0,0 0 0 0 59,744.37 "
+         fill="#FEFFDD"
+         style="stroke:#181818;stroke-width:0.5;"
+         id="path134" />
+      <path
+         d="M160.6055,744.37 L160.6055,754.37 L170.6055,754.37 L160.6055,744.37 "
+         fill="#FEFFDD"
+         style="stroke:#181818;stroke-width:0.5;"
+         id="path135" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="63.9014"
+         x="65"
+         y="758.7499"
+         id="text135">WiFi AP Mode</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="86.5625"
+         x="65"
+         y="770.2489"
+         id="text136">SSID: &quot;ERD-Byron&quot;</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="67.832"
+         x="65"
+         y="781.7479"
+         id="text137">IP: 192.168.4.1</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="90.6055"
+         x="65"
+         y="793.247"
+         id="text138">Multiple connections</text>
+    </g>
+    <!--link SS to FD-->
+    <g
+       id="link_SS_FD">
+      <path
+         d="M1747.19,1041.39 C1685.5,1095.25 1549.0094,1214.4135 1487.7894,1267.8735 "
+         fill="none"
+         id="SS-to-FD"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="1483.27,1271.82,1492.6801,1268.9131,1487.0362,1268.5312,1487.4181,1262.8873,1483.27,1271.82"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon138" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="51.1133"
+         x="1674.8691"
+         y="1117.2499"
+         id="text139">SCS UART</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="72.8516"
+         x="1664"
+         y="1128.7489"
+         id="text140">19200 baud&lt;/b&gt;</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="49.4531"
+         x="1675.6992"
+         y="1140.2479"
+         id="text141">COLOURS</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="7.1338"
+         x="1696.8589"
+         y="1151.747"
+         id="text142">θᵢ</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="39.4629"
+         x="1680.6943"
+         y="1163.246"
+         id="text143">EoM flag</text>
+    </g>
+    <!--link MDPS to FD-->
+    <g
+       id="link_MDPS_FD">
+      <path
+         d="M631.24,1016.47 C754.59,1020.61 1132.08,1038.7 1230,1106.87 C1254.48,1123.91 1236.83,1149.86 1262,1165.87 C1287.36,1182 1372.18,1156.93 1397,1173.87 C1429.87,1196.3 1442.9619,1236.8308 1448.8919,1265.9308 "
+         fill="none"
+         id="MDPS-to-FD"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="1450.09,1271.81,1452.2124,1262.1925,1449.0916,1266.9107,1444.3735,1263.7899,1450.09,1271.81"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon143" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="51.1133"
+         x="1273.8691"
+         y="1117.2499"
+         id="text144">SCS UART</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="72.8516"
+         x="1263"
+         y="1128.7489"
+         id="text145">19200 baud&lt;/b&gt;</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="33.9014"
+         x="1282.4751"
+         y="1140.2479"
+         id="text146">SPEED</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="50.5615"
+         x="1274.145"
+         y="1151.747"
+         id="text147">DISTANCE</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="51.665"
+         x="1273.5933"
+         y="1163.246"
+         id="text148">ROTATION</text>
+    </g>
+    <!--link OP to TH-->
+    <g
+       id="link_OP_TH">
+      <path
+         d="M1395.83,806.9 C1389.35,818.21 1382.96,831.19 1379,843.87 C1363.62,893.13 1361.294,947.99 1361.384,981.75 "
+         fill="none"
+         id="OP-to-TH"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="1361.4,987.75,1365.376,978.7394,1361.3867,982.75,1357.376,978.7607,1361.4,987.75"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon148" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="27.793"
+         x="1387.7808"
+         y="854.2499"
+         id="text149">Touch</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="43.3545"
+         x="1380"
+         y="865.7489"
+         id="text150">Activation</text>
+    </g>
+    <!--link OP to TD-->
+    <g
+       id="link_OP_TD">
+      <path
+         d="M1427.5,814.08 C1439.08,863.7 1456.9259,940.2071 1466.6359,981.7971 "
+         fill="none"
+         id="OP-to-TD"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="1468,987.64,1469.849,977.9663,1466.8632,982.7709,1462.0586,979.7851,1468,987.64"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon150" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="46.6895"
+         x="1440"
+         y="854.2499"
+         id="text151">Dual-Tone</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="43.9063"
+         x="1441.3916"
+         y="865.7489"
+         id="text152">(2800 Hz)</text>
+    </g>
+    <!--link FD to NAV-->
+    <g
+       id="link_FD_NAV">
+      <path
+         d="M1478.05,1325.31 C1501.43,1349.9 1538.53,1387.23 1574,1415.87 C1578.99,1419.9 1582.6,1418.44 1586,1423.87 C1588.0419,1427.1338 1589.9044,1430.5239 1591.602,1434.0127 C1592.4507,1435.757 1590.8925,1432.0121 1591.6606,1433.8023 "
+         fill="none"
+         id="FD-to-NAV"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="1594.0263,1439.3162,1594.1536,1429.4681,1592.0548,1434.7213,1586.8017,1432.6225,1594.0263,1439.3162"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon152" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="58.3643"
+         x="1590.8276"
+         y="1378.7499"
+         id="text153">Parsed Data:</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="64.9219"
+         x="1587.5488"
+         y="1390.2489"
+         id="text154">COLOURS, θᵢ,</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="90.0195"
+         x="1575"
+         y="1401.7479"
+         id="text155">SPEED, DISTANCE</text>
+    </g>
+    <!--link NAV to ES-->
+    <g
+       id="link_NAV_ES">
+      <path
+         d="M1613.0157,1512.3235 C1613.0371,1511.883 1613.0573,1511.4413 1613.0763,1510.9984 C1613.152,1509.2266 1613.2075,1507.4354 1613.24,1505.6287 C1613.76,1476.7225 1608.395,1443.875 1586,1423.87 C1567.46,1407.31 1335.57,1412.3 1188,1416.37 C1127.49,1418.04 1099.29,1386.08 1052,1423.87 C1039.915,1433.5275 1031.3181,1446.56 1025.2333,1460.8108 C1023.7121,1464.3735 1022.3479,1468.0123 1021.1254,1471.6936 C1020.8198,1472.6139 1020.523,1473.5369 1020.2349,1474.462 C1020.1629,1474.6933 1021.8495,1469.188 1021.7786,1469.4196 "
+         fill="none"
+         id="NAV-to-ES"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="1020.0204,1475.1562,1026.4821,1467.7234,1021.4855,1470.3757,1018.8332,1465.3792,1020.0204,1475.1562"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon155" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="26.6797"
+         x="1200.9531"
+         y="1384.7499"
+         id="text156">Store:</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="50.5859"
+         x="1189"
+         y="1396.2489"
+         id="text157">Last values</text>
+    </g>
+    <!--link ES to NAV-->
+    <g
+       id="link_ES_NAV">
+      <path
+         d="M1020.2062,1473.4578 C1020.2794,1473.227 1020.3532,1472.9962 1020.4275,1472.7657 C1020.5762,1472.3046 1020.7271,1471.8441 1020.8802,1471.3843 C1022.1052,1467.7061 1023.4741,1464.0732 1025.0025,1460.5195 C1031.1163,1446.305 1039.7825,1433.36 1052,1423.87 C1148.03,1349.27 1203.91,1418.04 1325.5,1416.37 C1441.31,1414.78 1500.26,1346 1586,1423.87 C1608.23,1444.06 1613.5875,1476.915 1613.105,1505.7788 C1613.0899,1506.6807 1613.0691,1507.5788 1613.043,1508.4725 C1613.0365,1508.6959 1613.2234,1502.9222 1613.2162,1503.1451 "
+         fill="none"
+         id="ES-to-NAV"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="1613.0224,1509.142,1617.311,1500.2759,1613.1839,1504.1446,1609.3152,1500.0174,1613.0224,1509.142"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon157" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="40.0146"
+         x="1338.1748"
+         y="1384.7499"
+         id="text158">Retrieve:</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="63.3643"
+         x="1326.5"
+         y="1396.2489"
+         id="text159">Previous state</text>
+    </g>
+    <!--link MG to FE-->
+    <g
+       id="link_MG_FE">
+      <path
+         d="M1274.51,1537.84 C1280.37,1505.73 1295.37,1451.46 1332,1423.87 C1353.49,1407.68 1374.28,1436.11 1392,1415.87 C1409.27,1396.14 1401.31,1381.39 1392,1356.87 C1387.5,1345.02 1383.4158,1338.4246 1374.9058,1329.3146 "
+         fill="none"
+         id="MG-to-FE"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="1370.81,1324.93,1374.0306,1334.2374,1374.2232,1328.5838,1379.8767,1328.7763,1370.81,1324.93"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon159" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="89.9951"
+         x="1403"
+         y="1367.2499"
+         id="text160">Motion Commands</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="39.4629"
+         x="1428.2661"
+         y="1378.7489"
+         id="text161">v_L, v_R</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="47.5146"
+         x="1424.2402"
+         y="1390.2479"
+         id="text162">(DEC=0/1)</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="64.4922"
+         x="1415.7515"
+         y="1401.747"
+         id="text163">Rotation angle</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="47.5146"
+         x="1424.2402"
+         y="1413.246"
+         id="text164">(DEC=2/3)</text>
+    </g>
+    <!--link GE to FSM-->
+    <g
+       id="link_GE_FSM">
+      <path
+         d="M1109.3583,1331.1596 C1109.9583,1383.8396 1111.171,1490.7604 1111.711,1537.7404 "
+         fill="none"
+         id="GE-FSM"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="1109.29,1325.16,1105.3928,1334.205,1109.3469,1330.1597,1113.3922,1334.1139,1109.29,1325.16"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon164" />
+      <polygon
+         fill="#181818"
+         points="1111.78,1543.74,1115.6763,1534.6946,1111.7225,1538.7403,1107.6768,1534.7866,1111.78,1543.74"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon165" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="27.793"
+         x="1120.729"
+         y="1384.7499"
+         id="text165">Guard</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="47.251"
+         x="1111"
+         y="1396.2489"
+         id="text166">Conditions</text>
+    </g>
+    <!--link TH to GE-->
+    <g
+       id="link_TH_GE">
+      <path
+         d="M1367.38,1040.88 C1372.81,1074.42 1376.36,1132.92 1344,1165.87 C1334.88,1175.15 1298.12,1169.13 1286,1173.87 C1227.38,1196.82 1173.9746,1238.8666 1141.0946,1267.7966 "
+         fill="none"
+         id="TH-to-GE"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="1136.59,1271.76,1145.9892,1268.8179,1140.3438,1268.4571,1140.7046,1262.8118,1136.59,1271.76"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon166" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="27.793"
+         x="1370"
+         y="1134.7499"
+         id="text167">Touch</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="25.5713"
+         x="1371.1108"
+         y="1146.2489"
+         id="text168">Event</text>
+    </g>
+    <!--link TD to GE-->
+    <g
+       id="link_TD_GE">
+      <path
+         d="M1470.54,1040.96 C1464.34,1075.73 1447.82,1136.86 1406,1165.87 C1384.04,1181.1 1311.21,1165.01 1286,1173.87 C1226.08,1194.92 1172.3461,1238.2001 1139.8761,1267.7701 "
+         fill="none"
+         id="TD-to-GE"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="1135.44,1271.81,1144.7874,1268.7075,1139.1368,1268.4434,1139.4009,1262.7927,1135.44,1271.81"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon168" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="22.793"
+         x="1453.3892"
+         y="1134.7499"
+         id="text169">Tone</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="25.5713"
+         x="1452"
+         y="1146.2489"
+         id="text170">Event</text>
+    </g>
+    <!--link FD to GE-->
+    <g
+       id="link_FD_GE">
+      <path
+         d="M1449.99,1271.84 C1444.01,1242.48 1429.72,1196.35 1397,1173.87 C1286.16,1097.72 1225.85,1139.49 1185,1163.37 C1145.06,1186.72 1126.1274,1233.8606 1116.9274,1266.0806 "
+         fill="none"
+         id="FD-to-GE"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="1115.28,1271.85,1121.5973,1264.2941,1116.6528,1267.0422,1113.9048,1262.0976,1115.28,1271.85"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon170" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="42.793"
+         x="1186"
+         y="1134.7499"
+         id="text171">EoC/EoM</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="24.4531"
+         x="1195.1699"
+         y="1146.2489"
+         id="text172">Flags</text>
+    </g>
+    <!--link FSM to NAV-->
+    <g
+       id="link_FSM_NAV">
+      <path
+         d="M1122.02,1543.4 C1137.43,1513.14 1169.68,1457.24 1212,1423.87 C1250.16,1393.78 1271.92,1409.14 1320.5,1410.37 C1438.61,1413.37 1499.03,1343.89 1586,1423.87 C1608.105,1444.2 1613.5497,1471.0632 1613.0947,1499.8957 "
+         fill="none"
+         id="FSM-to-NAV"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="1613,1505.895,1617.1415,1496.9592,1613.0789,1500.8956,1609.1425,1496.833,1613,1505.895"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon172" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="26.1279"
+         x="1270.1328"
+         y="1378.7499"
+         id="text173">State:</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="73.3936"
+         x="1246.5"
+         y="1390.2489"
+         id="text174">Enable/Suspend</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="42.7832"
+         x="1261.8052"
+         y="1401.7479"
+         id="text175">NAVCON</text>
+    </g>
+    <!--link FSM to PB-->
+    <g
+       id="link_FSM_PB">
+      <path
+         d="M1121.21,1584.89 C1140.69,1626.21 1183.5409,1717.0531 1205.3409,1763.2831 "
+         fill="none"
+         id="FSM-to-PB"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="1207.9,1768.71,1207.6793,1758.8636,1205.7674,1764.1876,1200.4435,1762.2757,1207.9,1768.71"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon175" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="33.3398"
+         x="1157"
+         y="1649.2499"
+         id="text176">System</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="23.3496"
+         x="1161.9951"
+         y="1660.7489"
+         id="text177">State</text>
+    </g>
+    <!--link ES to PB-->
+    <g
+       id="link_ES_PB">
+      <path
+         d="M1020.0288,1580.893 C1020.123,1581.067 1020.2179,1581.242 1020.3135,1581.418 C1020.5046,1581.7701 1020.6986,1582.1263 1020.8952,1582.4864 C1021.2886,1583.2066 1021.6927,1583.9426 1022.1073,1584.6929 C1022.9365,1586.1934 1023.8073,1587.7513 1024.7163,1589.355 C1031.9875,1602.185 1041.695,1617.955 1052,1630.87 C1094.65,1684.31 1149.135,1734.103 1184.665,1764.723 "
+         fill="none"
+         id="ES-to-PB"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="1189.21,1768.64,1185.0037,1759.7345,1185.4225,1765.3759,1179.7811,1765.7946,1189.21,1768.64"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon177" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="36.1377"
+         x="1077"
+         y="1649.2499"
+         id="text178">Episode</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="21.123"
+         x="1084.5073"
+         y="1660.7489"
+         id="text179">Data</text>
+    </g>
+    <!--link NAV to PB-->
+    <g
+       id="link_NAV_PB">
+      <path
+         d="M1595.7801,1614.9134 C1595.687,1615.1278 1595.5929,1615.3419 1595.4978,1615.5555 C1595.3078,1615.9827 1595.1139,1616.4082 1594.9162,1616.8318 C1594.1254,1618.5261 1593.2728,1620.1894 1592.3535,1621.8079 C1590.515,1625.0448 1588.41,1628.1025 1586,1630.87 C1496.19,1734 1334.5093,1774.0456 1261.4693,1787.5956 "
+         fill="none"
+         id="NAV-to-PB"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="1255.57,1788.69,1265.1486,1790.9813,1260.4861,1787.778,1263.6894,1783.1155,1255.57,1788.69"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon179" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="42.7832"
+         x="1572"
+         y="1649.2499"
+         id="text180">NAVCON</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="23.3496"
+         x="1581.7168"
+         y="1660.7489"
+         id="text181">State</text>
+    </g>
+    <!--link FD to PB-->
+    <g
+       id="link_FD_PB">
+      <path
+         d="M1493.24,1304.11 C1549.48,1311.81 1648.6,1329.03 1670,1356.87 C1695.66,1390.26 1698.59,1576.98 1623,1662.87 C1525.88,1773.23 1340.9566,1791.2279 1261.7466,1793.8979 "
+         fill="none"
+         id="FD-to-PB"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="1255.75,1794.1,1264.8796,1797.7945,1260.7472,1793.9316,1264.6101,1789.7991,1255.75,1794.1"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon181" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="31.6846"
+         x="1687"
+         y="1562.7499"
+         id="text182">Sensor</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="21.123"
+         x="1692.2808"
+         y="1574.2489"
+         id="text183">Data</text>
+    </g>
+    <!--link MG to PB-->
+    <g
+       id="link_MG_PB">
+      <path
+         d="M1265.25,1591.19 C1255.43,1635.29 1236.8448,1718.7536 1227.0348,1762.7836 "
+         fill="none"
+         id="MG-to-PB"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="1225.73,1768.64,1231.5915,1760.7253,1226.8174,1763.7597,1223.783,1758.9855,1225.73,1768.64"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon183" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="30.0146"
+         x="1265.5566"
+         y="1649.2499"
+         id="text184">Motion</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="51.1279"
+         x="1255"
+         y="1660.7489"
+         id="text185">Commands</text>
+    </g>
+    <!--link PB to RL-->
+    <g
+       id="link_PB_RL">
+      <path
+         d="M1219.84,1822.23 C1219.67,1851.59 1219.4164,1893.4801 1219.2264,1924.8401 "
+         fill="none"
+         id="PB-to-RL"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="1219.19,1930.84,1223.2445,1921.8644,1219.2203,1925.8401,1215.2446,1921.8159,1219.19,1930.84"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon185" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="42.7979"
+         x="1220.8276"
+         y="1875.2499"
+         id="text186">Complete</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="44.4531"
+         x="1220"
+         y="1886.7489"
+         id="text187">Telemetry</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="35.5713"
+         x="1224.4409"
+         y="1898.2479"
+         id="text188">Packets</text>
+    </g>
+    <!--link RL to PR-->
+    <g
+       id="link_RL_PR">
+      <path
+         d="m 1179.666,1960.7445 c -202.30199,-6.47 -1139.655135,-43.0202 -1139.655135,-164.3708 0,-1398.00742 0,-1398.00742 0,-1398.00742 0,-180.68096 233.510495,-18.7801 375.784105,-124.50066 12.40961,-9.22005 19.4727,-18.295 26.57084,-30.75507"
+         fill="none"
+         id="RL-to-PR"
+         style="stroke:#181818;stroke-width:0.985405" />
+      <polygon
+         fill="#181818"
+         points="423.4,237.94,415.3957,243.6786,420.8699,242.2526,422.2959,247.7268,423.4,237.94"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon188" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="47.788101"
+         x="21.184601"
+         y="1001.2499"
+         id="text189"
+         transform="translate(23.507479,-0.23625607)">SPI 2 MHz</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="31.684601"
+         x="29.2363"
+         y="1012.7489"
+         id="text190"
+         transform="translate(15.711029,0.35438411)">200 Hz</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="76.157204"
+         x="7"
+         y="1024.2479"
+         id="text191"
+         transform="translate(37.800972,-0.94502429)">257-byte packets</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="75.883797"
+         x="7.1367002"
+         y="1035.7469"
+         id="text192"
+         transform="translate(36.737819,-1.1812804)">13+ packet types</text>
+    </g>
+    <!--link PR to PD-->
+    <g
+       id="link_PR_PD">
+      <path
+         d="M436,238.23 C436,273.77 436,331.31 436,366.73 "
+         fill="none"
+         id="PR-to-PD"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="436,372.73,440,363.73,436,367.73,432,363.73,436,372.73"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon192" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="20.0049"
+         x="444.7832"
+         y="314.2499"
+         id="text193">Raw</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="35.5713"
+         x="437"
+         y="325.7489"
+         id="text194">Packets</text>
+    </g>
+    <!--link PD to JSON-->
+    <g
+       id="link_PD_JSON">
+      <path
+         d="M436,426.11 C436,467.88 436,543.92 436,585.66 "
+         fill="none"
+         id="PD-to-JSON"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="436,591.66,440,582.66,436,586.66,432,582.66,436,591.66"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon194" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="40.0293"
+         x="439.2119"
+         y="490.2499"
+         id="text195">Decoded</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="44.4531"
+         x="437"
+         y="501.7489"
+         id="text196">Telemetry</text>
+    </g>
+    <!--link JSON to HTTP-->
+    <g
+       id="link_JSON_HTTP">
+      <path
+         d="M434.64,645.15 C433.17,673.19 431.1348,711.7383 429.6648,739.7183 "
+         fill="none"
+         id="JSON-to-HTTP"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="429.35,745.71,433.8167,736.9323,429.6123,740.7169,425.8277,736.5125,429.35,745.71"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon196" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="26.6699"
+         x="438.2881"
+         y="687.2499"
+         id="text197">JSON</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="37.2461"
+         x="433"
+         y="698.7489"
+         id="text198">Updates</text>
+    </g>
+    <!--link HTTP to AP-->
+    <g
+       id="link_HTTP_AP">
+      <path
+         d="M403.36,745.71 C376.47,717.73 337.8561,677.5174 310.9261,649.4774 "
+         fill="none"
+         id="HTTP-to-AP"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="306.77,645.15,310.1192,654.4119,310.2334,648.7562,315.8891,648.8704,306.77,645.15"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon198" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="26.1084"
+         x="371.9604"
+         y="687.2499"
+         id="text199">HTTP</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="50.0293"
+         x="360"
+         y="698.7489"
+         id="text200">Responses</text>
+    </g>
+    <!--link AP to HTTP-->
+    <g
+       id="link_AP_HTTP">
+      <path
+         d="M276.55,644.9 C274.34,662.07 274.38,684.47 285,700.87 C309.15,738.16 353.4059,754.9577 387.4059,763.3777 "
+         fill="none"
+         id="AP-to-HTTP"
+         style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;" />
+      <polygon
+         fill="#181818"
+         points="393.23,764.82,385.4554,758.7738,388.3766,763.6181,383.5324,766.5392,393.23,764.82"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon200" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="26.1084"
+         x="294.0688"
+         y="687.2499"
+         id="text201">HTTP</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="42.2461"
+         x="286"
+         y="698.7489"
+         id="text202">Requests</text>
+    </g>
+    <!--reverse link OP_REMOTE to AP-->
+    <g
+       id="link_OP_REMOTE_AP">
+      <path
+         d="M144.5096,447.0639 C143.5396,468.5639 145.57,488.8 156,509.87 C173.35,544.92 207.82,573.07 236.33,591.76 "
+         fill="none"
+         id="OP_REMOTE-backto-AP"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="144.78,441.07,140.3784,449.8806,144.5546,446.0649,148.3703,450.2411,144.78,441.07"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon202" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="49.9902"
+         x="168.1353"
+         y="484.2499"
+         id="text203">WiFi/HTTP</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="72.2607"
+         x="157"
+         y="495.7489"
+         id="text204">Web Dashboard</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="64.4873"
+         x="160.8867"
+         y="507.2479"
+         id="text205">10 Hz updates</text>
+    </g>
+    <!--link OP_REMOTE to AP-->
+    <g
+       id="g207">
+      <path
+         d="M171.14,413.99 C190.07,427.2 217.35,448.87 234,473.87 C258.6,510.83 270.4667,555.6458 276.4867,585.8358 "
+         fill="none"
+         id="OP_REMOTE-to-AP"
+         style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;" />
+      <polygon
+         fill="#181818"
+         points="277.66,591.72,279.8228,582.1115,276.6822,586.8165,271.9772,583.676,277.66,591.72"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon205" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="36.6748"
+         x="259.2266"
+         y="490.2499"
+         id="text206">Browser</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="51.1279"
+         x="252"
+         y="501.7489"
+         id="text207">Commands</text>
+    </g>
+    <!--link HTTP to GPIOCMD-->
+    <g
+       id="link_HTTP_GPIOCMD">
+      <path
+         d="M393.41,782.58 C351.19,795.76 281.09,824.31 246,875.87 C243.8644,879.0075 241.9196,882.2794 240.1503,885.6573 C239.2656,887.3463 238.4249,889.0617 237.626,890.8001 C237.2266,891.6693 236.8376,892.5443 236.459,893.4245 C236.2696,893.8646 236.0828,894.3061 235.8986,894.7488 C235.8064,894.9701 237.9879,889.639 237.8971,889.861 "
+         fill="none"
+         id="HTTP-to-GPIOCMD"
+         style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;" />
+      <polygon
+         fill="#181818"
+         points="235.6241,895.4138,242.7354,888.5999,237.5182,890.7865,235.3317,885.5693,235.6241,895.4138"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon207" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="46.1279"
+         x="272"
+         y="854.2499"
+         id="text208">Command</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="32.7979"
+         x="278.665"
+         y="865.7489"
+         id="text209">Signals</text>
+    </g>
+    <!--link TI to GE-->
+    <g
+       id="link_TI_GE">
+      <path
+         d="M320.21,1034.88 C331.7,1053.42 351.09,1081.05 374,1098.87 C432.6,1144.45 456.48,1142.7 527,1165.87 C725.05,1230.95 965.4697,1273.9951 1061.7797,1289.8551 "
+         fill="none"
+         id="TI-to-GE"
+         style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;" />
+      <polygon
+         fill="#181818"
+         points="1067.7,1290.83,1059.4696,1285.4208,1062.7664,1290.0176,1058.1697,1293.3144,1067.7,1290.83"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon209" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="27.7832"
+         x="528.0049"
+         y="1128.7499"
+         id="text210">GPIO:</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="27.793"
+         x="528"
+         y="1140.2489"
+         id="text211">Touch</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="23.9014"
+         x="529.9458"
+         y="1151.7479"
+         id="text212">Inject</text>
+    </g>
+    <!--link TNI to GE-->
+    <g
+       id="link_TNI_GE">
+      <path
+         d="M455.07,1034.98 C474.09,1053.6 504.89,1081.28 536,1098.87 C721.12,1203.54 965.0076,1265.2973 1062.1276,1287.2473 "
+         fill="none"
+         id="TNI-to-GE"
+         style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;" />
+      <polygon
+         fill="#181818"
+         points="1067.98,1288.57,1060.0832,1282.6844,1063.103,1287.4678,1058.3196,1290.4876,1067.98,1288.57"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon212" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="27.7832"
+         x="671"
+         y="1128.7499"
+         id="text213">GPIO:</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="22.793"
+         x="673.4951"
+         y="1140.2489"
+         id="text214">Tone</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="23.9014"
+         x="672.9409"
+         y="1151.7479"
+         id="text215">Inject</text>
+    </g>
+    <!--reverse link MDPS to FE-->
+    <g
+       id="link_MDPS_FE">
+      <path
+         d="M636.8297,1031.412 C721.6697,1061.272 923.57,1129.32 1103,1165.87 C1133.25,1172.03 1143.25,1162.61 1172,1173.87 C1229.02,1196.2 1284.19,1242.64 1315.25,1271.77 "
+         fill="none"
+         id="MDPS-backto-FE"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="631.17,1029.42,638.3316,1036.1811,635.8864,1031.08,640.9875,1028.6348,631.17,1029.42"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon215" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="72.2314"
+         x="1104"
+         y="1123.2499"
+         id="text216">SCS Command</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="53.9111"
+         x="1113.1602"
+         y="1134.7489"
+         id="text217">Frames&lt;/b&gt;</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="26.958"
+         x="1126.6367"
+         y="1146.2479"
+         id="text218">IST=3</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="57.5342"
+         x="1111.3486"
+         y="1157.747"
+         id="text219">DEC=0/1/2/3</text>
+    </g>
+    <!--link NAV to GMN75-->
+    <g
+       id="link_NAV_GMN75"
+       transform="matrix(0.91770393,0,0,1.0408043,132.55563,-56.224228)">
+      <path
+         d="m 1611.034,1439.504 c 0.1957,-0.5814 0.3949,-1.1612 0.5976,-1.7393 0.8108,-2.3125 1.6776,-4.5983 2.6036,-6.8511 7.4079,-18.0223 18.6073,-33.9336 35.2648,-44.5436 69.71,-44.4 122.28,98.65 140.01,155.63"
+         fill="none"
+         id="NAV-GMN75"
+         style="stroke:#181818;stroke-width:1;stroke-dasharray:7, 7" />
+    </g>
+    <!--link GMN78 to ES-->
+    <g
+       id="link_GMN78_ES"
+       transform="matrix(0.82805845,0,0,0.52515645,164.65103,641.4769)">
+      <path
+         d="m 1928.45,1542.21 c -5.87,-39.48 -24.34,-121.06 -78.95,-155.84 -73.1,-46.56 -706.9,-46.56 -780,0 -16.9825,10.815 -29.1119,26.8319 -37.7427,44.8967 -4.3153,9.0324 -7.7561,18.5769 -10.4915,28.239 -0.3419,1.2078 -0.6728,2.4174 -0.993,3.6281 -0.08,0.3027 -0.1595,0.6054 -0.2382,0.9082"
+         fill="none"
+         id="GMN78-ES"
+         style="stroke:#181818;stroke-width:1;stroke-dasharray:7, 7" />
+    </g>
+    <!--link SPIRX to GMN84-->
+    <g
+       id="link_SPIRX_GMN84">
+      <path
+         d="M352.976,172.871 C352.8883,172.3193 352.8011,171.7636 352.7144,171.2039 C352.541,170.0846 352.3698,168.9494 352.2015,167.7996 C351.528,163.2002 350.8996,158.3651 350.3546,153.3599 C349.2646,143.3496 348.5084,132.6591 348.3937,121.8137 C347.935,78.4325 357.74,32.575 397.5,17.87 C429.6,6 442.4,6 474.5,17.87 C531.21,38.85 566.71,100.6 586.53,148.76 "
+         fill="none"
+         id="SPIRX-GMN84"
+         style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;" />
+    </g>
+    <!--SRC=[ZLTTRjj647xdAHOEqDf9PCjsahf24a2MA5k5PH4aKmUjYc8bhULjg5sLIofnYW0zI-vGeAVe7TgJz9lTfKHRSf0yED3CxFpFDqFpJge5p_cSZVdatIpNfPfsTAPpzgXd_mLc9M5k-5I_bsh6hdbcH8qp5TUyp8gULiKbdmlMpYNFjlCJ-L6mmsOGVCl23uN85S-OK8Kif311BYO5LxDCi9qa6QdTH2YZyv5Aoh6vDOMOx-qmRbYIa7VXizFdzHU3RaHl1hg0zzrSBeMJ9Zfx53RneXdm2N5tXWkHyu9KxqOtjqPEUEQ4Xv4D_AJRsI8QYxakH2NuQnmEXca8-MRuugH34GsuL2nCekCZjiZrH1XpDwWQVxU3PEGwOv4Jr3dqFWfVX2zwRVP7m5Wz5mKln4WDkE8paRiK3AmGOnCzNsY53BAVUo1Uw9cS_48I-7LVuApa-NIamYNFIWh9ofs54FiKtBLusVwnCxmSgQwOI2ErmYCraqfOss1k6dTD4vUPC5Pj9xulqRQgrnBj3GcKpjew4yhbtCeDphOuc7HGQwIkq1ETZTGvLzEiIaqdsP8RjA6myUYfS7fxtGU4GbKJsfQTL9UJcuCKhqQghz34rtpYKfEc_KtRLdpberMRdcyAAUjV8IPLu6btM-1HVwHIaOcvAFBRbRCkygYVlhMZqUmrD_s8CE6Y6AdJKcPLVD7fVQdOzjg5d4i4XgO_QZRP-SSzAnrVL1vDUS77tC2XS24DFC2GKfTQFyAg00QXe6NPpWKt1RCjOdQsSFxv-z-_FczZn1fAqHFtU8bK4z582hr0ogH1Rf3_BS-NlruynP_u7k-IBvdpreRpYKRtIlRabqQtnjzTfPzzmxgIpvGsXPmO6c22pB2vCS1Kj2JZous60IT- -t2fOZ4H039Vg_WXiNfRHzkwvagCuO38bxvJhiBJJQFdQHfLKbOL4UuB_P0CBrcRujazN3S6KRUPHT96gZsXTB98IrKuw_tUbZ5fHoqMnjt6wMrE873u_T7-uOkJ_MVxXmukeYq6pgB-SAGwUZx7S55kVmEF-iKY6vYTGVU1WMHEs4rQVziutf6uxAzxfOlcPzUPVczO0qABiZ3iEjTp9ZOs6bPL0qjJDLu3RrYBlHo_9dnwquvJ6oA6QypBwSk3yMl4CRmOlea1R7OUCDjw03Dy5jWLzlLwaYWCk-YAVfAsBpiXscYOjjC-IeJrLgb9pw76GrCRILlQGRiZGOQw9SyQ3fnsZquS5b0ER1jJgDDwCiYdGZEtFW9use0UsXSj5l7SYAdDNMiLwbCt-a-zpqzPvVF39fnkikAHnuroG5R86i2d1PBE1Smu5C2wGoaUr7X7JyrzQ5gx7sFUfLYIqYWNIwbB0q0Xmr_XgLjipFUf2GPdLdClT9MyntP5hB0BUU-6dLVDWyCz5DBZ8RFzxrb71yTVAecDojyEmLd8NbhJk1LQp1y4E4McajIQ05r1xBDmtHpX4jqSfDqwWzh1qNirUgWx1-ZPaUgXQKr0DjO9j7wqQ67nSIOEaj8i1CsiJpRy1nQoDRII_t3Vdan8uHf_LtgZKr9hxqA_VQgIMSvgCL7BhTh3ighpnZto8JXr_kAqRtoPBAEwJLOr19MOyGMO82uoGNkpjfaTE9i04erSpcuAKXL3-l5Zcbu4UyG6vn-fseyVZvJRi_Z_-NUDyIrAjd3lCTx7J_mFLjmkN2VNrf6iocuh7i24TPg6D-Rlrtv4BamBu9XhkpAcDOy3oo4Hmds8qE-HUhD0Ey6e9HAtJJotAs9X09YcvX8gLHtChBgN0xneb0iyNH_DFWlqve1qLLd0eW94c9knjfrfLmmhlGimubGIKjigsAyMjfJSWdsmrh-_xnqzpP4KEcHMXGEPk3x8Af3V0H65ZvBOrV9eiTLsIUGCQSQCz9q4HK5YQ6e_AcvX15WMMoJSjMW54CYmBB0tQgCQ00rSbYpQho1-PTvUfnuSW9AlZj6b3XWEW02aiwsKnmSJA4gJRJkchwdXiRuip0kcLNQBhW5XqFufz2Z6c9z8O3GcBXac0NumKXCuPPcujhh21C9nUz38XP5JmW36X8VG8aSzy8K8qkxwOsVllggnBWgiIoYp5oMTd2oZYvC-BXU0LsWrODIwNECeoJIVacOtAcpEFsneNaLi3okA2dDcBoyw6-YMCYrG__lpiqSElpqyoKw_FrGzxUf6Y8mb2o6c5Mc5mlQJnXCzsjVLNU2BYRcJdbQh8uPm6FuD-CTAZ2fitvLau0bxpkRONdxM7yoSlOTiWj3G0oIVWatwtHPEykgAelksZxEgTajHrV4fBe5Nc2Abd6yrE_y3]-->
+  </g>
+</svg>

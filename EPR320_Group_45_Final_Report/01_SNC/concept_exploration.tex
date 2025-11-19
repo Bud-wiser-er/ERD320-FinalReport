@@ -1,0 +1,45 @@
+%======================================================================
+\subsection{SNC Subsystem Concept Exploration}
+\label{subsec:snc-concept-exploration}
+%======================================================================
+
+This section evaluates alternative architectural approaches for \gls{snc} subsystem implementation, following systematic trade study methodology \cite{kossiakoff2011systems}. Design decisions for microcontroller architecture, communication interfaces, and analogue signal conditioning draw from established embedded systems design principles and manufacturer application guidance \cite{ti-opamps,nxp-i2c-spec,freertos-docs}.
+
+%----------------------------------------------------------------------
+\subsubsection{Platform Selection}
+
+Three microcontroller platforms were evaluated against memory, peripheral integration, and development ecosystem requirements. The ATmega328P provides 2~kB RAM. Analysis of \gls{navcon} state variables, \gls{scs} packet buffers, and tone detection logic indicates memory requirement exceeding 4~kB. This platform is not acceptable for memory-constrained operation. The STM32F4 offers 192~kB RAM and 180~MHz Cortex-M4 core meeting computational requirements. However, WiFi capability requires external ESP8266 or similar module adding interface complexity. This platform is acceptable with qualification requiring additional hardware. ESP32 integrates WiFi, capacitive touch peripheral, 12-bit ADC, and 520~kB RAM in single package with Arduino-compatible toolchain. FreeRTOS introduces timing jitter in WiFi-concurrent operation. This platform is acceptable for dual-MCU architecture with isolation between real-time control and WiFi tasks \cite{espressif-esp32-trm,freertos-docs}.
+
+%----------------------------------------------------------------------
+\subsubsection{Architecture}
+
+Two architectural approaches were evaluated against real-time determinism requirements. Single-MCU architecture executes control loop and WiFi stack concurrently on one ESP32. Empirical measurements indicate WiFi interrupt latency ranging from 10 to 15~ms with jitter of 5 to 12~ms violating control loop timing budget. This architecture is not acceptable for deterministic state machine operation. Dual-MCU architecture partitions functions between Main ESP32 and WiFi ESP32 with \gls{spi} interconnection at 200~Hz. Main ESP32 executes state machine, \gls{navcon}, \gls{scs} protocol, touch sensing, and tone input. WiFi ESP32 executes web server and telemetry dashboard. Hardware isolation eliminates WiFi jitter from control path. This architecture is acceptable for deterministic timing \cite{espressif-esp32-trm,iec61508}. ESP32 with ESP8266 variant reduces cost but constrains inter-MCU bandwidth to UART 115200 baud providing 11.5~kB per second versus 51.4~kB per second required for 257-byte telemetry at 200~Hz. This variant is not acceptable for bandwidth requirements.
+
+%----------------------------------------------------------------------
+\subsubsection{Communication Protocol}
+
+Three serial protocols were evaluated for inter-MCU telemetry between Main and WiFi ESP32 \cite{nxp-i2c-spec}. UART at 115200 baud provides 11.5~kB per second effective throughput accounting for start and stop bits. Requirement for 257-byte packets at 200~Hz yields 51.4~kB per second demand. This protocol is not acceptable for bandwidth requirements. I2C at 400~kHz standard-mode offers theoretical 50~kB per second but practical throughput degrades to 30~kB per second with protocol overhead and clock stretching. Multi-master capability introduces arbitration complexity unnecessary for point-to-point link. This protocol is acceptable with qualification for reduced update rates. \gls{spi} at 2~MHz supports 257-byte packet transmission in 1.03~ms allowing 200~Hz rate with margin. Hardware DMA permits non-blocking operation preserving Main ESP32 control loop timing. This protocol is acceptable for full-rate telemetry requirements \cite{espressif-esp32-trm,dma}.
+
+%----------------------------------------------------------------------
+\subsubsection{\gls{hmi}}
+
+Two operator interface approaches were evaluated. LCD display with 16 by 2 character or 128 by 64 OLED resolution provides local visibility without network dependency. Screen size constrains simultaneous parameter count to 2 through 8 values requiring menu navigation. Interface connects to Main ESP32 via I2C or SPI consuming GPIO and processing cycles. This approach is acceptable for basic diagnostics with limited information density. Web dashboard hosted on WiFi ESP32 provides browser-based visualization over WiFi. Large screen supports simultaneous multi-parameter display with plots and state diagrams. Processing occurs on WiFi ESP32 avoiding Main ESP32 impact. Network dependency requires WiFi connectivity but AP mode enables direct connection without router. This approach is acceptable for development and testing \cite{nngroup-visibility}.
+
+%----------------------------------------------------------------------
+\subsubsection{Tone Detection}
+
+Two 2800~Hz detection approaches were evaluated. Digital DSP using Main ESP32 ADC with firmware bandpass filter provides software-only implementation. Analysis indicates FFT or IIR filter requires 5 to 8~ms per audio frame introducing control loop delay. Specification explicitly prohibits digital filtering for tone detection. This approach is not acceptable violating specification requirements and introducing CPU overhead \cite{marv-guide-2025}. Analogue 4th-order bandpass filter at 2800~Hz with envelope detector and comparator provides zero CPU overhead. Filter comprises op-amp stages with passive components. Envelope detection via diode rectifier and RC integrator yields digital GPIO output for interrupt-driven dual-tone validation. This approach is acceptable for specification compliance with zero CPU overhead.
+
+%----------------------------------------------------------------------
+\subsubsection{Filter Topology}
+
+Three active filter topologies were evaluated for 4th-order bandpass implementation \cite{ti-opamps}. Sallen-Key topology exhibits interdependent Q-factor and gain adjustment with maximum Q limited to approximately 10 before stability issues. Required narrow bandwidth at 2800~Hz demands higher Q-factor. This topology is not acceptable for high-Q bandpass application. State-variable topology provides independent frequency, Q, and gain control with simultaneous lowpass, highpass, and bandpass outputs. Implementation requires 3 op-amps per biquad section resulting in 6 op-amps for 4th-order with corresponding power consumption and board area. This topology is acceptable with qualification for applications prioritizing flexibility over efficiency. \gls{mfb} bandpass topology achieves Q-factor control via resistor ratios with single op-amp per biquad requiring 2 total op-amps for 4th-order. Inverting configuration provides inherent DC blocking. Q exceeding 20 is achievable for narrow bandwidth. This topology is acceptable with 2 op-amps for 4th-order implementation.
+
+%----------------------------------------------------------------------
+\subsubsection{Touch Sensor}
+
+Three activation mechanisms were evaluated. Mechanical push button provides reliable tactile feedback with simple implementation. Specification requires non-mechanical activation method. This approach is not acceptable violating specification constraints \cite{marv-guide-2025}. Capacitive touch sensor using ESP32 TOUCH peripheral requires zero external components beyond touch pad electrode. Firmware implements threshold detection with 50~ms debouncing. This approach is acceptable for non-mechanical requirement. Smartphone app activation via WiFi provides remote triggering capability. This introduces dependency on external device and network connectivity unsuitable for \gls{hub} qualification testing requiring standalone operation. This approach is not acceptable for testability requirements.
+
+Selected concepts: dual ESP32 architecture, \gls{spi} inter-MCU communication, web dashboard \gls{hmi}, analogue bandpass tone detection, \gls{mfb} filter topology, and capacitive touch sensor.
+
+%======================================================================

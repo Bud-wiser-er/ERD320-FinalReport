@@ -1,0 +1,1033 @@
+/*
+ * Project:        MDSP
+ * File:           main.cpp
+ * Author:         Kyle G (u21441325)
+ * Created on:     2025-07-27
+ * Last modified:  2025-10-09
+ * Description:    Subsystem code that controls motor functions and communicates with other subsystems  
+ */
+
+////////////////////////////////////////////////// Libraries /////////////////////////////////////////////////
+
+#include <Arduino.h>
+
+// enables hardware pulse counters (PCNT) which counts edges in the background, with no ISR/CPU overhead!!!
+#include "driver/pcnt.h"
+
+///////////////////////////////////////////////// Definitions ////////////////////////////////////////////////
+
+// UART port definitions
+#define USB_PORT Serial
+//#define SCS_PORT Serial2  // HardwareSerial SCS_PORT(2);  -> setup() -> SCS_PORT.begin(19200, SERIAL_8N1, 16, 17); -> manually set UART PINS
+
+// PCNT pin definition + Assign PCNT units (used for rotary encoder) 
+
+// Assign pins for encoders
+#define ENCODER_R_PIN 34                    // Right wheel sensor
+#define ENCODER_L_PIN 35                    // Left  wheel sensor
+// Assign PCNT units (hardware units)
+#define ENCODER_R_UNIT PCNT_UNIT_0
+#define ENCODER_L_UNIT PCNT_UNIT_1
+// Assign channels for PCNT units
+#define ENCODER_R_CHANNEL PCNT_CHANNEL_0
+#define ENCODER_L_CHANNEL PCNT_CHANNEL_0
+
+// Baud rates
+#define DEBUG_BAUD 115200
+#define SCS_BAUD   115200
+
+// Packet structure
+#define PACKET_SIZE 4
+
+// MDPS identifier
+#define SUBSYSTEM_MDPS 0b10
+
+// PI
+#define PI 3.14159265358979323846
+
+//////////////////////////////////////////////////// PINS /////////////////////////////////////////////////////
+   
+const int interruptPin = 0  ;  // Boot Button, GPIO0, ADC2_CH1, TOUCH_CH1, Boot           -> using BOOT Button as interrupt
+const int GPIO_1       = 1  ;  // GPIO1, U0TXD
+const int GPIO_2       = 2  ;  // GPIO2, ADC2_CH2, TOUCH_CH2                              -> Power for Opto-circuit //not anymore
+const int GPIO_3       = 3  ;  // GPIO3, U0RXD
+const int GPIO_4       = 4  ;  // GPIO4, ADC2_CH0, TOUCH_CH0                              -> Power for Opto-circuit //not anymore
+const int GPIO_5       = 5  ;  // GPIO5
+const int GPIO_6       = 6  ;  // GPIO6, CLK                            //
+const int GPIO_7       = 7  ;  // GPIO7, D0                             // Try
+const int GPIO_8       = 8  ;  // GPIO8, D1                             // Avoid
+const int GPIO_9       = 9  ;  // GPIO9, D2                             // Using
+const int GPIO_10      = 10 ;  // GPIO10,D3                             //
+const int GPIO_11      = 11 ;  // GPIO11, CMD                           //
+const int PIN_H2_Q1    = 12 ;  // GPIO12, ADC2_CH5, TOUCH_CH5, MTDI                       -> H2_Q1       -> High-side P-MOSFET (default LOW) -> Wheel 2 (Right)
+const int PIN_H2_Q2    = 13 ;  // GPIO13, ADC2_CH4, TOUCH_CH4, MTCK                       -> H2_Q2       -> High-side P-MOSFET (default LOW)
+const int PIN_H2_Q3    = 14 ;  // GPIO14, ADC2_CH6, TOUCH_CH6, MTMS                       -> H2_Q3       -> Low-side N-MOSFET  (default High)
+const int PIN_H2_Q4    = 15 ;  // GPIO15, ADC2_CH3, TOUCH_CH3, MTDO                       -> H2_Q4       -> Low-side N-MOSFET  (default High)
+const int PinRX        = 16 ;  // GPIO16                                                  -> Serial2 RX
+const int PinTX        = 17 ;  // GPIO17                                                  -> Serial2 TX                                    
+const int GPIO_18      = 18 ;  // GPIO18                                                   
+const int GPIO_19      = 19 ;  // GPIO19                                                    
+const int bluePin      = 21 ;  // GPIO21                                                  -> Blue  LED   -> CAL  
+const int greenPin     = 22 ;  // GPIO22                                                  -> Green LED   -> MAZE -> White -> ALL 3 ON for IDLE 
+const int redPin       = 23 ;  // GPIO23                                                  -> Red   LED   -> SOS  
+const int PIN_H1_Q2    = 25 ;  // GPIO25, ADC2_CH8, DAC_1                                 -> H1_Q2       -> High-side P-MOSFET (default LOW) -> Wheel 1 (Left)
+const int PIN_H1_Q3    = 26 ;  // GPIO26, ADC2_CH9, DAC_2                                 -> H1_Q3       -> Low-side N-MOSFET  (default High)
+const int PIN_H1_Q4    = 27 ;  // GPIO27, ADC2_CH7, TOUCH_CH7                             -> H1_Q4       -> Low-side N-MOSFET  (default High)
+const int GPIO_32      = 32 ;  // GPIO32, ADC1_CH4, TOUCH_CH9, XTAL_32K_P                 
+const int PIN_H1_Q1    = 33 ;  // GPIO33, ADC1_CH5, TOUCH_CH8, XTAL_32K_N                 -> H1_Q1       -> High-side P-MOSFET (default LOW)
+const int PCNT_1       = 34 ;  // GPIO34, ADC1_CH6, VDET_1                                -> PCNT_1
+const int PCNT_2       = 35 ;  // GPIO35, ADC1_CH7, VDET_2                                -> PCNT_2                                 
+const int GPIO_36      = 36 ;  // GPIO36, ADC1_CH0, S_VP
+const int GPIO_39      = 39 ;  // GPIO39, ADC1_CH3, S_VN
+
+///////////////////////////////////////////////// Variables ////////////////////////////////////////////////////
+
+// Bytes of packet
+uint8_t controlByte;
+uint8_t dat1;
+uint8_t dat0;
+uint8_t dec;
+
+// Bits of controlByte
+uint8_t sys = 0b00;
+uint8_t sub;
+uint8_t ist;
+
+// Internal State Tracking
+uint8_t currentIST   = 0xFF ; 
+
+// Interrupt Flag
+volatile bool buttonPress = false;
+
+// Interrupt Debounce Flag
+volatile unsigned long lastInterruptTime = 0;
+
+// Receive Flag
+bool received = false;
+
+// SNC Set Speed
+uint8_t RightWheelSpeed;                             // Right wheel speed - dat1
+uint8_t LeftWheelSpeed;                              // Left  wheel speed - dat0
+
+// Rotation Variables
+float baseDiameter = 150; // mm from wheel centre to wheen centre
+float systemCircumference = PI * baseDiameter; // mm
+float distancePerDegree = (systemCircumference / 360); // mm/degree
+
+// Rotation control variables
+bool isRotating = false;
+float targetRotationDistance = 0;  // Target distance each wheel needs to travel
+float rotationStartDistance_R = 0; // Distance at start of rotation (right wheel)
+float rotationStartDistance_L = 0; // Distance at start of rotation (left wheel)
+
+float avgRotatedDistance = 0;
+
+// Last Rotation Direction & Angle
+uint8_t RotationDirection;  
+uint16_t RotationAngle;
+
+// ROTational Angle
+uint8_t data0 = 0;
+uint8_t data1 = 0;
+uint8_t data2 = 0;                                       // DEC = 2 -> left (CCW) + / DEC = 3 -> right (CW) -
+
+// TANgential Speed
+uint8_t data3 = 0;                                       
+uint8_t data4 = 0;             
+
+float speedRight =  0; // mm/s
+float speedLeft  =  0; // mm/s
+
+bool ResetFlag = false;
+
+// DIStance
+uint8_t data5 = 0;
+uint8_t data6 = 0;
+
+// Rotary Encoder Variables
+const float slots                         = 30;                                  // Number of slots in encoder wheel
+const float radius                        = 25;                                  // Wheel radius in mm
+const float countsPerRev                  = 60.0;                                // 30 slots × 2 edges = 60 counts
+const float distancePerSlot               = ( (2 * PI * radius) / countsPerRev); // Distance per count
+
+int16_t   CurrentDistance = 0;
+
+bool moving = false;
+
+int16_t   counter_1       = 0;
+int16_t   counter_0       = 0;
+
+float distanceTravelled_1 = 0;
+float distanceTravelled_0 = 0;
+
+unsigned long startTime = 0;
+unsigned long stopTime  = 0;
+unsigned long elapsed   = 0;   
+
+// uint8_t  lowByte   =  speed       & 0xFF;                   // lower 8 bits
+// uint8_t  highByte  = (speed >> 8) & 0xFF;                   // upper 8 bits
+// uint16_t original  = (highByte << 8) | lowByte;
+
+// PWM setup for ESP32
+const int PWM_CHANNEL_H1_Q3 = 0;  // PWM channel for H1 Q3 (forward)
+const int PWM_CHANNEL_H1_Q4 = 1;  // PWM channel for H1 Q4 (backward)
+const int PWM_CHANNEL_H2_Q3 = 2;  // PWM channel for H2 Q3 (forward)
+const int PWM_CHANNEL_H2_Q4 = 3;  // PWM channel for H2 Q4 (backward)
+const int PWM_FREQ = 1000;        // 1 kHz
+const int PWM_RESOLUTION = 8;     // 8-bit resolution (0–255)
+
+// Interrupt debounce variables
+uint32_t currentTime = 0;
+uint32_t lastTime    = 0;
+
+// ====== Calibration Data ======
+const int NUM_CAL_POINTS = 17;
+
+float speedR_PWM100 = 0, speedR_PWM0 = 0;
+float speedL_PWM100 = 0, speedL_PWM0 = 0;
+float speedR[NUM_CAL_POINTS], speedL[NUM_CAL_POINTS];
+int pwmLevels[NUM_CAL_POINTS] = {100,95,90,85,80,75,70,65,60,55,50,45,40,35,30,25,20};
+
+float* speedCalibrationR[NUM_CAL_POINTS];
+float* speedCalibrationL[NUM_CAL_POINTS];
+
+uint8_t tanSpeedR = 38;
+uint8_t tanSpeedL = 38;
+
+// Function Declaration
+void clearPCNT();
+
+void Calibrate();
+
+uint8_t motorSpeedRight(float desiredSpeed);
+uint8_t motorSpeedLeft(float desiredSpeed);
+
+void forward(float desiredSpeedR, float desiredSpeedL);
+void backward(float desiredSpeedR, float desiredSpeedL);
+
+void Stop();
+
+//////////////////// MIGHT NEED TO SWAP OUT
+//void forward();
+//void backward();
+void left();
+void right();
+///////////////////
+
+void angularRotation();
+void distance();
+void tangentialSpeed();
+
+void Receive_and_Sort(); 
+void Process();
+void System_State();
+void TX_Ready();
+void Transmit(uint8_t sys, uint8_t sub, uint8_t ist, uint8_t dat1, uint8_t dat0, uint8_t dec);
+
+///////////////////////////////////////////// Interrupt Function /////////////////////////////////////////////
+
+void IRAM_ATTR handleInterrupt() {
+  // Serial.println("Interrupt -> Boot Button Pressed -> GPIO0");
+
+  // A Software Debounce -> WAWAWEEWAA! Very Nice! 
+  unsigned long currentTime = millis();
+  if (currentTime - lastInterruptTime > 200) { 
+    //buttonPress = true;
+    lastInterruptTime = currentTime;
+  }
+}
+
+/////////////////////////////////////////////// Setup Function ////////////////////////////////////////////////
+
+void setup() {
+
+  // Baud Rate
+  USB_PORT.begin(DEBUG_BAUD);
+  // SCS_PORT.begin(SCS_BAUD);
+
+  // Interrupts
+  pinMode(interruptPin, INPUT); 
+  attachInterrupt(digitalPinToInterrupt(interruptPin), handleInterrupt, RISING);
+
+  // Pin Config (Opto-Circuit Power)
+  pinMode(GPIO_2 , OUTPUT);
+  pinMode(GPIO_4   , OUTPUT);
+  digitalWrite(GPIO_2 , LOW);
+  digitalWrite(GPIO_4  , LOW);
+
+  // Pin Config (States)
+  pinMode(bluePin  , OUTPUT);
+  pinMode(greenPin , OUTPUT);
+  pinMode(redPin   , OUTPUT);
+
+  digitalWrite(bluePin  , HIGH);
+  digitalWrite(greenPin , HIGH);
+  digitalWrite(redPin   , HIGH);
+
+  // PCNT Config for pin 34 (Right Encoder)
+  pcnt_config_t pcnt_config1 = {};
+  pcnt_config1.pulse_gpio_num = ENCODER_R_PIN;        // pulse input pin
+  pcnt_config1.ctrl_gpio_num  = PCNT_PIN_NOT_USED;
+  pcnt_config1.unit           = ENCODER_R_UNIT;       // UNIT_1 -> UNIT_7
+  pcnt_config1.channel        = ENCODER_R_CHANNEL;    // CH0 or CH1
+  pcnt_config1.pos_mode       = PCNT_COUNT_INC;       // count rising edges
+  pcnt_config1.neg_mode       = PCNT_COUNT_INC;       // count falling edges
+  pcnt_config1.lctrl_mode     = PCNT_MODE_KEEP;
+  pcnt_config1.hctrl_mode     = PCNT_MODE_KEEP;
+  pcnt_config1.counter_h_lim  = 32767;                // 0 ->  32767 (then saturates)
+  pcnt_config1.counter_l_lim  = 0;                    // 0 -> -32767
+  pcnt_unit_config(&pcnt_config1);
+  pcnt_counter_pause(ENCODER_R_UNIT);  
+  pcnt_counter_clear(ENCODER_R_UNIT);
+  pcnt_counter_resume(ENCODER_R_UNIT);
+
+  // PCNT Config for pin 35 (Left Encoder)
+  pcnt_config_t pcnt_config2 = {};
+  pcnt_config2.pulse_gpio_num = ENCODER_L_PIN;      
+  pcnt_config2.ctrl_gpio_num  = PCNT_PIN_NOT_USED;
+  pcnt_config2.unit           = ENCODER_L_UNIT;
+  pcnt_config2.channel        = ENCODER_L_CHANNEL;
+  pcnt_config2.pos_mode       = PCNT_COUNT_INC;   
+  pcnt_config2.neg_mode       = PCNT_COUNT_INC;   
+  pcnt_config2.lctrl_mode     = PCNT_MODE_KEEP;
+  pcnt_config2.hctrl_mode     = PCNT_MODE_KEEP;
+  pcnt_config2.counter_h_lim  = 32767;
+  pcnt_config2.counter_l_lim  = 0;
+  pcnt_unit_config(&pcnt_config2);
+  pcnt_counter_pause(ENCODER_L_UNIT); 
+  pcnt_counter_clear(ENCODER_L_UNIT);
+  pcnt_counter_resume(ENCODER_L_UNIT);
+
+  // To read counts safely:
+  // pcnt_get_counter_value(ENCODER_L_UNIT, &counter_0);   // Reads the current count of the left encoder
+  // Serial.print(counter_1);
+
+   // Point calibration arrays
+  for (int i = 0; i < NUM_CAL_POINTS; i++) {
+    speedCalibrationR[i] = &speedR[i];
+    speedCalibrationL[i] = &speedL[i];
+  }
+
+  // PWM Config
+
+  // Configure H-Bridge 1 outputs (Left Encoder)
+  pinMode(PIN_H1_Q1, OUTPUT);
+  pinMode(PIN_H1_Q2, OUTPUT);
+  pinMode(PIN_H1_Q3, OUTPUT);
+  pinMode(PIN_H1_Q4, OUTPUT);
+  
+  digitalWrite(PIN_H1_Q1, LOW);   // Q1 OFF
+  digitalWrite(PIN_H1_Q2, LOW);   // Q2 OFF
+  
+  // Configure H-Bridge 2 outputs (Right Encoder)
+  pinMode(PIN_H2_Q1, OUTPUT);
+  pinMode(PIN_H2_Q2, OUTPUT);
+  pinMode(PIN_H2_Q3, OUTPUT);
+  pinMode(PIN_H2_Q4, OUTPUT);
+  
+  digitalWrite(PIN_H2_Q1, LOW);   // Q1 OFF
+  digitalWrite(PIN_H2_Q2, LOW);   // Q2 OFF
+  
+  // Setup PWM for H-Bridge 1
+  ledcSetup(PWM_CHANNEL_H1_Q3, PWM_FREQ, PWM_RESOLUTION);
+  ledcAttachPin(PIN_H1_Q3, PWM_CHANNEL_H1_Q3);
+  ledcWrite(PWM_CHANNEL_H1_Q3, 255);  // 100% duty = HIGH = OFF
+  
+  ledcSetup(PWM_CHANNEL_H1_Q4, PWM_FREQ, PWM_RESOLUTION);
+  ledcAttachPin(PIN_H1_Q4, PWM_CHANNEL_H1_Q4);
+  ledcWrite(PWM_CHANNEL_H1_Q4, 255);  // 100% duty = HIGH = OFF
+  
+  // Setup PWM for H-Bridge 2
+  ledcSetup(PWM_CHANNEL_H2_Q3, PWM_FREQ, PWM_RESOLUTION);
+  ledcAttachPin(PIN_H2_Q3, PWM_CHANNEL_H2_Q3);
+  ledcWrite(PWM_CHANNEL_H2_Q3, 255);  // 100% duty = HIGH = OFF
+  
+  ledcSetup(PWM_CHANNEL_H2_Q4, PWM_FREQ, PWM_RESOLUTION);
+  ledcAttachPin(PIN_H2_Q4, PWM_CHANNEL_H2_Q4);
+  ledcWrite(PWM_CHANNEL_H2_Q4, 255);  // 100% duty = HIGH = OFF
+
+  // USB Debug
+  // USB_PORT.println("MDPS subsystem initialized.");
+
+}
+
+////////////////////////////////////////////////// Functions //////////////////////////////////////////////////
+
+void clearPCNT() {
+
+  pcnt_counter_pause(ENCODER_R_UNIT);  
+  pcnt_counter_clear(ENCODER_R_UNIT);
+  pcnt_counter_resume(ENCODER_R_UNIT);
+  pcnt_counter_pause(ENCODER_L_UNIT); 
+  pcnt_counter_clear(ENCODER_L_UNIT);
+  pcnt_counter_resume(ENCODER_L_UNIT);
+
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+uint8_t motorSpeedRight(float desiredSpeed) {
+
+  int closestIndex = 0;
+  float minDiff = abs(*speedCalibrationR[0] - desiredSpeed);
+  for (int i = 1; i < NUM_CAL_POINTS; i++) {
+    float diff = abs(*speedCalibrationR[i] - desiredSpeed);
+    if (diff < minDiff) { minDiff = diff; closestIndex = i; }
+  }
+
+  uint8_t pwmValue = (uint8_t)((100 - pwmLevels[closestIndex]) * 255 / 100);
+  return pwmValue;
+}
+
+uint8_t motorSpeedLeft(float desiredSpeed) {
+  
+  int closestIndex = 0;
+  float minDiff = abs(*speedCalibrationL[0] - desiredSpeed);
+  for (int i = 1; i < NUM_CAL_POINTS; i++) {
+    float diff = abs(*speedCalibrationL[i] - desiredSpeed);
+    if (diff < minDiff) { minDiff = diff; closestIndex = i; }
+  }
+
+  uint8_t pwmValue = (uint8_t)((100 - pwmLevels[closestIndex]) * 255 / 100);
+  return pwmValue;
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+void Stop() {
+  // Code to be added:
+  //  Control Command Description : MDPS. Pure Tone response.
+  //  Control Action              : Motor reduces speed to zero.
+  //  Additional Notes            : After stopping, DAT1 = 0 right wheel speed, DAT0 = 0 left wheel speed.
+
+  // All Outputs OFF
+  digitalWrite(PIN_H1_Q1, LOW);
+  digitalWrite(PIN_H1_Q2, LOW);
+  digitalWrite(PIN_H2_Q1, LOW);
+  digitalWrite(PIN_H2_Q2, LOW);
+  delay(10); 
+  ledcWrite(PWM_CHANNEL_H1_Q4, 0);
+  ledcWrite(PWM_CHANNEL_H1_Q3, 0);
+  ledcWrite(PWM_CHANNEL_H2_Q4, 0);
+  ledcWrite(PWM_CHANNEL_H2_Q3, 0);
+  delay(50); 
+  ledcWrite(PWM_CHANNEL_H1_Q4, 255);  // 100% = HIGH = OFF
+  ledcWrite(PWM_CHANNEL_H1_Q3, 255);  // 100% = HIGH = OFF
+  ledcWrite(PWM_CHANNEL_H2_Q4, 255);  // 100% = HIGH = OFF
+  ledcWrite(PWM_CHANNEL_H2_Q3, 255);  // 100% = HIGH = OFF
+
+  ResetFlag = true;
+  moving    = false;
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------
+//----------------- Go forwards and return tangential wheel speed ------> DAT1 = right wheel speed in mm/s, DAT0 = left wheel speed in mm/s -------------
+
+void forward(float desiredSpeedR, float desiredSpeedL) {
+
+  //uint8_t pwmR = motorSpeedRight(desiredSpeedR);
+  //uint8_t pwmL = motorSpeedLeft(desiredSpeedL);
+
+  // USB_PORT.printf("Right PWM speed: %d %%\n", pwmR);
+  // USB_PORT.printf("Left PWM speed: %d %%\n", pwmL);
+
+  digitalWrite(PIN_H1_Q1, LOW);
+  digitalWrite(PIN_H1_Q2, HIGH);
+  ledcWrite(PWM_CHANNEL_H1_Q3, 90);
+  ledcWrite(PWM_CHANNEL_H1_Q4, 255);
+
+  digitalWrite(PIN_H2_Q1, LOW);
+  digitalWrite(PIN_H2_Q2, HIGH);
+  ledcWrite(PWM_CHANNEL_H2_Q3, 90);
+  ledcWrite(PWM_CHANNEL_H2_Q4, 255);
+
+  startTime = millis();    // stopTime set in distance calculation
+
+  moving = true;
+
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------
+//----------------- Go backwards and return tangential wheel speed ------> DAT1 = right wheel speed in mm/s, DAT0 = left wheel speed in mm/s ------------
+
+void backward(float desiredSpeedR, float desiredSpeedL) {
+
+  //uint8_t pwmR = motorSpeedRight(desiredSpeedR);
+  //uint8_t pwmL = motorSpeedLeft(desiredSpeedL);
+
+  // USB_PORT.printf("Right PWM speed: %d %%\n", pwmR);
+  // USB_PORT.printf("Left PWM speed: %d %%\n", pwmL);
+
+  digitalWrite(PIN_H1_Q1, HIGH);
+  digitalWrite(PIN_H1_Q2, LOW);
+  ledcWrite(PWM_CHANNEL_H1_Q3, 255);
+  ledcWrite(PWM_CHANNEL_H1_Q4, 90);
+
+  digitalWrite(PIN_H2_Q1, HIGH);
+  digitalWrite(PIN_H2_Q2, LOW);
+  ledcWrite(PWM_CHANNEL_H2_Q3, 255);
+  ledcWrite(PWM_CHANNEL_H2_Q4, 90);
+
+  startTime = millis();    // stopTime set in distance calculation
+
+  moving = true;
+
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------
+//----------------- Go left and return angle of rotation ---> DATA = <DAT1:DAT0> contains the angle of rotation in degrees between 5° and 360°. ---------
+void left() {
+
+  RotationAngle = ((uint16_t)dat1 << 8) | dat0;                                 // Combine MSB and LSB to get rotation angle to turn (Set by SNC)
+
+  RotationDirection = 2; // Left = CCW
+
+  targetRotationDistance = RotationAngle * distancePerDegree;
+  avgRotatedDistance = 0;
+
+  clearPCNT();
+
+  // Record starting distances
+  pcnt_get_counter_value(ENCODER_R_UNIT, &counter_1);
+  pcnt_get_counter_value(ENCODER_L_UNIT, &counter_0);
+  rotationStartDistance_R = counter_1 * distancePerSlot;
+  rotationStartDistance_L = counter_0 * distancePerSlot;
+
+  // Wheel 1 (Left) - Backward
+  digitalWrite(PIN_H1_Q1, HIGH);                 // Q1 ON
+  digitalWrite(PIN_H1_Q2, LOW);                  // Q2 OFF
+
+  // Wheel 2 (Right) - Forward  
+  digitalWrite(PIN_H2_Q1, LOW);                  // Q1 OFF
+  digitalWrite(PIN_H2_Q2, HIGH);                 // Q2 ON
+
+  // Wheel 1 (Left) - Backward
+  ledcWrite(PWM_CHANNEL_H1_Q3, 255);             // Q3 OFF
+  ledcWrite(PWM_CHANNEL_H1_Q4, 127);             // Q4 PWM
+  
+  // Wheel 2 (Right) - Forward
+  ledcWrite(PWM_CHANNEL_H2_Q3, 127);             // Q3 PWM
+  ledcWrite(PWM_CHANNEL_H2_Q4, 255);             // Q4 OFF
+
+  startTime  = millis();    // stopTime set in distance calculation
+  moving     = true;
+  isRotating = true;
+ 
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------
+//----------------- Go right and return angle of rotation ---> DATA = <DAT1:DAT0> contains the angle of rotation in degrees between 5° and 360°. --------
+void right() {
+
+  RotationAngle = ((uint16_t)dat1 << 8) | dat0;                                 // Combine MSB and LSB to get rotation angle to turn (Set by SNC)
+
+  RotationDirection = 3; // Right = CW
+
+  targetRotationDistance = RotationAngle * distancePerDegree;
+  avgRotatedDistance = 0;
+
+  clearPCNT();
+
+  // Record starting distances
+  pcnt_get_counter_value(ENCODER_R_UNIT, &counter_1);
+  pcnt_get_counter_value(ENCODER_L_UNIT, &counter_0);
+  rotationStartDistance_R = counter_1 * distancePerSlot;
+  rotationStartDistance_L = counter_0 * distancePerSlot;
+
+  // Wheel 1 (Left) - Forward
+  digitalWrite(PIN_H1_Q1, LOW);                  // Q1 OFF
+  digitalWrite(PIN_H1_Q2, HIGH);                 // Q2 ON
+
+  // Wheel 2 (Right) - Backward
+  digitalWrite(PIN_H2_Q1, HIGH);                 // Q1 ON
+  digitalWrite(PIN_H2_Q2, LOW);                  // Q2 OFF
+
+  // Wheel 1 (Left) - Forward
+  ledcWrite(PWM_CHANNEL_H1_Q3, 127);             // Q3 PWM
+  ledcWrite(PWM_CHANNEL_H1_Q4, 255);             // Q4 OFF
+  
+  // Wheel 2 (Right) - Backward
+  ledcWrite(PWM_CHANNEL_H2_Q3, 255);             // Q3 OFF
+  ledcWrite(PWM_CHANNEL_H2_Q4, 127);             // Q4 PWM
+
+  startTime  = millis();    // stopTime set in distance calculation
+  moving     = true;
+  isRotating = true;
+
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+void Calibrate() {
+  // delay(1);
+
+  // // Code to be added:
+  // //  Control Command Description : (CAL) vop is the default forward tangential wheel speed.
+  // //  Control Action              : DATA bytes contain measured tangential speeds of the wheels. Control packet sent after calibration is complete.
+  // //  Additional Notes            : DAT1 = right wheel vR in mm/s, DAT0 = left wheel vL in mm/s.
+
+  // // Plan: Increment PWM in increments of 5% and tabulate speeds. When speed set then choose closest PWM to said Speed.
+
+  // // USB_PORT.println("\n=== STARTING CALIBRATION ===");
+  // // USB_PORT.println("PWM(%) | Duty(0-255) | Right Speed (mm/s) | Left Speed (mm/s)" );
+  // // USB_PORT.println("-------------------------------------------------------------");
+
+  // // Only calibrate from 100% down to 20% -> no motor function below 20%
+  // const int pwmLevels[] = {100, 95, 90, 85, 80, 75, 70, 65, 60, 55, 50, 45, 40, 35, 30, 25, 20};
+  // const int numCalPoints = sizeof(pwmLevels) / sizeof(pwmLevels[0]);
+
+  // for (int i = 0; i < numCalPoints; i++) {
+  //   int pwmPercent = pwmLevels[i];
+
+  //   uint8_t dutyValue = (uint8_t)((100 - pwmPercent) * 255 / 100);
+
+  //   // ===== WHEEL TEST =====
+  //   // Right WHEEL ON
+  //   digitalWrite(PIN_H2_Q1, LOW);
+  //   digitalWrite(PIN_H2_Q2, HIGH);
+  //   ledcWrite(PWM_CHANNEL_H2_Q3, dutyValue);
+  //   ledcWrite(PWM_CHANNEL_H2_Q4, 255); // complement
+
+  //   // LEFT WHEEL ON
+  //   digitalWrite(PIN_H1_Q1, LOW);
+  //   digitalWrite(PIN_H1_Q2, HIGH);
+  //   ledcWrite(PWM_CHANNEL_H1_Q3, dutyValue);
+  //   ledcWrite(PWM_CHANNEL_H1_Q4, 255); // complement
+
+  //   clearPCNT();
+
+  //   startTime = millis();
+
+  //   delay(1000);
+
+  //   stopTime = millis();
+
+  //   pcnt_get_counter_value(ENCODER_R_UNIT, &counter_1);
+  //   pcnt_get_counter_value(ENCODER_L_UNIT, &counter_0);
+
+  //   Stop();
+
+  //   elapsed = stopTime - startTime;
+
+  //   // Calculate distance and speed
+  //   float distanceR = counter_1 * distancePerSlot;       // mm
+  //   float speedR_mmps = distanceR / (elapsed / 1000.0);  // mm/s
+  //   speedR[i] = speedR_mmps;
+
+  //   float distanceL = counter_0 * distancePerSlot;
+  //   float speedL_mmps = distanceL / (elapsed / 1000.0);
+  //   speedL[i] = speedL_mmps;
+
+    // USB Debug - calibration data
+    // USB_PORT.print("  ");
+    // USB_PORT.print(pwmPercent);
+    // USB_PORT.print("\t\t");
+    // USB_PORT.print(dutyValue);
+    // USB_PORT.print("\t\t");
+    // USB_PORT.print(speedR[i], 2);
+    // USB_PORT.print("\t\t\t");
+    // USB_PORT.println(speedL[i], 2);
+  //}
+
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+void angularRotation() {
+  
+  if (isRotating) {
+
+    // Rotate until target angle reached
+
+    while (avgRotatedDistance < targetRotationDistance) {
+    // Get current distances
+    pcnt_get_counter_value(ENCODER_R_UNIT, &counter_1);
+    pcnt_get_counter_value(ENCODER_L_UNIT, &counter_0);
+    float currentDistance_R = counter_1 * distancePerSlot;
+    float currentDistance_L = counter_0 * distancePerSlot;
+  
+    // Calculate how far we've rotated
+    float rotatedDistance_R = currentDistance_R - rotationStartDistance_R;
+    float rotatedDistance_L = currentDistance_L - rotationStartDistance_L;
+  
+    // Use the average of both wheels (they should be similar for rotation)
+    avgRotatedDistance = (rotatedDistance_R + rotatedDistance_L) / 2.0;
+  
+    }
+
+    Stop();
+    
+    // Calculate actual angle rotated
+    float actualAngle = avgRotatedDistance / distancePerDegree;
+    RotationAngle = (uint16_t)(actualAngle + 0.5);  // Round to nearest degree
+
+    isRotating = false;  // Resets rotating flab
+
+    clearPCNT();
+  
+  }
+  
+  // Split value into MSB and LSB for transmission
+  data1 = (RotationAngle >> 8) & 0xFF;   // Upper 8 bits
+  data0 = RotationAngle & 0xFF;          // Lower 8 bits
+  data2 = RotationDirection;             // 2 = left (CCW), 3 = right (CW)
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+void distance() {
+
+  // Code to be added:
+  //  Control Command Description : MDPS. MARV Measured DISTANCE moved since previous stop/rotation. -> Check stop/rotate clears distance travelled & PCNT
+  //  Control Action              : DATA = <DAT1:DAT0> contains measured distance in mm.
+  //  Additional Notes            : It is the distance the MARV travelled in a straight line to the nearest mm.
+
+  pcnt_get_counter_value(ENCODER_R_UNIT, &counter_1);  // Right 
+  pcnt_get_counter_value(ENCODER_L_UNIT, &counter_0);  // Left
+  distanceTravelled_1 = distancePerSlot * counter_1; 
+  distanceTravelled_0 = distancePerSlot * counter_0;   
+
+  // Round and convert to 16-bit integer
+  CurrentDistance = (uint16_t)(((distanceTravelled_1 + distanceTravelled_0)/2)  + 0.5); // rounds to nearest integer
+
+  // Split value into MSB and LSB
+  data6 = (CurrentDistance >> 8) & 0xFF;   // Upper 8 bits -> DAT1
+  data5 = CurrentDistance & 0xFF;          // Lower 8 bits -> DAT0
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+void tangentialSpeed() {
+
+  // Code to be added:
+  //  Control Command Description : MDPS. MARV Measured SPEED
+  //  Control Action              : DATA bytes contain measured tangential speeds of the wheels.
+  //  Additional Notes            : DAT1 = right wheel speed in mm/s, DAT0 = left wheel speed in mm/s. SNC displays the speeds on indicators.
+
+  stopTime = millis(); // startTime set in movement operations
+  elapsed = stopTime - startTime; // ms
+
+  // Check if we're being commanded to stop (dat0 = 0 and dat1 = 0)
+  if ((dat0 == 0) && (dat1 == 0)) {
+    // Stop command received - report zero speed
+    data4 = 0;
+    data3 = 0;
+  }
+
+  else {
+    // Normal movement - calculate actual speeds
+    speedRight = (elapsed > 0) ? (distanceTravelled_1 / (elapsed / 1000.0)) : 0; // mm/s
+    speedLeft = (elapsed > 0) ? (distanceTravelled_0 / (elapsed / 1000.0)) : 0; // mm/s
+
+    data4 = (uint8_t)(speedRight + 0.5); // rounds to nearest integer
+    data3 = (uint8_t)(speedLeft + 0.5);  // rounds to nearest integer
+
+    //data4 = (uint8_t)(startTime + 0.5); // rounds to nearest integer
+    //data3 = (uint8_t)(stopTime + 0.5);  // rounds to nearest integer
+
+  }
+  
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+void Transmit(uint8_t sys, uint8_t sub, uint8_t ist, uint8_t dat1, uint8_t dat0, uint8_t dec) {
+  uint8_t packet[4];
+
+  // Guard: Never transmit in IDLE state
+  if (sys == 0b00) {
+    return;
+  }
+
+  // Reconstruct Control Byte
+  packet[0] = ((sys & 0b11) << 6) | ((sub & 0b11) << 4) | (ist & 0b1111);
+
+  // Assign each BYTE to the PACKET
+  packet[1] = dat1;
+  packet[2] = dat0;
+  packet[3] = dec;
+
+  // Transmit the packet
+  //SCS_PORT.write(packet, PACKET_SIZE);
+  USB_PORT.write(packet, PACKET_SIZE);
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+void TX_Ready() {
+  // USB_PORT.println("TX READY -> Press Boot Button");
+
+  // // Wait for buttonPress
+  // while (!buttonPress) {
+  // //  do nothing
+  // }
+
+  //Clear Interrupt Flag
+  buttonPress = false;
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+void Receive_and_Sort() {
+
+//if (SCS_PORT.available() >= PACKET_SIZE) {
+  if (USB_PORT.available() >= PACKET_SIZE) {
+    
+
+    // Receive Data
+    uint8_t packet[PACKET_SIZE];
+  //SCS_PORT.readBytes(packet, PACKET_SIZE);
+    USB_PORT.readBytes(packet, PACKET_SIZE);
+
+    // Assign each BYTE from the PACKET to a variable/register (8-bits)
+    controlByte = packet[0];
+    dat1        = packet[1];
+    dat0        = packet[2];
+    dec         = packet[3];
+
+    // Section Control Byte
+    sys = (controlByte >> 6) & 0b11;       // nnnn nnxx-- ----           ->  x  =  keep -> & 0bxxxxx
+    sub = (controlByte >> 4) & 0b11;       // nnnn ccxx ----             ->  -  =  shifted out of "register"
+    ist = controlByte        & 0b1111;     // cccc xxxx                  ->  c  =  cleared -> 0
+    //                                                                   ->  n  =  "new bit" from shift -> 0 
+
+    received = true;
+
+    // // Display Received/Sorted Data
+    // currentIST = ist;
+    //  USB_PORT.print("Packet Received -> ");
+    //  USB_PORT.print("SYS: ");                USB_PORT.print(sys);
+    //  USB_PORT.print(" | SUB: ");             USB_PORT.print(sub);
+    //  USB_PORT.print(" | IST: ");             USB_PORT.print(ist);
+    //  USB_PORT.print(" | DAT1: ");            USB_PORT.print(dat1);
+    //  USB_PORT.print(" | DAT0: ");            USB_PORT.print(dat0);
+    //  USB_PORT.print(" | DEC: ");             USB_PORT.println(dec);
+    }
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+void System_State() {
+
+    //SYS_STATE Handler -> Displays the system state
+    switch (sys) {
+      case 0b00:
+        //USB_PORT.println("SYS_STATE = IDLE -> WHITE LED");
+        digitalWrite(bluePin  , HIGH);
+        digitalWrite(greenPin , HIGH);
+        digitalWrite(redPin   , HIGH);
+        break;
+      case 0b01:
+        //USB_PORT.println("SYS_STATE = CAL -> BLUE LED");
+        digitalWrite(bluePin  , HIGH);
+        digitalWrite(greenPin , LOW);
+        digitalWrite(redPin   , LOW);
+        break;
+      case 0b10:
+        //USB_PORT.println("SYS_STATE = MAZE -> GREEN LED");
+        digitalWrite(bluePin  , LOW);
+        digitalWrite(greenPin , HIGH);
+        digitalWrite(redPin   , LOW);
+        break;
+      case 0b11:
+        //USB_PORT.println("SYS_STATE = SOS -> RED LED");
+        digitalWrite(bluePin  , LOW);
+        digitalWrite(greenPin , LOW);
+        digitalWrite(redPin   , HIGH);
+        break;
+      default:
+        //USB_PORT.println("SYS_STATE = UNKNOWN -> LED OFF");
+        digitalWrite(bluePin  , LOW);
+        digitalWrite(greenPin , LOW);
+        digitalWrite(redPin   , LOW);
+        break;
+    }
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+void Process() {     
+ 
+      // Guard: Do nothing if in IDLE state
+      if (sys == 0b00) {
+        return;  // Exit immediately - no transmissions in IDLE
+      }
+
+
+      //ID -> Calibration
+      if (sys == 0b01 && sub == 0b11 && ist == 0b00) {
+
+        // USB_PORT.println("ID Match -> Calibration Start");
+
+        Calibrate();    
+
+        clearPCNT();
+
+        TX_Ready();
+        // Transmit Data
+        // USB_PORT.println("Transmitting Tangential Speed Data"); 
+        Transmit(0b01, 0b10, 0b0000, tanSpeedR, tanSpeedL, 0x00);             // Specific to next task/state
+
+        TX_Ready();
+        // Transmit Data
+        // USB_PORT.println("Transmitting Battery Level Data"); 
+        Transmit(0b01, 0b10, 0b0001, 0x00, 0x00, 0x00);                       // Specific to next task/state
+      }
+
+      else if (sys == 0b01 && sub == 0b01 && ist == 0b00 && dat1 == 0x00) {
+
+        // USB_PORT.println("ID Match -> Touch Not Sensed");
+
+        TX_Ready();
+        
+        // Transmit Data
+        // USB_PORT.println("Transmitting Battery Level Data"); 
+        Transmit(0b01, 0b10, 0b0001, 0x00, 0x00, 0x00);                       // Specific to next task/state
+      }
+
+      else if (sys == 0b10 && sub == 0b01 && ist == 0b01 && dat1 == 0x01) {
+
+        // USB_PORT.println("ID Match -> Pure Tone Sensed");
+
+        digitalWrite(bluePin  , LOW);
+        digitalWrite(greenPin , LOW);
+        digitalWrite(redPin   , HIGH);
+
+        Stop();                                                               
+
+        TX_Ready(); 
+        
+        // Transmit Data
+        // USB_PORT.println("Transmitting Motor Stopped"); 
+        Transmit(0b11, 0b10, 0b0100, 0x00, 0x00, 0x00);                       // Specific to next task/state
+      }
+
+      else if (sys == 0b10 && sub == 0b01 && ist == 0b11) {
+
+        // USB_PORT.println("ID Match -> NAVCON");
+
+        if ((dat1 == 0) && (dat0 == 0)) {
+
+        Stop();
+        
+        }
+
+        else {
+
+          if (!moving) {
+            clearPCNT();  // Clear counters at start of new movement
+
+          switch (dec) {
+            case 0b00:
+              // USB_PORT.println("NAVCON -> FORWARD");
+              forward(tanSpeedR, tanSpeedL);                                                        
+              break;
+
+            case 0b01:
+              // USB_PORT.println("NAVCON -> BACKWARD");
+              backward(tanSpeedR, tanSpeedL);                                                       
+              break;
+
+            case 0b10:
+              // USB_PORT.println("NAVCON -> LEFT (CCW)");
+              left();                                                           
+              break;
+
+            case 0b11:
+              // USB_PORT.println("NAVCON -> RIGHT (CW)");
+              right();                                                          
+              break;
+
+            default:
+              // USB_PORT.println("NAVCON -> UNKNOWN");
+              // Haha, Not cool gang!
+              delay(1);
+              break;
+          }  
+
+          }
+
+        }
+        
+        angularRotation();
+
+        distance();
+
+        tangentialSpeed();
+
+        TX_Ready(); 
+        // Transmit Data
+        // USB_PORT.println("Transmitting Battery Level Data"); 
+        Transmit(0b10, 0b10, 0b0001, 0x00, 0x00, 0x00);                        // Specific to next task/state
+
+        TX_Ready(); 
+        // Transmit Data
+        // USB_PORT.println("Transmitting Last Known Angular Rotation Data"); 
+        Transmit(0b10, 0b10, 0b0010, data1, data0, data2);                      // Specific to next task/state
+
+        TX_Ready(); 
+        // Transmit Data
+        // USB_PORT.println("Transmitting Tangential Speed Data"); 
+        Transmit(0b10, 0b10, 0b0011, data4, data3, 0x00);                      // Specific to next task/state
+
+        TX_Ready(); 
+        // Transmit Data
+        // USB_PORT.println("Transmitting MARV Travel Distance Data"); 
+        Transmit(0b10, 0b10, 0b0100, data6, data5, 0x00);                      // Specific to next task/state
+
+        if (ResetFlag) {
+          // Reset distances & counters
+          distanceTravelled_1 = 0; // Extra Safe
+          distanceTravelled_0 = 0; // Extra Safe
+          clearPCNT();             // Resets distance counter
+          data6 = 0;               // Resets Distance MSB
+          data5 = 0;               // Resets Distance MSB
+          ResetFlag = false;       // Resets Reset Flag
+          moving = false;          // Resets moving flag
+          isRotating = false;      // Resets rotating flab
+        }
+
+      }
+       
+      else if (sys == 0b10 && sub == 0b11 && ist == 0b11) {
+        // USB_PORT.println("ID Match -> End of Maize!");
+
+        dat1 = 1;
+        dat0 = 104;
+
+        // right();
+
+        // angularRotation();
+
+        Stop();
+                                                                     
+        // USB_PORT.println("Motor Stopped -> End of Maize!"); 
+
+      }
+    
+      else {
+        // USB_PORT.print("Received Data Ignored");
+      }
+
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//////////////////////////////////////////////// Loop Function ////////////////////////////////////////////////
+
+void loop() {
+
+  Receive_and_Sort();
+
+  if (received) {
+
+    // System_State();
+
+    // Only process if NOT in IDLE state
+    if (sys != 0b00) {
+      Process();
+    }
+
+    received = false;
+  }
+}

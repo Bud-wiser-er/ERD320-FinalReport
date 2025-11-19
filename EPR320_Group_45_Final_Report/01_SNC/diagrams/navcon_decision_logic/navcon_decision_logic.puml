@@ -1,0 +1,89 @@
+@startuml navcon_decision_logic
+!define DECISION_COLOR #FFE6B3
+!define PROCESS_COLOR #B3D9FF
+!define ACTION_COLOR #C2F0C2
+!define ERROR_COLOR #FFB3B3
+!define INPUT_COLOR #FFFFCC
+
+skinparam backgroundColor white
+skinparam defaultTextAlignment center
+skinparam activity {
+  BackgroundColor<<decision>> DECISION_COLOR
+  BackgroundColor<<process>> PROCESS_COLOR
+  BackgroundColor<<action>> ACTION_COLOR
+  BackgroundColor<<error>> ERROR_COLOR
+  BackgroundColor<<input>> INPUT_COLOR
+  BorderColor black
+  FontSize 11
+  FontName Arial
+}
+
+start
+
+:NAVCON Decision Cycle Start;
+
+:Receive SCS Packet from
+Sensor Subsystem
+**Colors, Angle θᵢ, Distances**]<<input>>;
+
+if (Line Detected
+on Any Sensor?) then (No)
+  :Continue Forward Scan
+**FORWARD primitive**]<<error>>;
+  stop
+else (Yes)
+  :Classify Line Type
+by Color Code]<<process>>;
+
+  if (Navigable Line?
+**RED or GREEN**) then (No)
+    :WALL Detected:
+**Obstacle Avoidance Protocol**]<<error>>;
+    stop
+  else (Yes)
+    :Categorize Approach
+Angle θᵢ]<<decision>>;
+
+    split
+      :θᵢ ≤ 5°
+**Direct Crossing**]<<action>>;
+    split again
+      :5° < θᵢ ≤ 45°
+**Alignment Required**]<<action>>;
+    split again
+      :θᵢ > 45°
+**Steep Approach**]<<action>>;
+    end split
+
+    :Determine Active Sensor
+Position **(S1, S2, S3)**]<<process>>;
+
+    :Select Motion Primitive
+Based on:
+• Line Type
+• Angle Category
+• Sensor Position]<<decision>>;
+
+    :Motion Primitives:
+**FORWARD** | **REVERSE**
+**ROTATE_LEFT** | **ROTATE_RIGHT**
+**STOP** | **INCREMENTAL_CORRECTION**]<<action>>;
+
+    :Encode SCS Command:
+**DEC field + DATA bytes**
+(Speed in mm/s or Angle in degrees)]<<process>>;
+
+    :Transmit Command to
+MDPS via SCS Protocol]<<process>>;
+
+    :Wait for MDPS
+Completion Confirmation]<<process>>;
+
+    :Return to
+**FORWARD_SCAN** State]<<action>>;
+
+    stop
+  endif
+endif
+
+@enduml

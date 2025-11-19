@@ -1,0 +1,87 @@
+@startuml architecture_wifi_esp32
+
+skinparam backgroundColor #FFFFFF
+skinparam componentStyle rectangle
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 10
+skinparam rectangleBorderColor #333333
+
+title WiFi ESP32 Architecture (Telemetry & Diagnostics Processor)
+
+rectangle "WiFi ESP32 - Telemetry Subsystem" #FFFFE0 {
+  component [SPI Slave\nInterface\n(2 MHz)] as SPISLAVE
+  component [Telemetry\nPacket\nDecoder] as TELDEC
+  component [WiFi Access\nPoint\n(ERD-Byron)] as WIFIAP
+  component [HTTP Web\nServer] as WEBSERVER
+  component [JSON API\n(10 Hz)] as JSONAPI
+  component [GPIO\nCommand\nOutputs] as GPIOCMD
+}
+
+actor "Operator\n(Remote Browser)" as OP2
+
+' WiFi ESP32 internal flow
+SPISLAVE --> TELDEC : Raw\nPackets
+TELDEC --> JSONAPI : Decoded\nTelemetry
+JSONAPI --> WEBSERVER : JSON\nData
+WEBSERVER --> WIFIAP : HTTP\nResponses
+WIFIAP --> OP2 : **WiFi**\nDashboard\n10 Hz
+
+' Remote commands
+OP2 ..> WIFIAP : Browser\nCommands
+WIFIAP ..> WEBSERVER : HTTP\nRequests
+WEBSERVER ..> GPIOCMD : Command\nSignals
+
+note left of SPISLAVE
+  **SPI Slave Receives:**
+  • System State
+  • Sensor Colors (W/R/G/B/K)
+  • Wheel Speeds (v_L, v_R)
+  • Rotation Angle
+  • NAVCON State
+  • Line Detection Status
+  • End of Maze Flag
+  • Communication Status
+  • Diagnostic Strings
+  • State Announcements
+  + 3 more packet types
+
+  **Packet Format:**
+  257-byte frames @ 200 Hz
+  SPI 2 MHz clock rate
+end note
+
+note right of WIFIAP
+  **WiFi Configuration:**
+  Mode: Access Point (AP)
+  SSID: "ERD-Byron"
+  IP: 192.168.4.1
+  Security: Open (diagnostic-only)
+  Max Connections: 4 concurrent
+end note
+
+note bottom of GPIOCMD
+  **GPIO Command Injection:**
+  Pin 4: Touch inject
+  Pin 2: Tone inject
+  Pin 15: Send command
+
+  Enables remote testing
+  and operator control via
+  web dashboard
+end note
+
+note right of OP2
+  **Web Dashboard Features:**
+  • Real-time state display
+  • Sensor data visualization
+  • Motion parameter graphs
+  • NAVCON decision trace
+  • Communication diagnostics
+  • System uptime/loop timing
+
+  Update Rate: 10 Hz
+  Latency: ~150 ms typical
+end note
+
+@enduml

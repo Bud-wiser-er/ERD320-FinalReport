@@ -1,0 +1,91 @@
+@startuml architecture_interfaces
+
+skinparam backgroundColor #FFFFFF
+skinparam componentStyle rectangle
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 11
+skinparam rectangleBorderColor #333333
+
+title SNC External Interfaces and Inter-Microcontroller Communication
+
+' External subsystems
+cloud "SS\n(Sensor Subsystem)" as SS #FFE4B5
+cloud "MDPS\n(Motor Drive &\nDead-reckoning)" as MDPS #E0FFE0
+database "HUB\n(Test Harness)" as HUB #E8F4F8
+actor "Operator\n(Physical)" as OP1
+
+' Main ESP32
+rectangle "Main ESP32\n(Control Processor)" as MAIN #E6E6FA {
+  component [SCS Protocol\nHandler] as SCS_MAIN
+  component [State Manager\n& NAVCON] as CORE
+  component [SPI Master\n(2 MHz)] as SPI_MASTER
+  component [Touch/Tone\nInputs] as INPUTS
+}
+
+' WiFi ESP32
+rectangle "WiFi ESP32\n(Telemetry Processor)" as WIFI #FFFFE0 {
+  component [SPI Slave\n(2 MHz)] as SPI_SLAVE
+  component [WiFi AP\n& Web Server] as WEB
+  component [GPIO Control\nOutputs] as GPIO_OUT
+}
+
+actor "Operator\n(Remote)" as OP2
+
+' External to Main ESP32
+SS --> SCS_MAIN : **UART RX**\n19200 baud\nCOLOURS, θᵢ, EoM
+MDPS --> SCS_MAIN : **UART RX**\n19200 baud\nSPEED, DISTANCE,\nROTATION
+SCS_MAIN --> MDPS : **UART TX**\n19200 baud\nv_L, v_R, rotation\nIST=3, DEC=0/1/2/3
+HUB <--> SCS_MAIN : **QTP Frames**\nEmulated SS/MDPS
+OP1 --> INPUTS : Touch sensor\n2800 Hz tone
+
+' Internal Main ESP32
+INPUTS --> CORE
+SCS_MAIN <--> CORE
+CORE --> SPI_MASTER
+
+' Main to WiFi ESP32
+SPI_MASTER --> SPI_SLAVE : **SPI Bus**\n2 MHz clock\n200 Hz updates\n257-byte packets\n13+ packet types
+
+' WiFi ESP32 to Operator
+SPI_SLAVE --> WEB : Telemetry\nData
+WEB --> OP2 : **WiFi/HTTP**\nWeb Dashboard\n10 Hz updates
+
+' Remote commands back
+OP2 ..> WEB : Browser\nCommands
+WEB ..> GPIO_OUT : Remote\nControl
+GPIO_OUT ..> INPUTS : **GPIO 3-wire**\nTouch/Tone/Send inject
+
+note top of MAIN
+  **Main ESP32 Hardware:**
+  UART SS: RX=21, TX=22
+  UART MDPS: RX=16, TX=17
+  SPI Master: CS=5, SCK=18, MOSI=23, MISO=19
+  GPIO: Touch sensor, Microphone (tone)
+end note
+
+note top of WIFI
+  **WiFi ESP32 Hardware:**
+  SPI Slave: CS, SCK, MISO
+  GPIO Out: Pins 4, 2, 15 (to Main ESP32)
+  WiFi: Integrated 802.11 b/g/n radio
+end note
+
+note bottom of SPI_MASTER
+  **SPI Telemetry Packets:**
+  1. System State (IDLE/CAL/MAZE/SOS)
+  2. Sensor Colors (3 sensors)
+  3. Incidence Angle θᵢ
+  4. Wheel Speeds (v_L, v_R)
+  5. Rotation Command
+  6. Distance Since Stop
+  7. NAVCON State
+  8. Line Detection Status
+  9. EoM Flag
+  10. Communication Status
+  11. Diagnostic Strings
+  12. State Announcements
+  13. Timing/Loop Data
+end note
+
+@enduml

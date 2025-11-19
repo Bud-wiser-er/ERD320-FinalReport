@@ -1,0 +1,207 @@
+@startuml Edge_Case_Matrix
+title Edge Case Matrix - Actual NAVCON Detection Logic
+
+start
+
+note right
+Note: The edge case matrix is DEFINED but NOT ACTIVELY USED.
+Your NAVCON uses simpler priority-based detection logic.
+This diagram shows the ACTUAL detection behavior.
+end note
+
+:Sensor readings received;
+
+if (S2 detects color?) then (yes)
+  :S2 IMMEDIATE DETECTION;
+  note right
+Center sensor has ABSOLUTE priority
+
+Examples:
+?-R-? Detect RED (navigable)
+?-G-? Detect GREEN (navigable)
+?-B-? Detect BLUE (wall)
+?-K-? Detect BLACK (wall)
+
+Action:
+Use S2 color plus angle from SS
+detection_active = TRUE
+angle_valid = TRUE
+  end note
+  stop
+
+elseif (S1 AND S2 both detect?) then (yes)
+  :S1+S2 Adjacent Detection;
+  note right
+Line at angle from left side
+
+Examples:
+G-G-W GREEN line at angle
+R-R-W RED line at angle
+K-K-W BLACK wall at angle
+B-B-W BLUE wall at angle
+
+Action:
+Use S2 color (center)
+detecting_sensor = 1 (mark from left)
+Use angle from SS
+detection_active = TRUE
+  end note
+  stop
+
+elseif (S2 AND S3 both detect?) then (yes)
+  :S2+S3 Adjacent Detection;
+  note right
+Line at angle from right side
+
+Examples:
+W-G-G GREEN line at angle
+W-R-R RED line at angle
+W-K-K BLACK wall at angle
+W-B-B BLUE wall at angle
+
+Action:
+Use S2 color (center)
+detecting_sensor = 3 (mark from right)
+Use angle from SS
+detection_active = TRUE
+  end note
+  stop
+
+elseif (Only S1 detects?) then (yes)
+  :Start S1 Distance Tracking;
+  note right
+Edge sensor detection possible steep angle
+
+Examples:
+G-W-W Start tracking
+R-W-W Start tracking
+K-W-W Start tracking
+B-W-W Start tracking
+
+Action:
+Record detection_start_distance
+Wait for S2 confirmation OR
+Travel more than 61mm (SENSOR_SPACING)
+detection_active = FALSE (not confirmed)
+  end note
+  stop
+
+elseif (Only S3 detects?) then (yes)
+  :Start S3 Distance Tracking;
+  note right
+Edge sensor detection possible steep angle
+
+Examples:
+W-W-G Start tracking
+W-W-R Start tracking
+W-W-K Start tracking
+W-W-B Start tracking
+
+Action:
+Record detection_start_distance
+Wait for S2 confirmation OR
+Travel more than 61mm (SENSOR_SPACING)
+detection_active = FALSE (not confirmed)
+  end note
+  stop
+
+elseif (Already tracking AND S2 confirms?) then (yes)
+  :S2 Confirmation Received;
+  note right
+S2 caught up angle is valid
+
+After S1 or S3 detected:
+?-G-? Angle valid, use SS
+?-R-? Angle valid, use SS
+?-K-? Angle valid, use SS
+?-B-? Angle valid, use SS
+
+Action:
+detection_active = TRUE
+angle_valid = TRUE
+Use angle from SS
+  end note
+  stop
+
+elseif (Already tracking AND traveled more than 61mm?) then (yes)
+  :Infer Steep Angle more than 45 degrees;
+  note right
+S2 never confirmed after 61mm
+
+Edge sensor plus 61mm traveled
+Infer steep angle more than 45 degrees
+
+Action:
+initial_angle = 46 degrees (inferred)
+angle_valid = FALSE (no SS data)
+detection_active = TRUE
+SNC calculates from distance
+  end note
+  stop
+
+elseif (Already tracking?) then (yes)
+  :Continue tracking;
+  note right
+Keep monitoring for:
+S2 confirmation OR
+61mm travel threshold
+  end note
+  stop
+
+else (all sensors white)
+  :No detection;
+  note right
+Normal forward operation
+
+W-W-W Continue forward scan
+
+Action:
+No detection
+Continue FORWARD_SCAN state
+Keep monitoring sensors
+  end note
+  stop
+endif
+
+legend right
+Color Codes:
+W = WHITE (0)
+R = RED (1)
+G = GREEN (2)
+B = BLUE (3)
+K = BLACK (4)
+? = ANY COLOR (wildcard)
+
+Line Types:
+RED/GREEN = Navigable (cross or align)
+BLACK/BLUE = Walls (turn away 90 degrees)
+
+Key Values:
+SENSOR_SPACING = 61mm
+(Distance between S2 and S1/S3)
+
+Priority Order:
+1. S2 (center) Immediate
+2. S1+S2 or S2+S3 Adjacent
+3. S1 or S3 alone Distance tracking
+4. All WHITE Continue scanning
+end legend
+
+floating note right
+ACTUAL NAVCON Detection Logic
+
+Steep Angle Detection (more than 45 degrees):
+Edge sensor (S1/S3) sees color first
+S2 does not confirm within 61mm travel
+Angle inferred as more than 45 degrees
+angle_valid = FALSE (no SS data)
+SNC calculates correction from distance
+
+The edge_case_matrix.h rules exist
+but are NOT actively used in NAVCON.
+This shows the actual priority-based logic.
+end note
+
+stop
+
+@enduml

@@ -1,0 +1,102 @@
+@startuml hmi_wireframe
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam rectangleBorderColor #333333
+
+' Main display frame
+rectangle "SNC Human-Machine Interface" #E8F4F8 {
+
+  ' Title bar
+  rectangle "=== MARV - SNC SUBSYSTEM ===" as TITLE #4A90E2 {
+  }
+
+  ' State display - prominent
+  rectangle " " as STATE #FFE4B5 {
+    rectangle "**CURRENT STATE**" as STATELABEL #FFA500
+    rectangle "    MAZE    " as STATEVALUE #FFFF00 {
+      note right
+        Font: Large, Bold
+        Colors: IDLE (gray)
+                CAL (yellow)
+                MAZE (green)
+                SOS (red)
+      end note
+    }
+  }
+
+  ' Sensor data section
+  rectangle "SENSOR DATA (SS)" as SENSORBOX #E0FFE0 {
+    rectangle "Colors [W/R/G/B/K]:" as COLORLABEL
+    rectangle "  ⬜ W    🟥 R    🟩 G  " as COLORVALUE
+
+    rectangle "Incidence Angle θᵢ:" as ANGLELABEL
+    rectangle "  +23°  " as ANGLEVALUE
+
+    rectangle "End-of-Maze Flag:" as EOMLABEL
+    rectangle "  FALSE  " as EOMVALUE
+  }
+
+  ' Motion data section
+  rectangle "MOTION DATA (MDPS)" as MOTIONBOX #FFF8DC {
+    rectangle "Left Wheel Speed v_L:" as VLEFTLABEL
+    rectangle "  120 mm/s  " as VLEFTVALUE
+
+    rectangle "Right Wheel Speed v_R:" as VRIGHTLABEL
+    rectangle "  115 mm/s  " as VRIGHTVALUE
+
+    rectangle "Last Rotation Command:" as ROTLABEL
+    rectangle "  +45°  " as ROTVALUE
+
+    rectangle "Distance Since Stop:" as DISTLABEL
+    rectangle "  340 mm  " as DISTVALUE
+  }
+
+  ' Input controls section
+  rectangle "OPERATOR CONTROLS" as CONTROLBOX #FFE0F0 {
+    rectangle "🔘 Touch Sensor" as TOUCHBUTTON #CCCCCC {
+      note right
+        Physical touch input
+        IDLE → CAL transition
+      end note
+    }
+
+    rectangle "🔊 Tone Override (2800 Hz)" as TONEINFO #CCCCCC {
+      note right
+        Dual-tone detection
+        0.5-1.0s per tone
+        Δt ≤ 2s window
+        Toggles MAZE ⇄ SOS
+      end note
+    }
+  }
+
+  ' Status footer
+  rectangle "───────────────────────────────────" as SEPARATOR
+
+  rectangle "Update Rate: 5 Hz  |  Uptime: 00:04:32  |  Loop: 47ms" as FOOTER #DDDDDD
+}
+
+' Physical layout notes
+note left of TITLE
+  Display Type: LCD/OLED
+  Resolution: Sufficient for
+  all fields (e.g., 128x64)
+  Update: ≥5 Hz (no flicker)
+end note
+
+note right of CONTROLBOX
+  Touch: Capacitive or
+         Mechanical button
+  Mic: Omnidirectional
+       60 dB SPL @ ≥10 cm
+end note
+
+note bottom of FOOTER
+  All fields updated simultaneously
+  Format per PEC requirements
+  Clear visibility in lab lighting
+end note
+
+@enduml

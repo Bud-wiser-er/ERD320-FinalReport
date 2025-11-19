@@ -1,0 +1,294 @@
+\documentclass[a4paper, onecolumn, 12pt]{IEEEtran}
+%\documentclass[draftcls, onecolumn, a4paper, twoside]{IEEEtran}
+
+
+% These values get used many times, so it is easier to define then once here.
+% Module code
+\def\modulecode{EPR 320 Electrical/Electronic/Computer Engineering Design}
+% Assessment title
+\def\assessment{Exam assignment}
+%Project title
+\def\ProjectTitle{Project Title}
+% Group number
+\def\groupnumber{45}
+% Student details:
+% Details of the first student
+\def\firststudentname{Byron Norval}
+\def\firststudentnumber{u21444758}
+\def\firststudentcontribution{33.3\%}
+% Details of the second student
+\def\secondstudentname{Kyle Green}
+\def\secondstudentnumber{u21441325}
+\def\secondstudentcontribution{33.3\%}
+% Details of the third student
+\def\thirdstudentname{Francois Venter}
+\def\thirdstudentnumber{U21471305}
+\def\thirdstudentcontribution{33.3\%}
+
+
+% Allows multi-line equations to be split over a number of pages.
+\interdisplaylinepenalty=2500 
+
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{cite}
+\usepackage{graphicx}
+\usepackage{lastpage}
+\usepackage{listings}
+% \usepackage{minted}
+% \renewcommand\theFancyVerbLine{\normalsize\arabic{FancyVerbLine}}
+\usepackage{multirow}
+\usepackage{paralist}
+\usepackage{placeins}  % For \FloatBarrier
+\usepackage{float}     % For [H] table/figure placement
+%\usepackage{rotfloat}
+%\usepackage{rotating}  % Package not available - commented out
+\usepackage[tight,small]{subfigure}  % normalsize small footnotesize
+\usepackage{tabularx}
+\usepackage{tabulary}
+\usepackage{booktabs}  % Professional quality tables
+\usepackage{circuitikz} % For circuit diagrams
+
+% I prefer this to the default font.
+\usepackage{newtxmath}
+\usepackage{newtxtext}
+\renewcommand{\rmdefault}{ntxtlf} 
+%https://tex.stackexchange.com/questions/347566/math-digits-are-rendered-in-cm-when-using-libertine-and-newtxmath-with-xelatex-i
+
+
+% Set the page format up.
+\usepackage{geometry}
+\geometry{includefoot}
+\geometry{paper=a4paper}
+\geometry{left=25mm}
+\geometry{right=25mm}
+\geometry{top=25mm}
+\geometry{bottom=20mm}
+\geometry{headsep=10mm}
+\geometry{footskip=10mm}
+%\geometry{columnsep=4mm}
+
+
+\usepackage[pdftex]{hyperref}
+%\hypersetup{pdfborder={0 0 0.2}}
+\usepackage{xcolor}
+\definecolor{darkred}{rgb}{0.8,0,0}
+\definecolor{darkgreen}{rgb}{0,0.45,0}
+\definecolor{darkblue}{rgb}{0,0,0.3}
+
+% Set the PDF properties of the document.
+\hypersetup{%
+  pdftitle={\modulecode-- \assessment},
+  pdfauthor={Group \groupnumber}}
+
+
+\usepackage{fancyhdr}
+% Set the page format up.
+\def\pagenumberfooter{\thepage}
+\fancypagestyle{plain}{%
+  \fancyhf{}
+  \lhead{}
+  \rhead{}
+  \lfoot{}
+%  \cfoot{Confidential}
+  \rfoot{\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+\def\pagenumberfooter{\thepage}
+\fancypagestyle{fancy}{%
+  %\fancyhf{}
+  %\lhead{}
+  %\rhead{}
+  %\lfoot{\modulecode~-- \assessment~-- Group \groupnumber}
+%  \cfoot{Confidential}
+  \rfoot{\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0.0pt}
+}
+
+
+\hyphenation{mono-pulse}
+\hyphenation{retro-directive}
+
+
+% I prefer this to the default versions - feel free to disagree.
+%\usepackage[cal=boondoxo]{mathalfa}  % Package not available - commented out
+\renewcommand{\Re}{\mathcal{R\hspace{-0.2em}e\hspace{-0.1em}}}
+\renewcommand{\Im}{\mathcal{I\hspace{-0.25em}m\hspace{-0.15em}}}
+
+\newlength{\equalswidth}
+\settowidth{\equalswidth}{$ =~ $}
+\newcommand{\eqsplitline}{\nonumber \\ & \hspace{\equalswidth}}
+\newcommand{\eqsplitaligned}{\\ & \hspace{\equalswidth}}
+
+
+
+%\def\today{27 March 2018}
+% Get the Day Month Year format.
+\def\today{%
+  \number\day
+  \space
+  \ifcase\month\or January\or February\or March\or April\or May\or
+  June\or July\or August\or September\or October\or November\or
+  December\fi
+  \space
+  \number\year
+}
+
+
+% Allow large floats.
+\renewcommand\topfraction{1}
+\renewcommand\bottomfraction{0}
+\renewcommand\textfraction{0}
+\renewcommand\floatpagefraction{1}
+\setcounter{topnumber}{10}
+\setcounter{totalnumber}{10}
+
+
+% Increase the figure caption font size.
+\usepackage[font=normalsize]{caption}
+
+% Deal with missing images which are not directly included in the repository
+\newcommand{\noimage}{%
+  \fbox{\parbox[t][0.3\textwidth][c]{0.48\textwidth}{\centering Image file is missing.}}
+%  \setlength{\fboxsep}{-\fboxrule}%
+%  \fbox{\phantom{\rule{10pt}{10pt}}File missing\phantom{\rule{10pt}{10pt}}}% Framed box
+}
+\let\includegraphicsoriginal\includegraphics
+\renewcommand{\includegraphics}[2][width=\textwidth]
+{%
+  \IfFileExists{#2}
+  {\includegraphicsoriginal[#1]{#2}}%
+  {\noimage}%
+%  {\fbox{\includegraphicsoriginal[#1]{drawings/gripen}\makebox[0pt]{File #2 is missing.}}}%
+}
+
+% Centred column in tabularx.
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+% Redefine section titles to be left-aligned and bold
+\usepackage{titlesec}
+\titleformat{\section}{\bfseries\Large}{\thesection}{1em}{}
+\titleformat{\section}{\fontsize{18}{22}\bfseries\rmfamily}{\thesection}{1em}{}
+
+\titleformat{\subsection}{\fontsize{16}{20}\bfseries\rmfamily}{\thesubsection}{1em}{}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+
+\titleformat{\subsubsection}{\fontsize{14}{18}\bfseries\rmfamily}{\thesubsubsection}{1em}{}
+\renewcommand{\thesubsubsection}{\thesection.\arabic{subsection}.\arabic{subsubsection}}
+
+% Format paragraph and subparagraph
+\titleformat{\paragraph}{\fontsize{12}{15}\bfseries\rmfamily}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}{0pt}{1em}{0.5em}
+
+\titleformat{\subparagraph}{\fontsize{11}{14}\bfseries\rmfamily}{\thesubparagraph}{1em}{}
+\titlespacing*{\subparagraph}{0pt}{0.8em}{0.4em}
+
+% Define numbering for subsubsubsections as 2.5.1.1
+\newcounter{subsubsubsection}[subsubsection]
+\renewcommand{\thesubsubsubsection}{\thesubsubsection.\arabic{subsubsubsection}}
+
+% Define the subsubsubsection command with a new line after heading
+\titleformat{\subsubsubsection}{\fontsize{12}{15}\itshape}{\thesubsubsubsection}{1em}{} 
+
+% Command for subsubsubsection
+\newcommand{\subsubsubsection}[1]{%
+    \refstepcounter{subsubsubsection}%
+    \vspace{0.2em} % Adjusts space before
+    \noindent\textit{\thesubsubsubsection\ #1}\par
+    \vspace{-0.5em} % Adjusts space after
+}
+
+
+% Define numbering for subsubsubsubsections as 2.5.1.1.1
+\newcounter{subsubsubsubsection}[subsubsubsection]
+\renewcommand{\thesubsubsubsubsection}{\thesubsubsubsection.\arabic{subsubsubsubsection}}
+
+% Command for subsubsubsubsection (11pt, italic, slightly smaller)
+\newcommand{\subsubsubsubsection}[1]{%
+    \refstepcounter{subsubsubsubsection}%
+    \vspace{0.15em} % Adjusts space before
+    \noindent{\fontsize{11}{14}\selectfont\itshape\thesubsubsubsubsection\ #1}\par
+    \vspace{-0.5em} % Adjusts space after
+}
+
+
+% Define numbering for subsubsubsubsubsections as 2.5.1.1.1.1
+\newcounter{subsubsubsubsubsection}[subsubsubsubsection]
+\renewcommand{\thesubsubsubsubsubsection}{\thesubsubsubsubsection.\arabic{subsubsubsubsubsection}}
+
+% Command for subsubsubsubsubsection (10pt, italic, smallest)
+\newcommand{\subsubsubsubsubsection}[1]{%
+    \refstepcounter{subsubsubsubsubsection}%
+    \vspace{0.1em} % Adjusts space before
+    \noindent{\fontsize{10}{13}\selectfont\itshape\thesubsubsubsubsubsection\ #1}\par
+    \vspace{-0.5em} % Adjusts space after
+}
+\usepackage[acronym]{glossaries}
+\makeglossaries
+\setglossarystyle{long}
+% Increase the gap between acronym and description
+\setlength{\glsdescwidth}{0.8\textwidth}
+\setlength{\glspagelistwidth}{0.15\textwidth}
+\input{acronyms.tex}
+
+\setlength{\parindent}{0pt}
+\usepackage{setspace}
+\setlength{\parskip}{0.35em} % Space between paragraphs
+\setstretch{1.15} % Set line spacing to 1.15
+
+\begin{document}
+
+% Colours for code listings.
+\definecolor{codegreen}{RGB}{0,200,0}
+\definecolor{codepurple}{RGB}{220,0,220}
+\definecolor{codecyan}{RGB}{0,200,200}
+
+\lstset{keywordstyle=\color{blue}}%\bfseries}
+\lstset{commentstyle=\color{codegreen}}%\itshape}
+\lstset{stringstyle=\color{red}}
+
+% Variables.
+\lstset{classoffset=2,morekeywords={input, output, beat}, keywordstyle=\color{orange}, classoffset=0}
+% Function names.
+\lstset{classoffset=3,morekeywords={choice},keywordstyle=\color{codepurple},classoffset=0}
+% Classes.
+\lstset{classoffset=4,morekeywords={random},keywordstyle=\color{codecyan},classoffset=0}
+
+
+% Customise the reference format.
+% Uncomment the line below when you add references
+% Note: This requires IEEEexample.bib control file
+%\bstctlcite{IEEEexample:BSTcontrol}
+
+
+% Title page
+\input{titlepage}
+
+% Start Roman numerals for front matter
+\pagenumbering{roman}
+\pagestyle{plain}
+
+% List of Acronyms
+\printglossary[type=\acronymtype,title=List of Acronyms]
+\clearpage
+
+% Table of Contents
+\setcounter{tocdepth}{5}  % Show all section levels including subsubsubsubsubsection
+\addtocontents{toc}{\protect\thispagestyle{plain}}
+\tableofcontents
+\clearpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\pagestyle{fancy}
+
+% Force Arabic numerals for section numbering (override IEEEtran class default)
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+
+\input{Content.tex}
+
+\end{document}

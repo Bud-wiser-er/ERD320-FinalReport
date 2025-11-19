@@ -1,0 +1,107 @@
+@startuml dataflow_main_control
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 11
+
+title Main ESP32 Control Data Flow (State Management and Navigation)
+
+' External entities
+rectangle "SS" as SS #FFE4B5
+rectangle "MDPS" as MDPS #E0FFE0
+actor "Operator" as OP #FFF8DC
+
+' Main ESP32 core processes
+rectangle "Main ESP32" #E6E6FA {
+
+  rectangle "State\nManager" as SM {
+    component [FSM\nLogic] as FSM
+    component [Guard\nEvaluator] as GE
+  }
+
+  rectangle "NAVCON\nEngine" as NAV {
+    component [Color\nRules] as CR
+    component [Angle\nRules] as AR
+    component [Motion\nGenerator] as MG
+  }
+
+  rectangle "SCS\nProtocol" as SCS {
+    component [Frame\nDecoder] as FD
+    component [Frame\nEncoder] as FE
+  }
+
+  rectangle "Touch/Tone" as TTI {
+    component [Touch\nHandler] as TH
+    component [Tone\nDetector] as TD
+  }
+
+  database "Episode\nState" as ES {
+    storage "Last Colors"
+    storage "Last θᵢ"
+    storage "Last Rotation"
+    storage "Distance"
+    storage "v_L, v_R"
+    storage "Nav State"
+  }
+}
+
+' External inputs
+SS --> FD : **SCS UART**\n19200 baud\nCOLOURS\nθᵢ (incidence)\nEoM flag
+
+MDPS --> FD : **SCS UART**\n19200 baud\nSPEED\nDISTANCE\nROTATION
+
+OP --> TH : Touch\nActivation
+OP --> TD : Dual-Tone\n2800 Hz
+
+' Internal flows - Decoding
+FD --> NAV : Parsed:\nCOLOURS\nθᵢ\nSPEED\nDISTANCE
+FD --> GE : EoC/EoM\nFlags
+
+' Navigation to Episode State
+NAV --> ES : Store:\nDecision\nData
+ES --> NAV : Retrieve:\nPrevious\nState
+
+' Navigation outputs
+MG --> FE : **Commands:**\nv_L, v_R\n(DEC=0/1)\nRotation\n(DEC=2/3)
+
+' State management
+TH --> GE : Touch\nEvent
+TD --> GE : Tone\nDetected
+GE <--> FSM : Guard\nConditions
+FSM --> NAV : **State Control:**\nEnable NAVCON\n(MAZE)\nor Suspend\n(SOS/IDLE/CAL)
+
+' Output
+FE --> MDPS : **SCS UART**\nMotion\nCommands\nIST=3
+
+note right of NAV
+  **NAVCON Active in MAZE State:**
+
+  Color Rules:
+  • White/Red/Green/Blue/Black
+  • Priority-based decision tree
+
+  Angle Rules:
+  • θᵢ ≤ 5° → straight
+  • 5° < θᵢ ≤ 45° → adjust
+  • θᵢ > 45° → turn
+
+  Dead-band: ±2° hysteresis
+end note
+
+note right of FSM
+  **State Transitions:**
+  IDLE → CAL (touch)
+  CAL → MAZE (EoC)
+  MAZE ⇄ SOS (tone)
+  MAZE → IDLE (EoM)
+end note
+
+note bottom of ES
+  **Episode State Storage:**
+  RAM-resident tracking
+  Limited to essential variables
+  for memory efficiency
+end note
+
+@enduml

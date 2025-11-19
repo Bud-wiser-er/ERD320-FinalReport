@@ -1,0 +1,761 @@
+🔄 Serial ports refreshed
+🚀 MARV NAVCON Testing Suite initialized
+📋 Select a serial port and test scenario to begin
+✅ Connected to COM6 at 19200 baud
+15:16:16.697 ||   1 || RECEIVED || (0-1-0) || IDLE | SNC | 0 ||   0 |  50 |   0 ||  16
+🚀 Started test scenario: Full Maze: All Colors
+📡 PHASE 1: Establishing IDLE connection...
+15:16:48.191 ||   1 || SENT     || (0-0-0) || IDLE | HUB | 0 ||   0 |   0 |   0 ||   0 || HUB: IDLE:HUB:0
+✅ IDLE connection established
+🛠️ PHASE 2: CAL initialization...
+15:16:49.217 ||   2 || SENT     || (1-3-0) || CAL | SS | 0 ||   0 |   0 |   0 || 112 || SS: CAL:SS:0
+15:16:49.319 ||   3 || SENT     || (1-2-0) || CAL | MDPS | 0 ||  10 |  10 |   0 ||  96 || MDPS: CAL:MDPS:0
+15:16:49.421 ||   4 || SENT     || (1-2-1) || CAL | MDPS | 1 ||  90 |   0 |   0 ||  97 || MDPS: CAL:MDPS:1
+15:16:49.524 ||   5 || SENT     || (1-3-1) || CAL | SS | 1 ||   0 |   0 |   0 || 113 || SS: CAL:SS:1
+15:16:50.181 ||   1 || RECEIVED || (0-1-0) || IDLE | SNC | 0 ||   1 |  50 |   0 ||  16
+⚠️ No CAL:SNC:0, continuing anyway...
+✅ CAL state entered
+🎵 PHASE 3: CAL loop (waiting for pure tone)...
+15:16:55.157 ||   6 || SENT     || (1-2-1) || CAL | MDPS | 1 ||  90 |   0 |   0 ||  97 || MDPS: CAL:MDPS:1
+15:16:55.261 ||   7 || SENT     || (1-3-1) || CAL | SS | 1 ||   0 |   0 |   0 || 113 || SS: CAL:SS:1
+15:16:55.330 ||   2 || RECEIVED || (1-1-0) || CAL | SNC | 0 ||   1 |   0 |   0 ||  80
+15:16:55.664 ||   8 || SENT     || (1-2-1) || CAL | MDPS | 1 ||  90 |   0 |   0 ||  97 || MDPS: CAL:MDPS:1
+15:16:55.770 ||   9 || SENT     || (1-3-1) || CAL | SS | 1 ||   0 |   0 |   0 || 113 || SS: CAL:SS:1
+15:16:55.852 ||   3 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+🎯 MAZE state detected - starting continuous loop!
+🔄 Starting MAZE continuous loop (emulating SS + MDPS)...
+15:16:56.194 ||  10 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:16:56.246 ||  11 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:16:56.301 ||  12 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:16:56.356 ||  13 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   0 |  44 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=44)
+15:16:56.410 ||  14 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:16:56.464 ||  15 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:16:56.525 ||   4 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:16:56.533 ||  16 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:16:56.584 ||  17 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:16:56.638 ||  18 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:16:56.691 ||  19 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   0 |  46 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=46)
+15:16:56.747 ||  20 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:16:56.803 ||  21 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:16:57.038 ||   5 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:16:57.047 ||  22 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:16:57.103 ||  23 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:16:57.158 ||  24 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:16:57.213 ||  25 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   0 |  48 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=48)
+15:16:57.268 ||  26 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:16:57.323 ||  27 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:16:57.558 ||   6 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:16:57.567 ||  28 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:16:57.622 ||  29 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:16:57.676 ||  30 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:16:57.732 ||  31 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   0 |  50 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=50)
+15:16:57.787 ||  32 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:16:57.844 ||  33 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:16:58.070 ||   7 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:16:58.081 ||  34 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:16:58.138 ||  35 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:16:58.193 ||  36 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:16:58.249 ||  37 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   0 |  52 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=52)
+15:16:58.304 ||  38 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:16:58.359 ||  39 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:16:58.590 ||   8 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:16:58.598 ||  40 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:16:58.655 ||  41 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:16:58.709 ||  42 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:16:58.767 ||  43 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   0 |  54 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=54)
+15:16:58.823 ||  44 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:16:58.877 ||  45 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:16:59.108 ||   9 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:16:59.114 ||  46 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:16:59.170 ||  47 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:16:59.228 ||  48 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:16:59.288 ||  49 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   0 |  56 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=56)
+15:16:59.346 ||  50 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:16:59.405 ||  51 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:16:59.622 ||  10 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:16:59.629 ||  52 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:16:59.692 ||  53 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:16:59.751 ||  54 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:16:59.807 ||  55 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   0 |  58 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=58)
+15:16:59.862 ||  56 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:16:59.919 ||  57 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:00.141 ||  11 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:00.146 ||  58 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:00.199 ||  59 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:00.256 ||  60 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:00.312 ||  61 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   0 |  60 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=60)
+15:17:00.369 ||  62 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:00.424 ||  63 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:00.656 ||  12 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:00.669 ||  64 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:00.725 ||  65 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:00.781 ||  66 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:00.836 ||  67 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   0 |  62 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=62)
+15:17:00.891 ||  68 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:00.949 ||  69 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:01.168 ||  13 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+🟢 GREEN line #1 detected (22° angle - moderate)
+📊 Loop 10: distance=64cm, color=16
+15:17:01.191 ||  70 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:01.245 ||  71 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:01.301 ||  72 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:01.357 ||  73 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   0 |  64 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=64)
+15:17:01.413 ||  74 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |  16 |   0 || 177 || SS: MAZE:SS:1 (color=16)
+15:17:01.471 ||  75 || SENT     || (2-3-2) || MAZE | SS | 2 ||  22 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=22)
+15:17:01.685 ||  14 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:01.692 ||  76 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:01.749 ||  77 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:01.808 ||  78 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:01.863 ||  79 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   0 |  66 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=66)
+15:17:01.919 ||  80 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |  16 |   0 || 177 || SS: MAZE:SS:1 (color=16)
+15:17:01.975 ||  81 || SENT     || (2-3-2) || MAZE | SS | 2 ||  22 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=22)
+15:17:02.201 ||  15 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:02.209 ||  82 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:02.264 ||  83 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:02.322 ||  84 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:02.377 ||  85 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   0 |  68 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=68)
+15:17:02.434 ||  86 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |  16 |   0 || 177 || SS: MAZE:SS:1 (color=16)
+15:17:02.491 ||  87 || SENT     || (2-3-2) || MAZE | SS | 2 ||  22 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=22)
+15:17:02.727 ||  16 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:02.736 ||  88 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:02.797 ||  89 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:02.852 ||  90 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:02.909 ||  91 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   0 |  70 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=70)
+15:17:02.964 ||  92 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |  16 |   0 || 177 || SS: MAZE:SS:1 (color=16)
+15:17:03.021 ||  93 || SENT     || (2-3-2) || MAZE | SS | 2 ||  22 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=22)
+15:17:03.239 ||  17 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:03.246 ||  94 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:03.303 ||  95 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:03.364 ||  96 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:03.420 ||  97 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   0 |  72 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=72)
+15:17:03.475 ||  98 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |  16 |   0 || 177 || SS: MAZE:SS:1 (color=16)
+15:17:03.532 ||  99 || SENT     || (2-3-2) || MAZE | SS | 2 ||  22 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=22)
+15:17:03.758 ||  18 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+⚪ GREEN cleared - back to WHITE
+15:17:03.769 || 100 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:03.826 || 101 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:03.880 || 102 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:03.936 || 103 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   0 |  74 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=74)
+15:17:03.992 || 104 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:04.048 || 105 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:04.268 ||  19 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:04.277 || 106 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:04.336 || 107 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:04.390 || 108 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:04.448 || 109 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   0 |  76 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=76)
+15:17:04.504 || 110 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:04.559 || 111 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:04.788 ||  20 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:04.799 || 112 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:04.856 || 113 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:04.911 || 114 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:04.967 || 115 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   0 |  78 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=78)
+15:17:05.022 || 116 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:05.079 || 117 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:05.306 ||  21 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:05.315 || 118 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:05.372 || 119 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:05.428 || 120 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:05.485 || 121 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   0 |  80 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=80)
+15:17:05.540 || 122 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:05.596 || 123 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:05.828 ||  22 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:05.834 || 124 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:05.892 || 125 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:05.948 || 126 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:06.003 || 127 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   0 |  82 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=82)
+15:17:06.060 || 128 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:06.115 || 129 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:06.355 ||  23 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+📊 Loop 20: distance=84cm, color=0
+15:17:06.364 || 130 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:06.422 || 131 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:06.477 || 132 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:06.532 || 133 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   0 |  84 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=84)
+15:17:06.588 || 134 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:06.646 || 135 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:06.863 ||  24 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:06.874 || 136 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:06.929 || 137 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:06.986 || 138 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:07.042 || 139 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   0 |  86 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=86)
+15:17:07.096 || 140 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:07.153 || 141 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:07.385 ||  25 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:07.398 || 142 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:07.455 || 143 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:07.510 || 144 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:07.564 || 145 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   0 |  88 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=88)
+15:17:07.623 || 146 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:07.678 || 147 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:07.903 ||  26 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:07.912 || 148 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:07.969 || 149 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:08.026 || 150 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:08.080 || 151 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   0 |  90 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=90)
+15:17:08.141 || 152 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:08.198 || 153 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:08.411 ||  27 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:08.424 || 154 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:08.479 || 155 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:08.537 || 156 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:08.592 || 157 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   0 |  92 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=92)
+15:17:08.649 || 158 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:08.706 || 159 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:08.931 ||  28 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+🔵 BLUE wall detected (30° angle) - should trigger 90° turn!
+15:17:08.955 || 160 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:09.012 || 161 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:09.068 || 162 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:09.126 || 163 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   0 |  94 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=94)
+15:17:09.183 || 164 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |  24 |   0 || 177 || SS: MAZE:SS:1 (color=24)
+15:17:09.239 || 165 || SENT     || (2-3-2) || MAZE | SS | 2 ||  30 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=30)
+15:17:09.445 ||  29 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:09.454 || 166 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:09.510 || 167 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:09.565 || 168 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:09.621 || 169 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   0 |  96 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=96)
+15:17:09.676 || 170 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |  24 |   0 || 177 || SS: MAZE:SS:1 (color=24)
+15:17:09.731 || 171 || SENT     || (2-3-2) || MAZE | SS | 2 ||  30 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=30)
+15:17:09.967 ||  30 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:09.977 || 172 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:10.033 || 173 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:10.089 || 174 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:10.144 || 175 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   0 |  98 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=98)
+15:17:10.200 || 176 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |  24 |   0 || 177 || SS: MAZE:SS:1 (color=24)
+15:17:10.255 || 177 || SENT     || (2-3-2) || MAZE | SS | 2 ||  30 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=30)
+15:17:10.478 ||  31 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:10.491 || 178 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:10.546 || 179 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:10.601 || 180 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:10.657 || 181 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |   0 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=100)
+15:17:10.712 || 182 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |  24 |   0 || 177 || SS: MAZE:SS:1 (color=24)
+15:17:10.770 || 183 || SENT     || (2-3-2) || MAZE | SS | 2 ||  30 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=30)
+15:17:10.998 ||  32 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:11.004 || 184 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:11.060 || 185 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:11.115 || 186 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:11.172 || 187 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |   2 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=102)
+15:17:11.226 || 188 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |  24 |   0 || 177 || SS: MAZE:SS:1 (color=24)
+15:17:11.279 || 189 || SENT     || (2-3-2) || MAZE | SS | 2 ||  30 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=30)
+15:17:11.513 ||  33 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+⚪ BLUE cleared
+📊 Loop 30: distance=104cm, color=0
+15:17:11.534 || 190 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:11.593 || 191 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:11.649 || 192 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:11.705 || 193 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |   4 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=104)
+15:17:11.762 || 194 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:11.817 || 195 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:12.033 ||  34 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:12.039 || 196 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:12.095 || 197 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:12.152 || 198 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:12.207 || 199 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |   6 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=106)
+15:17:12.262 || 200 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:12.319 || 201 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:12.548 ||  35 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:12.557 || 202 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:12.612 || 203 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:12.669 || 204 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:12.725 || 205 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |   8 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=108)
+15:17:12.780 || 206 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:12.835 || 207 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:13.066 ||  36 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:13.071 || 208 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:13.126 || 209 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:13.183 || 210 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:13.238 || 211 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  10 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=110)
+15:17:13.295 || 212 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:13.350 || 213 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:13.581 ||  37 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:13.591 || 214 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:13.646 || 215 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:13.702 || 216 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:13.760 || 217 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  12 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=112)
+15:17:13.816 || 218 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:13.873 || 219 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:14.101 ||  38 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:14.107 || 220 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:14.162 || 221 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:14.220 || 222 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:14.275 || 223 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  14 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=114)
+15:17:14.330 || 224 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:14.389 || 225 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:14.616 ||  39 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:14.625 || 226 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:14.680 || 227 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:14.736 || 228 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:14.790 || 229 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  16 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=116)
+15:17:14.846 || 230 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:14.904 || 231 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:15.133 ||  40 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:15.140 || 232 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:15.195 || 233 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:15.252 || 234 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:15.309 || 235 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  18 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=118)
+15:17:15.366 || 236 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:15.423 || 237 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:15.680 ||  41 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:15.689 || 238 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:15.745 || 239 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:15.803 || 240 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:15.859 || 241 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  20 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=120)
+15:17:15.914 || 242 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:15.973 || 243 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:16.200 ||  42 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:16.209 || 244 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:16.267 || 245 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:16.321 || 246 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:16.376 || 247 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  22 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=122)
+15:17:16.432 || 248 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:16.488 || 249 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:16.721 ||  43 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+🟢 GREEN line #2 detected (35° angle - moderate-high)
+📊 Loop 40: distance=124cm, color=16
+15:17:16.739 || 250 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:16.795 || 251 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:16.851 || 252 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:16.907 || 253 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  24 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=124)
+15:17:16.964 || 254 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |  16 |   0 || 177 || SS: MAZE:SS:1 (color=16)
+15:17:17.020 || 255 || SENT     || (2-3-2) || MAZE | SS | 2 ||  35 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=35)
+15:17:17.239 ||  44 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:17.250 || 256 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:17.305 || 257 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:17.361 || 258 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:17.416 || 259 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  26 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=126)
+15:17:17.473 || 260 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |  16 |   0 || 177 || SS: MAZE:SS:1 (color=16)
+15:17:17.528 || 261 || SENT     || (2-3-2) || MAZE | SS | 2 ||  35 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=35)
+15:17:17.756 ||  45 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:17.763 || 262 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:17.822 || 263 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:17.876 || 264 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:17.933 || 265 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  28 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=128)
+15:17:17.989 || 266 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |  16 |   0 || 177 || SS: MAZE:SS:1 (color=16)
+15:17:18.045 || 267 || SENT     || (2-3-2) || MAZE | SS | 2 ||  35 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=35)
+15:17:18.271 ||  46 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:18.282 || 268 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:18.341 || 269 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:18.397 || 270 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:18.454 || 271 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  30 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=130)
+15:17:18.509 || 272 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |  16 |   0 || 177 || SS: MAZE:SS:1 (color=16)
+15:17:18.565 || 273 || SENT     || (2-3-2) || MAZE | SS | 2 ||  35 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=35)
+15:17:18.793 ||  47 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:18.802 || 274 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:18.857 || 275 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:18.919 || 276 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:18.976 || 277 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  32 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=132)
+15:17:19.033 || 278 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |  16 |   0 || 177 || SS: MAZE:SS:1 (color=16)
+15:17:19.088 || 279 || SENT     || (2-3-2) || MAZE | SS | 2 ||  35 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=35)
+15:17:19.308 ||  48 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+⚪ GREEN cleared
+15:17:19.319 || 280 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:19.379 || 281 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:19.436 || 282 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:19.491 || 283 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  34 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=134)
+15:17:19.546 || 284 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:19.602 || 285 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:19.819 ||  49 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:19.830 || 286 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:19.887 || 287 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:19.944 || 288 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:20.003 || 289 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  36 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=136)
+15:17:20.059 || 290 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:20.115 || 291 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:20.343 ||  50 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:20.350 || 292 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:20.406 || 293 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:20.461 || 294 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:20.517 || 295 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  38 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=138)
+15:17:20.573 || 296 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:20.629 || 297 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:20.861 ||  51 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:20.871 || 298 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:20.926 || 299 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:20.984 || 300 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:21.039 || 301 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  40 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=140)
+15:17:21.095 || 302 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:21.152 || 303 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:21.369 ||  52 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:21.376 || 304 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:21.432 || 305 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:21.488 || 306 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:21.544 || 307 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  42 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=142)
+15:17:21.599 || 308 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:21.655 || 309 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:21.892 ||  53 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+🟢 GREEN line #3 detected (>45° STEEP) - EDGE SENSOR triggered - angle=0 (SNC must calculate from distance)!
+📊 Loop 50: distance=144cm, color=2
+15:17:21.906 || 310 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:21.963 || 311 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:22.020 || 312 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:22.074 || 313 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  44 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=144)
+15:17:22.130 || 314 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   2 |   0 || 177 || SS: MAZE:SS:1 (color=2)
+15:17:22.186 || 315 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:22.400 ||  54 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:22.412 || 316 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:22.468 || 317 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:22.523 || 318 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:22.575 || 319 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  46 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=146)
+15:17:22.631 || 320 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   2 |   0 || 177 || SS: MAZE:SS:1 (color=2)
+15:17:22.687 || 321 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:22.921 ||  55 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:22.933 || 322 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:22.989 || 323 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:23.044 || 324 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:23.102 || 325 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  48 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=148)
+15:17:23.158 || 326 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   2 |   0 || 177 || SS: MAZE:SS:1 (color=2)
+15:17:23.214 || 327 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:23.439 ||  56 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:23.451 || 328 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:23.509 || 329 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:23.564 || 330 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:23.620 || 331 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  50 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=150)
+15:17:23.675 || 332 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   2 |   0 || 177 || SS: MAZE:SS:1 (color=2)
+15:17:23.732 || 333 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:23.953 ||  57 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:23.958 || 334 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:24.014 || 335 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:24.073 || 336 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:24.129 || 337 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  52 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=152)
+15:17:24.185 || 338 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   2 |   0 || 177 || SS: MAZE:SS:1 (color=2)
+15:17:24.240 || 339 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:24.477 ||  58 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+⚪ GREEN cleared (steep angle)
+15:17:24.490 || 340 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:24.547 || 341 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:24.603 || 342 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:24.660 || 343 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  54 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=154)
+15:17:24.715 || 344 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:24.770 || 345 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:24.987 ||  59 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:24.996 || 346 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:25.055 || 347 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:25.110 || 348 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:25.165 || 349 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  56 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=156)
+15:17:25.222 || 350 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:25.277 || 351 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:25.505 ||  60 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:25.517 || 352 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:25.573 || 353 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:25.628 || 354 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:25.686 || 355 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  58 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=158)
+15:17:25.742 || 356 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:25.797 || 357 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:26.032 ||  61 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:26.039 || 358 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:26.094 || 359 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:26.149 || 360 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:26.204 || 361 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  60 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=160)
+15:17:26.260 || 362 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:26.315 || 363 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:26.548 ||  62 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:26.551 || 364 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:26.609 || 365 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:26.666 || 366 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:26.722 || 367 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  62 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=162)
+15:17:26.787 || 368 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:26.842 || 369 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:27.063 ||  63 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+⚫ BLACK wall detected (28° angle) - should trigger 90° turn!
+📊 Loop 60: distance=164cm, color=32
+15:17:27.078 || 370 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:27.147 || 371 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:27.211 || 372 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:27.267 || 373 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  64 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=164)
+15:17:27.324 || 374 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |  32 |   0 || 177 || SS: MAZE:SS:1 (color=32)
+15:17:27.381 || 375 || SENT     || (2-3-2) || MAZE | SS | 2 ||  28 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=28)
+15:17:27.580 ||  64 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:27.587 || 376 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:27.645 || 377 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:27.701 || 378 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:27.759 || 379 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  66 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=166)
+15:17:27.814 || 380 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |  32 |   0 || 177 || SS: MAZE:SS:1 (color=32)
+15:17:27.871 || 381 || SENT     || (2-3-2) || MAZE | SS | 2 ||  28 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=28)
+15:17:28.098 ||  65 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:28.107 || 382 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:28.161 || 383 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:28.218 || 384 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:28.274 || 385 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  68 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=168)
+15:17:28.329 || 386 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |  32 |   0 || 177 || SS: MAZE:SS:1 (color=32)
+15:17:28.386 || 387 || SENT     || (2-3-2) || MAZE | SS | 2 ||  28 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=28)
+15:17:28.617 ||  66 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:28.628 || 388 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:28.688 || 389 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:28.744 || 390 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:28.799 || 391 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  70 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=170)
+15:17:28.855 || 392 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |  32 |   0 || 177 || SS: MAZE:SS:1 (color=32)
+15:17:28.910 || 393 || SENT     || (2-3-2) || MAZE | SS | 2 ||  28 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=28)
+15:17:29.132 ||  67 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:29.145 || 394 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:29.201 || 395 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:29.257 || 396 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:29.312 || 397 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  72 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=172)
+15:17:29.370 || 398 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |  32 |   0 || 177 || SS: MAZE:SS:1 (color=32)
+15:17:29.425 || 399 || SENT     || (2-3-2) || MAZE | SS | 2 ||  28 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=28)
+15:17:29.644 ||  68 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+⚪ BLACK cleared
+15:17:29.653 || 400 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:29.709 || 401 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:29.765 || 402 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:29.821 || 403 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  74 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=174)
+15:17:29.876 || 404 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:29.933 || 405 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:30.171 ||  69 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:30.180 || 406 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:30.236 || 407 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:30.292 || 408 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:30.348 || 409 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  76 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=176)
+15:17:30.404 || 410 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:30.460 || 411 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:30.678 ||  70 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:30.687 || 412 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:30.744 || 413 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:30.801 || 414 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:30.858 || 415 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  78 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=178)
+15:17:30.914 || 416 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:30.971 || 417 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:31.196 ||  71 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:31.207 || 418 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:31.263 || 419 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:31.318 || 420 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:31.374 || 421 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  80 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=180)
+15:17:31.430 || 422 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:31.486 || 423 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:31.710 ||  72 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:31.720 || 424 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:31.777 || 425 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:31.832 || 426 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:31.888 || 427 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  82 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=182)
+15:17:31.943 || 428 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:31.998 || 429 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:32.232 ||  73 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+🟢 GREEN line #4 detected (8° angle - small)
+📊 Loop 70: distance=184cm, color=16
+15:17:32.250 || 430 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:32.307 || 431 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:32.363 || 432 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:32.419 || 433 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  84 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=184)
+15:17:32.474 || 434 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |  16 |   0 || 177 || SS: MAZE:SS:1 (color=16)
+15:17:32.529 || 435 || SENT     || (2-3-2) || MAZE | SS | 2 ||   8 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=8)
+15:17:32.744 ||  74 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:32.755 || 436 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:32.813 || 437 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:32.869 || 438 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:32.927 || 439 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  86 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=186)
+15:17:32.983 || 440 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |  16 |   0 || 177 || SS: MAZE:SS:1 (color=16)
+15:17:33.039 || 441 || SENT     || (2-3-2) || MAZE | SS | 2 ||   8 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=8)
+15:17:33.266 ||  75 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:33.274 || 442 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:33.329 || 443 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:33.385 || 444 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:33.441 || 445 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  88 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=188)
+15:17:33.496 || 446 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |  16 |   0 || 177 || SS: MAZE:SS:1 (color=16)
+15:17:33.553 || 447 || SENT     || (2-3-2) || MAZE | SS | 2 ||   8 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=8)
+15:17:33.774 ||  76 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:33.788 || 448 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:33.844 || 449 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:33.899 || 450 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:33.955 || 451 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  90 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=190)
+15:17:34.011 || 452 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |  16 |   0 || 177 || SS: MAZE:SS:1 (color=16)
+15:17:34.066 || 453 || SENT     || (2-3-2) || MAZE | SS | 2 ||   8 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=8)
+15:17:34.294 ||  77 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:34.303 || 454 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:34.359 || 455 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:34.417 || 456 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:34.474 || 457 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  92 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=192)
+15:17:34.532 || 458 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |  16 |   0 || 177 || SS: MAZE:SS:1 (color=16)
+15:17:34.588 || 459 || SENT     || (2-3-2) || MAZE | SS | 2 ||   8 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=8)
+15:17:34.813 ||  78 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+⚪ GREEN cleared
+15:17:34.823 || 460 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:34.879 || 461 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:34.935 || 462 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:34.992 || 463 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  94 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=194)
+15:17:35.047 || 464 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:35.105 || 465 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:35.330 ||  79 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:35.338 || 466 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:35.391 || 467 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:35.446 || 468 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:35.503 || 469 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  96 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=196)
+15:17:35.559 || 470 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:35.614 || 471 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:35.845 ||  80 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:35.854 || 472 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:35.909 || 473 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:35.965 || 474 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:36.021 || 475 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   1 |  98 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=198)
+15:17:36.077 || 476 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:36.132 || 477 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:36.366 ||  81 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:36.377 || 478 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:36.434 || 479 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:36.489 || 480 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:36.546 || 481 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   2 |   0 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=200)
+15:17:36.603 || 482 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:36.658 || 483 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:36.877 ||  82 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:36.883 || 484 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:36.941 || 485 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:36.999 || 486 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:37.056 || 487 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   2 |   2 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=202)
+15:17:37.112 || 488 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:37.170 || 489 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:37.394 ||  83 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+🟢 GREEN line #5 detected (>45° VERY STEEP) - EDGE SENSOR triggered - angle=0 (SNC must calculate)!
+📊 Loop 80: distance=204cm, color=2
+15:17:37.408 || 490 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:37.465 || 491 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:37.523 || 492 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:37.579 || 493 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   2 |   4 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=204)
+15:17:37.636 || 494 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   2 |   0 || 177 || SS: MAZE:SS:1 (color=2)
+15:17:37.691 || 495 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:37.916 ||  84 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:37.921 || 496 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:37.982 || 497 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:38.039 || 498 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:38.095 || 499 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   2 |   6 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=206)
+15:17:38.151 || 500 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   2 |   0 || 177 || SS: MAZE:SS:1 (color=2)
+15:17:38.206 || 501 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:38.433 ||  85 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:38.443 || 502 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:38.501 || 503 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:38.556 || 504 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:38.612 || 505 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   2 |   8 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=208)
+15:17:38.668 || 506 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   2 |   0 || 177 || SS: MAZE:SS:1 (color=2)
+15:17:38.724 || 507 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:38.943 ||  86 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:38.949 || 508 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:39.006 || 509 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:39.062 || 510 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:39.117 || 511 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   2 |  10 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=210)
+15:17:39.173 || 512 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   2 |   0 || 177 || SS: MAZE:SS:1 (color=2)
+15:17:39.228 || 513 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:39.459 ||  87 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:39.466 || 514 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:39.519 || 515 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:39.575 || 516 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:39.630 || 517 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   2 |  12 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=212)
+15:17:39.687 || 518 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   2 |   0 || 177 || SS: MAZE:SS:1 (color=2)
+15:17:39.743 || 519 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:39.976 ||  88 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+⚪ GREEN cleared (very steep angle)
+15:17:39.989 || 520 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:40.045 || 521 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:40.102 || 522 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:40.157 || 523 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   2 |  14 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=214)
+15:17:40.212 || 524 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:40.268 || 525 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:40.498 ||  89 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:40.505 || 526 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:40.561 || 527 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:40.617 || 528 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:40.672 || 529 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   2 |  16 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=216)
+15:17:40.727 || 530 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:40.783 || 531 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:41.013 ||  90 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:41.023 || 532 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:41.078 || 533 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:41.134 || 534 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:41.191 || 535 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   2 |  18 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=218)
+15:17:41.246 || 536 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:41.302 || 537 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:41.521 ||  91 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:41.529 || 538 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:41.585 || 539 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:41.641 || 540 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:41.696 || 541 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   2 |  20 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=220)
+15:17:41.753 || 542 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:41.808 || 543 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:42.048 ||  92 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:42.054 || 544 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:42.110 || 545 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:42.166 || 546 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:42.222 || 547 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   2 |  22 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=222)
+15:17:42.277 || 548 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:42.332 || 549 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:42.564 ||  93 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+⚠️ Approaching EOM - angle=12° (robot should rectify to <5°)
+📊 Loop 90: distance=224cm, color=0
+15:17:42.582 || 550 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:42.639 || 551 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:42.699 || 552 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:42.755 || 553 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   2 |  24 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=224)
+15:17:42.810 || 554 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:42.866 || 555 || SENT     || (2-3-2) || MAZE | SS | 2 ||  12 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=12)
+15:17:43.073 ||  94 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:43.082 || 556 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:43.137 || 557 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:43.193 || 558 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:43.248 || 559 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   2 |  26 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=226)
+15:17:43.305 || 560 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:43.360 || 561 || SENT     || (2-3-2) || MAZE | SS | 2 ||  12 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=12)
+15:17:43.590 ||  95 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+⚠️ EOM approach - angle=7° (still rectifying...)
+15:17:43.599 || 562 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:43.656 || 563 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:43.712 || 564 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:43.769 || 565 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   2 |  28 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=228)
+15:17:43.824 || 566 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:43.879 || 567 || SENT     || (2-3-2) || MAZE | SS | 2 ||   7 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=7)
+15:17:44.111 ||  96 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:44.115 || 568 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:44.171 || 569 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:44.226 || 570 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:44.281 || 571 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   2 |  30 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=230)
+15:17:44.338 || 572 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:44.393 || 573 || SENT     || (2-3-2) || MAZE | SS | 2 ||   7 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=7)
+15:17:44.624 ||  97 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+✅ EOM approach - angle=3° (good alignment!)
+15:17:44.639 || 574 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:44.696 || 575 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:44.753 || 576 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:44.807 || 577 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   2 |  32 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=232)
+15:17:44.863 || 578 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:44.921 || 579 || SENT     || (2-3-2) || MAZE | SS | 2 ||   3 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=3)
+15:17:45.144 ||  98 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:45.156 || 580 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:45.211 || 581 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:45.269 || 582 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:45.324 || 583 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   2 |  34 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=234)
+15:17:45.379 || 584 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:45.440 || 585 || SENT     || (2-3-2) || MAZE | SS | 2 ||   3 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=3)
+15:17:45.664 ||  99 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+✅ EOM approach - angle=1° (excellent alignment)
+15:17:45.676 || 586 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:45.735 || 587 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:45.791 || 588 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:45.846 || 589 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   2 |  36 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=236)
+15:17:45.903 || 590 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:45.958 || 591 || SENT     || (2-3-2) || MAZE | SS | 2 ||   1 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=1)
+15:17:46.175 || 100 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+15:17:46.183 || 592 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:46.240 || 593 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:46.295 || 594 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:46.355 || 595 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   2 |  38 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=238)
+15:17:46.411 || 596 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |   0 |   0 || 177 || SS: MAZE:SS:1 (color=0)
+15:17:46.467 || 597 || SENT     || (2-3-2) || MAZE | SS | 2 ||   1 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=1)
+15:17:46.695 || 101 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+🔴 RED END-OF-MAZE detected! Angle=1° (<5° requirement met) - SNC should accept EOM!
+15:17:46.712 || 598 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:46.773 || 599 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:46.829 || 600 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:46.886 || 601 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   2 |  40 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=240)
+15:17:46.941 || 602 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |  73 |   0 || 177 || SS: MAZE:SS:1 (color=73)
+15:17:46.997 || 603 || SENT     || (2-3-2) || MAZE | SS | 2 ||   1 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=1)
+15:17:47.205 || 102 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+🔴 RED EOM confirmed - angle=0° (perfect) - maze complete!
+15:17:47.215 || 604 || SENT     || (2-2-1) || MAZE | MDPS | 1 ||  90 |   0 |   0 || 161 || MDPS: MAZE:MDPS:1 (stop/rotate)
+15:17:47.269 || 605 || SENT     || (2-2-2) || MAZE | MDPS | 2 ||   0 |   0 |   0 || 162 || MDPS: MAZE:MDPS:2 (confirm)
+15:17:47.324 || 606 || SENT     || (2-2-3) || MAZE | MDPS | 3 ||  10 |  10 |   0 || 163 || MDPS: MAZE:MDPS:3 (forward)
+15:17:47.380 || 607 || SENT     || (2-2-4) || MAZE | MDPS | 4 ||   2 |  42 |   0 || 164 || MDPS: MAZE:MDPS:4 (dist=242)
+15:17:47.439 || 608 || SENT     || (2-3-1) || MAZE | SS | 1 ||   0 |  73 |   0 || 177 || SS: MAZE:SS:1 (color=73)
+15:17:47.493 || 609 || SENT     || (2-3-2) || MAZE | SS | 2 ||   0 |   0 |   0 || 178 || SS: MAZE:SS:2 (angle=0)
+15:17:47.725 || 103 || RECEIVED || (2-1-1) || MAZE | SNC | 1 ||   0 |   0 |   0 || 145
+📊 Loop 100: distance=244cm, color=73
+✅ MAZE continuous loop completed!
+⏹️ Test stopped
+15:17:48.257 || 104 || RECEIVED || (2-1-2) || MAZE | SNC | 2 ||   0 |   0 |   0 || 146
+15:17:48.301 || 105 || RECEIVED || (2-1-3) || MAZE | SNC | 3 ||  10 |  10 |   0 || 147
+

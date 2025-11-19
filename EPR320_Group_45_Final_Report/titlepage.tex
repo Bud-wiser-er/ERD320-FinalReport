@@ -1,0 +1,58 @@
+% Title page
+
+\newcolumntype{A}{>{\centering\arraybackslash}m{4cm}}
+\newcolumntype{B}{>{\centering\arraybackslash}m{3.75cm}}
+\newcolumntype{C}{>{\centering\arraybackslash}m{3.25cm}}
+
+\begin{titlepage}
+    \begin{center}
+
+        \vspace*{1.2cm}
+    
+        % University Logo
+        \includegraphics[width=0.8\textwidth]{drawings/EECELogo.pdf}\\[2.0cm]    
+    	
+        % Department Title
+        {\LARGE \modulecode}\\[1.0cm]
+        \vspace{-1em}
+
+        % Assignment Title
+    \Large\assessment\\[0.5cm]
+    \vspace{0.5em}
+
+    \begin{centering}
+        {\Large{\textbf{\ProjectTitle}}}\\
+      \end{centering} 
+      
+      \vspace{1em}
+      \large Group Number: \groupnumber \\
+
+        % Students/Contributors Table
+        \begin{table}[h]
+            \centering
+            \normalsize
+            \begin{tabularx}{\textwidth}{|A|C|B|C|}
+                \hline
+                \textbf{Name and Surname} & \textbf{Student Number} & \textbf{Signature} & \textbf{\% contribution} \\
+                \hline
+                \firststudentname   & \firststudentnumber   & \includegraphics[height=0.9cm]{signatures/Byron_Sig.jpg} & \firststudentcontribution \\
+                & & &   \\ \hline
+                \secondstudentname  & \secondstudentnumber  & \includegraphics[height=0.9cm]{signatures/Kyle_Sig.jpg} & \secondstudentcontribution \\
+                & & &   \\ \hline
+                \thirdstudentname   & \thirdstudentnumber   &\includegraphics[height=0.9cm]{signatures/Signeture.jpg} & \thirdstudentcontribution \\
+                & & &   \\ \hline
+            \end{tabularx}
+        \end{table}
+		
+    \end{center}
+
+  % Report Declaration
+%   Comment this line out and uncomment the line below it in the \verb|report.tex| file to include the required declaration.
+    \noindent By submitting this assignment we confirm that we have read and are aware of the University of Pretoria's policy on academic dishonesty and plagiarism and we declare that the work submitted in this assignment is our own as delimited by the mentioned policies. We explicitly declare that no parts of this assignment have been copied from current or previous students' work or any other sources (including the internet), whether copyrighted or not. We understand that we will be subjected to disciplinary actions should it be found that the work we submit here does not comply with the said policies.
+	
+	\vfill
+    \begin{center}
+		\large\today
+    \end{center}
+
+\end{titlepage}

@@ -1,0 +1,29 @@
+\subsection{Subsystem Concept Definition: Planning}
+% \textit{-	Refer to Kossiakoff, Chapter 9\\
+% -	Provide a single-figure subsystem functional diagram\\
+% \hspace*{2em}o	Extend on the practical guide diagram with more details, unique to your design.\\
+% \hspace*{2em}o	Include direction and nature of all internal and external interactions, including those with other subsystems and those with the outside world.\\
+% -	Provide a single-figure subsystem architecture diagram\\
+% \hspace*{2em}o	Extend on the practical guide diagram with more details, unique to your design.\\
+% \hspace*{2em}o	Draw to component / software function level \\
+% \hspace*{2em}o	Include direction and nature of all internal and external interactions, both to the external world and to other subsystems \\
+% \hspace*{2em}o	Indicate clearly which components are designed and which components are bought off-the-shelf. \\
+% \textbf{-	This must be more detailed than the diagrams in the practical guide; copies of the practical guide figures will receive 0 marks. }}
+
+% Add your concept definition and diagrams here
+
+\noindent
+The Motor Driver and Power Supply (MDPS) subsystem provides both the mechanical actuation and electrical power required for the MARV to operate. Functionally, the MDPS accepts motion commands from the SNC and converts them into controlled wheel movement using its motor actuation hardware. Through this, the subsystem enables the MARV to accelerate, decelerate and perform rotational movements required to navigate the maze. In addition to motion control, the MDPS is responsible for supplying suitable regulated voltage to all connected subsystems. This ensures that the system will operate reliably under varying load conditions. The chosen power approach uses a simple active voltage regulation strategy, which aligns with the MARV’s requirement for stable, low-noise supply rails without unnecessary circuit complexity. The MDPS also incorporates on-board measurement capabilities to support system-level navigation. Using wheel-mounted rotary encoders, the subsystem determines the distance travelled and the angular rotation achieved during turns. These measurements are transmitted to the SNC via asynchronous UART communication.\\
+
+Conceptually, the MDPS therefore acts as both the “movement unit” and the “power distribution unit” of the MARV. It executes movement on request, regulates the system’s electrical supply, and provides movement data to the SNC. Within the broader system architecture, the MDPS serves as the interface between the SNC’s navigation decisions and the MARV’s physical behaviour in the maze environment.
+
+The overall operation of the MDPS subsystem can be seen with the functional block diagram shown in Figure \ref{fig:MDPS_Func} below. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{03_MDPS/documents/Functional_Block_Diagram.png}
+    \caption{MDPS Functional Block Diagram}
+    \label{fig:MDPS_Func}
+\end{figure}
+
+The overall architecture of the MDPS subsystem can be seen with the architectural diagram shown in Figure \ref{fig:MDPS_Arc} below. 

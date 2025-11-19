@@ -1,0 +1,179 @@
+@startuml Distance_Tracking_Steep_Angle
+title Distance Tracking for Steep Angle Detection
+
+start
+
+:Edge sensor (S1 or S3) detects color;
+note right
+Example: S1 sees GREEN
+But S2 (center) still sees WHITE
+
+This indicates line is at an angle
+to the robot's path
+end note
+
+:Record starting point;
+note right
+Initialize tracking:
+detected_color = S1/S3 color (e.g., GREEN)
+detecting_sensor = 1 or 3
+detection_start_distance = current_distance
+detection_active = FALSE (not confirmed yet)
+angle_valid = FALSE (no angle data yet)
+end note
+
+repeat
+
+  :Read current_distance from MDPS;
+  note right
+MDPS continuously updates
+current_distance as robot
+moves forward
+  end note
+
+  :Calculate travel_distance;
+  note right
+travel_distance =
+  current_distance - detection_start_distance
+
+This tells us how far we've traveled
+since edge sensor first detected the line
+  end note
+
+  if (S2 detects color?) then (yes)
+    :Angle is measurable;
+    note right
+S2 caught up with edge sensor
+
+The line is at a moderate angle (less than or equal to 45 degrees)
+that SS can measure accurately
+
+Update detection:
+initial_angle = received_incidence_angle
+current_target_angle = received_incidence_angle
+angle_valid = TRUE (SS provided data)
+detection_active = TRUE
+    end note
+
+    :Use SS angle data;
+    stop
+
+  elseif (travel_distance more than or equal to 61mm?) then (yes)
+    :INFER STEEP ANGLE more than 45 degrees;
+    note right
+S2 never confirmed after 61mm travel
+
+SENSOR_SPACING = 61mm
+(physical distance between S2 and S1/S3)
+
+If robot traveled more than or equal to 61mm and S2 still
+hasn't seen the line, the angle MUST
+be steeper than S1/S3 spacing allows
+    end note
+
+    :Set steep angle parameters;
+    note right
+Update detection:
+initial_angle = 46 degrees (inferred more than 45)
+current_target_angle = 46 degrees
+angle_valid = FALSE (no SS data available)
+detection_active = TRUE
+
+Why angle_valid = FALSE?
+SS cannot measure angles more than 45 degrees because
+the geometry prevents S2 from seeing
+the line when edge sensor detects first
+    end note
+
+    :SNC uses distance-based calculation;
+    note right
+With angle_valid = FALSE, NAVCON knows:
+1. Angle is more than 45 degrees (steep)
+2. Cannot trust SS angle data
+3. Must use alternative calculation
+
+Alternative approach:
+Use detection_start_distance
+Use current_distance
+Calculate actual angle from geometry
+Or use conservative 90 degree correction
+    end note
+
+    stop
+
+  else (continue)
+    :Continue forward;
+    note right
+Still waiting for either:
+S2 to confirm (angle less than or equal to 45 degrees)
+61mm travel (angle more than 45 degrees)
+    end note
+  endif
+
+repeat while (Robot moving forward?) is (yes) not (stopped)
+
+stop
+
+legend right
+Key Variables:
+
+current_distance:
+Updated by MDPS every loop
+Distance in mm since last stop
+Resets to 0 after each stop
+
+detection_start_distance:
+Snapshot of current_distance when
+edge sensor (S1/S3) first detected
+Stays constant during tracking
+
+travel_distance:
+current_distance minus detection_start_distance
+How far robot moved since detection
+
+SENSOR_SPACING = 61mm:
+Physical distance between sensors
+S2 to S1 = 61mm
+S2 to S3 = 61mm
+
+angle_valid flag:
+TRUE: SS measured angle (less than or equal to 45 degrees)
+FALSE: Angle inferred (more than 45 degrees), no SS data
+end legend
+
+floating note right
+Why 61mm threshold?
+
+The sensors are physically spaced 61mm apart.
+
+If the robot travels 61mm forward and S2 still
+hasn't seen the line that S1/S3 detected, then
+geometrically the line MUST be at more than 45 degree angle.
+
+Example Scenario:
+
+Time 0ms:
+S1 detects GREEN
+current_distance = 100mm
+detection_start_distance = 100mm
+S2 still WHITE
+
+Time 500ms:
+Robot moved forward
+current_distance = 150mm
+travel_distance = 150 minus 100 = 50mm
+S2 still WHITE, Keep tracking
+
+Time 1000ms:
+current_distance = 162mm
+travel_distance = 162 minus 100 = 62mm
+travel_distance more than or equal to 61mm!
+S2 never confirmed
+Infer steep angle more than 45 degrees
+Set angle_valid = FALSE
+detection_active = TRUE
+end note
+
+stop
+
+@enduml

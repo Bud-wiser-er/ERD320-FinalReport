@@ -1,0 +1,1405 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   contentStyleType="text/css"
+   height="979px"
+   preserveAspectRatio="none"
+   style="width:1731px;height:979px;background:#FFFFFF;"
+   version="1.1"
+   viewBox="0 0 1731 979"
+   width="1731px"
+   zoomAndPan="magnify"
+   id="svg85"
+   sodipodi:docname="architecture_main_esp32.svg"
+   inkscape:export-filename="architecture_main_esp32.pdf"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview85"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.81511747"
+     inkscape:cx="904.16416"
+     inkscape:cy="515.26316"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="2391"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="cluster_Main ESP32 - Five Layer Architecture" />
+  <title
+     id="title1">Main ESP32 Functional Architecture (Control Processor)</title>
+  <defs
+     id="defs1" />
+  <g
+     id="g85">
+    <text
+       fill="#000000"
+       font-family="Arial"
+       font-size="14"
+       font-weight="bold"
+       lengthAdjust="spacing"
+       textLength="375.7373"
+       x="670.9751"
+       y="23.1318"
+       id="text1">Main ESP32 Functional Architecture (Control Processor)</text>
+    <!--cluster Main ESP32 - Five Layer Architecture-->
+    <g
+       id="cluster_Main ESP32 - Five Layer Architecture">
+      <rect
+         fill="#E6E6FA"
+         height="880.5"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#333333;stroke-width:1.0;"
+         width="1313"
+         x="7"
+         y="92.7786"
+         id="rect1" />
+    </g>
+    <!--cluster L5-->
+    <g
+       id="cluster_L5">
+      <rect
+         fill="#FFE4B5"
+         height="238.86"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#333333;stroke-width:1.0;"
+         width="447"
+         x="338"
+         y="665.2786"
+         id="rect2" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="167.8271"
+         x="477.5864"
+         y="676.6585"
+         id="text3">Layer 5: Supervision &amp; Diagnostics</text>
+    </g>
+    <!--cluster L4-->
+    <g
+       id="cluster_L4">
+      <rect
+         fill="#E0FFE0"
+         height="130"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#333333;stroke-width:1.0;"
+         width="243"
+         x="675"
+         y="138.7786"
+         id="rect3" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="125.0049"
+         x="733.9976"
+         y="150.1585"
+         id="text4">Layer 4: Touch/Tone Input</text>
+    </g>
+    <!--cluster L3-->
+    <g
+       id="cluster_L3">
+      <rect
+         fill="#FFE0F0"
+         height="119"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#333333;stroke-width:1.0;"
+         width="463"
+         x="825"
+         y="665.2786"
+         id="rect4" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="160.0244"
+         x="976.4878"
+         y="676.6585"
+         id="text5">Layer 3: Communication Protocol</text>
+    </g>
+    <!--cluster L2-->
+    <g
+       id="cluster_L2"
+       transform="translate(-1.7349813,2.602472)">
+      <rect
+         fill="#fff8dc"
+         height="276"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#333333;stroke-width:1"
+         width="259"
+         x="39"
+         y="665.27863"
+         id="rect5" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="189.48241"
+         x="73.758797"
+         y="676.65851"
+         id="text6">Layer 2: Navigation Decision (NAVCON)</text>
+    </g>
+    <!--cluster L1-->
+    <g
+       id="cluster_L1">
+      <rect
+         fill="#E6E6FA"
+         height="252.5"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#333333;stroke-width:1.0;"
+         width="228"
+         x="582"
+         y="340.7786"
+         id="rect6" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="155.0488"
+         x="618.4756"
+         y="352.1585"
+         id="text7">Layer 1: State Management Core</text>
+    </g>
+    <!--entity TBM-->
+    <g
+       id="elem_TBM">
+      <rect
+         fill="#F1F1F1"
+         height="42.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="84.4775"
+         x="677"
+         y="717.2786"
+         id="rect7" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="64.4775"
+         x="687"
+         y="736.6585"
+         id="text8">Timing Budget</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="33.3447"
+         x="687"
+         y="748.1575"
+         id="text9">Monitor</text>
+    </g>
+    <!--entity WDT-->
+    <g
+       id="elem_WDT">
+      <rect
+         fill="#F1F1F1"
+         height="42.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="65.0244"
+         x="576.5"
+         y="717.2786"
+         id="rect9" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="45.0244"
+         x="586.5"
+         y="736.6585"
+         id="text10">Watchdog</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="30.5518"
+         x="586.5"
+         y="748.1575"
+         id="text11">Timers</text>
+    </g>
+    <!--entity EDL-->
+    <g
+       id="elem_EDL">
+      <rect
+         fill="#F1F1F1"
+         height="42.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="80.0391"
+         x="461"
+         y="717.2786"
+         id="rect11" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="60.0391"
+         x="471"
+         y="736.6585"
+         id="text12">Episode Data</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="31.1377"
+         x="471"
+         y="748.1575"
+         id="text13">Logger</text>
+    </g>
+    <!--entity QTP-->
+    <g
+       id="elem_QTP">
+      <rect
+         fill="#F1F1F1"
+         height="42.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="62.7832"
+         x="362.5"
+         y="717.2786"
+         id="rect13" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="42.7832"
+         x="372.5"
+         y="736.6585"
+         id="text14">QTP Test</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="28.3447"
+         x="372.5"
+         y="748.1575"
+         id="text15">Hooks</text>
+    </g>
+    <!--entity TIH-->
+    <g
+       id="elem_TIH">
+      <rect
+         fill="#F1F1F1"
+         height="42.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="72.8125"
+         x="718.5"
+         y="196.2786"
+         id="rect15" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="52.8125"
+         x="728.5"
+         y="215.6585"
+         id="text16">Touch Input</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="35.0195"
+         x="728.5"
+         y="227.1575"
+         id="text17">Handler</text>
+    </g>
+    <!--entity DTD-->
+    <g
+       id="elem_DTD">
+      <rect
+         fill="#F1F1F1"
+         height="54.4971"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="66.6895"
+         x="826.5"
+         y="190.7786"
+         id="rect17" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="46.6895"
+         x="836.5"
+         y="210.1585"
+         id="text18">Dual-Tone</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="37.793"
+         x="836.5"
+         y="221.6575"
+         id="text19">Detector</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="43.9063"
+         x="836.5"
+         y="233.1566"
+         id="text20">(2800 Hz)</text>
+    </g>
+    <!--entity ENC-->
+    <g
+       id="elem_ENC">
+      <rect
+         fill="#F1F1F1"
+         height="42.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="72.2314"
+         x="1192"
+         y="717.2786"
+         id="rect20" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="52.2314"
+         x="1202"
+         y="736.6585"
+         id="text21">SCS Frame</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="37.2461"
+         x="1202"
+         y="748.1575"
+         id="text22">Encoder</text>
+    </g>
+    <!--entity DEC-->
+    <g
+       id="elem_DEC">
+      <rect
+         fill="#F1F1F1"
+         height="42.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="72.2314"
+         x="1085"
+         y="717.2786"
+         id="rect22" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="52.2314"
+         x="1095"
+         y="736.6585"
+         id="text23">SCS Frame</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="37.7979"
+         x="1095"
+         y="748.1575"
+         id="text24">Decoder</text>
+    </g>
+    <!--entity SPIENC-->
+    <g
+       id="elem_SPIENC">
+      <rect
+         fill="#F1F1F1"
+         height="42.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="83.3496"
+         x="966.5"
+         y="717.2786"
+         id="rect24" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="63.3496"
+         x="976.5"
+         y="736.6585"
+         id="text25">SPI Telemetry</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="37.2461"
+         x="976.5"
+         y="748.1575"
+         id="text26">Encoder</text>
+    </g>
+    <!--entity TD-->
+    <g
+       id="elem_TD">
+      <rect
+         fill="#F1F1F1"
+         height="42.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="62.793"
+         x="868.5"
+         y="717.2786"
+         id="rect26" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="30.0049"
+         x="878.5"
+         y="736.6585"
+         id="text27">Timing</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="42.793"
+         x="878.5"
+         y="748.1575"
+         id="text28">Discipline</text>
+    </g>
+    <!--entity CRE-->
+    <g
+       id="elem_CRE">
+      <rect
+         fill="#F1F1F1"
+         height="42.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="67.2412"
+         x="82.5"
+         y="717.2786"
+         id="rect28" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="47.2412"
+         x="92.5"
+         y="736.6585"
+         id="text29">Color Rule</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="31.1377"
+         x="92.5"
+         y="748.1575"
+         id="text30">Engine</text>
+    </g>
+    <!--entity ARE-->
+    <g
+       id="elem_ARE">
+      <rect
+         fill="#F1F1F1"
+         height="42.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="68.9209"
+         x="184.5"
+         y="717.2786"
+         id="rect30" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="48.9209"
+         x="194.5"
+         y="736.6585"
+         id="text31">Angle Rule</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="31.1377"
+         x="194.5"
+         y="748.1575"
+         id="text32">Engine</text>
+    </g>
+    <!--entity MPG-->
+    <g
+       id="elem_MPG">
+      <rect
+         fill="#F1F1F1"
+         height="42.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="80.0146"
+         x="71"
+         y="874.2786"
+         id="rect32" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="30.0146"
+         x="81"
+         y="893.6585"
+         id="text33">Motion</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="60.0146"
+         x="81"
+         y="905.1575"
+         id="text34">Primitive Gen</text>
+    </g>
+    <!--entity KFP-->
+    <g
+       id="elem_KFP">
+      <rect
+         fill="#F1F1F1"
+         height="42.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="87.2559"
+         x="186.5"
+         y="874.2786"
+         id="rect34" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="43.9063"
+         x="196.5"
+         y="893.6585"
+         id="text35">Kinematic</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="67.2559"
+         x="196.5"
+         y="905.1575"
+         id="text36">Feedback Proc</text>
+    </g>
+    <!--entity FSM-->
+    <g
+       id="elem_FSM">
+      <rect
+         fill="#F1F1F1"
+         height="42.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="125.5762"
+         x="625"
+         y="526.2786"
+         id="rect36" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="67.2363"
+         x="635"
+         y="545.6585"
+         id="text37">FSM Controller</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="105.5762"
+         x="635"
+         y="557.1575"
+         id="text38">(IDLE/CAL/MAZE/SOS)</text>
+    </g>
+    <!--entity GE-->
+    <g
+       id="elem_GE">
+      <rect
+         fill="#F1F1F1"
+         height="42.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="62.2461"
+         x="724"
+         y="392.7786"
+         id="rect38" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="27.793"
+         x="734"
+         y="412.1585"
+         id="text39">Guard</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="42.2461"
+         x="734"
+         y="423.6575"
+         id="text40">Evaluator</text>
+    </g>
+    <!--entity EA-->
+    <g
+       id="elem_EA">
+      <rect
+         fill="#F1F1F1"
+         height="42.998"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5;"
+         width="62.7881"
+         x="625.5"
+         y="392.7786"
+         id="rect40" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="42.7881"
+         x="635.5"
+         y="412.1585"
+         id="text41">Entry/Exit</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="32.793"
+         x="635.5"
+         y="423.6575"
+         id="text42">Actions</text>
+    </g>
+    <g
+       id="elem_GMN35">
+      <path
+         d="M1336.5,862.2786 L1336.5,929.7738 L1493.252,929.7738 L1493.252,872.2786 L1483.252,862.2786 L1336.5,862.2786 "
+         fill="#FEFFDD"
+         style="stroke:#181818;stroke-width:0.5;"
+         id="path42" />
+      <path
+         d="M1483.252,862.2786 L1483.252,872.2786 L1493.252,872.2786 L1483.252,862.2786 "
+         fill="#FEFFDD"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="path43" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="88.9063"
+         x="1342.5"
+         y="876.6585"
+         id="text43">Layer 5 Functions:</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="119.1162"
+         x="1342.5"
+         y="888.1575"
+         id="text44">• Timing budget monitoring</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="135.752"
+         x="1342.5"
+         y="899.6566"
+         id="text45">• Watchdog timers (SS/MDPS)</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="101.9043"
+         x="1342.5"
+         y="911.1556"
+         id="text46">• Episode state logging</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="119.6729"
+         x="1342.5"
+         y="922.6546"
+         id="text47">• QTP test hook integration</text>
+    </g>
+    <g
+       id="elem_GMN38">
+      <path
+         d="M1336,189.7786 L1336,245.7747 L1487.7959,245.7747 L1487.7959,199.7786 L1477.7959,189.7786 L1336,189.7786 "
+         fill="#FEFFDD"
+         style="stroke:#181818;stroke-width:0.5;"
+         id="path47" />
+      <path
+         d="M1477.7959,189.7786 L1477.7959,199.7786 L1487.7959,199.7786 L1477.7959,189.7786 "
+         fill="#FEFFDD"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="path48" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="88.9063"
+         x="1342"
+         y="204.1585"
+         id="text48">Layer 4 Functions:</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="121.3574"
+         x="1342"
+         y="215.6575"
+         id="text49">• Touch sensor debouncing</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="109.1309"
+         x="1342"
+         y="227.1566"
+         id="text50">• 2800 Hz tone detection</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="130.7959"
+         x="1342"
+         y="238.6556"
+         id="text51">• Dual-tone window validation</text>
+    </g>
+    <g
+       id="elem_GMN41">
+      <path
+         d="M1336.5,705.2786 L1336.5,772.7738 L1523.3008,772.7738 L1523.3008,715.2786 L1513.3008,705.2786 L1336.5,705.2786 "
+         fill="#FEFFDD"
+         style="stroke:#181818;stroke-width:0.5;"
+         id="path51" />
+      <path
+         d="M1513.3008,705.2786 L1513.3008,715.2786 L1523.3008,715.2786 L1513.3008,705.2786 "
+         fill="#FEFFDD"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="path52" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="88.9063"
+         x="1342.5"
+         y="719.6585"
+         id="text52">Layer 3 Functions:</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="126.3525"
+         x="1342.5"
+         y="731.1575"
+         id="text53">• SCS frame encode/decode</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="165.8008"
+         x="1342.5"
+         y="742.6566"
+         id="text54">• UART communication (19200 baud)</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="150.791"
+         x="1342.5"
+         y="754.1556"
+         id="text55">• SPI telemetry encoding (200 Hz)</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="124.6582"
+         x="1342.5"
+         y="765.6546"
+         id="text56">• Anti-spam timing discipline</text>
+    </g>
+    <g
+       id="elem_GMN44"
+       transform="translate(-215.9198,-145.99123)">
+      <path
+         d="m 1559,705.2786 v 67.4952 h 165.6875 v -57.4952 l -10,-10 H 1559"
+         fill="#feffdd"
+         style="stroke:#181818;stroke-width:0.5"
+         id="path56" />
+      <path
+         d="m 1714.6875,705.2786 v 10 h 10 l -10,-10"
+         fill="#feffdd"
+         style="stroke:#181818;stroke-width:1"
+         id="path57" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="88.906303"
+         x="1565"
+         y="719.65851"
+         id="text57">Layer 2 Functions:</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="133.5742"
+         x="1565"
+         y="731.15747"
+         id="text58">• Color-based navigation rules</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="135.25391"
+         x="1565"
+         y="742.65662"
+         id="text59">• Angle-based navigation rules</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="126.3379"
+         x="1565"
+         y="754.15558"
+         id="text60">• Motion primitive generation</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="144.6875"
+         x="1565"
+         y="765.6546"
+         id="text61">• Kinematic feedback processing</text>
+    </g>
+    <g
+       id="elem_GMN47">
+      <path
+         d="M1336,386.2786 L1336,442.2747 L1482.249,442.2747 L1482.249,396.2786 L1472.249,386.2786 L1336,386.2786 "
+         fill="#FEFFDD"
+         style="stroke:#181818;stroke-width:0.5;"
+         id="path61" />
+      <path
+         d="M1472.249,386.2786 L1472.249,396.2786 L1482.249,396.2786 L1472.249,386.2786 "
+         fill="#FEFFDD"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="path62" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="88.9063"
+         x="1342"
+         y="400.6585"
+         id="text62">Layer 1 Functions:</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="112.9932"
+         x="1342"
+         y="412.1575"
+         id="text63">• FSM state management</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="125.249"
+         x="1342"
+         y="423.6566"
+         id="text64">• Guard condition evaluation</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="123.0078"
+         x="1342"
+         y="435.1556"
+         id="text65">• Entry/exit action execution</text>
+    </g>
+    <!--link DTD to GE-->
+    <g
+       id="link_DTD_GE">
+      <path
+         d="M845.84,245.0086 C824.74,284.0986 788.3108,351.5791 769.0608,387.2291 "
+         fill="none"
+         id="DTD-to-GE"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="766.21,392.5086,774.0058,386.4899,768.5856,388.1091,766.9665,382.6889,766.21,392.5086"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon65" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="22.793"
+         x="828.6157"
+         y="303.1585"
+         id="text66">Tone</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="40.0244"
+         x="820"
+         y="314.6575"
+         id="text67">Detected</text>
+    </g>
+    <!--link TIH to GE-->
+    <g
+       id="link_TIH_GE">
+      <path
+         d="M755,239.5886 C755,277.0286 755,349.2886 755,386.6086 "
+         fill="none"
+         id="TIH-to-GE"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="755,392.6086,759,383.6086,755,387.6086,751,383.6086,755,392.6086"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon67" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="27.793"
+         x="756"
+         y="303.1585"
+         id="text68">Touch</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="25.5713"
+         x="757.1108"
+         y="314.6575"
+         id="text69">Event</text>
+    </g>
+    <!--link GE to FSM-->
+    <g
+       id="link_GE_FSM">
+      <path
+         d="M744.53,435.8286 C732.02,460.3886 713.9131,495.9121 701.3431,520.5921 "
+         fill="none"
+         id="GE-to-FSM"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="698.62,525.9386,706.2689,519.7343,700.8892,521.4832,699.1403,516.1035,698.62,525.9386"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon69" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="27.793"
+         x="735.4531"
+         y="482.6585"
+         id="text70">Guard</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="46.6992"
+         x="726"
+         y="494.1575"
+         id="text71">Evaluation</text>
+    </g>
+    <!--link FSM to L2-->
+    <g
+       id="link_FSM_L2"
+       transform="matrix(0.99570818,0,0,1.0788765,-0.37317938,-56.324632)">
+      <path
+         d="m 624.83,549.3686 c -144.63,2.76 -493.22,17.97 -569.83,99.91 -3.3187,3.55 -5.9419,7.5663 -7.9903,11.8803 -0.5121,1.0785 -0.9883,2.1756 -1.4305,3.2887 -0.0552,0.1392 2.0616,-5.3147 2.0073,-5.1751"
+         fill="none"
+         id="FSM-to-L2"
+         style="stroke:#181818;stroke-width:1" />
+      <polygon
+         fill="#181818"
+         points="47.2246,660.2047 44.9435,655.0282 45.415,664.8658 52.4011,657.9236 "
+         style="stroke:#181818;stroke-width:1"
+         id="polygon71" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="73.3936"
+         x="97"
+         y="627.65851"
+         id="text72">Enable/Suspend</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="42.783199"
+         x="112.3052"
+         y="639.15747"
+         id="text73"
+         transform="translate(-19.71368,-36.530129)">NAVCON</text>
+    </g>
+    <!--link DEC to L2-->
+    <g
+       id="link_DEC_L2">
+      <path
+         d="M1114.65,717.0086 C1107.11,695.5586 1092.27,663.9486 1067,649.2786 C986.35,602.4686 740.74,640.3886 647.5,639.2786 C581.66,638.4986 103.19,604.4086 55,649.2786 C51.5175,652.5211 48.7513,656.2614 46.58,660.3349 C46.0372,661.3533 45.5316,662.3925 45.0613,663.4499 C44.8261,663.9786 46.8525,658.9509 46.6348,659.4884 "
+         fill="none"
+         id="DEC-to-L2"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="44.382,665.0495,51.4685,658.2098,46.2593,660.4153,44.0538,655.2061,44.382,665.0495"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon73" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="31.684601"
+         x="615.5"
+         y="627.65851"
+         id="text74"
+         transform="translate(466.65053,22.849467)">Sensor</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="21.122999"
+         x="620.78082"
+         y="639.15747"
+         id="text75"
+         transform="translate(466.03712,21.776003)">Data</text>
+    </g>
+    <!--link L2 to ENC-->
+    <g
+       id="link_L2_ENC">
+      <path
+         d="M44.3926,665.0601 C44.6102,664.5223 44.8363,663.9889 45.0713,663.4599 C45.5412,662.4021 46.0463,661.3624 46.5886,660.3435 C48.7578,656.268 51.5213,652.5249 55,649.2786 C100.05,607.2386 547.88,638.7386 609.5,639.2786 C735.18,640.3886 1066.36,586.0786 1175,649.2786 C1200.13,663.8986 1212.6801,689.8475 1219.9701,711.3075 "
+         fill="none"
+         id="L2-to-ENC"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="1221.9,716.9886,1222.7926,707.1803,1220.2918,712.2543,1215.2177,709.7535,1221.9,716.9886"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon75" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="30.014601"
+         x="568.05658"
+         y="627.65851"
+         id="text76"
+         transform="translate(617.08897,18.095551)">Motion</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="51.127899"
+         x="557.5"
+         y="639.15747"
+         id="text77"
+         transform="translate(627.21021,15.948622)">Commands</text>
+    </g>
+    <!--link FSM to EDL-->
+    <g
+       id="link_FSM_EDL"
+       transform="matrix(1.0791438,0,0,0.9999147,-49.459812,-3.4157553)">
+      <path
+         d="m 624.95,553.4386 c -43.23,6.86 -97.7,23.55 -125.95,63.84 -20.66,29.47 -14.326,67.966 -6.846,93.846"
+         fill="none"
+         id="FSM-to-EDL"
+         style="stroke:#181818;stroke-width:1" />
+      <polygon
+         fill="#181818"
+         points="492.4317,712.0852 487.4783,709.3532 493.82,716.8886 495.1638,707.1319 "
+         style="stroke:#181818;stroke-width:1"
+         id="polygon77" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="23.3496"
+         x="512.77832"
+         y="627.65851"
+         id="text78"
+         transform="translate(-28.991807,-41.639551)">State</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="48.9063"
+         x="500"
+         y="639.15747"
+         id="text79"
+         transform="translate(-28.844064,-45.326387)">Transitions</text>
+    </g>
+    <!--link TBM to L5-->
+    <g
+       id="link_TBM_L5"
+       transform="translate(-2.602472)">
+      <path
+         d="m 726.7,760.3586 c 15.53,41.51 47.1409,125.9255 48.1809,128.7255"
+         fill="none"
+         id="TBM-to-L5"
+         style="stroke:#181818;stroke-width:1" />
+      <polygon
+         fill="#181818"
+         points="777.586,884.8791 775.2291,890.0215 770.0866,887.6646 776.97,894.7086 "
+         style="stroke:#181818;stroke-width:1"
+         id="polygon79" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="30.0049"
+         x="754"
+         y="818.65851"
+         id="text80">Timing</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="21.122999"
+         x="758.44092"
+         y="830.15747"
+         id="text81">Data</text>
+    </g>
+    <!--link WDT to FSM-->
+    <g
+       id="link_WDT_FSM"
+       transform="matrix(0.98044773,0,0,1.0058845,25.947235,-3.3489203)">
+      <path
+         d="m 617.59,717.2186 c 15.19,-36.34 44.2953,-105.9644 59.4953,-142.3144"
+         fill="none"
+         id="WDT-to-FSM"
+         style="stroke:#181818;stroke-width:1" />
+      <polygon
+         fill="#181818"
+         points="677.4711,573.9816 679.6183,579.2151 679.4,569.3686 672.2376,576.1288 "
+         style="stroke:#181818;stroke-width:1"
+         id="polygon81" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="36.123001"
+         x="658"
+         y="627.65851"
+         id="text82"
+         transform="translate(11.927996,-24.506611)">Timeout</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10px"
+         lengthAdjust="spacing"
+         textLength="30.571301"
+         x="660.77588"
+         y="639.15747"
+         id="text83"
+         transform="translate(13.229232,-26.89221)">Events</text>
+    </g>
+    <!--link SPIENC to L5-->
+    <g
+       id="link_SPIENC_L5">
+      <path
+         d="M990.73,760.3586 C979.62,772.8386 964.41,788.5586 949,800.2786 C914.83,826.2636 872.63,849.5611 838.5813,866.5224 C821.5569,875.003 806.5703,881.8996 795.6442,886.756 C792.9127,887.9701 790.435,889.0567 788.2426,890.0086 C787.1464,890.4846 791.6347,888.5594 790.6852,888.9671 "
+         fill="none"
+         id="SPIENC-to-L5"
+         style="stroke:#181818;stroke-width:1.0;" />
+      <polygon
+         fill="#181818"
+         points="785.172,891.3347,795.0201,891.4588,789.7663,889.3617,791.8634,884.1079,785.172,891.3347"
+         style="stroke:#181818;stroke-width:1.0;"
+         id="polygon83" />
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="44.4531"
+         x="937"
+         y="818.6585"
+         id="text84">Telemetry</text>
+      <text
+         fill="#000000"
+         font-family="Arial"
+         font-size="10"
+         lengthAdjust="spacing"
+         textLength="35.5713"
+         x="941.4409"
+         y="830.1575"
+         id="text85">Packets</text>
+    </g>
+    <!--link L5 to GMN35-->
+    <g
+       id="link_L5_GMN35">
+      <path
+         d="M786.3491,895.7786 C789.2587,895.7786 792.1684,895.7786 795.0781,895.7786 C800.8975,895.7786 806.7168,895.7786 812.5361,895.7786 C824.1748,895.7786 835.8134,895.7786 847.4521,895.7786 C870.7293,895.7786 894.0063,895.7786 917.2833,895.7786 C963.8372,895.7786 1010.3906,895.7786 1056.9438,895.7786 C1150.05,895.7786 1243.155,895.7786 1336.26,895.7786 "
+         fill="none"
+         id="L5-GMN35"
+         style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;" />
+    </g>
+    <!--link L4 to GMN38-->
+    <g
+       id="link_L4_GMN38"
+       transform="matrix(0.63358723,0,0,0.26044109,490.3646,140.24216)">
+      <path
+         d="m 678.3977,138.4797 c 0.0551,-0.5198 0.1125,-1.0393 0.1722,-1.5586 0.4776,-4.1539 1.1045,-8.2879 1.9068,-12.352 1.6047,-8.1282 3.9109,-15.9766 7.1275,-23.145 6.4333,-14.3367 16.5083,-25.953 31.8958,-31.6455 72.11,-26.68 96.85,-10.64 173,0 162.77,22.73 346.14,83.7 445.63,119.9"
+         fill="none"
+         id="L4-GMN38"
+         style="stroke:#181818;stroke-width:1;stroke-dasharray:7, 7" />
+    </g>
+    <!--link L3 to GMN41-->
+    <g
+       id="link_L3_GMN41">
+      <path
+         d="M839.9354,665.1764 C840.063,664.8172 840.1926,664.459 840.3242,664.1018 C840.5874,663.3874 840.8586,662.6771 841.1379,661.9714 C842.2553,659.1487 843.5037,656.3998 844.8973,653.7577 C850.4719,643.1893 858.37,634.3286 869.5,629.2786 C909.26,611.2386 1220.65,616.8086 1262.5,629.2786 C1312.11,644.0586 1360.71,678.7286 1392.68,705.1286 "
+         fill="none"
+         id="L3-GMN41"
+         style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;" />
+    </g>
+    <!--link L2 to GMN44-->
+    <g
+       id="link_L2_GMN44"
+       transform="matrix(0.78910208,-0.05624206,0,0.52534474,71.176579,326.57714)">
+      <path
+         d="m 46.132,664.934 c 0.0917,-0.359 0.1856,-0.7171 0.2816,-1.0742 0.192,-0.714 0.3926,-1.4238 0.6021,-2.1289 0.8379,-2.8203 1.8179,-5.5646 2.958,-8.1996 4.5607,-10.5402 11.6838,-19.3327 22.5263,-24.2527 36.7,-16.65 1413.47,-14.69 1451,0 38.74,15.16 72.41,49.58 93.85,75.81"
+         fill="none"
+         id="L2-GMN44"
+         style="stroke:#181818;stroke-width:1;stroke-dasharray:7, 7"
+         sodipodi:nodetypes="csscccc" />
+    </g>
+    <!--link L1 to GMN47-->
+    <g
+       id="link_L1_GMN47"
+       transform="matrix(0.7091711,0,0,0.53062936,388.57707,186.42937)">
+      <path
+         d="m 596.9354,340.6764 c 0.1276,-0.3592 0.2572,-0.7174 0.3888,-1.0746 0.2632,-0.7144 0.5344,-1.4247 0.8137,-2.1304 1.1174,-2.8227 2.3658,-5.5716 3.7594,-8.2137 5.5746,-10.5684 13.4727,-19.4291 24.6027,-24.4791 63.95,-29.02 88.04,-6.09 158,0 201.5,17.53 435.48,66.31 551.5,92.45"
+         fill="none"
+         id="L1-GMN47"
+         style="stroke:#181818;stroke-width:1;stroke-dasharray:7, 7" />
+    </g>
+    <!--SRC=[XLRRRkCs47tNLmooGEi4C7pDOkk70eea9y7QNZTIkq3hFj0IBHEHI8EaqiqM1Vej_RH-IOUaB2k-RFMeEHoUkPmZgMV6TqII4jOaVSwbg7WMY498U3UrZwSQH2hAdU2KwrY_5XGaJJNXUK5R4BKbcVY3yHmsf53jI4Otf2hqL72z82K5Np9Id8_7x2k5GRyLRAww4pAZiYOuie_dQQQHpfmm3b6y70rXMl5KCy59WTUaMwRnU2KfT0BCBaK1IobIgfIGrvxNv8QhLeekJDaBXHbvfV9DaYju5xsFtazz-DFp05gd7VPs0d6re_A5AMG0tq78ICw5qYnLLq0Kp6vDQwFntIrc07oQji9l2IjDx-wgBATwnUU2Cotax-POSZS_HdycEjrc8bznF4UbihZFONACYtPCYOn2I3HPyPd8S-foHk7i6FjJieI4AhpyGOXdbnBV8Uoli-ME9v28Ajts4am0ZtnNQLVb6FlKnphxPweq1nmMho4yAse-oUF3CJQiID4rkLSyf6O4GgvuP_YXtuU7hzVsL9Y45-cD9X28igmuIudP23DvBL9HE98ZEuh-z0p9E8XXYhk75qSynVRLBLi4tq26z80CerFayX6RMz2IQldwDY-6pgHs-u1vcKhPhc2SkZvTBdWuWGLvORch5lcuDUmi_5-2JujhL_RGYlj369oMxQJrL1Msxdn_O_0K7IDzU-q9qZz5peKXi-9BYULe8wjxoYrulhm_1d_4H2MoJrTyIcbcNCdArU8_JYzluW25fuasHi19ZZt6R84mWZKb3rgoFRfn6i-XDWPSHDoknt0MzG9_rflxlqQz-5FizWnnnqVlAo8pBF-551NPA_N-f04H9d_jHLyOxhjldSa9A_9jDLZFzxNJCAwf90xYuM93j_iZ9WIZieC6QEQXLDen59IXWRTv-CO4J5KJU4iGithclOdZ4amWucHTq5vSgHtbY7DRuk7g7Z0nvSg8phY7XszC05SL8_kv6eMXYbMJ6tq5wccWDqd25NCLeOcvnBU6zNwvJMAqhHPjusV2k8CjINbE7QsZ1n4jSK4eGZmkSFQIvLiDOeCmREtDJUt9pHT1JMvkCF3lt__KryFQUYsKpchnJHtUcojewwtGYUFUF5p6rtLyRwhAxbo1fdeuQqnKeud25ZtKpZINhllOPJ14J-YEMtJ7P-bQqrHs6FYnNEE7EZtSM1iYQEF2cLqISvqBMW-r4Vmou-SPS1jOzZ-4HYr2etE4ZErjZEq1jJxMowpvrT6V_QV4IA1blPt13qDakIPLjc-YCKIzdwNBOsRI6Jfxhr4-rwohTlWVeDtCiiOEB_CVjlWFp_6tJjTT4qKnmy4o9HgQQYv6V_asn6a0TesrvPJJUjWEqHWQRFP-jdE_7sPy5_aFMlm7v_WRfRZbAnl3gqDMzTXzdbdT0Jt8lrvUQqWK3GcSsG3zGjFgxKRy1m00]-->
+  </g>
+</svg>

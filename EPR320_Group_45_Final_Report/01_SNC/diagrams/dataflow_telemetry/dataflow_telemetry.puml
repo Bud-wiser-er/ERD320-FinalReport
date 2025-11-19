@@ -1,0 +1,118 @@
+@startuml dataflow_telemetry
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 11
+
+title Telemetry Data Flow (Main ESP32 to WiFi ESP32 to Operator)
+
+' Main ESP32 telemetry sources
+rectangle "Main ESP32" #E6E6FA {
+  component [FSM State\nManager] as FSM
+  component [NAVCON\nEngine] as NAV
+  component [SCS Frame\nDecoder] as FD
+  component [Motion\nGenerator] as MG
+
+  database "Episode\nState" as ES
+
+  rectangle "SPI Telemetry\nEncoder" as SPITX #FFE0F0 {
+    component [Packet\nBuilder] as PB
+    component [Rate\nLimiter\n200 Hz] as RL
+  }
+}
+
+' WiFi ESP32
+rectangle "WiFi ESP32" #FFFFE0 {
+  rectangle "SPI Slave\nInterface" as SPIRX {
+    component [Packet\nReceiver] as PR
+    component [Packet\nDecoder] as PD
+  }
+
+  rectangle "Web Server" as WEB {
+    component [HTTP\nServer] as HTTP
+    component [JSON API\n10 Hz] as JSON
+  }
+
+  component [WiFi Access\nPoint\nERD-Byron] as AP
+}
+
+actor "Operator\n(Browser)" as OP
+
+' Telemetry collection on Main ESP32
+FSM --> PB : Current\nState
+NAV --> PB : NAVCON\nState
+ES --> PB : Episode\nData
+FD --> PB : Sensor\nData
+MG --> PB : Motion\nCommands
+
+' SPI transfer
+PB --> RL : Complete\nPackets
+RL --> PR : **SPI 2 MHz**\n200 Hz\n257-byte\npackets
+
+' WiFi ESP32 processing
+PR --> PD : Raw\nPackets
+PD --> JSON : Decoded\nTelemetry
+JSON --> HTTP : JSON\nUpdates
+HTTP --> AP : HTTP\nResponses
+
+' To operator
+AP --> OP : **WiFi/HTTP**\nWeb Dashboard\n10 Hz updates
+
+note right of PB
+  **13+ Packet Types:**
+  1. System State
+  2. Sensor Colors (3x)
+  3. Incidence Angle
+  4. Wheel Speeds
+  5. Rotation Command
+  6. Distance Traveled
+  7. NAVCON State
+  8. Line Detection
+  9. EoM Flag
+  10. Comm Status
+  11. Diagnostics
+  12. Announcements
+  13. Timing Data
+end note
+
+note right of RL
+  **Rate Limiting:**
+
+  Max: 200 Hz transmission
+  System load monitoring:
+  • CPU usage
+  • Free heap
+  • SPI bus utilization
+
+  Prevents WiFi ESP32
+  overload while maintaining
+  real-time visibility
+end note
+
+note bottom of AP
+  **WiFi Configuration:**
+  SSID: "ERD-Byron"
+  IP: 192.168.4.1
+  Mode: Access Point
+
+  Multiple concurrent
+  connections supported
+  for team monitoring
+end note
+
+note right of OP
+  **Dashboard Displays:**
+  • State (IDLE/CAL/MAZE/SOS)
+  • Sensor colors & angle
+  • Wheel speeds v_L, v_R
+  • Distance since stop
+  • NAVCON decisions
+  • Communication status
+  • Loop timing & uptime
+
+  Update: 10 Hz
+  Latency: ~150 ms
+end note
+
+@enduml

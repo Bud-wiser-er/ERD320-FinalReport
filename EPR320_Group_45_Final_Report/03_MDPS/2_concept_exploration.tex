@@ -1,0 +1,63 @@
+\subsection{Subsystem Concept Exploration}
+% \textit{-	Refer to Kossiakoff, Chapter 6, 7 and 8\\
+% -	Do a brief survey of literature on possible methods / circuits / designs that could meet the above needs, other than the prescribed subsystem. MAKE SURE THAT THE DOCUMENTS YOU REFERENCE ARE INCLUDED IN SECTION 1.2!!!}
+
+\noindent
+Various approaches can be considered to address the needs of the Motor Driver and Power Supply (MDPS) subsystem. By reviewing multiple sources and evaluating the advantages and disadvantages of each option, a more informed decision can be made regarding the concept best suited for the intended application.
+
+\subsubsection{Movement}
+Standard wheels, continuous tracks, cams, or propellers are some of the many options that can be considered when exploring different modes of movement for the MARV.
+
+\begin{table}[H]
+\centering
+\caption{Comparison of Different Motion Systems}
+\label{tab:motion_systems}
+\begin{tabular}{|c|p{6cm}|p{6cm}|}
+\hline
+\textbf{System} & \textbf{Advantages} & \textbf{Disadvantages} \\ \hline
+Wheels & Simple Design, Low Cost, Manoeuvrability & Dependence on Flat Surfaces \\ \hline
+Tracks & Improved Traction, Better Weight Distribution & Complex Design, Lower Speed \\ \hline
+Cams & Simple Design, Precision Motion & Friction Losses, High Torque Required \\ \hline
+Propellers & Independence of Ground Terrain  & Complex Design, Manoeuvrability \\ \hline
+\end{tabular}
+\end{table}
+
+Table \ref{tab:motion_systems} shows that wheeled systems offer a simple design, low production cost, and good manoeuvrability, but they perform best on flat surfaces and may struggle on rough or uneven terrain. Tracked systems provide improved traction and better weight distribution, making them suitable for uneven and smooth surfaces \cite{AUTODESK}, but they are mechanically more complex and generally slower. Cam-based mechanisms is just a lever arm which spins off-centre from the shaft, which can achieve precise motion and maintain a simple design \cite{AUTODESK}, but they suffer from friction losses and require high torque if lifting a system of of the ground. Propeller-based systems allow the vehicle to move independently of ground terrain, which is advantageous for unconventional surfaces \cite{JOUAV}, but they introduce higher complexity and manoeuvrability is significantly reduce when confined to small areas such as the maize. Considering the MARV’s operational environment being a maze with reasonably flat surfaces and the desire for low-cost, with easily controllable motion, a wheeled system is the most appropriate choice. It provides the necessary balance of simplicity and precision that is required to accurately navigate the maze.
+
+\subsubsection{Power}
+A simple voltage regulator or dc-dc (buck-boost) converter can be considered to regulate the power of the system. 
+
+\begin{table}[H]
+\centering
+\caption{Comparison of Power Systems}
+\label{tab:power_systems}
+\begin{tabular}{|c|p{6cm}|p{6cm}|}
+\hline
+\textbf{System} & \textbf{Advantages} & \textbf{Disadvantages} \\ \hline
+Voltage Regulator & Simple Design, Low Cost, Few Components & Large Losses, Only Step-Down Operations Possible \\ \hline
+Buck Converter & Wide Input Voltage, Stable Outputs, Smaller Losses & Cost, More Complex \\ \hline
+\end{tabular}
+\end{table}
+
+From Table \ref{tab:power_systems}, voltage regulators offer a simple design with low cost and require relatively few components, making them easy to integrate. However, they are limited to step-down operation and can exhibit larger power losses compared to switching converters \cite{VREG}. Buck converters, provide stable outputs over a wide input voltage range and are generally more efficient, but they are more complex and costly, requiring additional components and careful design considerations \cite{DCDC}. Considering  simplicity, low cost, and ease of integration as the driving factors, the voltage regulator is the most suitable choice for the power subsystem, as it meets the operational needs of supplying stable voltage to the subsystems without introducing unnecessary complexity.
+
+\subsubsection{Communication}
+\noindent
+$I^2C$, SPI, and UART are widely used communication protocols in embedded systems due to their simplicity and reliability, and were therefore considered as potential options for the MARV subsystem.
+
+\begin{table}[H]
+\centering
+\caption{Comparison of Communication Protocols}
+\label{tab:com_systems}
+\begin{tabular}{|c|p{6cm}|p{6cm}|}
+\hline
+\textbf{Protocol} & \textbf{Advantages} & \textbf{Disadvantages} \\ \hline
+$I^2C$ & Simple two-wire interface, Multiple slaves and multi-master, error checking & Requires addressing, Half-duplex \\ \hline
+SPI & Full-duplex, Single-master systems & Separate slave select lines for each device, Complex wiring for multiple slaves, Limited multi-master support \\ \hline
+UART & Simple two-wire interface, bidirectional, asynchronous, configurable baud rate, widely supported for device-to-device communication & Requires matching baud rates between devices \\ \hline
+\end{tabular}
+\end{table}
+
+From Table \ref{tab:com_systems}, $I^2C$ provides a simple two-wire interface and supports multiple slave devices with built-in error checking, but complexity increases with addressing. SPI offers full-duplex capability, making it ideal for high-speed data transfers, but adding multiple devices increases wiring complexity and it does not easily support multi-master configurations. UART is a simple, asynchronous two-wire protocol that supports bidirectional communication, making it a reliable device-to-device communication protocol \cite{Coms}. Given the MARV’s requirement for asynchronous communication between microcontroller subsystems, and the limited number of devices involved, UART is the most appropriate choice, due to its ease of implementation to meet the operational needs of the system.
+
+% 

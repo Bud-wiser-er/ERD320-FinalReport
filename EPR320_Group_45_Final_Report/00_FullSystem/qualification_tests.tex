@@ -1,0 +1,25 @@
+\subsection{System Qualification Test Results}
+
+System-level qualification testing verified integrated operation across all three subsystems. Table~\ref{tab:system-qtp-results} summarizes test specifications, expected results, and measured outcomes. Test video evidence submitted per \gls{qtp} requirements at \url{https://forms.gle/N91ffyDfQ4Dn41Vy8}.
+
+\begin{table}[H]
+\centering
+\caption{System Qualification Test Results}
+\label{tab:system-qtp-results}
+\small
+\begin{tabularx}{\textwidth}{lXXc}
+\toprule
+\textbf{Specification} & \textbf{Expected Result} & \textbf{Measured Result} & \textbf{Status} \\
+\midrule
+System State Transitions & IDLE $\rightarrow$ CAL $\rightarrow$ MAZE $\rightarrow$ IDLE sequence with touch activation, dual EOC, and EOM detection & State sequence executed with touch trigger, calibration completion signals from SS and MDPS, maze navigation, and return to IDLE & \textcolor{darkgreen}{\textbf{PASS}} \\
+Line Following Navigation & Navigate maze following RED and GREEN lines with angle-dependent path selection per NAVCON rules & Successfully followed colored lines with cross, align, and turn maneuvers based on angle thresholds & \textcolor{darkgreen}{\textbf{PASS}} \\
+Obstacle Avoidance & Detect and avoid BLACK and BLUE wall lines without crossing & Detected wall colors and executed avoidance maneuvers without line crossing violations & \textcolor{darkgreen}{\textbf{PASS}} \\
+SCS Protocol Communication & All subsystems exchange packets at 19200 baud with correct framing and turn discipline & Packet exchange verified with 0xAA sync, 257-byte length, turn-based transmission & \textcolor{darkgreen}{\textbf{PASS}} \\
+Pure Tone SOS Activation & Detect 2800\,Hz dual-tone at 60\,dB SPL from 10\,cm, toggle MAZE to SOS state & Dual-tone detected at 12\,cm, state toggled to SOS halting navigation & \textcolor{darkgreen}{\textbf{PASS}} \\
+End-of-Maze Detection & Detect 360° rotation signal from SS, transmit stop command, return to IDLE & EOM flag detected, MDPS stop command sent, system returned to IDLE state & \textcolor{darkgreen}{\textbf{PASS}} \\
+Calibration Completion & SS and MDPS complete calibration procedures within 60\,s and assert EOC flags & Both subsystems completed calibration in 45\,s, EOC flags asserted correctly & \textcolor{darkgreen}{\textbf{PASS}} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Test results demonstrate full system integration with all seven specifications meeting acceptance criteria. Communication protocol operated without packet loss or timing violations. State machine transitions executed deterministically. Navigation decision logic produced correct motion commands for all line types and approach angles encountered during maze traversal.

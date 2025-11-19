@@ -1,0 +1,193 @@
+@startuml NAVCON_Tester_Maze_Flow
+title NAVCON Tester - Full Maze Run Flow
+
+start
+
+:Initialize Tester;
+note right
+  - Setup serial connection
+  - Create log file
+  - Reset counters
+end note
+
+partition "IDLE State" {
+  repeat
+    :Send IDLE:HUB:0 packet;
+    :Wait for response;
+  repeat while (SNC responded with IDLE:SNC:0?) is (No)
+  ->Yes;
+
+  :Transition to CAL state;
+}
+
+partition "CAL State" {
+  repeat
+    :Send 4 CAL packets;
+    note right
+      1. CAL:HUB:0
+      2. MDPS:1 (battery=0)
+      3. MDPS:3 (speeds=0,0)
+      4. MDPS:4 (distance=0)
+    end note
+
+    :Wait 500ms for SNC response;
+  repeat while (SNC in MAZE state?) is (No)
+  ->Yes;
+
+  :Transition to MAZE state;
+  :Initialize maze variables;
+  note right
+    - distance = 44cm
+    - loop_count = 1
+    - current_color = 0 (WHITE)
+    - current_angle = 0°
+  end note
+}
+
+partition "MAZE State - 100 Loop Iterations" {
+  while (loop_count < 100?) is (Yes)
+
+    :Send 6 MAZE packets;
+    note right
+      **MDPS Packets:**
+      1. MDPS:1 (battery=0,0)
+      2. MDPS:2 (rotation=0,0)
+      3. MDPS:3 (speeds=10,10)
+      4. MDPS:4 (distance=current)
+
+      **SS Packets:**
+      5. SS:1 (color=current_color)
+      6. SS:2 (angle=current_angle)
+    end note
+
+    :Wait 500ms for SNC response;
+    note right
+      Turn-based protocol:
+      Give SNC time to process
+      and respond with MAZE:SNC:[1,2,3]
+    end note
+
+    :Update virtual maze state;
+    note right
+      - distance += 2cm
+      - loop_count += 1
+    end note
+
+    if (Check event triggers) then
+
+      if (loop_count == 10) then (Yes)
+        :GREEN Line #1;
+        note right
+          S2=GREEN (16)
+          Angle=22°
+          Moderate angle
+        end note
+
+      elseif (loop_count == 15) then (Yes)
+        :Clear GREEN;
+
+      elseif (loop_count == 25) then (Yes)
+        :BLUE Wall;
+        note right
+          S2=BLUE (24)
+          Angle=30°
+          Should trigger 90° turn
+        end note
+
+      elseif (loop_count == 30) then (Yes)
+        :Clear BLUE;
+
+      elseif (loop_count == 40) then (Yes)
+        :GREEN Line #2;
+        note right
+          S2=GREEN (16)
+          Angle=35°
+          Moderate-high angle
+        end note
+
+      elseif (loop_count == 45) then (Yes)
+        :Clear GREEN;
+
+      elseif (loop_count == 50) then (Yes)
+        :GREEN Line #3 STEEP;
+        note right
+          **S1=GREEN (2) EDGE SENSOR**
+          Angle=0° (NO DATA)
+          >45° steep angle
+          SNC must calculate from distance
+        end note
+
+      elseif (loop_count == 55) then (Yes)
+        :Clear STEEP GREEN;
+
+      elseif (loop_count == 60) then (Yes)
+        :BLACK Wall;
+        note right
+          S2=BLACK (32)
+          Angle=28°
+        end note
+
+      elseif (loop_count == 65) then (Yes)
+        :Clear BLACK;
+
+      elseif (loop_count == 70) then (Yes)
+        :GREEN Line #4;
+        note right
+          S2=GREEN (16)
+          Angle=8°
+          Small angle - easy crossing
+        end note
+
+      elseif (loop_count == 75) then (Yes)
+        :Clear GREEN;
+
+      elseif (loop_count == 80) then (Yes)
+        :GREEN Line #5 VERY STEEP;
+        note right
+          **S1=GREEN (2) EDGE**
+          Angle=0° (NO DATA)
+          Very steep >45°
+        end note
+
+      elseif (loop_count == 85) then (Yes)
+        :Clear STEEP GREEN;
+
+      elseif (loop_count >= 90 AND loop_count <= 98) then (Yes)
+        :EOM Rectification;
+        note right
+          Loop 90: angle=12°
+          Loop 92: angle=7°
+          Loop 94: angle=3°
+          Loop 96: angle=1°
+          Loop 98: RED + angle=1°
+          **Gradual alignment to EOM**
+        end note
+
+      elseif (loop_count == 99) then (Yes)
+        :RED EOM;
+        note right
+          **All sensors RED (73)**
+          S1=RED, S2=RED, S3=RED
+          Angle=0°
+          **Perfect alignment - EOM!**
+        end note
+
+      else (Continue)
+        :WHITE surface;
+        note right
+          Normal forward driving
+          No line detected
+        end note
+      endif
+
+    endif
+
+  endwhile (No - loop_count >= 100)
+}
+
+:End test - Save log;
+:Generate test report;
+
+stop
+
+@enduml
